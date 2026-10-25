@@ -99,6 +99,48 @@
     });
     pre.append(button);
   });
+  document.querySelectorAll('[data-trajectory-replay]').forEach(figure => {
+    const image = figure.querySelector('img[data-replay-src]');
+    const button = figure.querySelector('[data-replay-toggle]');
+    const status = figure.querySelector('[data-replay-status]');
+    if (!image || !button || !status) return;
+    const poster = image.getAttribute('src');
+    const source = new URL(image.dataset.replaySrc,document.baseURI);
+    const seconds = (Number(image.dataset.durationMs)/1000).toFixed(2);
+    let playing = false;
+    let failed = false;
+    let version = 0;
+    function updateButton() {
+      button.textContent = playing?'停止回放':'播放回放';
+      button.setAttribute('aria-pressed',String(playing));
+    }
+    image.addEventListener('load',() => {
+      if (failed) return;
+      status.textContent = playing?`循环回放中 · 每轮 ${seconds} 秒。`:'当前显示原始第0帧。';
+    });
+    image.addEventListener('error',() => {
+      if (!playing) return;
+      playing = false;
+      failed = true;
+      updateButton();
+      status.textContent = '回放未能加载，请使用下方下载链接。';
+      image.src = poster;
+    });
+    button.addEventListener('click',() => {
+      playing = !playing;
+      failed = false;
+      updateButton();
+      if (playing) {
+        source.searchParams.set('play',String(++version));
+        status.textContent = '正在加载真实回放…';
+        image.src = source.href;
+      } else {
+        image.src = poster;
+        status.textContent = '当前显示原始第0帧。';
+      }
+    });
+    button.hidden = false;
+  });
   const links = Array.from(document.querySelectorAll('.article-toc a[href^="#"]'));
   if (links.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {

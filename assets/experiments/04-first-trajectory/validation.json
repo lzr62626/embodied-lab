@@ -1,0 +1,234 @@
+{
+  "result": "PASS",
+  "check_count": 35,
+  "checks": [
+    {
+      "name": "capture_successful",
+      "pass": true
+    },
+    {
+      "name": "article3_runtime_source_match_before_actions",
+      "pass": true
+    },
+    {
+      "name": "single_env_seed42_no_training",
+      "pass": true
+    },
+    {
+      "name": "one_attempt_twenty_completed_steps",
+      "pass": true
+    },
+    {
+      "name": "no_capture_artifact_modified",
+      "pass": true
+    },
+    {
+      "name": "numeric_npz_no_pickle",
+      "pass": true
+    },
+    {
+      "name": "metadata_shapes_and_types",
+      "pass": true
+    },
+    {
+      "name": "N_actions_N_plus_one_observations",
+      "pass": true
+    },
+    {
+      "name": "N_returns_and_diagnostics",
+      "pass": true
+    },
+    {
+      "name": "batch_axis_retained",
+      "pass": true
+    },
+    {
+      "name": "continuous_step_indices",
+      "pass": true
+    },
+    {
+      "name": "continuous_simulation_time",
+      "pass": true
+    },
+    {
+      "name": "no_early_terminal_concatenation",
+      "pass": true
+    },
+    {
+      "name": "requested_limit_not_episode_end",
+      "pass": true
+    },
+    {
+      "name": "exact_twenty_step_plan",
+      "pass": true
+    },
+    {
+      "name": "float32_actions_in_bounds",
+      "pass": true
+    },
+    {
+      "name": "controller_targets_aligned_to_previous_obs",
+      "pass": true
+    },
+    {
+      "name": "gripper_targets_hold_open",
+      "pass": true
+    },
+    {
+      "name": "all_transition_rows_align",
+      "pass": true
+    },
+    {
+      "name": "twenty_one_original_png_files",
+      "pass": true
+    },
+    {
+      "name": "every_png_pixel_equals_corresponding_npz",
+      "pass": true
+    },
+    {
+      "name": "rgb_uint8_actual_range",
+      "pass": true
+    },
+    {
+      "name": "initial_frame_matches_previous_experiments",
+      "pass": true
+    },
+    {
+      "name": "all_independent_snapshots_unchanged",
+      "pass": true
+    },
+    {
+      "name": "camera_fixed_across_time",
+      "pass": true
+    },
+    {
+      "name": "privileged_cube_not_policy_observation",
+      "pass": true
+    },
+    {
+      "name": "gif_decodes_21_frames",
+      "pass": true
+    },
+    {
+      "name": "gif_loops_player_only",
+      "pass": true
+    },
+    {
+      "name": "all_gif_frames_equal_intended_quantized_pngs",
+      "pass": true
+    },
+    {
+      "name": "gif_timing_and_no_merging",
+      "pass": true
+    },
+    {
+      "name": "simulation_vs_replay_final_hold",
+      "pass": true
+    },
+    {
+      "name": "cube_displacement_honestly_recorded",
+      "pass": true
+    },
+    {
+      "name": "article2_article3_evidence_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_82_package_versions_unchanged",
+      "pass": true
+    },
+    {
+      "name": "single_bounded_step_call_site",
+      "pass": true
+    }
+  ],
+  "N": 20,
+  "observations": 21,
+  "numeric_arrays": 21,
+  "gif_color_quantization_mean_absolute_error": 0.7526576935298859,
+  "reset_info_axes": {
+    "reset_info/elapsed_steps": {
+      "time_axis": null,
+      "environment_axis": 0
+    },
+    "reset_info/success": {
+      "time_axis": null,
+      "environment_axis": 0
+    },
+    "reset_info/reconfigure": {
+      "time_axis": null,
+      "environment_axis": null
+    }
+  },
+  "visual_review": {
+    "status": "PASS",
+    "files": [
+      "frames/0005.png",
+      "frames/0020.png",
+      "work/04-first-trajectory/gif-decoded-0010.png"
+    ],
+    "note": "Selected original PNGs and decoded GIF frame inspected: robot forearm/gripper, tabletop and cube recognizable; small arm displacement, no visible cube transport. GIF is a quantized display copy. Browser playback will be checked separately."
+  },
+  "original_capture_sha256": {
+    "capture_trajectory.py": "89a22245a613f6929d6f83c24504fe84af9531774a12d2db4b6353500b7e8416",
+    "environment.json": "4ce47ea938ec58896720080e5a2931e9f568ce1ad01911c52b2476811d6c95cb",
+    "frames/0000.png": "89d665a348ce18c86542c12795cc6d63f673f7ed7922c946cb51cf6508a4f4e6",
+    "frames/0001.png": "153e1fee471688883d4a9122152bb13426c451da8dfac63e18cd628615d1768b",
+    "frames/0002.png": "53aaf81088358762d90f4cb0916cb33733d6bfdc5650cfc51f14c0add802ca50",
+    "frames/0003.png": "fca5c2083fec357bc46dc428056ee2a6923b84d174f9a8ffe389d5604641f6c4",
+    "frames/0004.png": "37b6a766d47922b03386475b6e21247713ad9cba20efe90a52db49aa4ba47069",
+    "frames/0005.png": "a223d637a2d6421dc41774e7ed0d0243705afe09556f3232c9ad61e9d3c9cfb9",
+    "frames/0006.png": "a0e4d3500c33b825b21c4de72c2c3428017119027a531e5aeefd7871d4383852",
+    "frames/0007.png": "163d69e488060848f4ec5cff3bc80f279ebbf2c6e35c1fc506e7db7b0b3d659b",
+    "frames/0008.png": "c3d79e26b3eac38a52353d489a8746bef178ab60ec2c21ebaa1851492b44ab48",
+    "frames/0009.png": "cb7512d30be4048b3136453a584f054348470d9a21022da54a4e72cbda9f2a14",
+    "frames/0010.png": "2ff6154b9870ed4b7fabaad8a5ff29a4e70fd30d97a0b9b6298645e6021ca809",
+    "frames/0011.png": "91c8e1a60c328528e1ca0ccd88bca568c76eadcecdcea4ff6a09cdeb9eeda6a7",
+    "frames/0012.png": "96ce1d14f324b2ccf3191da20efdb89e8630dd2fddf4eae5adceca2599583f67",
+    "frames/0013.png": "ae68cc94aaebae30ad53621ee63aea0ad2e941cbd79ba0101e01b78b5c77eed3",
+    "frames/0014.png": "6586dc5aa3af133d5a228940a580f1114372638676044ba31170e91cef7e2033",
+    "frames/0015.png": "9a64b8502811ecc88393903326b132b6be569f7ab7602a1572567a6c2fa8412a",
+    "frames/0016.png": "d4965ee661a8c902a5f24c4a360d962c54f4513aed22409a164f2c906dd503a4",
+    "frames/0017.png": "445c94389bc5a53e7469b5ed4156687e18e4e06e289e24936d8344d4c2b99ece",
+    "frames/0018.png": "ee4d46c02b58c0ea7b5510df2c8d26175743b324b4caf1578d18175669fba886",
+    "frames/0019.png": "ad5ef6eedc36c6f159388f11cb632e929cfcd56ea1f73ab5868ecb2c63eff019",
+    "frames/0020.png": "129bf646f5c14c31e8e92ed4da27948edc8b77fcd03a978ad5460f1d0bfac3cb",
+    "replay.gif": "421e51d9b6cdba6b7ab3e997db618d82b00178d90e7f994b825cf9230f004f93",
+    "schema.json": "ec7604801f1635f9d1f71f7a7d2cea37368e4cadbf2e3a1b168988e1df17d4f5",
+    "trajectory.json": "9e6e3b0c3aa238eb2cb1e618d10500d58c148041111fbdd23c0dc84110c15fe8",
+    "trajectory.npz": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85"
+  },
+  "public_artifacts_sha256": {
+    "capture_trajectory.py": "89a22245a613f6929d6f83c24504fe84af9531774a12d2db4b6353500b7e8416",
+    "environment.json": "ed6a188a237ed29ed9b40cb95a306005b697fcb133d84db23587e15e53221b0a",
+    "frames/0000.png": "89d665a348ce18c86542c12795cc6d63f673f7ed7922c946cb51cf6508a4f4e6",
+    "frames/0001.png": "153e1fee471688883d4a9122152bb13426c451da8dfac63e18cd628615d1768b",
+    "frames/0002.png": "53aaf81088358762d90f4cb0916cb33733d6bfdc5650cfc51f14c0add802ca50",
+    "frames/0003.png": "fca5c2083fec357bc46dc428056ee2a6923b84d174f9a8ffe389d5604641f6c4",
+    "frames/0004.png": "37b6a766d47922b03386475b6e21247713ad9cba20efe90a52db49aa4ba47069",
+    "frames/0005.png": "a223d637a2d6421dc41774e7ed0d0243705afe09556f3232c9ad61e9d3c9cfb9",
+    "frames/0006.png": "a0e4d3500c33b825b21c4de72c2c3428017119027a531e5aeefd7871d4383852",
+    "frames/0007.png": "163d69e488060848f4ec5cff3bc80f279ebbf2c6e35c1fc506e7db7b0b3d659b",
+    "frames/0008.png": "c3d79e26b3eac38a52353d489a8746bef178ab60ec2c21ebaa1851492b44ab48",
+    "frames/0009.png": "cb7512d30be4048b3136453a584f054348470d9a21022da54a4e72cbda9f2a14",
+    "frames/0010.png": "2ff6154b9870ed4b7fabaad8a5ff29a4e70fd30d97a0b9b6298645e6021ca809",
+    "frames/0011.png": "91c8e1a60c328528e1ca0ccd88bca568c76eadcecdcea4ff6a09cdeb9eeda6a7",
+    "frames/0012.png": "96ce1d14f324b2ccf3191da20efdb89e8630dd2fddf4eae5adceca2599583f67",
+    "frames/0013.png": "ae68cc94aaebae30ad53621ee63aea0ad2e941cbd79ba0101e01b78b5c77eed3",
+    "frames/0014.png": "6586dc5aa3af133d5a228940a580f1114372638676044ba31170e91cef7e2033",
+    "frames/0015.png": "9a64b8502811ecc88393903326b132b6be569f7ab7602a1572567a6c2fa8412a",
+    "frames/0016.png": "d4965ee661a8c902a5f24c4a360d962c54f4513aed22409a164f2c906dd503a4",
+    "frames/0017.png": "445c94389bc5a53e7469b5ed4156687e18e4e06e289e24936d8344d4c2b99ece",
+    "frames/0018.png": "ee4d46c02b58c0ea7b5510df2c8d26175743b324b4caf1578d18175669fba886",
+    "frames/0019.png": "ad5ef6eedc36c6f159388f11cb632e929cfcd56ea1f73ab5868ecb2c63eff019",
+    "frames/0020.png": "129bf646f5c14c31e8e92ed4da27948edc8b77fcd03a978ad5460f1d0bfac3cb",
+    "README.md": "6b23858589f0963d74fbe608bc4125b717481ab08f978809b003b99d6a56cb45",
+    "replay.gif": "421e51d9b6cdba6b7ab3e997db618d82b00178d90e7f994b825cf9230f004f93",
+    "requirements.txt": "718658883d7b1991caeebf56d318ddad24e8aa548506a999c797510bdb47e999",
+    "schema.json": "011e1e42a5375894315b929674941315442a6feff7cccf4e36a70b1f4dca2ee0",
+    "trajectory.json": "9e6e3b0c3aa238eb2cb1e618d10500d58c148041111fbdd23c0dc84110c15fe8",
+    "trajectory.npz": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85"
+  },
+  "publication_note": "Environment and schema are filtered/annotated public copies. Original PNGs, NPZ, GIF and capture code are byte-identical to captured files. Raw execution logs are private."
+}
