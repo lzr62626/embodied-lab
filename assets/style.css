@@ -29,7 +29,9 @@ h1,h2,h3 { color:var(--ink); font-weight:500; }
 .header-inner { width:min(1320px,calc(100% - 2 * var(--space-page-edge))); margin:auto; min-height:98px; display:flex; align-items:center; justify-content:space-between; gap:32px; }
 .brand { display:flex; align-items:center; gap:12px; color:var(--ink); font-size:17px; font-weight:500; line-height:1.5; white-space:nowrap; }
 .brand:hover { color:var(--accent); }
-.brand-symbol { color:var(--accent); padding-right:2px; }
+.brand-copy { min-width:0; }
+.brand-title { display:block; white-space:normal; }
+.brand-symbol { flex:0 0 auto; color:var(--accent); padding-right:2px; }
 .brand-symbol .ui-icon { width:27px; height:27px; }
 .brand small { display:block; color:var(--muted); font:11px/1.8 var(--mono-font-family); letter-spacing:1.3px; }
 .site-header nav { display:flex; align-items:center; gap:31px; }
@@ -199,7 +201,7 @@ kbd { font:10px/1.6 var(--mono-font-family); color:var(--muted); margin-left:8px
 @media(max-width:800px) {
   :root { --space-page-edge:1.25rem; } html { scroll-padding-top:132px; }
   .header-inner { min-height:0; gap:8px; flex-wrap:wrap; padding-top:20px; } .header-actions { margin-left:auto; }
-  .brand { font-size:15px; gap:8px; } .brand small { font-size:11px; } .brand-symbol .ui-icon { width:25px; height:25px; }
+  .brand { flex:1; min-width:0; font-size:15px; gap:8px; } .brand small { font-size:11px; } .brand-symbol .ui-icon { width:25px; height:25px; }
   .search-trigger { border-color:transparent; padding-inline:7px; }
   .site-header nav { order:3; width:100%; justify-content:space-between; gap:12px; padding-top:9px; }
   .site-header nav a { font-size:12px; padding:10px 0 17px; } .site-header nav a[aria-current]::after { bottom:8px; }
@@ -232,6 +234,7 @@ kbd { font:10px/1.6 var(--mono-font-family); color:var(--muted); margin-left:8px
   .hero-actions { gap:21px; } .hero-visual { margin-top:0; } .hero-visual figcaption { margin-inline:5px; font-size:11px; }
   .featured-copy h2 { font-size:22px; } .article-heading h1 { font-size:29px; } .article-toc ol { columns:1; }
   .prose .loop { grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 12px; } .loop li:nth-child(3) { border-left:0; }
+  .brand small { display:none; }
   .search-label { display:none; } .header-actions { gap:5px; }
 }
 @media(pointer:coarse) { .icon-button { min-height:44px; min-width:44px; } .button { min-height:46px; } .copy-code { min-height:32px; } }
