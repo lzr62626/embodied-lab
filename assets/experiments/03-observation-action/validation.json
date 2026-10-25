@@ -1,0 +1,169 @@
+{
+  "result": "PASS",
+  "checked_at_utc": "2026-10-25T17:27:18.598985+00:00",
+  "checks": [
+    {
+      "name": "capture_completed",
+      "pass": true
+    },
+    {
+      "name": "one_environment_seed42",
+      "pass": true
+    },
+    {
+      "name": "one_step_no_training",
+      "pass": true
+    },
+    {
+      "name": "one_step_call_site",
+      "pass": true
+    },
+    {
+      "name": "script_matches_executed_hash",
+      "pass": true
+    },
+    {
+      "name": "artifact_hashes_match_capture",
+      "pass": true
+    },
+    {
+      "name": "all_31_arrays_loaded_without_pickle",
+      "pass": true
+    },
+    {
+      "name": "numeric_arrays_finite",
+      "pass": true
+    },
+    {
+      "name": "array_shapes_and_types_match_metadata",
+      "pass": true
+    },
+    {
+      "name": "matching_observation_trees",
+      "pass": true
+    },
+    {
+      "name": "step_order_zero_then_one",
+      "pass": true
+    },
+    {
+      "name": "control_dt_and_physics_steps",
+      "pass": true
+    },
+    {
+      "name": "stored_time_alignment",
+      "pass": true
+    },
+    {
+      "name": "action_shape_dtype_bounds",
+      "pass": true
+    },
+    {
+      "name": "action_is_checked_fixed_vector",
+      "pass": true
+    },
+    {
+      "name": "independent_snapshot_reported",
+      "pass": true
+    },
+    {
+      "name": "arm_target_matches_scaled_instruction",
+      "pass": true
+    },
+    {
+      "name": "mimic_fingers_absolute_target",
+      "pass": true
+    },
+    {
+      "name": "joint_change_statistics",
+      "pass": true
+    },
+    {
+      "name": "target_and_measured_are_distinct",
+      "pass": true
+    },
+    {
+      "name": "before.png_real_rgb_equals_npz",
+      "pass": true
+    },
+    {
+      "name": "before.png_pixel_range",
+      "pass": true
+    },
+    {
+      "name": "after.png_real_rgb_equals_npz",
+      "pass": true
+    },
+    {
+      "name": "after.png_pixel_range",
+      "pass": true
+    },
+    {
+      "name": "image_statistics_recomputed",
+      "pass": true
+    },
+    {
+      "name": "initial_frame_equals_article2",
+      "pass": true
+    },
+    {
+      "name": "camera_parameters_consistent",
+      "pass": true
+    },
+    {
+      "name": "observed_extrinsic_is_3_by_4",
+      "pass": true
+    },
+    {
+      "name": "rgb_observation_excludes_privileged_cube_pose",
+      "pass": true
+    },
+    {
+      "name": "cube_motion_is_tiny_not_push_success",
+      "pass": true
+    },
+    {
+      "name": "reward_and_episode_flags_recorded",
+      "pass": true
+    },
+    {
+      "name": "article2_all_original_evidence_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_installed_versions_unchanged",
+      "pass": true
+    }
+  ],
+  "check_count": 33,
+  "npz_array_count": 31,
+  "visual_review": {
+    "status": "PASS",
+    "files": [
+      "before.png",
+      "after.png"
+    ],
+    "description": "Both reopened and inspected: robot gripper/forearm, wood tabletop, blue cube and goal region visible; small robot movement, no visible cube displacement."
+  },
+  "original_capture_files_preserved": true,
+  "original_capture_sha256": {
+    "capture_transition.py": "5ebe252f50ed3a4c0b08ebc4ef1140596fd9a130fb23b47072994dbc31b89358",
+    "before.png": "89d665a348ce18c86542c12795cc6d63f673f7ed7922c946cb51cf6508a4f4e6",
+    "after.png": "93794c5abb0712c7d494dbf540ddbc6e1989158dc032e6a5ba03b22730b37033",
+    "transition.npz": "0ea6094908971be26ac770f1cd77f6f9b403c12764d99102baf6b972f30916dc",
+    "transition.json": "84c276906ef7e6d2dea9ff11fd797a582684db7bb16bab798096af3601b2e7e6",
+    "environment.json": "edc196f8c64e404271a50c61880dcda37f2c1952d1b598a10bf597963ee6d370"
+  },
+  "publication_note": "Original capture hashes identify local raw records. The public environment and README are filtered copies; public_artifacts_sha256 identifies the downloadable public files.",
+  "public_artifacts_sha256": {
+    "after.png": "93794c5abb0712c7d494dbf540ddbc6e1989158dc032e6a5ba03b22730b37033",
+    "before.png": "89d665a348ce18c86542c12795cc6d63f673f7ed7922c946cb51cf6508a4f4e6",
+    "capture_transition.py": "5ebe252f50ed3a4c0b08ebc4ef1140596fd9a130fb23b47072994dbc31b89358",
+    "environment.json": "9fdd7e04debbccc501c26a67174d7d26667cf9d8495a79f84cb2a804b35a9761",
+    "README.md": "1ec24d560827fb0394900eebe9a13721d470033bebb175a502f4033d1ae66e55",
+    "requirements.txt": "718658883d7b1991caeebf56d318ddad24e8aa548506a999c797510bdb47e999",
+    "schema.json": "54fbaf0912e223a00d74d5846ff90b8ee3108bdc3a867c923de5deeae28add2f",
+    "transition.json": "84c276906ef7e6d2dea9ff11fd797a582684db7bb16bab798096af3601b2e7e6",
+    "transition.npz": "0ea6094908971be26ac770f1cd77f6f9b403c12764d99102baf6b972f30916dc"
+  }
+}
