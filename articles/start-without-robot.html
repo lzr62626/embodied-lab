@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>没有实机，如何开始学习具身智能？ · 具身实验室</title><meta name="description" content="从桌面推物理解观测、动作与闭环交互，为第一次机器人仿真实验确定目标和验收标准。"><link rel="canonical" href="https://lzr62626.github.io/embodied-lab/articles/start-without-robot.html"><meta property="og:url" content="https://lzr62626.github.io/embodied-lab/articles/start-without-robot.html"><meta property="og:title" content="没有实机，如何开始学习具身智能？"><meta property="og:description" content="从桌面推物理解观测、动作与闭环交互，为第一次机器人仿真实验确定目标和验收标准。"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/style.css"><script src="../assets/theme.js"></script><script defer src="../assets/site.js"></script></head>
+<body class="reading-page"><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="具身实验室首页"><span class="brand-symbol"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15V3h12M9 17h8V9"/><circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/></svg></span><span>具身实验室<small>Embodied Lab</small></span></a><nav aria-label="主导航"><a href="../index.html">首页</a><a href="../learn.html">开始学习</a><a href="../articles.html" aria-current="page">文章</a><a href="../about.html">关于</a></nav><div class="header-actions"><button type="button" class="icon-button search-trigger" data-search-open aria-label="搜索文章" aria-keyshortcuts="Control+K Meta+K"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><span class="search-label">搜索</span><kbd>Ctrl K</kbd></button><button type="button" class="icon-button theme-toggle" data-theme-toggle aria-label="切换深浅主题" title="切换深浅主题"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 3a7 7 0 0 1 0 14Z" fill="currentColor" stroke="none"/></svg></button></div></div></header>
+<main id="main" class="article-main wrap"><div class="breadcrumbs"><a href="../learn.html">开始学习</a><span aria-hidden="true">/</span><span>没有机器人，也能开始的具身智能实践</span></div><header class="article-heading"><p class="eyebrow">入门路线 · 第 1 篇</p><h1>没有实机，如何开始学习具身智能？</h1><p class="article-summary">从桌面推物理解观测、动作与闭环交互，为第一次机器人仿真实验确定目标和验收标准。</p><div class="article-meta"><time datetime="2026-10-25">2026-10-25</time><span>约 8 分钟</span><a href="../sources/start-without-robot.md" download>下载 Markdown ↗</a></div><div class="tags"><span>具身智能</span><span>机器人学习</span><span>仿真</span><span>世界模型</span></div></header><div class="article-layout"><article class="prose"><p>想学习具身智能，却没有机械臂，应该从哪里开始？</p>
+<p>你可以先使用公开数据和仿真环境，学习机器人如何获取观测、执行动作，以及根据结果调整下一步行为。LeRobot 的官方文档也为没有硬件的学习者列出了使用已有数据集、在仿真中评估策略等路径。<a href="https://huggingface.co/docs/lerobot/index">LeRobot 官方文档</a></p>
+<p>真正需要先明确的是：你准备让机器人完成什么任务，又如何判断自己已经理解了这个过程。</p>
+<p>这个系列从一个桌面推物任务出发，逐步走向数据采集、策略学习和世界模型。本篇先把任务中的基本关系讲清楚，并为第一次仿真实验确定一个可以检查的目标。</p>
+<h2 id="task">从桌面上的一个方块开始</h2>
+<p>设想一张桌子上放着一个方块，旁边标出目标区域。机械臂需要接近方块，将它推入目标区域。</p>
+<p>为了方便入门，我们先考虑一个简化设定：末端保持固定高度和姿态，主要在桌面平面内移动。这里描述的是教学任务，具体环境的控制方式和成功条件，需要在实际使用时另行确认。</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>要素</th>
+<th>本文中的设定</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务目标</td>
+<td>将方块推入指定区域</td>
+</tr>
+<tr>
+<td>观测输入</td>
+<td>相机图像，以及选定的关节状态或末端状态</td>
+</tr>
+<tr>
+<td>目标信息</td>
+<td>通过图像中的目标标记或明确提供的目标表示给出</td>
+</tr>
+<tr>
+<td>动作接口</td>
+<td>表达末端在桌面平面内的期望移动</td>
+</tr>
+<tr>
+<td>评估依据</td>
+<td>方块是否进入目标区域、使用了多少步、是否发生预先定义的失败事件</td>
+</tr>
+</tbody></table></div>
+<p>这个任务会遇到接触、滑动、遮挡和推偏等情况。它已经足够让我们讨论一个核心问题：机器人如何根据环境的变化，决定下一步动作？</p>
+<h2 id="observations">先分清：环境的状态与机器人得到的观测</h2>
+<p>环境状态描述场景在某个时刻的物理情况，例如方块的位置、速度，以及机械臂的关节位置和速度。</p>
+<p>观测则是我们选择提供给策略的信息。它可以是相机图像、关节读数，也可以包含任务允许使用的目标信息。</p>
+<p>两者不必相同。一张图像里，方块的一部分可能被夹爪挡住；仅凭单帧图像，也很难准确判断它当前的速度。</p>
+<p>在仿真中，这个区别尤其容易被忽略。仿真器可能允许程序读取物体的精确位姿，但这些信息未必能由真实传感器直接获得。ManiSkill 的文档就区分了包含物体位姿等特权信息的状态观测，以及来自相机等传感器的数据。<a href="https://maniskill.readthedocs.io/en/latest/user_guide/concepts/observation.html">ManiSkill 观测文档</a></p>
+<p>因此，开始实验前要写清楚：<strong>哪些信息进入策略，哪些信息只用于评估。</strong></p>
+<p>例如，我们可以让视觉策略使用相机图像和机器人自身状态，由评估程序读取方块的精确位置来判断任务是否成功。也可以建立使用完整状态的基线，但应明确标注输入条件，再进行比较。</p>
+<h2 id="actions">动作是一条控制指令</h2>
+<p>“把方块往右推一点”对人来说很直观，对程序来说却还不够明确。</p>
+<p>这里的“右”是相机画面右侧，还是机器人基座坐标系的某个方向？“一点”表示位移、速度，还是一个需要缩放的归一化数值？指令会持续多长时间？</p>
+<p>这些问题由动作空间和控制器共同决定。以 ManiSkill 为例，策略输出的动作会交给选定的控制器；末端位姿控制器可以将期望的末端变化转换为关节目标。<a href="https://maniskill.readthedocs.io/en/latest/user_guide/concepts/controllers.html">ManiSkill 控制器与动作空间文档</a></p>
+<p>在本文的平面推物设定中，我们可以用两个数表达期望的平面移动，但这只是一个简化接口。使用具体环境时，仍要检查动作的维度、坐标系、单位、缩放方式和执行频率。</p>
+<p>而且，发出了移动指令，不代表末端一定准确到达目标，更不代表方块会移动相同距离。接触位置、摩擦和机器人运动都会影响结果。执行之后，需要重新观察。</p>
+<h2 id="closed-loop">把一次动作连接成闭环</h2>
+<p>现在可以把任务串起来：</p>
+<figure class="loop-figure"><ol class="loop"><li><span>01</span>环境</li><li><span>02</span>获取观测</li><li><span>03</span>结合目标选择动作</li><li><span>04</span>控制器执行</li></ol><figcaption>执行改变环境，再次获取观测，进入下一轮闭环。</figcaption></figure>
+<p>机械臂观察当前场景，选择动作，执行后再次观察，再据此调整后续行为。这个反复获取反馈并调整动作的过程，就是闭环。</p>
+<p>选择动作的规则通常称为策略。它可以是一段人工编写的规则，也可以是训练得到的模型；必要时还会使用过去的观测和动作。</p>
+<p>对于推物任务，闭环的作用很具体：第一次推动后，方块可能只移动了一小段，也可能发生旋转。下一步应该根据新的观测来决定。</p>
+<p>因此，一段展示机器人运动的视频，只能说明某次执行的过程。要评估一个方法，还需要约定测试初始条件、成功标准和步数限制，并记录多次尝试的结果。</p>
+<h2 id="simulation">仿真能够帮助我们研究什么</h2>
+<p>仿真为学习提供了一个便于设置场景、记录数据和重复试验的环境。你可以逐步检查：相机能否看到任务区域，动作方向是否符合预期，数据是否正确对应，以及策略在不同初始条件下如何表现。</p>
+<p>这里需要区分两个问题：场景看起来是否合理，以及任务交互是否按预期发生。ManiSkill 的基础文档说明，物体的视觉形状与碰撞形状承担不同作用。画面中的外观，并不能单独证明碰撞和接触设置正确。<a href="https://maniskill.readthedocs.io/en/latest/user_guide/concepts/simulation_101.html">ManiSkill 仿真基础文档</a></p>
+<p>实验记录也需要比“一段视频”更完整。至少应保留环境和依赖版本、观测与动作配置、初始条件、随机种子、成功定义，以及实际测试次数。随机种子是复现线索之一；跨机器、不同配置之间能否复现，还需要实际检查。ManiSkill 也单独讨论了随机数与环境状态的保存方式。<a href="https://maniskill.readthedocs.io/en/latest/user_guide/concepts/rng.html">ManiSkill 可复现性文档</a></p>
+<p>仿真结果的结论范围也应与实验一致：它能说明方法在所测试仿真条件下的表现。真实机器人的摩擦、相机误差、控制延迟和硬件特性可能不同，迁移后的表现需要另外验证。</p>
+<h2 id="world-model">世界模型在这里扮演什么角色</h2>
+<p>策略回答的是：“接下来做什么？”</p>
+<p>动作条件世界模型则尝试回答：“如果执行这个动作，之后可能发生什么？”</p>
+<p>回到推物任务，我们可以考虑几个候选动作：正面推动、从侧面接近，或者先调整末端位置。世界模型根据当前观测或内部表示，以及候选动作，预测后续变化；规划器再利用预测结果比较不同方案。</p>
+<p>预测的对象可以是图像，也可以是状态或视觉特征。例如 DINO-WM 在预训练视觉特征上学习动作相关的动态，并通过优化动作序列进行规划。这说明，用于行动的世界模型可以在特征空间中工作。<a href="https://arxiv.org/abs/2411.04983">DINO-WM 论文</a></p>
+<p>这种方法还需要执行后的反馈：预测可能有误，动作实施后应获取新的观测，再更新判断。</p>
+<p>评估时也要同时关心预测与行动。即使预测图像在视觉上变化不大，关键的接触位置误差也可能影响推物结果。对于服务规划的模型，应进一步检查闭环任务表现，而不能只看预测画面。</p>
+<h2 id="first-experiment">第一次实验，先保存并检查一张图像</h2>
+<p>理解上面的关系后，第一次动手可以设定为：</p>
+<blockquote>
+<p>启动一个机器人仿真任务，获取一帧相机观测，保存为图片，并打开检查。</p>
+</blockquote>
+<p>这一小步能够同时暴露环境初始化、相机设置、渲染和图像读写中的问题。完成时，应能回答下面三个问题：</p>
+<ul>
+<li>图像里能否辨认出机械臂、桌面和任务物体？</li>
+<li>这张图来自哪个相机，它是策略输入，还是用于展示的画面？</li>
+<li>能否根据记录的版本、配置和初始化条件，再次生成对应场景？</li>
+</ul>
+<p>完成后，再执行一条语义明确的控制指令，检查执行前后的观测，并保存动作。数据的基本单元也就逐渐清楚了：</p>
+<pre><code class="language-text">当前观测 → 执行的动作 → 下一时刻观测
+</code></pre>
+<p>继续积累这些记录，才有了后续数据检查、策略学习和世界模型训练的基础。</p>
+<p>在实际运行之前，你也可以先填写一张任务卡，作为本篇文章的练习：</p>
+<pre><code class="language-text">任务：将桌面方块推入目标区域
+策略能获得的信息：
+目标如何表示：
+动作的含义、坐标系与单位：
+如何判断成功、失败或超时：
+需要保存的观测、动作与实验配置：
+</code></pre>
+<p>如果这些空项还无法填写，就先把它们作为查阅环境文档时的问题。第一次实验的目标，是让这张任务卡中的描述与实际输出对应起来。</p>
+<p>下一篇《第一次机器人仿真实验：保存一张相机图像》将围绕这个目标展开：从检查运行条件开始，获取图像，并逐项检查它是否可以成为后续实验的数据输入。</p>
+<footer class="article-next"><span class="eyebrow">接下来</span><h2>第一次机器人仿真实验：保存一张相机图像</h2><p>用 ManiSkill 初始化一个推方块任务，保存真实相机 RGB，检查图像、数据维度与运行配置，并记录一次控制器初始化问题。</p><a class="text-link" href="capture-camera-frame.html">继续阅读 →</a></footer></article><aside class="article-toc" aria-label="文章目录"><details open><summary>本文目录</summary><ol><li><a href="#task">从桌面上的一个方块开始</a></li><li><a href="#observations">先分清：环境的状态与机器人得到的观测</a></li><li><a href="#actions">动作是一条控制指令</a></li><li><a href="#closed-loop">把一次动作连接成闭环</a></li><li><a href="#simulation">仿真能够帮助我们研究什么</a></li><li><a href="#world-model">世界模型在这里扮演什么角色</a></li><li><a href="#first-experiment">第一次实验，先保存并检查一张图像</a></li></ol></details><a class="toc-back" href="../articles.html">← 全部文章</a></aside></div></main>
+<footer class="site-footer"><div><a class="footer-brand" href="../index.html">具身实验室</a><p>从仿真开始，记录能被检查的学习与研究过程。</p></div><div class="footer-links"><a href="../learn.html">学习路线</a><a href="../about.html">关于本站</a><a href="https://github.com/lzr62626/embodied-lab">GitHub ↗</a><span>© 2026 具身实验室</span></div></footer>
+<dialog class="search-dialog" aria-labelledby="search-heading"><form method="dialog" novalidate class="search-head"><h2 id="search-heading">搜索文章</h2><button class="icon-button" aria-label="关闭搜索" value="close"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></form><label for="site-search" class="visually-hidden">标题、主题或关键词</label><div class="search-field"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="site-search" type="search" placeholder="搜索观测、动作、世界模型……" autocomplete="off"><button class="icon-button search-clear" data-search-clear type="button" aria-label="清除搜索" hidden><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div><div class="search-results" aria-live="polite" aria-atomic="true"></div><p class="search-hint">按 Esc 关闭 · 仅搜索已有文章</p></dialog><script type="application/json" id="search-data">[{"title":"没有实机，如何开始学习具身智能？","description":"从桌面推物理解观测、动作与闭环交互，为第一次机器人仿真实验确定目标和验收标准。","tags":["具身智能","机器人学习","仿真","世界模型"],"url":"../articles/start-without-robot.html"},{"title":"第一次机器人仿真实验：保存一张相机图像","description":"用 ManiSkill 初始化一个推方块任务，保存真实相机 RGB，检查图像、数据维度与运行配置，并记录一次控制器初始化问题。","tags":["仿真实践","ManiSkill","相机观测","具身智能"],"url":"../articles/capture-camera-frame.html"}]</script></body></html>

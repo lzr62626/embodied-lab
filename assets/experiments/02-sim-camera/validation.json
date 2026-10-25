@@ -1,0 +1,39 @@
+{
+  "checked_at_utc": "2026-10-25T12:26:30.535114+00:00",
+  "result": "PASS",
+  "checks": {
+    "png_is_rgb": true,
+    "dimensions_match_report": true,
+    "shape_256_256_3": true,
+    "uint8": true,
+    "finite_pixels": true,
+    "not_flat": true,
+    "pixel_range_matches_report": true,
+    "png_sha256_matches": true,
+    "script_sha256_matches": true,
+    "one_saved_frame": true,
+    "single_environment": true,
+    "seed_42": true,
+    "no_actions": true,
+    "no_training": true,
+    "sensor_camera": true,
+    "cpu_physics": true,
+    "cpu_image_transfer": true,
+    "successful_exit_recorded": true,
+    "failed_attempt_preserved": true
+  },
+  "successful_attempt": "r002",
+  "assistant_visual_review": {
+    "method": "Opened the actual saved frame.png with view_image.",
+    "recognizable": [
+      "robot forearm and gripper",
+      "wooden tabletop",
+      "blue cube",
+      "red and white goal marker"
+    ],
+    "passed": true,
+    "note": "Camera crops the upper robot; this is the original sensor viewpoint, not a full-robot publicity view."
+  },
+  "scope": "Initialization and one saved frame only; no action execution, policy learning, or real robot validation.",
+  "publication_note": "Summary of the completed local artifact checks; original logs and local audit files are not part of this public package."
+}

@@ -1,0 +1,140 @@
+{
+  "record_type": "public_reproduction_configuration",
+  "python_version": "3.11.9",
+  "packages": {
+    "mani-skill": "3.0.1",
+    "sapien": "3.0.3",
+    "torch": "2.14.1",
+    "gymnasium": "1.4.0",
+    "numpy": "2.4.6",
+    "pillow": "13.0.0"
+  },
+  "experiment": {
+    "env_id": "PushCube-v1",
+    "robot_uids": "panda",
+    "num_envs": 1,
+    "seed": 42,
+    "obs_mode": "rgb",
+    "camera_name": "base_camera",
+    "camera_role": "sensor observation, available as policy input; no policy was run",
+    "sim_backend": "cpu",
+    "render_backend": "cpu",
+    "rendering": "SAPIEN Vulkan GPU renderer with CPU-accessible image transfer",
+    "control_mode": "pd_joint_delta_pos",
+    "render_mode": "rgb_array",
+    "sensor_configs": {
+      "width": 256,
+      "height": 256,
+      "shader_pack": "minimal"
+    },
+    "explicit_reset_calls": 1,
+    "step_calls": 0,
+    "frames_saved": 1,
+    "training": false,
+    "constructor_note": "ManiSkill 3.0.1 also resets internally while constructing the environment."
+  },
+  "resolved_backend": {
+    "sim_backend": "physx_cpu",
+    "render_backend": "sapien_cpu",
+    "tensor_device": "cpu",
+    "sim_device": "cpu",
+    "render_device": "cpu"
+  },
+  "observation": {
+    "key": "sensor_data/base_camera/rgb",
+    "batched_shape": [
+      1,
+      256,
+      256,
+      3
+    ],
+    "dtype": "torch.uint8",
+    "device": "cpu"
+  },
+  "camera_parameters": {
+    "extrinsic_cv": [
+      [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.7808687686920166,
+          0.0,
+          -0.6246950626373291,
+          0.1405564546585083
+        ],
+        [
+          -0.6246950626373291,
+          0.0,
+          -0.7808687686920166,
+          0.6559298038482666
+        ]
+      ]
+    ],
+    "cam2world_gl": [
+      [
+        [
+          0.0,
+          -0.7808687686920166,
+          0.6246950626373291,
+          0.30000001192092896
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.6246950626373291,
+          0.7808687686920166,
+          0.6000000238418579
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    ],
+    "intrinsic_cv": [
+      [
+        [
+          128.0,
+          0.0,
+          128.0
+        ],
+        [
+          0.0,
+          128.0,
+          128.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    ]
+  },
+  "image": {
+    "file": "frame.png",
+    "width": 256,
+    "height": 256,
+    "channels": 3,
+    "dtype": "uint8",
+    "pixel_min": 34,
+    "pixel_max": 255,
+    "std": 49.284145702333774,
+    "unique_rgb_colors": 10649,
+    "png_reopened_equal_to_sensor": true,
+    "sha256": "89d665a348ce18c86542c12795cc6d63f673f7ed7922c946cb51cf6508a4f4e6"
+  },
+  "script_sha256": "32b27791b74ef23b0d4daf34026b1e075329fef33731205d4deadcfab5dea33c",
+  "note": "Public configuration for the article. Raw local logs and filesystem paths are retained locally."
+}

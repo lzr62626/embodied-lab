@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lzr62626.github.io/embodied-lab/sitemap.xml
