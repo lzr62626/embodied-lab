@@ -1,0 +1,27 @@
+{
+  "record_type": "public_offline_dataset_configuration",
+  "created_at_utc": "2026-10-26T04:58:21.053391+00:00",
+  "python_version": "3.11.9",
+  "packages": {
+    "numpy": "2.4.6",
+    "torch": "2.14.1+cpu",
+    "pillow": "13.0.0"
+  },
+  "device": "cpu",
+  "torch_cuda_build": null,
+  "offline_only": true,
+  "simulator_calls": 0,
+  "training": false,
+  "source_file": "trajectory.npz",
+  "source_sha256": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+  "loader": {
+    "batch_size": 4,
+    "shuffle": false,
+    "drop_last": false,
+    "num_workers": 0,
+    "pin_memory": false,
+    "generator_seed": 42,
+    "device": "cpu"
+  },
+  "publication_note": "Raw logs, machine paths and maintenance tools are retained privately. Source trajectory is bundled for offline reproduction."
+}

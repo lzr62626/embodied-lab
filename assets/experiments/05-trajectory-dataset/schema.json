@@ -1,0 +1,312 @@
+{
+  "format": "article5-transition-batch-v1",
+  "fields": {
+    "obs/qpos": {
+      "shape": [
+        4,
+        9
+      ],
+      "dtype": "float32",
+      "sample_shape": [
+        9
+      ],
+      "axes": [
+        "B",
+        "J"
+      ],
+      "units": [
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "m",
+        "m"
+      ]
+    },
+    "obs/qvel": {
+      "shape": [
+        4,
+        9
+      ],
+      "dtype": "float32",
+      "sample_shape": [
+        9
+      ],
+      "axes": [
+        "B",
+        "J"
+      ],
+      "units": [
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "m/s",
+        "m/s"
+      ]
+    },
+    "obs/rgb": {
+      "shape": [
+        4,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sample_shape": [
+        3,
+        256,
+        256
+      ],
+      "axes": [
+        "B",
+        "C",
+        "H",
+        "W"
+      ],
+      "units": "normalized RGB intensity [0,1]"
+    },
+    "action": {
+      "shape": [
+        4,
+        8
+      ],
+      "dtype": "float32",
+      "sample_shape": [
+        8
+      ],
+      "axes": [
+        "B",
+        "A"
+      ],
+      "units": "dimensionless"
+    },
+    "next_obs/qpos": {
+      "shape": [
+        4,
+        9
+      ],
+      "dtype": "float32",
+      "sample_shape": [
+        9
+      ],
+      "axes": [
+        "B",
+        "J"
+      ],
+      "units": [
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "m",
+        "m"
+      ]
+    },
+    "next_obs/qvel": {
+      "shape": [
+        4,
+        9
+      ],
+      "dtype": "float32",
+      "sample_shape": [
+        9
+      ],
+      "axes": [
+        "B",
+        "J"
+      ],
+      "units": [
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "m/s",
+        "m/s"
+      ]
+    },
+    "next_obs/rgb": {
+      "shape": [
+        4,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "sample_shape": [
+        3,
+        256,
+        256
+      ],
+      "axes": [
+        "B",
+        "C",
+        "H",
+        "W"
+      ],
+      "units": "normalized RGB intensity [0,1]"
+    },
+    "reward": {
+      "shape": [
+        4
+      ],
+      "dtype": "float32",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "task reward; not task success"
+    },
+    "terminated": {
+      "shape": [
+        4
+      ],
+      "dtype": "bool",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "boolean"
+    },
+    "truncated": {
+      "shape": [
+        4
+      ],
+      "dtype": "bool",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "boolean"
+    },
+    "metadata/sample_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "dimensionless"
+    },
+    "metadata/step_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "dimensionless"
+    },
+    "metadata/next_step_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "dimensionless"
+    },
+    "metadata/time_s": {
+      "shape": [
+        4
+      ],
+      "dtype": "float64",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "s (simulation time, not loading wall time)"
+    },
+    "metadata/next_time_s": {
+      "shape": [
+        4
+      ],
+      "dtype": "float64",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "s (simulation time, not loading wall time)"
+    },
+    "metadata/environment_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "dimensionless"
+    },
+    "metadata/is_last_sample": {
+      "shape": [
+        4
+      ],
+      "dtype": "bool",
+      "sample_shape": [],
+      "axes": [
+        "B"
+      ],
+      "units": "boolean"
+    }
+  },
+  "source_axes": {
+    "qpos_qvel": [
+      "T+1",
+      "E",
+      "J"
+    ],
+    "rgb": [
+      "T+1",
+      "E",
+      "H",
+      "W",
+      "C"
+    ],
+    "actions": [
+      "T",
+      "A"
+    ],
+    "reward_flags": [
+      "T",
+      "E"
+    ]
+  },
+  "selection": "Explicit environment 0; obs[i], action[i], obs[i+1]. B is not a sequence-model time axis.",
+  "observation_subset": [
+    "qpos",
+    "qvel",
+    "rgb"
+  ],
+  "excluded_from_inputs": [
+    "camera matrices",
+    "tcp_pose",
+    "diagnostic/*",
+    "info/success",
+    "reset_info/*"
+  ],
+  "action_meaning": {
+    "dimensions_0_to_6": "Normalized [-1,1]; joint delta target_rad = 0.1*a relative to measured pre-step qpos.",
+    "dimension_7": "Normalized absolute mimic-gripper target_m = 0.015 + 0.025*a for each finger; a=1 holds target 0.04m."
+  },
+  "is_last_sample": "Fragment-end metadata only; never substituted for terminated or truncated."
+}

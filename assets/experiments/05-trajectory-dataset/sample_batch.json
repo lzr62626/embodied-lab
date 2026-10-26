@@ -1,0 +1,307 @@
+{
+  "result": "exported_pending_independent_validation",
+  "source_file": "trajectory.npz",
+  "source_sha256": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+  "dataset_length": 20,
+  "source_observations": 21,
+  "loader": {
+    "batch_size": 4,
+    "shuffle": false,
+    "drop_last": false,
+    "num_workers": 0,
+    "pin_memory": false,
+    "generator_seed": 42,
+    "device": "cpu"
+  },
+  "batch_count": 5,
+  "batch_indices": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      8,
+      9,
+      10,
+      11
+    ],
+    [
+      12,
+      13,
+      14,
+      15
+    ],
+    [
+      16,
+      17,
+      18,
+      19
+    ]
+  ],
+  "fields": {
+    "obs/qpos": {
+      "shape": [
+        4,
+        9
+      ],
+      "dtype": "float32",
+      "min": -1.9330347776412964,
+      "max": 2.3515117168426514
+    },
+    "obs/qvel": {
+      "shape": [
+        4,
+        9
+      ],
+      "dtype": "float32",
+      "min": -0.0006175365997478366,
+      "max": 0.07096222788095474
+    },
+    "obs/rgb": {
+      "shape": [
+        4,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "min": 0.13333334028720856,
+      "max": 1.0
+    },
+    "action": {
+      "shape": [
+        4,
+        8
+      ],
+      "dtype": "float32",
+      "min": 0.0,
+      "max": 1.0
+    },
+    "next_obs/qpos": {
+      "shape": [
+        4,
+        9
+      ],
+      "dtype": "float32",
+      "min": -1.9330217838287354,
+      "max": 2.3515117168426514
+    },
+    "next_obs/qvel": {
+      "shape": [
+        4,
+        9
+      ],
+      "dtype": "float32",
+      "min": -0.0006175365997478366,
+      "max": 0.0714072659611702
+    },
+    "next_obs/rgb": {
+      "shape": [
+        4,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "min": 0.13333334028720856,
+      "max": 1.0
+    },
+    "reward": {
+      "shape": [
+        4
+      ],
+      "dtype": "float32",
+      "min": 0.06982088088989258,
+      "max": 0.07132682204246521
+    },
+    "terminated": {
+      "shape": [
+        4
+      ],
+      "dtype": "bool",
+      "min": false,
+      "max": false
+    },
+    "truncated": {
+      "shape": [
+        4
+      ],
+      "dtype": "bool",
+      "min": false,
+      "max": false
+    },
+    "metadata/sample_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 3
+    },
+    "metadata/step_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 3
+    },
+    "metadata/next_step_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "min": 1,
+      "max": 4
+    },
+    "metadata/time_s": {
+      "shape": [
+        4
+      ],
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.15000000000000002
+    },
+    "metadata/next_time_s": {
+      "shape": [
+        4
+      ],
+      "dtype": "float64",
+      "min": 0.05,
+      "max": 0.2
+    },
+    "metadata/environment_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 0
+    },
+    "metadata/is_last_sample": {
+      "shape": [
+        4
+      ],
+      "dtype": "bool",
+      "min": false,
+      "max": false
+    }
+  },
+  "source_rgb_min": 34,
+  "source_rgb_max": 255,
+  "source_time_range_s": [
+    0.0,
+    1.0
+  ],
+  "preview": {
+    "size_wh": [
+      560,
+      1288
+    ],
+    "tiles": [
+      {
+        "sample_index": 0,
+        "state_index": 0,
+        "role": "obs",
+        "box_xywh": [
+          16,
+          90,
+          256,
+          256
+        ]
+      },
+      {
+        "sample_index": 0,
+        "state_index": 1,
+        "role": "next_obs",
+        "box_xywh": [
+          288,
+          90,
+          256,
+          256
+        ]
+      },
+      {
+        "sample_index": 1,
+        "state_index": 1,
+        "role": "obs",
+        "box_xywh": [
+          16,
+          398,
+          256,
+          256
+        ]
+      },
+      {
+        "sample_index": 1,
+        "state_index": 2,
+        "role": "next_obs",
+        "box_xywh": [
+          288,
+          398,
+          256,
+          256
+        ]
+      },
+      {
+        "sample_index": 2,
+        "state_index": 2,
+        "role": "obs",
+        "box_xywh": [
+          16,
+          706,
+          256,
+          256
+        ]
+      },
+      {
+        "sample_index": 2,
+        "state_index": 3,
+        "role": "next_obs",
+        "box_xywh": [
+          288,
+          706,
+          256,
+          256
+        ]
+      },
+      {
+        "sample_index": 3,
+        "state_index": 3,
+        "role": "obs",
+        "box_xywh": [
+          16,
+          1014,
+          256,
+          256
+        ]
+      },
+      {
+        "sample_index": 3,
+        "state_index": 4,
+        "role": "next_obs",
+        "box_xywh": [
+          288,
+          1014,
+          256,
+          256
+        ]
+      }
+    ],
+    "note": "Original RGB pixels pasted without resizing, filtering, or color conversion; labels outside tiles."
+  },
+  "last_sample": {
+    "index": 19,
+    "terminated": false,
+    "truncated": false,
+    "is_last_sample": true
+  }
+}

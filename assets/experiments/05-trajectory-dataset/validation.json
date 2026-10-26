@@ -1,0 +1,235 @@
+{
+  "result": "PASS",
+  "check_count": 36,
+  "checks": [
+    {
+      "name": "all_previous_81_files_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_82_installed_package_versions_unchanged",
+      "pass": true
+    },
+    {
+      "name": "cpu_only_pytorch_build",
+      "pass": true
+    },
+    {
+      "name": "trajectory_dataset.py_offline_scope",
+      "pass": true
+    },
+    {
+      "name": "inspect_dataset.py_offline_scope",
+      "pass": true
+    },
+    {
+      "name": "source_all_numeric_and_finite",
+      "pass": true
+    },
+    {
+      "name": "N_actions_N_plus_1_states",
+      "pass": true
+    },
+    {
+      "name": "dataset_length_equals_actions",
+      "pass": true
+    },
+    {
+      "name": "normalized_actions_in_bounds",
+      "pass": true
+    },
+    {
+      "name": "invalid_index_-1_rejected",
+      "pass": true
+    },
+    {
+      "name": "invalid_index_20_rejected",
+      "pass": true
+    },
+    {
+      "name": "all_20_current_next_states_equal_source",
+      "pass": true
+    },
+    {
+      "name": "all_20_actions_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_rewards_episode_flags_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_20_metadata_indices_times_match",
+      "pass": true
+    },
+    {
+      "name": "all_sample_shapes_and_scalar_semantics",
+      "pass": true
+    },
+    {
+      "name": "all_samples_cpu_no_gradient",
+      "pass": true
+    },
+    {
+      "name": "explicit_copies_do_not_share_source_cache",
+      "pass": true
+    },
+    {
+      "name": "all_RGB_HWC_CHW_scaling_and_uint8_roundtrip",
+      "pass": true
+    },
+    {
+      "name": "no_privileged_input_fields",
+      "pass": true
+    },
+    {
+      "name": "mutating_every_returned_field_preserves_reread",
+      "pass": true
+    },
+    {
+      "name": "mutating_sample_preserves_neighbor",
+      "pass": true
+    },
+    {
+      "name": "current_next_and_neighbor_have_independent_storage",
+      "pass": true
+    },
+    {
+      "name": "five_batches_of_four",
+      "pass": true
+    },
+    {
+      "name": "batch_indices_cover_0_through_19_once",
+      "pass": true
+    },
+    {
+      "name": "first_last_transition_indices",
+      "pass": true
+    },
+    {
+      "name": "consecutive_steps_and_simulation_time",
+      "pass": true
+    },
+    {
+      "name": "fragment_end_is_not_episode_end",
+      "pass": true
+    },
+    {
+      "name": "saved_batch_has_exactly_17_numeric_finite_fields",
+      "pass": true
+    },
+    {
+      "name": "all_saved_batch_fields_equal_actual_first_batch",
+      "pass": true
+    },
+    {
+      "name": "first_batch_shapes",
+      "pass": true
+    },
+    {
+      "name": "summary_counts_and_hash_match",
+      "pass": true
+    },
+    {
+      "name": "schema_matches_all_saved_shapes_types_and_batch_axes",
+      "pass": true
+    },
+    {
+      "name": "preview_reopens_with_expected_size",
+      "pass": true
+    },
+    {
+      "name": "all_eight_preview_tiles_match_original_pixels_and_indices",
+      "pass": true
+    },
+    {
+      "name": "source_hash_still_matches_baseline",
+      "pass": true
+    }
+  ],
+  "source_sha256": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+  "dataset_length": 20,
+  "batch_count": 5,
+  "batch_indices": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      8,
+      9,
+      10,
+      11
+    ],
+    [
+      12,
+      13,
+      14,
+      15
+    ],
+    [
+      16,
+      17,
+      18,
+      19
+    ]
+  ],
+  "numeric_arrays_in_batch": 17,
+  "max_rgb_error_vs_numpy_reference": 0.0,
+  "source_rgb_range": [
+    34,
+    255
+  ],
+  "first_batch_rgb_range": [
+    0.13333334028720856,
+    1.0
+  ],
+  "source_files_protected": 81,
+  "package_versions_preserved": 82,
+  "scope": {
+    "simulator_calls": 0,
+    "training": false,
+    "device": "cpu",
+    "gpu_use": false
+  },
+  "visual_review": {
+    "status": "PASS",
+    "method": "Reopened sample_preview.png using view_image after saved-file checks.",
+    "robot_table_cube_visible": true,
+    "labels_match": true,
+    "note": "Four rows show 0->1,1->2,2->3,3->4. Small arm motion; no visible cube transport or pushing-success claim."
+  },
+  "original_artifacts_sha256": {
+    "trajectory_dataset.py": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc",
+    "inspect_dataset.py": "294ec6eee5f70e3cb9131f3f9588353be6e71142a6c731a4b48a2620006fe261",
+    "sample_batch.npz": "f49847f092d3673ceb9e1f9ac0110a4adaa754fa32f1f9d1a8f75ca8ac143422",
+    "sample_batch.json": "dffadc84efd1429e8067bb3cdf07310152fc9e7b7a7e0e9505c722aa32997c4c",
+    "sample_preview.png": "1cef282e418df4d4f10e816479c52411b4f07066cd66926e8f251593400f7ffb",
+    "schema.json": "dde81d20aaeabde6a80eb4959454a78930a66a0f7746f93311c1709e2d6d3881",
+    "environment.json": "bda314bfff83f5a0e99d0ceca7464a7ee9a23694f7280dcc4f784f4ba8120827",
+    "requirements.txt": "c428c64db934585da32e1104f029c95e4651915a4e494bf1799ca86f75866cb5"
+  },
+  "publication_note": "Independent local checks on saved source files and CPU loading; original logs and maintenance scripts are excluded. Public copy has a portable README and sanitized environment.",
+  "public_artifacts_sha256": {
+    "environment.json": "af10718bb5ba17b54615caeefb9f5536622f742181f46c80043c424853a16dd5",
+    "inspect_dataset.py": "294ec6eee5f70e3cb9131f3f9588353be6e71142a6c731a4b48a2620006fe261",
+    "README.md": "fd9bbbe08f6b508aef95d6af2ba5f3b78c5f20f4412a57a92e0002779899bca5",
+    "requirements.txt": "c428c64db934585da32e1104f029c95e4651915a4e494bf1799ca86f75866cb5",
+    "sample_batch.json": "dffadc84efd1429e8067bb3cdf07310152fc9e7b7a7e0e9505c722aa32997c4c",
+    "sample_batch.npz": "f49847f092d3673ceb9e1f9ac0110a4adaa754fa32f1f9d1a8f75ca8ac143422",
+    "sample_preview.png": "1cef282e418df4d4f10e816479c52411b4f07066cd66926e8f251593400f7ffb",
+    "schema.json": "dde81d20aaeabde6a80eb4959454a78930a66a0f7746f93311c1709e2d6d3881",
+    "source/environment.json": "ed6a188a237ed29ed9b40cb95a306005b697fcb133d84db23587e15e53221b0a",
+    "source/schema.json": "011e1e42a5375894315b929674941315442a6feff7cccf4e36a70b1f4dca2ee0",
+    "source/trajectory.npz": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+    "trajectory_dataset.py": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc"
+  }
+}

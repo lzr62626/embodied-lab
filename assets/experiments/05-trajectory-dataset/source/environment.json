@@ -1,0 +1,238 @@
+{
+  "captured_at_utc": "2026-10-25T18:08:13.562551+00:00",
+  "python_version": "3.11.9",
+  "packages": {
+    "mani-skill": "3.0.1",
+    "sapien": "3.0.3",
+    "torch": "2.14.1",
+    "gymnasium": "1.4.0",
+    "numpy": "2.4.6",
+    "pillow": "13.0.0"
+  },
+  "experiment": {
+    "task": "PushCube-v1",
+    "robot": "panda",
+    "num_envs": 1,
+    "seed": 42,
+    "obs_mode": "rgb",
+    "control_mode": "pd_joint_delta_pos",
+    "camera": "base_camera",
+    "camera_role": "policy_observation_sensor",
+    "width": 256,
+    "height": 256,
+    "shader_pack": "minimal",
+    "sim_backend": "cpu",
+    "render_backend": "cpu",
+    "requested_steps": 20,
+    "max_authorized_step_calls": 20,
+    "explicit_reset_calls": 1,
+    "attempted_step_calls": 20,
+    "completed_steps": 20,
+    "training": false
+  },
+  "resolved_backend": {
+    "sim_backend": "physx_cpu",
+    "render_backend": "sapien_cpu",
+    "device": "cpu",
+    "sim_device": "cpu",
+    "render_device": "cpu"
+  },
+  "timing": {
+    "control_freq_hz": 20,
+    "simulation_freq_hz": 100,
+    "control_dt_s": 0.05,
+    "simulation_dt_s": 0.01,
+    "physics_substeps_per_control": 5
+  },
+  "action_space": {
+    "shape": [
+      8
+    ],
+    "dtype": "float32",
+    "low": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "high": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "controllers": {
+    "arm": {
+      "class": "PDJointPosController",
+      "config": {
+        "joint_names": [
+          "panda_joint1",
+          "panda_joint2",
+          "panda_joint3",
+          "panda_joint4",
+          "panda_joint5",
+          "panda_joint6",
+          "panda_joint7"
+        ],
+        "lower": -0.1,
+        "upper": 0.1,
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "force_limit": 100,
+        "friction": 0.0,
+        "use_delta": true,
+        "use_target": false,
+        "interpolate": false,
+        "normalize_action": true,
+        "drive_mode": "force"
+      },
+      "joint_names": [
+        "panda_joint1",
+        "panda_joint2",
+        "panda_joint3",
+        "panda_joint4",
+        "panda_joint5",
+        "panda_joint6",
+        "panda_joint7"
+      ],
+      "active_joint_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "physical_low": [
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612
+      ],
+      "physical_high": [
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612
+      ],
+      "action_slice": [
+        0,
+        7
+      ]
+    },
+    "gripper": {
+      "class": "PDJointPosMimicController",
+      "config": {
+        "joint_names": [
+          "panda_finger_joint1",
+          "panda_finger_joint2"
+        ],
+        "lower": -0.01,
+        "upper": 0.04,
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "force_limit": 100,
+        "friction": 0.0,
+        "use_delta": false,
+        "use_target": false,
+        "interpolate": false,
+        "normalize_action": true,
+        "drive_mode": "force",
+        "mimic": {
+          "panda_finger_joint2": {
+            "joint": "panda_finger_joint1"
+          }
+        }
+      },
+      "joint_names": [
+        "panda_finger_joint1",
+        "panda_finger_joint2"
+      ],
+      "active_joint_indices": [
+        7,
+        8
+      ],
+      "physical_low": [
+        -0.009999999776482582
+      ],
+      "physical_high": [
+        0.03999999910593033
+      ],
+      "action_slice": [
+        7,
+        8
+      ]
+    }
+  },
+  "source_sha256": {
+    "agents/robots/panda/panda.py": "2a98a2133b49e5a94a83d05019c0ab833ad6767f85ff1bf66265cd9247cb0fda",
+    "agents/controllers/base_controller.py": "a39aa1ec3666ccca4820d0c8c42d3422b266a5a2561c0ca38ab34e42a9d5c249",
+    "agents/controllers/pd_joint_pos.py": "ce05feb05c4370ec2be58c60465082dde15fd97e6398a187a648a5e932a4d58e",
+    "utils/gym_utils.py": "66f56909b8b913014fba394c2348e4948d87855ab6a81a89597bfca61a4ef325",
+    "envs/tasks/tabletop/push_cube.py": "8ae1536c13fae2fe8f5c84be0c60ff40a6acd625e738dfafc056ec333a16e0d8",
+    "envs/sapien_env.py": "459196c275764eaf53ccba8e154e3207036399e54c8bdd45f9e7d0919970464b"
+  },
+  "script_sha256": "89a22245a613f6929d6f83c24504fe84af9531774a12d2db4b6353500b7e8416",
+  "article3_reference_match": true,
+  "replay": {
+    "frames": 21,
+    "durations_ms": [
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "total_duration_ms": 1050,
+    "loop": 0,
+    "width": 256,
+    "height": 256,
+    "source_pngs": 21,
+    "nominal_frame_duration_ms": 50,
+    "nominal_fps": 20.0,
+    "merged_frames": 0,
+    "extra_final_state_hold_ms": 50,
+    "note": "Presentation only: per-frame 256-color quantization. Source PNGs and NPZ RGB are the original data. Last state is held one frame interval after simulated end; looping restarts the player, not the simulator."
+  },
+  "torch_cuda_build": null,
+  "report_kind": "public_reproduction_configuration",
+  "original_artifacts_sha256": {
+    "trajectory.npz": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+    "trajectory.json": "9e6e3b0c3aa238eb2cb1e618d10500d58c148041111fbdd23c0dc84110c15fe8",
+    "schema.json": "ec7604801f1635f9d1f71f7a7d2cea37368e4cadbf2e3a1b168988e1df17d4f5",
+    "replay.gif": "421e51d9b6cdba6b7ab3e997db618d82b00178d90e7f994b825cf9230f004f93"
+  },
+  "note": "Raw local paths and logs omitted. Original capture hashes identify private originals; public schema includes reviewed reset-only axis annotations."
+}

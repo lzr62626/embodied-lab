@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>把轨迹变成数据集：用 PyTorch 批量读取机器人样本 · Lamone&#39;s Embodied Lab</title><meta name="description" content="离线读取第四篇的真实轨迹，将20个动作与21份观测整理为Dataset，实际加载5个批次，检查图像转换、时间对应和独立副本。"><link rel="canonical" href="https://lzr62626.github.io/embodied-lab/articles/trajectory-to-dataset.html"><meta property="og:url" content="https://lzr62626.github.io/embodied-lab/articles/trajectory-to-dataset.html"><meta property="og:title" content="把轨迹变成数据集：用 PyTorch 批量读取机器人样本"><meta property="og:description" content="离线读取第四篇的真实轨迹，将20个动作与21份观测整理为Dataset，实际加载5个批次，检查图像转换、时间对应和独立副本。"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="Lamone&#39;s Embodied Lab"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/style.css?v=5284e4902704"><script src="../assets/theme.js"></script><script defer src="../assets/site.js?v=4f9e24fa93d8"></script></head>
+<body class="reading-page"><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Lamone&#39;s Embodied Lab首页"><span class="brand-symbol"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15V3h12M9 17h8V9"/><circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/></svg></span><span class="brand-copy"><span class="brand-title">Lamone&#39;s Embodied Lab</span><small>具身智能 · 研究与实践</small></span></a><nav aria-label="主导航"><a href="../index.html">首页</a><a href="../learn.html">开始学习</a><a href="../articles.html" aria-current="page">文章</a><a href="../about.html">关于</a></nav><div class="header-actions"><button type="button" class="icon-button search-trigger" data-search-open aria-label="搜索文章" aria-keyshortcuts="Control+K Meta+K"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><span class="search-label">搜索</span><kbd>Ctrl K</kbd></button><button type="button" class="icon-button theme-toggle" data-theme-toggle aria-label="切换深浅主题" title="切换深浅主题"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 3a7 7 0 0 1 0 14Z" fill="currentColor" stroke="none"/></svg></button></div></div></header>
+<main id="main" class="article-main wrap"><div class="breadcrumbs"><a href="../learn.html">开始学习</a><span aria-hidden="true">/</span><span>没有机器人，也能开始的具身智能实践</span></div><header class="article-heading"><p class="eyebrow">入门路线 · 第 5 篇</p><h1>把轨迹变成数据集：用 PyTorch 批量读取机器人样本</h1><p class="article-summary">离线读取第四篇的真实轨迹，将20个动作与21份观测整理为Dataset，实际加载5个批次，检查图像转换、时间对应和独立副本。</p><div class="article-meta"><time datetime="2026-10-26">2026-10-26</time><span>约 7 分钟</span><a href="../sources/trajectory-to-dataset.md" download>下载 Markdown ↗</a></div><div class="tags"><span>数据实践</span><span>PyTorch</span><span>Dataset</span><span>机器人轨迹</span></div></header><div class="article-layout"><article class="prose"><p><a href="record-first-trajectory.html">第四篇</a>保存了20个动作、21份观测。这次继续使用那些真实文件，让程序能够按索引取出一条样本，再一次读入4条。</p>
+<p>本篇已于2026-10-26完成验证。全程在CPU上离线处理，没有创建仿真环境、追加动作或训练模型。20条样本组成5个批次，首批次17个数值数组，36项独立检查通过。</p>
+<h2 id="section-1">先看实际读出的样本</h2>
+<p>下面是首批次的4条transition。左列是当前观测，右列是下一时刻观测；每个图块直接使用第四篇NPZ里的原始256×256 RGB，标签放在图外。</p>
+<figure class="experiment-figure"><img src="../assets/experiments/05-trajectory-dataset/sample_preview.png" alt="首批4条真实机器人样本，左右分别显示步0到1、1到2、2到3、3到4的相机画面，机器人在桌面上方小幅运动，蓝色方块未明显移动" width="560" height="1288" loading="lazy" decoding="async"><figcaption>base_camera原始像素对照图，560×1288。相邻行的右图与下一行左图属于同一个时刻；画面相同是轨迹连接关系。<a href="../assets/experiments/05-trajectory-dataset/sample_preview.png" download>下载原尺寸对照图</a></figcaption></figure>
+
+<p>方块没有明显位移，本篇也没有推物成功或模型效果结论。图像只是帮助我们检查索引，数据管线的验收还包括数值、形状与存储独立性。</p>
+<p><a href="../assets/experiments/05-trajectory-dataset/dataset-files.zip">下载完整公开示例</a>，解压后包含脚本、真实来源轨迹、首批次、字段说明和验收摘要。也可以单独查看 <a href="../assets/experiments/05-trajectory-dataset/trajectory_dataset.py">Dataset实现</a>、<a href="../assets/experiments/05-trajectory-dataset/inspect_dataset.py">运行脚本</a>、<a href="../assets/experiments/05-trajectory-dataset/sample_batch.npz">首批次NPZ</a>、<a href="../assets/experiments/05-trajectory-dataset/sample_batch.json">实际统计</a>、<a href="../assets/experiments/05-trajectory-dataset/schema.json">字段说明</a> 和 <a href="../assets/experiments/05-trajectory-dataset/validation.json">验收结果</a>。</p>
+<h2 id="section-2">第一步：从已有文件开始</h2>
+<p>本次复用Python3.11.9、NumPy2.4.6、PyTorch2.14.1+cpu、Pillow13.0.0。此前81份文件的SHA256和82个已安装包的版本均保持不变。</p>
+<p>输入仍是第四篇的PushCube-v1、panda、seed=42、pd_joint_delta_pos轨迹，策略观测相机为base_camera。本次只读取文件，复现数据加载不需要启动ManiSkill或SAPIEN。</p>
+<p>使用已有兼容Python环境，在下载包解压目录执行：</p>
+<pre><code class="language-powershell">python -B inspect_dataset.py --trajectory source/trajectory.npz --output-dir result
+</code></pre>
+<p><code>source/trajectory.npz</code>已经包含在包内。也可省略<code>--trajectory</code>，脚本会读取自身旁边的这个文件。<code>result</code>用来保存新的结果；已有同名文件时程序会拒绝覆盖，再次执行请换成<code>result-2</code>。</p>
+<p>本次实际导出的摘要为：</p>
+<pre><code class="language-json">{&quot;result&quot;:&quot;EXPORTED&quot;,&quot;samples&quot;:20,&quot;batches&quot;:5,&quot;first_indices&quot;:[0,1,2,3],&quot;arrays&quot;:17,&quot;device&quot;:&quot;cpu&quot;,&quot;preview_size&quot;:[560,1288]}
+</code></pre>
+<p>新环境的版本要求见包内<code>requirements.txt</code>；本次没有执行安装或升级。新环境安装和其他操作系统组合需要另行验证。</p>
+<h2 id="section-3">第二步：21份观测，只产生20条样本</h2>
+<p>一条transition需要前后两份观测：</p>
+<pre><code class="language-text">sample[0]  = obs[0]  → action[0]  → obs[1]
+sample[1]  = obs[1]  → action[1]  → obs[2]
+...
+sample[19] = obs[19] → action[19] → obs[20]
+</code></pre>
+<p>因此<code>len(dataset)=20</code>。最后一份观测给最后一个动作提供结果，不能单独再配出第21条transition。</p>
+<p><a href="https://docs.pytorch.org/docs/2.14/data.html#map-style-datasets">PyTorch Dataset接口</a>通过<code>__len__</code>给出样本数量，通过<code>__getitem__</code>按索引提供样本。我们的实现只接收这份单环境轨迹格式，不会自动拼接多个回合。</p>
+<pre><code class="language-python">from trajectory_dataset import TrajectoryDataset
+
+dataset = TrajectoryDataset(&quot;source/trajectory.npz&quot;)
+sample = dataset[0]
+print(len(dataset))                         # 20
+print(sample[&quot;obs&quot;][&quot;qpos&quot;].shape)          # torch.Size([9])
+print(sample[&quot;next_obs&quot;][&quot;rgb&quot;].shape)      # torch.Size([3, 256, 256])
+print(sample[&quot;metadata&quot;][&quot;next_step_index&quot;])  # tensor(1)
+</code></pre>
+<p>观测输入选择qpos、qvel、RGB，是原始策略观测的一个子集。相机矩阵、tcp_pose没有加入这个最小示例；仿真物体真值、控制器目标和success也没有混入输入。原始NPZ仍保留此前保存的字段。</p>
+<h2 id="section-4">第三步：显式取出环境轴</h2>
+<p>原始状态带有时间轴和环境轴，即使只有一个环境，环境维度仍然存在：</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>来源形状</th>
+<th>取第i条样本时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>qpos、qvel</td>
+<td><code>(21,1,9)</code></td>
+<td>当前<code>[i,0]</code>，下一时刻<code>[i+1,0]</code></td>
+</tr>
+<tr>
+<td>RGB</td>
+<td><code>(21,1,256,256,3)</code></td>
+<td>当前<code>[i,0]</code>，下一时刻<code>[i+1,0]</code></td>
+</tr>
+<tr>
+<td>action</td>
+<td><code>(20,8)</code></td>
+<td><code>[i]</code>，本身没有环境轴</td>
+</tr>
+<tr>
+<td>reward、回合标志</td>
+<td><code>(20,1)</code></td>
+<td><code>[i,0]</code>，得到标量</td>
+</tr>
+</tbody></table></div>
+<p>这里显式选择环境0，没有使用不带维度参数的<code>squeeze()</code>。这样可以看清究竟移除了哪个轴，也避免以后批大小或其他维度为1时删错维度。</p>
+<p>原始数组中的T表示动作时间，T+1表示状态时间，E表示环境。取出一条样本后，它只包含一对相邻时刻；后面新增的B是样本批次轴。</p>
+<h2 id="section-5">第四步：转换图像，同时保留状态与动作原值</h2>
+<p>图像从HWC变成CHW，从uint8变成float32，再除以255。下面是实现中的转换片段，<code>source_rgb</code>表示带有状态时间轴和环境轴的原始RGB数组：</p>
+<pre><code class="language-python">hwc = source_rgb[i, 0]
+chw = hwc.transpose(2, 0, 1).copy()
+rgb = torch.from_numpy(chw).to(
+    device=&quot;cpu&quot;, dtype=torch.float32
+).div_(255.0)
+</code></pre>
+<p>没有裁剪、缩放或数据增强。原始整段RGB的实际范围是34～255；首批次当前RGB的实际范围约为0.13333334～1.0。除以255限定数值范围，但不会把每张图片的最暗像素强制拉到0。</p>
+<p>qpos、qvel和动作保持原值：</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>前7维机械臂</th>
+<th>后续夹爪字段</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>qpos，9维</td>
+<td>rad</td>
+<td>两指位置，各为m</td>
+</tr>
+<tr>
+<td>qvel，9维</td>
+<td>rad/s</td>
+<td>两指速度，各为m/s</td>
+</tr>
+<tr>
+<td>action，8维</td>
+<td>归一化指令，目标角增量<code>0.1*a</code> rad</td>
+<td>最后一维为绝对目标<code>0.015+0.025*a</code> m，两指联动</td>
+</tr>
+</tbody></table></div>
+<p>本批次的第一关节动作保持归一化输入+0.1，对应控制器请求的目标角增量+0.01 rad；夹爪输入1对应每指0.04 m目标。动作指令、控制器目标和测得的实际关节状态仍是不同的量，可回看<a href="observations-and-actions.html">第三篇</a>。</p>
+<h2 id="section-6">第五步：返回独立副本</h2>
+<p><code>np.load(..., allow_pickle=False)</code>读取纯数值NPZ；文件用完后关闭。<a href="https://numpy.org/doc/2.4/reference/generated/numpy.load.html">NumPy文档</a>说明了这个参数与NPZ上下文管理方式。</p>
+<p>还要处理内存共享。<a href="https://docs.pytorch.org/docs/2.14/generated/torch.from_numpy.html">torch.from_numpy</a>会和传入的NumPy数组共享存储，因此状态字段先复制，再转换：</p>
+<pre><code class="language-python">def _tensor(value):
+    return torch.from_numpy(np.array(value, copy=True))
+</code></pre>
+<p>它共享的是刚创建的新副本，不是Dataset保存的源数组。RGB也先创建独立CHW副本。当前样本、下一时刻样本和再次访问得到的张量，数值可以相同，存储彼此独立。</p>
+<p>验收时修改了返回样本的全部字段，然后重新读取同一条与相邻一条，确认它们仍与来源文件一致。仅检查磁盘文件哈希不足以发现内存里的共享问题。</p>
+<h2 id="section-7">第六步：把4条样本组成一个批次</h2>
+<p>本次配置如下：</p>
+<pre><code class="language-python">import torch
+from torch.utils.data import DataLoader
+
+loader = DataLoader(
+    dataset,
+    batch_size=4,
+    shuffle=False,
+    drop_last=False,
+    num_workers=0,
+    pin_memory=False,
+    generator=torch.Generator(device=&quot;cpu&quot;).manual_seed(42),
+)
+</code></pre>
+<p><code>num_workers=0</code>让数据在当前进程加载，便于在Windows检查错误；程序仍保留<code>if __name__ == &quot;__main__&quot;:</code>入口保护。此次没有模型、梯度更新或GPU张量。</p>
+<p>实际遍历得到：</p>
+<pre><code class="language-text">batch 0: [0, 1, 2, 3]
+batch 1: [4, 5, 6, 7]
+batch 2: [8, 9, 10, 11]
+batch 3: [12, 13, 14, 15]
+batch 4: [16, 17, 18, 19]
+</code></pre>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>首批次字段</th>
+<th>形状</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>当前/下一时刻qpos、qvel</td>
+<td><code>(4,9)</code></td>
+<td>float32</td>
+</tr>
+<tr>
+<td>当前/下一时刻RGB</td>
+<td><code>(4,3,256,256)</code></td>
+<td>float32</td>
+</tr>
+<tr>
+<td>action</td>
+<td><code>(4,8)</code></td>
+<td>float32</td>
+</tr>
+<tr>
+<td>reward</td>
+<td><code>(4,)</code></td>
+<td>float32</td>
+</tr>
+<tr>
+<td>terminated、truncated</td>
+<td><code>(4,)</code></td>
+<td>bool</td>
+</tr>
+<tr>
+<td>样本索引、前后步数、环境索引</td>
+<td><code>(4,)</code></td>
+<td>int64</td>
+</tr>
+<tr>
+<td>前后仿真时间</td>
+<td><code>(4,)</code></td>
+<td>float64</td>
+</tr>
+<tr>
+<td>is_last_sample</td>
+<td><code>(4,)</code></td>
+<td>bool</td>
+</tr>
+</tbody></table></div>
+<p>这是4条transition的集合。因为没有shuffle，当前批次索引恰好连续；B仍然是样本轴，不能直接当作序列模型需要的T。构建历史窗口或动作序列需要另行定义切片和回合边界。</p>
+<h2 id="section-8">第七步：重新读文件，而不是只看程序退出码</h2>
+<p><code>sample_batch.npz</code>保存首批次的17个数组。字典层级用斜杠写入键名，例如<code>obs/rgb</code>、<code>next_obs/qpos</code>，没有把Python字典塞进object数组：</p>
+<pre><code class="language-python">with np.load(&quot;result/sample_batch.npz&quot;, allow_pickle=False) as batch:
+    print(batch[&quot;obs/rgb&quot;].shape)   # (4, 3, 256, 256)
+    print(batch[&quot;action&quot;].shape)    # (4, 8)
+</code></pre>
+<p>独立验收只读已保存的文件并执行离线加载，36项检查通过，覆盖全部20条样本、5个批次、输入哈希、动作边界、类型与有限值、像素转换、保存后重读以及修改样本后的独立性。RGB与独立NumPy参考计算的最大误差为0；对照图8个图块与原始RGB逐像素一致，并已重新打开目视检查。</p>
+<p>最后一条样本连接step19→20、0.95→1.0秒。它的<code>is_last_sample=true</code>只表示文件片段到此结束，原始<code>terminated=false</code>、<code>truncated=false</code>均未改动。数据加载花费的墙钟时间不属于这1秒仿真时间。</p>
+<h2 id="section-9">常见问题与下一步</h2>
+<p><strong>为什么相邻样本看起来重复？</strong> 第i条的下一时刻就是第i+1条的当前时刻。内容相同是正常关系，存储是否独立需要另外检查。</p>
+<p><strong>为什么不把所有字段都缩放到0～1？</strong> 图像强度、关节位置、速度和控制指令语义不同。本篇只缩放图像，不在20条相邻数据上拟合状态归一化统计。</p>
+<p><strong>找不到输入文件或提示形状错误怎么办？</strong> 解压完整下载包，保留<code>source</code>目录；确认输入来自第四篇且字段符合<code>schema.json</code>。实现会拒绝缺字段、越界动作、非有限值、不连续步数或跨回合拼接，避免静默错配。</p>
+<p><strong>输出目录已经存在怎么办？</strong> 换一个没有同名文件的新目录。示例默认保护既有结果，不自动覆盖。</p>
+<p><strong>这就是可用于训练的完整数据集了吗？</strong> 这20条样本只演示读取方式，没有训练/验证划分、模型或泛化结论。相邻transition共享观测，未来有多条轨迹时，应考虑先按轨迹或回合划分再采样，减少数据泄漏。轨迹间其他相关性仍需要单独检查。</p>
+<p>当前实现将一份小NPZ读入内存，没有验证大规模数据性能。后续可以在明确回合边界后再讨论多轨迹索引、历史窗口和数据划分。</p>
+<h2 id="section-10">官方参考资料</h2>
+<ul>
+<li><a href="https://docs.pytorch.org/docs/2.14/data.html">PyTorch 2.14：Dataset、DataLoader与批量加载</a></li>
+<li><a href="https://docs.pytorch.org/docs/2.14/generated/torch.from_numpy.html">PyTorch 2.14：torch.from_numpy的共享存储语义</a></li>
+<li><a href="https://numpy.org/doc/2.4/reference/generated/numpy.load.html">NumPy 2.4：numpy.load与allow_pickle</a></li>
+<li><a href="https://pillow.readthedocs.io/en/stable/reference/Image.html">Pillow 13.0.0：Image模块与PNG保存</a></li>
+</ul>
+<footer class="article-next"><span class="eyebrow">接下来</span><h2>沿着学习路线继续探索。</h2><p>回到学习路线，查看已有文章与后续安排。</p><a class="text-link" href="../learn.html">回到学习路线 →</a></footer></article><aside class="article-toc" aria-label="文章目录"><details open><summary>本文目录</summary><ol><li><a href="#section-1">先看实际读出的样本</a></li><li><a href="#section-2">第一步：从已有文件开始</a></li><li><a href="#section-3">第二步：21份观测，只产生20条样本</a></li><li><a href="#section-4">第三步：显式取出环境轴</a></li><li><a href="#section-5">第四步：转换图像，同时保留状态与动作原值</a></li><li><a href="#section-6">第五步：返回独立副本</a></li><li><a href="#section-7">第六步：把4条样本组成一个批次</a></li><li><a href="#section-8">第七步：重新读文件，而不是只看程序退出码</a></li><li><a href="#section-9">常见问题与下一步</a></li><li><a href="#section-10">官方参考资料</a></li></ol></details><a class="toc-back" href="../articles.html">← 全部文章</a></aside></div></main>
+<footer class="site-footer"><div><a class="footer-brand" href="../index.html">Lamone&#39;s Embodied Lab</a><p>从仿真开始，记录能被检查的学习与研究过程。</p></div><div class="footer-links"><a href="../learn.html">学习路线</a><a href="../about.html">关于本站</a><a href="https://github.com/lzr62626/embodied-lab">GitHub ↗</a><span>© 2026 Lamone&#39;s Embodied Lab</span></div></footer>
+<dialog class="search-dialog" aria-labelledby="search-heading"><form method="dialog" novalidate class="search-head"><h2 id="search-heading">搜索文章</h2><button class="icon-button" aria-label="关闭搜索" value="close"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></form><label for="site-search" class="visually-hidden">标题、主题或关键词</label><div class="search-field"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="site-search" type="search" placeholder="搜索观测、动作、世界模型……" autocomplete="off"><button class="icon-button search-clear" data-search-clear type="button" aria-label="清除搜索" hidden><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div><div class="search-results" aria-live="polite" aria-atomic="true"></div><p class="search-hint">按 Esc 关闭 · 仅搜索已有文章</p></dialog><script type="application/json" id="search-data">[{"title":"机器人数据长什么样：读懂一条观测与动作记录","description":"读取一条真实的 ManiSkill transition，区分观测、归一化动作、控制器目标与下一时刻的实际运动，并检查数据如何对应。","tags":["仿真实践","观测与动作","ManiSkill","机器人数据"],"url":"../articles/observations-and-actions.html"},{"title":"从一条记录到一段轨迹：保存机器人动作序列","description":"采集20个真实控制步，保存21份观测和原始相机帧，读懂轨迹的时间轴、回合边界及GIF回放，并检查数据是否一一对应。","tags":["仿真实践","机器人轨迹","ManiSkill","数据采集"],"url":"../articles/record-first-trajectory.html"},{"title":"把轨迹变成数据集：用 PyTorch 批量读取机器人样本","description":"离线读取第四篇的真实轨迹，将20个动作与21份观测整理为Dataset，实际加载5个批次，检查图像转换、时间对应和独立副本。","tags":["数据实践","PyTorch","Dataset","机器人轨迹"],"url":"../articles/trajectory-to-dataset.html"},{"title":"没有实机，如何开始学习具身智能？","description":"从桌面推物理解观测、动作与闭环交互，为第一次机器人仿真实验确定目标和验收标准。","tags":["具身智能","机器人学习","仿真","世界模型"],"url":"../articles/start-without-robot.html"},{"title":"第一次机器人仿真实验：保存一张相机图像","description":"用 ManiSkill 初始化一个推方块任务，保存真实相机 RGB，检查图像、数据维度与运行配置，并记录一次控制器初始化问题。","tags":["仿真实践","ManiSkill","相机观测","具身智能"],"url":"../articles/capture-camera-frame.html"}]</script></body></html>
