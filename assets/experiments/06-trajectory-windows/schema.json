@@ -1,0 +1,266 @@
+{
+  "format": "article6-window-batch-v1",
+  "K": 4,
+  "stride": 1,
+  "fields": {
+    "observations/qpos": {
+      "shape": [
+        4,
+        5,
+        9
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K+1",
+        "J"
+      ],
+      "units": [
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "m",
+        "m"
+      ]
+    },
+    "observations/qvel": {
+      "shape": [
+        4,
+        5,
+        9
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K+1",
+        "J"
+      ],
+      "units": [
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "m/s",
+        "m/s"
+      ]
+    },
+    "observations/rgb": {
+      "shape": [
+        4,
+        5,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K+1",
+        "C",
+        "H",
+        "W"
+      ],
+      "units": "RGB intensity [0,1]"
+    },
+    "actions": {
+      "shape": [
+        4,
+        4,
+        8
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K",
+        "A"
+      ],
+      "units": "normalized controller commands [-1,1], unchanged"
+    },
+    "rewards": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K"
+      ],
+      "units": "task reward, not success"
+    },
+    "terminated": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "bool",
+      "axes": [
+        "B",
+        "K"
+      ],
+      "units": "boolean, unchanged episode flag"
+    },
+    "truncated": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "bool",
+      "axes": [
+        "B",
+        "K"
+      ],
+      "units": "boolean, unchanged episode flag"
+    },
+    "metadata/source_id": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata"
+    },
+    "metadata/window_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata"
+    },
+    "metadata/start_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata"
+    },
+    "metadata/end_index_exclusive": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata"
+    },
+    "metadata/state_indices": {
+      "shape": [
+        4,
+        5
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B",
+        "K+1"
+      ],
+      "units": "integer state index/control-step count"
+    },
+    "metadata/action_indices": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B",
+        "K"
+      ],
+      "units": "integer source transition index"
+    },
+    "metadata/step_index": {
+      "shape": [
+        4,
+        5
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B",
+        "K+1"
+      ],
+      "units": "integer state index/control-step count"
+    },
+    "metadata/time_s": {
+      "shape": [
+        4,
+        5
+      ],
+      "dtype": "float64",
+      "axes": [
+        "B",
+        "K+1"
+      ],
+      "units": "simulation seconds"
+    },
+    "metadata/environment_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata"
+    },
+    "metadata/ends_fragment": {
+      "shape": [
+        4
+      ],
+      "dtype": "bool",
+      "axes": [
+        "B"
+      ],
+      "units": "boolean fragment end, not episode end"
+    }
+  },
+  "environment_selection": "Explicit environment 0 in copied article5 loader; no unqualified squeeze.",
+  "observation_subset": [
+    "qpos",
+    "qvel",
+    "rgb"
+  ],
+  "excluded_from_inputs": [
+    "diagnostic/*",
+    "info/success",
+    "controller targets",
+    "camera matrices",
+    "tcp_pose"
+  ],
+  "source_axes": {
+    "qpos_qvel": [
+      "T+1",
+      "E",
+      "J"
+    ],
+    "rgb": [
+      "T+1",
+      "E",
+      "H",
+      "W",
+      "C"
+    ],
+    "actions": [
+      "T",
+      "A"
+    ]
+  },
+  "end_index_exclusive": "Exclusive action stop s+K; also final included state index. State slice stop is s+K+1.",
+  "causality": "Offline sequence record only. Future states are not assumed visible at window start. Context/targets/visibility must be defined for a future model.",
+  "source_id": "Numeric key into sources in window_index.json; identifies a fragment, not a claim of a complete episode.",
+  "ends_fragment": "Separate metadata; never substituted for terminated or truncated."
+}

@@ -1,0 +1,228 @@
+{
+  "result": "PASS",
+  "check_count": 39,
+  "checks": [
+    {
+      "name": "all_previous_files_sha256_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_installed_package_versions_unchanged",
+      "pass": true
+    },
+    {
+      "name": "article5_helper_is_exact_copy",
+      "pass": true
+    },
+    {
+      "name": "cpu_only_pytorch_build",
+      "pass": true
+    },
+    {
+      "name": "trajectory_dataset.py_offline_CPU_scope",
+      "pass": true
+    },
+    {
+      "name": "trajectory_window_dataset.py_offline_CPU_scope",
+      "pass": true
+    },
+    {
+      "name": "inspect_windows.py_offline_CPU_scope",
+      "pass": true
+    },
+    {
+      "name": "complete_source_20_actions_21_observations",
+      "pass": true
+    },
+    {
+      "name": "source_numeric_finite_and_action_bounds",
+      "pass": true
+    },
+    {
+      "name": "seventeen_complete_window_starts",
+      "pass": true
+    },
+    {
+      "name": "invalid_window_index_-1_rejected",
+      "pass": true
+    },
+    {
+      "name": "invalid_window_index_17_rejected",
+      "pass": true
+    },
+    {
+      "name": "all_85_selected_states_match_original",
+      "pass": true
+    },
+    {
+      "name": "all_RGB_transform_and_original_pixel_roundtrip",
+      "pass": true
+    },
+    {
+      "name": "all_68_transition_actions_match_original",
+      "pass": true
+    },
+    {
+      "name": "all_rewards_episode_flags_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_window_metadata_indices_times_match",
+      "pass": true
+    },
+    {
+      "name": "all_single_window_shapes",
+      "pass": true
+    },
+    {
+      "name": "all_tensors_CPU_no_gradient",
+      "pass": true
+    },
+    {
+      "name": "only_qpos_qvel_RGB_observation_subset",
+      "pass": true
+    },
+    {
+      "name": "first_last_window_endpoints",
+      "pass": true
+    },
+    {
+      "name": "fragment_end_does_not_change_episode_flags",
+      "pass": true
+    },
+    {
+      "name": "overlap_values_equal_but_storage_distinct",
+      "pass": true
+    },
+    {
+      "name": "mutating_window_preserves_reread",
+      "pass": true
+    },
+    {
+      "name": "mutating_window_preserves_overlapping_window",
+      "pass": true
+    },
+    {
+      "name": "source_cache_remains_original",
+      "pass": true
+    },
+    {
+      "name": "batch_sizes_4_4_4_4_1",
+      "pass": true
+    },
+    {
+      "name": "window_indices_0_through_16_once",
+      "pass": true
+    },
+    {
+      "name": "first_batch_B_K_shapes",
+      "pass": true
+    },
+    {
+      "name": "last_batch_B_equals_1_preserved",
+      "pass": true
+    },
+    {
+      "name": "seventeen_saved_numeric_finite_arrays",
+      "pass": true
+    },
+    {
+      "name": "all_saved_fields_equal_actual_first_batch",
+      "pass": true
+    },
+    {
+      "name": "all_saved_window_index_entries_match",
+      "pass": true
+    },
+    {
+      "name": "summary_batch_sizes_and_indices_match",
+      "pass": true
+    },
+    {
+      "name": "schema_all_shapes_types_axes_match",
+      "pass": true
+    },
+    {
+      "name": "preview_reopens_560_by_1592_RGB",
+      "pass": true
+    },
+    {
+      "name": "five_preview_tiles_and_labels_match_source",
+      "pass": true
+    },
+    {
+      "name": "source_duration_1s_window_duration_point2s",
+      "pass": true
+    },
+    {
+      "name": "source_reference_hashes_still_match",
+      "pass": true
+    }
+  ],
+  "window_count": 17,
+  "K": 4,
+  "stride": 1,
+  "batch_sizes": [
+    4,
+    4,
+    4,
+    4,
+    1
+  ],
+  "numeric_arrays": 17,
+  "source_sha256": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+  "source_duration_s": 1.0,
+  "max_rgb_error_vs_numpy": 0.0,
+  "previous_files_preserved": 144,
+  "installed_package_versions_preserved": 82,
+  "boundary_test_summary": {
+    "type": "artificial_private_numeric_tests",
+    "result": "PASS",
+    "check_count": 16,
+    "real_source_flags": "all false",
+    "note": "These tests validate rejection rules; they are not genuine simulation terminations. Fixtures and private validator are not published."
+  },
+  "visual_review": {
+    "status": "PASS",
+    "method": "Reopened window_preview.png using view_image after pixel checks.",
+    "robot_table_cube_visible": true,
+    "labels_match": true,
+    "note": "Five real states0..4 at0..0.20s,actions0..3 only; small arm movement, no visible cube transport. Labels outside original tiles."
+  },
+  "scope": {
+    "offline_only": true,
+    "simulator_calls": 0,
+    "training": false,
+    "gpu_use": false,
+    "device": "cpu"
+  },
+  "original_artifacts_sha256": {
+    "trajectory_window_dataset.py": "e0acd5106e028a14b0194a8f179db9f178519135036437261e5f2cf9a041ee28",
+    "trajectory_dataset.py": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc",
+    "inspect_windows.py": "ededec40f42b5fdba707be102297e5267adde19df490a7f46979401fec52d4ac",
+    "window_index.json": "c92bfe1ed9c1e533b24f67a6f5fed1a6abb2771f5f78664998f46fd03a28ad3e",
+    "sample_batch.npz": "30be77c18252ba8a1fe83fce133a753ce1d9eb560604dab42f4317fe89d335e5",
+    "sample_batch.json": "be8de7f7b4e95b31df2e786110d504c59521adba18d491e2bcd0b2571def5a98",
+    "window_preview.png": "462a675c626a62954d96a7606e6b9547f1250c3e342e3648d980d6e41cb65e04",
+    "schema.json": "9540a39ebb525cfc67aad2f9b8d1a63df1a3b290a74c3757fc6954d2ee4a9aea",
+    "environment.json": "c375022d231d7dc87a46e80dfeef74630bcbd82801e99a60ff659cb865b1f2cf",
+    "requirements.txt": "c428c64db934585da32e1104f029c95e4651915a4e494bf1799ca86f75866cb5"
+  },
+  "public_artifacts_sha256": {
+    "environment.json": "2fa42bf17ae889ae18d7417780685128176667f49df77207590457a5bcc37d97",
+    "inspect_windows.py": "ededec40f42b5fdba707be102297e5267adde19df490a7f46979401fec52d4ac",
+    "README.md": "041509dd076519792029cd6c2d5006865d77312010921de254ab20c5289d9051",
+    "requirements.txt": "c428c64db934585da32e1104f029c95e4651915a4e494bf1799ca86f75866cb5",
+    "sample_batch.json": "be8de7f7b4e95b31df2e786110d504c59521adba18d491e2bcd0b2571def5a98",
+    "sample_batch.npz": "30be77c18252ba8a1fe83fce133a753ce1d9eb560604dab42f4317fe89d335e5",
+    "schema.json": "9540a39ebb525cfc67aad2f9b8d1a63df1a3b290a74c3757fc6954d2ee4a9aea",
+    "source/environment.json": "ed6a188a237ed29ed9b40cb95a306005b697fcb133d84db23587e15e53221b0a",
+    "source/schema.json": "011e1e42a5375894315b929674941315442a6feff7cccf4e36a70b1f4dca2ee0",
+    "source/trajectory.npz": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+    "trajectory_dataset.py": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc",
+    "trajectory_window_dataset.py": "e0acd5106e028a14b0194a8f179db9f178519135036437261e5f2cf9a041ee28",
+    "window_index.json": "c92bfe1ed9c1e533b24f67a6f5fed1a6abb2771f5f78664998f46fd03a28ad3e",
+    "window_preview.png": "462a675c626a62954d96a7606e6b9547f1250c3e342e3648d980d6e41cb65e04"
+  },
+  "publication_note": "Saved real-data acceptance and separate artificial boundary test summary only; private fixtures, validators and raw logs are excluded."
+}

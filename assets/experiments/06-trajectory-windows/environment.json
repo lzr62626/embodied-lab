@@ -1,0 +1,34 @@
+{
+  "record_type": "public_offline_window_configuration",
+  "created_at_utc": "2026-10-26T08:29:32.370254+00:00",
+  "python_version": "3.11.9",
+  "packages": {
+    "numpy": "2.4.6",
+    "torch": "2.14.1+cpu",
+    "pillow": "13.0.0"
+  },
+  "device": "cpu",
+  "torch_cuda_build": null,
+  "offline_only": true,
+  "simulator_calls": 0,
+  "training": false,
+  "source_file": "trajectory.npz",
+  "source_sha256": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+  "article5_helper": {
+    "file": "trajectory_dataset.py",
+    "sha256": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc",
+    "copied_unchanged": true
+  },
+  "configuration": {
+    "K": 4,
+    "stride": 1,
+    "batch_size": 4,
+    "shuffle": false,
+    "drop_last": false,
+    "num_workers": 0,
+    "pin_memory": false,
+    "generator_seed": 42,
+    "device": "cpu"
+  },
+  "publication_note": "Only portable tutorial data/code. Original logs, local paths, artificial fixtures and maintenance validators remain private."
+}

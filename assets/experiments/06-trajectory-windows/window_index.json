@@ -1,0 +1,596 @@
+{
+  "format": "article6-window-index-v1",
+  "K": 4,
+  "stride": 1,
+  "source_actions": 20,
+  "source_observations": 21,
+  "window_count": 17,
+  "sources": {
+    "0": {
+      "file": "trajectory.npz",
+      "sha256": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+      "environment_index": 0
+    }
+  },
+  "policy": "Complete windows only; no padding, terminal continuation, resets, or source-file joining.",
+  "windows": [
+    {
+      "window_index": 0,
+      "source_id": 0,
+      "start_index": 0,
+      "end_index_exclusive": 4,
+      "state_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "action_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "step_index": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "time_s": [
+        0.0,
+        0.05,
+        0.1,
+        0.15000000000000002,
+        0.2
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 1,
+      "source_id": 0,
+      "start_index": 1,
+      "end_index_exclusive": 5,
+      "state_indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "action_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "step_index": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "time_s": [
+        0.05,
+        0.1,
+        0.15000000000000002,
+        0.2,
+        0.25
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 2,
+      "source_id": 0,
+      "start_index": 2,
+      "end_index_exclusive": 6,
+      "state_indices": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "action_indices": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "step_index": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "time_s": [
+        0.1,
+        0.15000000000000002,
+        0.2,
+        0.25,
+        0.30000000000000004
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 3,
+      "source_id": 0,
+      "start_index": 3,
+      "end_index_exclusive": 7,
+      "state_indices": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "action_indices": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "step_index": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "time_s": [
+        0.15000000000000002,
+        0.2,
+        0.25,
+        0.30000000000000004,
+        0.35000000000000003
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 4,
+      "source_id": 0,
+      "start_index": 4,
+      "end_index_exclusive": 8,
+      "state_indices": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "action_indices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "step_index": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "time_s": [
+        0.2,
+        0.25,
+        0.30000000000000004,
+        0.35000000000000003,
+        0.4
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 5,
+      "source_id": 0,
+      "start_index": 5,
+      "end_index_exclusive": 9,
+      "state_indices": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "action_indices": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "step_index": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "time_s": [
+        0.25,
+        0.30000000000000004,
+        0.35000000000000003,
+        0.4,
+        0.45
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 6,
+      "source_id": 0,
+      "start_index": 6,
+      "end_index_exclusive": 10,
+      "state_indices": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "action_indices": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "step_index": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "time_s": [
+        0.30000000000000004,
+        0.35000000000000003,
+        0.4,
+        0.45,
+        0.5
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 7,
+      "source_id": 0,
+      "start_index": 7,
+      "end_index_exclusive": 11,
+      "state_indices": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "action_indices": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "step_index": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "time_s": [
+        0.35000000000000003,
+        0.4,
+        0.45,
+        0.5,
+        0.55
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 8,
+      "source_id": 0,
+      "start_index": 8,
+      "end_index_exclusive": 12,
+      "state_indices": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "action_indices": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "step_index": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "time_s": [
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6000000000000001
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 9,
+      "source_id": 0,
+      "start_index": 9,
+      "end_index_exclusive": 13,
+      "state_indices": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "action_indices": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "step_index": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "time_s": [
+        0.45,
+        0.5,
+        0.55,
+        0.6000000000000001,
+        0.65
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 10,
+      "source_id": 0,
+      "start_index": 10,
+      "end_index_exclusive": 14,
+      "state_indices": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "action_indices": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "step_index": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "time_s": [
+        0.5,
+        0.55,
+        0.6000000000000001,
+        0.65,
+        0.7000000000000001
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 11,
+      "source_id": 0,
+      "start_index": 11,
+      "end_index_exclusive": 15,
+      "state_indices": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "action_indices": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "step_index": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "time_s": [
+        0.55,
+        0.6000000000000001,
+        0.65,
+        0.7000000000000001,
+        0.75
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 12,
+      "source_id": 0,
+      "start_index": 12,
+      "end_index_exclusive": 16,
+      "state_indices": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "action_indices": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "step_index": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "time_s": [
+        0.6000000000000001,
+        0.65,
+        0.7000000000000001,
+        0.75,
+        0.8
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 13,
+      "source_id": 0,
+      "start_index": 13,
+      "end_index_exclusive": 17,
+      "state_indices": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "action_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "step_index": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "time_s": [
+        0.65,
+        0.7000000000000001,
+        0.75,
+        0.8,
+        0.8500000000000001
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 14,
+      "source_id": 0,
+      "start_index": 14,
+      "end_index_exclusive": 18,
+      "state_indices": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "action_indices": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "step_index": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "time_s": [
+        0.7000000000000001,
+        0.75,
+        0.8,
+        0.8500000000000001,
+        0.9
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 15,
+      "source_id": 0,
+      "start_index": 15,
+      "end_index_exclusive": 19,
+      "state_indices": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "action_indices": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "step_index": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "time_s": [
+        0.75,
+        0.8,
+        0.8500000000000001,
+        0.9,
+        0.9500000000000001
+      ],
+      "ends_fragment": false
+    },
+    {
+      "window_index": 16,
+      "source_id": 0,
+      "start_index": 16,
+      "end_index_exclusive": 20,
+      "state_indices": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "action_indices": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "step_index": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "time_s": [
+        0.8,
+        0.8500000000000001,
+        0.9,
+        0.9500000000000001,
+        1.0
+      ],
+      "ends_fragment": true
+    }
+  ]
+}

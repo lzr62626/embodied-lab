@@ -1,0 +1,413 @@
+{
+  "result": "exported_pending_independent_validation",
+  "source_sha256": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+  "K": 4,
+  "stride": 1,
+  "window_count": 17,
+  "loader": {
+    "batch_size": 4,
+    "shuffle": false,
+    "drop_last": false,
+    "num_workers": 0,
+    "pin_memory": false,
+    "generator_seed": 42,
+    "device": "cpu"
+  },
+  "batch_count": 5,
+  "batch_sizes": [
+    4,
+    4,
+    4,
+    4,
+    1
+  ],
+  "batch_window_indices": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      8,
+      9,
+      10,
+      11
+    ],
+    [
+      12,
+      13,
+      14,
+      15
+    ],
+    [
+      16
+    ]
+  ],
+  "first_window": {
+    "window_index": 0,
+    "source_id": 0,
+    "start_index": 0,
+    "end_index_exclusive": 4,
+    "state_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "action_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "step_index": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "time_s": [
+      0.0,
+      0.05,
+      0.1,
+      0.15000000000000002,
+      0.2
+    ],
+    "ends_fragment": false
+  },
+  "last_window": {
+    "window_index": 16,
+    "source_id": 0,
+    "start_index": 16,
+    "end_index_exclusive": 20,
+    "state_indices": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "action_indices": [
+      16,
+      17,
+      18,
+      19
+    ],
+    "step_index": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "time_s": [
+      0.8,
+      0.8500000000000001,
+      0.9,
+      0.9500000000000001,
+      1.0
+    ],
+    "ends_fragment": true
+  },
+  "source_simulation_duration_s": 1.0,
+  "window_duration_s": 0.2,
+  "preview": {
+    "size_wh": [
+      560,
+      1592
+    ],
+    "tiles": [
+      {
+        "state_index": 0,
+        "step_index": 0,
+        "time_s": 0.0,
+        "box_xywh": [
+          16,
+          88,
+          256,
+          256
+        ]
+      },
+      {
+        "state_index": 1,
+        "step_index": 1,
+        "time_s": 0.05,
+        "box_xywh": [
+          16,
+          392,
+          256,
+          256
+        ]
+      },
+      {
+        "state_index": 2,
+        "step_index": 2,
+        "time_s": 0.1,
+        "box_xywh": [
+          16,
+          696,
+          256,
+          256
+        ]
+      },
+      {
+        "state_index": 3,
+        "step_index": 3,
+        "time_s": 0.15000000000000002,
+        "box_xywh": [
+          16,
+          1000,
+          256,
+          256
+        ]
+      },
+      {
+        "state_index": 4,
+        "step_index": 4,
+        "time_s": 0.2,
+        "box_xywh": [
+          16,
+          1304,
+          256,
+          256
+        ]
+      }
+    ],
+    "note": "Five source RGB tiles pasted without resize/filter/augmentation; labels are outside image tiles and are not model inputs."
+  },
+  "fields": {
+    "observations/qpos": {
+      "shape": [
+        4,
+        5,
+        9
+      ],
+      "dtype": "float32",
+      "min": -1.933039665222168,
+      "max": 2.3515124320983887
+    },
+    "observations/qvel": {
+      "shape": [
+        4,
+        5,
+        9
+      ],
+      "dtype": "float32",
+      "min": -0.06636496633291245,
+      "max": 0.07150592654943466
+    },
+    "observations/rgb": {
+      "shape": [
+        4,
+        5,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "min": 0.13333334028720856,
+      "max": 1.0
+    },
+    "actions": {
+      "shape": [
+        4,
+        4,
+        8
+      ],
+      "dtype": "float32",
+      "min": -0.10000000149011612,
+      "max": 1.0
+    },
+    "rewards": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "min": 0.06982088088989258,
+      "max": 0.07187889516353607
+    },
+    "terminated": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "bool",
+      "min": false,
+      "max": false
+    },
+    "truncated": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "bool",
+      "min": false,
+      "max": false
+    },
+    "metadata/source_id": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 0
+    },
+    "metadata/window_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 3
+    },
+    "metadata/start_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 3
+    },
+    "metadata/end_index_exclusive": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "min": 4,
+      "max": 7
+    },
+    "metadata/state_indices": {
+      "shape": [
+        4,
+        5
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 7
+    },
+    "metadata/action_indices": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 6
+    },
+    "metadata/step_index": {
+      "shape": [
+        4,
+        5
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 7
+    },
+    "metadata/time_s": {
+      "shape": [
+        4,
+        5
+      ],
+      "dtype": "float64",
+      "min": 0.0,
+      "max": 0.35000000000000003
+    },
+    "metadata/environment_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "min": 0,
+      "max": 0
+    },
+    "metadata/ends_fragment": {
+      "shape": [
+        4
+      ],
+      "dtype": "bool",
+      "min": false,
+      "max": false
+    }
+  },
+  "last_batch_shapes": {
+    "observations/qpos": [
+      1,
+      5,
+      9
+    ],
+    "observations/qvel": [
+      1,
+      5,
+      9
+    ],
+    "observations/rgb": [
+      1,
+      5,
+      3,
+      256,
+      256
+    ],
+    "actions": [
+      1,
+      4,
+      8
+    ],
+    "rewards": [
+      1,
+      4
+    ],
+    "terminated": [
+      1,
+      4
+    ],
+    "truncated": [
+      1,
+      4
+    ],
+    "metadata/source_id": [
+      1
+    ],
+    "metadata/window_index": [
+      1
+    ],
+    "metadata/start_index": [
+      1
+    ],
+    "metadata/end_index_exclusive": [
+      1
+    ],
+    "metadata/state_indices": [
+      1,
+      5
+    ],
+    "metadata/action_indices": [
+      1,
+      4
+    ],
+    "metadata/step_index": [
+      1,
+      5
+    ],
+    "metadata/time_s": [
+      1,
+      5
+    ],
+    "metadata/environment_index": [
+      1
+    ],
+    "metadata/ends_fragment": [
+      1
+    ]
+  },
+  "note": "Overlapping windows do not add independent trajectories or simulation time. No train/validation split or training."
+}
