@@ -1,0 +1,202 @@
+{
+  "python_version": "3.11.9",
+  "packages": {
+    "mani-skill": "3.0.1",
+    "sapien": "3.0.3",
+    "torch": "2.14.1",
+    "gymnasium": "1.4.0",
+    "numpy": "2.4.6",
+    "pillow": "13.0.0"
+  },
+  "experiment": {
+    "task": "PushCube-v1",
+    "robot": "panda",
+    "num_envs": 1,
+    "seed": 44,
+    "obs_mode": "rgb",
+    "control_mode": "pd_joint_delta_pos",
+    "camera": "base_camera",
+    "camera_role": "policy_observation_sensor",
+    "width": 256,
+    "height": 256,
+    "shader_pack": "minimal",
+    "sim_backend": "cpu",
+    "render_backend": "cpu",
+    "requested_steps": 20,
+    "max_authorized_step_calls": 20,
+    "explicit_reset_calls": 1,
+    "attempted_step_calls": 20,
+    "completed_steps": 20,
+    "training": false
+  },
+  "resolved_backend": {
+    "sim_backend": "physx_cpu",
+    "render_backend": "sapien_cpu",
+    "device": "cpu",
+    "sim_device": "cpu",
+    "render_device": "cpu"
+  },
+  "timing": {
+    "control_freq_hz": 20,
+    "simulation_freq_hz": 100,
+    "control_dt_s": 0.05,
+    "simulation_dt_s": 0.01,
+    "physics_substeps_per_control": 5
+  },
+  "action_space": {
+    "shape": [
+      8
+    ],
+    "dtype": "float32",
+    "low": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "high": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "controllers": {
+    "arm": {
+      "class": "PDJointPosController",
+      "config": {
+        "joint_names": [
+          "panda_joint1",
+          "panda_joint2",
+          "panda_joint3",
+          "panda_joint4",
+          "panda_joint5",
+          "panda_joint6",
+          "panda_joint7"
+        ],
+        "lower": -0.1,
+        "upper": 0.1,
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "force_limit": 100,
+        "friction": 0.0,
+        "use_delta": true,
+        "use_target": false,
+        "interpolate": false,
+        "normalize_action": true,
+        "drive_mode": "force"
+      },
+      "joint_names": [
+        "panda_joint1",
+        "panda_joint2",
+        "panda_joint3",
+        "panda_joint4",
+        "panda_joint5",
+        "panda_joint6",
+        "panda_joint7"
+      ],
+      "active_joint_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "physical_low": [
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612,
+        -0.10000000149011612
+      ],
+      "physical_high": [
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612
+      ],
+      "action_slice": [
+        0,
+        7
+      ]
+    },
+    "gripper": {
+      "class": "PDJointPosMimicController",
+      "config": {
+        "joint_names": [
+          "panda_finger_joint1",
+          "panda_finger_joint2"
+        ],
+        "lower": -0.01,
+        "upper": 0.04,
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "force_limit": 100,
+        "friction": 0.0,
+        "use_delta": false,
+        "use_target": false,
+        "interpolate": false,
+        "normalize_action": true,
+        "drive_mode": "force",
+        "mimic": {
+          "panda_finger_joint2": {
+            "joint": "panda_finger_joint1"
+          }
+        }
+      },
+      "joint_names": [
+        "panda_finger_joint1",
+        "panda_finger_joint2"
+      ],
+      "active_joint_indices": [
+        7,
+        8
+      ],
+      "physical_low": [
+        -0.009999999776482582
+      ],
+      "physical_high": [
+        0.03999999910593033
+      ],
+      "action_slice": [
+        7,
+        8
+      ]
+    }
+  },
+  "source_sha256": {
+    "agents/robots/panda/panda.py": "2a98a2133b49e5a94a83d05019c0ab833ad6767f85ff1bf66265cd9247cb0fda",
+    "agents/controllers/base_controller.py": "a39aa1ec3666ccca4820d0c8c42d3422b266a5a2561c0ca38ab34e42a9d5c249",
+    "agents/controllers/pd_joint_pos.py": "ce05feb05c4370ec2be58c60465082dde15fd97e6398a187a648a5e932a4d58e",
+    "utils/gym_utils.py": "66f56909b8b913014fba394c2348e4948d87855ab6a81a89597bfca61a4ef325",
+    "envs/tasks/tabletop/push_cube.py": "8ae1536c13fae2fe8f5c84be0c60ff40a6acd625e738dfafc056ec333a16e0d8",
+    "envs/sapien_env.py": "459196c275764eaf53ccba8e154e3207036399e54c8bdd45f9e7d0919970464b"
+  },
+  "script_sha256": "5befca9ec42f5711ddbc28a05bdb935c820410b3af0479492549aca3cb58ee1c",
+  "article3_reference_match": true,
+  "torch_cuda_build": null,
+  "render_provenance": {
+    "render_system_device": "cpu",
+    "device_is_cpu": true,
+    "device_is_cuda": false,
+    "image_transfer": "CPU-accessible RGB copied into numpy uint8; no CUDA image tensors",
+    "physical_render_device_note": "Device API and enumeration are recorded separately. CPU-accessible memory does not establish CPU-only rasterization. No GPU utilization benchmark performed."
+  },
+  "record_type": "public_source_configuration",
+  "publication_note": "Historical seed42 reused;43/44new. Device API labels do not prove CPU-only rasterization; physical GPU selection/utilization not measured. Machine enumeration/paths/raw audit remain private."
+}

@@ -1,0 +1,268 @@
+{
+  "format": "article7-numeric-split-batches-v1",
+  "K": 4,
+  "stride": 1,
+  "fields": {
+    "observations/qpos": {
+      "shape": [
+        4,
+        5,
+        9
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K+1",
+        "J"
+      ],
+      "units": [
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "m",
+        "m"
+      ]
+    },
+    "observations/qvel": {
+      "shape": [
+        4,
+        5,
+        9
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K+1",
+        "J"
+      ],
+      "units": [
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "m/s",
+        "m/s"
+      ]
+    },
+    "observations/rgb": {
+      "shape": [
+        4,
+        5,
+        3,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K+1",
+        "C",
+        "H",
+        "W"
+      ],
+      "units": "RGB[0,1]"
+    },
+    "actions": {
+      "shape": [
+        4,
+        4,
+        8
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K",
+        "A"
+      ],
+      "units": "normalized command [-1,1]"
+    },
+    "rewards": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "float32",
+      "axes": [
+        "B",
+        "K"
+      ],
+      "units": "unchanged task reward"
+    },
+    "terminated": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "bool",
+      "axes": [
+        "B",
+        "K"
+      ],
+      "units": "boolean"
+    },
+    "truncated": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "bool",
+      "axes": [
+        "B",
+        "K"
+      ],
+      "units": "boolean"
+    },
+    "metadata/source_id": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata/index"
+    },
+    "metadata/start_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata/index"
+    },
+    "metadata/end_index_exclusive": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata/index"
+    },
+    "metadata/state_indices": {
+      "shape": [
+        4,
+        5
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B",
+        "K+1"
+      ],
+      "units": "integer metadata/index"
+    },
+    "metadata/action_indices": {
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B",
+        "K"
+      ],
+      "units": "integer metadata/index"
+    },
+    "metadata/step_index": {
+      "shape": [
+        4,
+        5
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B",
+        "K+1"
+      ],
+      "units": "integer metadata/index"
+    },
+    "metadata/time_s": {
+      "shape": [
+        4,
+        5
+      ],
+      "dtype": "float64",
+      "axes": [
+        "B",
+        "K+1"
+      ],
+      "units": "simulation seconds"
+    },
+    "metadata/environment_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata/index"
+    },
+    "metadata/ends_fragment": {
+      "shape": [
+        4
+      ],
+      "dtype": "bool",
+      "axes": [
+        "B"
+      ],
+      "units": "boolean"
+    },
+    "metadata/trajectory_window_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata/index"
+    },
+    "metadata/global_window_index": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata/index"
+    },
+    "metadata/split_code": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "axes": [
+        "B"
+      ],
+      "units": "integer metadata/index"
+    }
+  },
+  "trajectory_id_strings": "Retained in Dataset/DataLoader metadata and batch_summary.json; not stored as object/Unicode NPZ arrays. Numeric source_id maps through dataset_manifest.json.",
+  "split_code": {
+    "0": "train",
+    "1": "validation"
+  },
+  "observation_subset": [
+    "qpos",
+    "qvel",
+    "rgb"
+  ],
+  "excluded_from_model_inputs": [
+    "source/split labels",
+    "diagnostic/*",
+    "info/success",
+    "controller targets"
+  ],
+  "causality": "Offline K+1 state records; future observations not assumed visible at window start."
+}

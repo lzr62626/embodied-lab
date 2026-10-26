@@ -1,0 +1,953 @@
+{
+  "format": "time_stacked_numeric_arrays_v1",
+  "N": 20,
+  "observations": 21,
+  "stop_reason": "requested_step_limit",
+  "planned_action_segments": [
+    {
+      "steps_inclusive": [
+        1,
+        5
+      ],
+      "joint1_normalized_input": 0.1
+    },
+    {
+      "steps_inclusive": [
+        6,
+        10
+      ],
+      "joint1_normalized_input": -0.1
+    },
+    {
+      "steps_inclusive": [
+        11,
+        15
+      ],
+      "joint1_normalized_input": 0.1
+    },
+    {
+      "steps_inclusive": [
+        16,
+        20
+      ],
+      "joint1_normalized_input": -0.1
+    }
+  ],
+  "simulation_duration_s": 1.0,
+  "states": [
+    {
+      "index": 0,
+      "file": "frames/0000.png",
+      "sha256": "6b2d5ae37cd885b8ef75b1a6ed3f65225d43af23b385aca0fa242c3ec996a2eb",
+      "time_s": 0.0
+    },
+    {
+      "index": 1,
+      "file": "frames/0001.png",
+      "sha256": "aab41ee78d2285023e12b7cd39333a529594bb0035899f934e7179cee795989f",
+      "time_s": 0.05
+    },
+    {
+      "index": 2,
+      "file": "frames/0002.png",
+      "sha256": "295bd7f71af32805becdf0dfd2bda7391e46a74cd8c533759c1f9924161fc5c5",
+      "time_s": 0.1
+    },
+    {
+      "index": 3,
+      "file": "frames/0003.png",
+      "sha256": "6d5f9dd1ba5833dc97e0bec852dd77c99540d05ae32dc94f5ed2e469f6ccab1a",
+      "time_s": 0.15000000000000002
+    },
+    {
+      "index": 4,
+      "file": "frames/0004.png",
+      "sha256": "651544c026776e626430cd0ebb207544b19f56c8229ffbbe4079e382ab53cb53",
+      "time_s": 0.2
+    },
+    {
+      "index": 5,
+      "file": "frames/0005.png",
+      "sha256": "1d120c482d216d4ff3e292bb11099c1f89090e23ffb053b4aad9cb8f236a52d3",
+      "time_s": 0.25
+    },
+    {
+      "index": 6,
+      "file": "frames/0006.png",
+      "sha256": "f7aa1d1bec65d02c03c214adb957dac6ef827af7b05729e87f5867074a4d5c4e",
+      "time_s": 0.30000000000000004
+    },
+    {
+      "index": 7,
+      "file": "frames/0007.png",
+      "sha256": "cf58dd3ea10caae1001769c87cd96d6f6f96ee17ad905e18f9a19ed43255ab10",
+      "time_s": 0.35000000000000003
+    },
+    {
+      "index": 8,
+      "file": "frames/0008.png",
+      "sha256": "7373c2f20e1bf32229616b6c601f838ea3f63a08e57fbcefbd395624fb9fc5cb",
+      "time_s": 0.4
+    },
+    {
+      "index": 9,
+      "file": "frames/0009.png",
+      "sha256": "2fb6235705aaf3f195c81558054d5bfe9725d36d4eac96f48ecb35c461e42657",
+      "time_s": 0.45
+    },
+    {
+      "index": 10,
+      "file": "frames/0010.png",
+      "sha256": "227a833f3c2ecf9b75554c8d00ed73b88d908ff7ee6832c38585a3dacea68d94",
+      "time_s": 0.5
+    },
+    {
+      "index": 11,
+      "file": "frames/0011.png",
+      "sha256": "13e23f3adfc056b0007d0ab8e92c70eefa228d2beba886921ffa04472ae46790",
+      "time_s": 0.55
+    },
+    {
+      "index": 12,
+      "file": "frames/0012.png",
+      "sha256": "6850aa0fa203121ddba2f9fe11a98b19c2f249ee8775be3fb905846459ba4408",
+      "time_s": 0.6000000000000001
+    },
+    {
+      "index": 13,
+      "file": "frames/0013.png",
+      "sha256": "38a73258a11a5bb38c7af58322b031e2798bc5f0044ecf38c529476b058c2451",
+      "time_s": 0.65
+    },
+    {
+      "index": 14,
+      "file": "frames/0014.png",
+      "sha256": "802275c209a21fcf9c315667fc7337f08e5b67dfb09716bbfcfb25c5eae338bd",
+      "time_s": 0.7000000000000001
+    },
+    {
+      "index": 15,
+      "file": "frames/0015.png",
+      "sha256": "d6726db5d512e74d57229645b67eb292d148ece9a0ccc9eb7a1511cdc7974a93",
+      "time_s": 0.75
+    },
+    {
+      "index": 16,
+      "file": "frames/0016.png",
+      "sha256": "bbb1d10064562e1401dbb9d585971fbc86c40aa70f202579124db8db286f0ff3",
+      "time_s": 0.8
+    },
+    {
+      "index": 17,
+      "file": "frames/0017.png",
+      "sha256": "3890e8c173f671d6d2ae3775f4b6bd3d7627fcead51a12b4c2ff5d807f094b2b",
+      "time_s": 0.8500000000000001
+    },
+    {
+      "index": 18,
+      "file": "frames/0018.png",
+      "sha256": "0b4b78f06863b027c74661a4a1cc338fcc41305230e3f27aff567229fc34e5df",
+      "time_s": 0.9
+    },
+    {
+      "index": 19,
+      "file": "frames/0019.png",
+      "sha256": "63be5348b7af5979bfc0f70497a5145711540599263cffcdc0ca89ade37ac53f",
+      "time_s": 0.9500000000000001
+    },
+    {
+      "index": 20,
+      "file": "frames/0020.png",
+      "sha256": "de4670d817901318a70ebe61b5e4fc93e1d4c81f0c0bbec96c6ae96b6354687c",
+      "time_s": 1.0
+    }
+  ],
+  "transitions": [
+    {
+      "action_index": 0,
+      "obs_index": 0,
+      "next_obs_index": 1,
+      "time_t_s": 0.0,
+      "time_tp1_s": 0.05,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.015147998929023743,
+      "joint1_actual_delta_rad": 0.0024877511896193027,
+      "changed_pixels": 2018,
+      "reward": [
+        0.07701696455478668
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          1
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 1,
+      "obs_index": 1,
+      "next_obs_index": 2,
+      "time_t_s": 0.05,
+      "time_tp1_s": 0.1,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.017635751515626907,
+      "joint1_actual_delta_rad": 0.0036464091390371323,
+      "changed_pixels": 2495,
+      "reward": [
+        0.07650701701641083
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          2
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 2,
+      "obs_index": 2,
+      "next_obs_index": 3,
+      "time_t_s": 0.1,
+      "time_tp1_s": 0.15000000000000002,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.02128215879201889,
+      "joint1_actual_delta_rad": 0.003895414061844349,
+      "changed_pixels": 2549,
+      "reward": [
+        0.07592841982841492
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          3
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 3,
+      "obs_index": 3,
+      "next_obs_index": 4,
+      "time_t_s": 0.15000000000000002,
+      "time_tp1_s": 0.2,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.025177573785185814,
+      "joint1_actual_delta_rad": 0.003949091769754887,
+      "changed_pixels": 2647,
+      "reward": [
+        0.07532377541065216
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          4
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 4,
+      "obs_index": 4,
+      "next_obs_index": 5,
+      "time_t_s": 0.2,
+      "time_tp1_s": 0.25,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.029126666486263275,
+      "joint1_actual_delta_rad": 0.003960667178034782,
+      "changed_pixels": 2629,
+      "reward": [
+        0.07470309734344482
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          5
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 5,
+      "obs_index": 5,
+      "next_obs_index": 6,
+      "time_t_s": 0.25,
+      "time_tp1_s": 0.30000000000000004,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.01308733131736517,
+      "joint1_actual_delta_rad": -0.0010123532265424728,
+      "changed_pixels": 598,
+      "reward": [
+        0.0746261328458786
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          6
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 6,
+      "obs_index": 6,
+      "next_obs_index": 7,
+      "time_t_s": 0.30000000000000004,
+      "time_tp1_s": 0.35000000000000003,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.012074978090822697,
+      "joint1_actual_delta_rad": -0.0033291634172201157,
+      "changed_pixels": 2391,
+      "reward": [
+        0.07509748637676239
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          7
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 7,
+      "obs_index": 7,
+      "next_obs_index": 8,
+      "time_t_s": 0.35000000000000003,
+      "time_tp1_s": 0.4,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.008745814673602581,
+      "joint1_actual_delta_rad": -0.0038270391523838043,
+      "changed_pixels": 2555,
+      "reward": [
+        0.07567796111106873
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          8
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 8,
+      "obs_index": 8,
+      "next_obs_index": 9,
+      "time_t_s": 0.4,
+      "time_tp1_s": 0.45,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.004918775521218777,
+      "joint1_actual_delta_rad": -0.003934373147785664,
+      "changed_pixels": 2566,
+      "reward": [
+        0.07627105712890625
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          9
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 9,
+      "obs_index": 9,
+      "next_obs_index": 10,
+      "time_t_s": 0.45,
+      "time_tp1_s": 0.5,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.000984402373433113,
+      "joint1_actual_delta_rad": -0.003957509994506836,
+      "changed_pixels": 2579,
+      "reward": [
+        0.07685533165931702
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          10
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 10,
+      "obs_index": 10,
+      "next_obs_index": 11,
+      "time_t_s": 0.5,
+      "time_tp1_s": 0.55,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.01702689379453659,
+      "joint1_actual_delta_rad": 0.0010130377486348152,
+      "changed_pixels": 608,
+      "reward": [
+        0.07692596316337585
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          11
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 11,
+      "obs_index": 11,
+      "next_obs_index": 12,
+      "time_t_s": 0.55,
+      "time_tp1_s": 0.6000000000000001,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.01803993061184883,
+      "joint1_actual_delta_rad": 0.0033292770385742188,
+      "changed_pixels": 2396,
+      "reward": [
+        0.07648627460002899
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          12
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 12,
+      "obs_index": 12,
+      "next_obs_index": 13,
+      "time_t_s": 0.6000000000000001,
+      "time_tp1_s": 0.65,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.02136920765042305,
+      "joint1_actual_delta_rad": 0.003827044740319252,
+      "changed_pixels": 2521,
+      "reward": [
+        0.07592342793941498
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          13
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 13,
+      "obs_index": 13,
+      "next_obs_index": 14,
+      "time_t_s": 0.65,
+      "time_tp1_s": 0.7000000000000001,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.02519625425338745,
+      "joint1_actual_delta_rad": 0.003934348002076149,
+      "changed_pixels": 2633,
+      "reward": [
+        0.0753222107887268
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          14
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 14,
+      "obs_index": 14,
+      "next_obs_index": 15,
+      "time_t_s": 0.7000000000000001,
+      "time_tp1_s": 0.75,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.02913060039281845,
+      "joint1_actual_delta_rad": 0.003957489505410194,
+      "changed_pixels": 2631,
+      "reward": [
+        0.0747022032737732
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          15
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 15,
+      "obs_index": 15,
+      "next_obs_index": 16,
+      "time_t_s": 0.75,
+      "time_tp1_s": 0.8,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.013088089413940907,
+      "joint1_actual_delta_rad": -0.001013040542602539,
+      "changed_pixels": 596,
+      "reward": [
+        0.07462553679943085
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          16
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 16,
+      "obs_index": 16,
+      "next_obs_index": 17,
+      "time_t_s": 0.8,
+      "time_tp1_s": 0.8500000000000001,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.012075048871338367,
+      "joint1_actual_delta_rad": -0.003329327329993248,
+      "changed_pixels": 2392,
+      "reward": [
+        0.07509678602218628
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          17
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 17,
+      "obs_index": 17,
+      "next_obs_index": 18,
+      "time_t_s": 0.8500000000000001,
+      "time_tp1_s": 0.9,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.00874572154134512,
+      "joint1_actual_delta_rad": -0.0038270745426416397,
+      "changed_pixels": 2554,
+      "reward": [
+        0.07567732036113739
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          18
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 18,
+      "obs_index": 18,
+      "next_obs_index": 19,
+      "time_t_s": 0.9,
+      "time_tp1_s": 0.9500000000000001,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.00491864699870348,
+      "joint1_actual_delta_rad": -0.003934375010430813,
+      "changed_pixels": 2566,
+      "reward": [
+        0.07627029716968536
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          19
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 19,
+      "obs_index": 19,
+      "next_obs_index": 20,
+      "time_t_s": 0.9500000000000001,
+      "time_tp1_s": 1.0,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.000984271988272667,
+      "joint1_actual_delta_rad": -0.0039575109258294106,
+      "changed_pixels": 2581,
+      "reward": [
+        0.07685460150241852
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          20
+        ],
+        "success": [
+          false
+        ]
+      }
+    }
+  ],
+  "snapshot_fingerprints": [
+    "b45280d7fcbfb2564708a875b8d321f8de7847bfc5393c1af530ee6c181b0aa4",
+    "3e0fab7c82b0a5ab029b979bcad8b7b41a0a99310e049dbbc0def63f5dec60a3",
+    "2d21acbd4fe13877e36eea04e928ba067ee7e3c05e36149808c0ac63f62554c7",
+    "8e0d7f82b076f26285778b3f6e680b7904a77ad2f7a53be53b405c12262f5305",
+    "5faad58ce5a2cfaf2eab9a8ab86d55af2a09e72321945658ebf11b57c2cd6f69",
+    "44ecc0cfed135710f42522dc9d49a8c08df4180a74a64425c598f73f2c1e8117",
+    "bfbe4bb47fa3ff6681377aa05d22d42b41512b071b3b07ea97d1f9c19d8fe668",
+    "9a0babf6c065bf5355ee6d703afbee2d0ac012837954834711d55d42f25e886f",
+    "c7acd8ff939442bec8c0d657035139452be9f06a8316c38ce7212d1b3a336e80",
+    "0df66e7181c3f981c055441a077345b8accc1f406bf1ed3a2552925ccc3e8427",
+    "7ab0238889128ffd4b2e4fd93bf56f15b84365029a8eaae461bddbb6fc87d702",
+    "57c2026e4676cf1bc51940858b3d9242671d417e79becb379a10fa397561b037",
+    "36fc3d8bfe18f3fa7473f72435c859e399d795e546a1a77a5d3d053b35098a85",
+    "a09a847d8aa48447cc1692d04a95b9a6f852973d5a827c31d3f5cc73d0a189cd",
+    "1bc2d681df1fa084d1ac27667e78fc58652cabf2d74f4d3988e4dd1b44e40ac3",
+    "4f5b0f93788a23a60fb6433636c72e0fbf25bf83179c998c7cdcbcc10a2dd7a3",
+    "d7257643930b5bbf6c4dc5249d276ac22ff392f98ca0416cea0b7c68a0ac24da",
+    "ebdbeb63c1749f4951a9f6caf2f9a57c7f6b245c040a9ad46ffc8af00ac95554",
+    "e6d4f974a6e8a23c18318a81c4f51561cb9a5229615d324327b8b9f921710fb3",
+    "5b9e352d795c6d25649473af39d0c066a53b4601b27b14f01e10adcf932230ca",
+    "763282d40e4c86376717f3a6656f6a66bcaec54d3b4be5eff622eb75bb89ff0f"
+  ],
+  "independent_snapshots_unchanged": true,
+  "statistics": {
+    "joint1_start_rad": 0.005147998686879873,
+    "joint1_end_rad": 0.007026761770248413,
+    "joint1_min_rad": 0.005147998686879873,
+    "joint1_max_rad": 0.023088090121746063,
+    "joint1_net_delta_rad": 0.0018787630833685398,
+    "cube_net_translation_m": [
+      [
+        -3.781169652938843e-07,
+        -7.227063179016113e-07,
+        -9.872019290924072e-08
+      ]
+    ],
+    "cube_net_translation_norm_m": 8.215975526582042e-07,
+    "success_any": false,
+    "success_final": [
+      false
+    ],
+    "first_png_sha256": "6b2d5ae37cd885b8ef75b1a6ed3f65225d43af23b385aca0fa242c3ec996a2eb",
+    "last_png_sha256": "de4670d817901318a70ebe61b5e4fc93e1d4c81f0c0bbec96c6ae96b6354687c"
+  },
+  "publication_note": "Complete numeric trajectory and all original PNGs included. Local derived GIF metadata omitted; raw local JSON retained privately."
+}

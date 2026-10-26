@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>从一条到多条轨迹：按轨迹划分训练与验证数据 · Lamone&#39;s Embodied Lab</title><meta name="description" content="复用seed42并新增43、44两条真实片段，建立来源清单与数值指纹，先划分轨迹再切出34个train与17个validation窗口。"><link rel="canonical" href="https://lzr62626.github.io/embodied-lab/articles/multi-trajectory-splits.html"><meta property="og:url" content="https://lzr62626.github.io/embodied-lab/articles/multi-trajectory-splits.html"><meta property="og:title" content="从一条到多条轨迹：按轨迹划分训练与验证数据"><meta property="og:description" content="复用seed42并新增43、44两条真实片段，建立来源清单与数值指纹，先划分轨迹再切出34个train与17个validation窗口。"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="Lamone&#39;s Embodied Lab"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/style.css?v=5284e4902704"><script src="../assets/theme.js"></script><script defer src="../assets/site.js?v=4f9e24fa93d8"></script></head>
+<body class="reading-page"><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Lamone&#39;s Embodied Lab首页"><span class="brand-symbol"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15V3h12M9 17h8V9"/><circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/></svg></span><span class="brand-copy"><span class="brand-title">Lamone&#39;s Embodied Lab</span><small>具身智能 · 研究与实践</small></span></a><nav aria-label="主导航"><a href="../index.html">首页</a><a href="../learn.html">开始学习</a><a href="../articles.html" aria-current="page">文章</a><a href="../about.html">关于</a></nav><div class="header-actions"><button type="button" class="icon-button search-trigger" data-search-open aria-label="搜索文章" aria-keyshortcuts="Control+K Meta+K"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><span class="search-label">搜索</span><kbd>Ctrl K</kbd></button><button type="button" class="icon-button theme-toggle" data-theme-toggle aria-label="切换深浅主题" title="切换深浅主题"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 3a7 7 0 0 1 0 14Z" fill="currentColor" stroke="none"/></svg></button></div></div></header>
+<main id="main" class="article-main wrap"><div class="breadcrumbs"><a href="../learn.html">开始学习</a><span aria-hidden="true">/</span><span>没有机器人，也能开始的具身智能实践</span></div><header class="article-heading"><p class="eyebrow">入门路线 · 第 7 篇</p><h1>从一条到多条轨迹：按轨迹划分训练与验证数据</h1><p class="article-summary">复用seed42并新增43、44两条真实片段，建立来源清单与数值指纹，先划分轨迹再切出34个train与17个validation窗口。</p><div class="article-meta"><time datetime="2026-10-26">2026-10-26</time><span>约 7 分钟</span><a href="../sources/multi-trajectory-splits.md" download>下载 Markdown ↗</a></div><div class="tags"><span>数据实践</span><span>数据划分</span><span>来源追踪</span><span>ManiSkill</span></div></header><div class="article-layout"><article class="prose"><p><a href="trajectory-time-windows.html">第六篇</a>从一条轨迹构造了17个重叠窗口。现在有了多条来源，我们要先回答：一个窗口来自哪次采集，它应该属于哪个集合？</p>
+<p>本篇于2026-10-26完成实际验证。复用第四篇seed42的历史结果，顺序新增seed43、44，各执行20次env.step，新增尝试合计40次。之后只读取保存文件，整理为train34个窗口、validation17个窗口。没有训练模型。</p>
+<h2 id="section-1">先看三份真实来源</h2>
+<figure class="experiment-figure"><img src="../assets/experiments/07-multi-trajectory-splits/split_preview.png" alt="三份真实轨迹首帧：来源0是历史seed42属于train，来源1是新增seed43属于train，来源2是新增seed44属于validation；机器人、方块和目标的初始相对位置有所不同" width="560" height="984" loading="lazy" decoding="async"><figcaption>三张256×256原图逐像素保留，整张对照图560×984。标签在图块外，用于解释来源，不输入模型。<a href="../assets/experiments/07-multi-trajectory-splits/split_preview.png" download>下载原尺寸对照图</a></figcaption></figure>
+
+<p>三份片段都有机器人、桌面和方块，但初始状态确实不同。这里的train与validation是数据用途名称，不代表模型已经训练或得到验证。</p>
+<p><a href="../assets/experiments/07-multi-trajectory-splits/multi-trajectory-files.zip">下载完整公开示例</a>，含3份完整数值轨迹、63张原图与便携代码。默认复现离线整理流程，不重采数据。也可查看 <a href="../assets/experiments/07-multi-trajectory-splits/dataset_manifest.json">来源清单</a>、<a href="../assets/experiments/07-multi-trajectory-splits/splits.json">固定划分</a>、<a href="../assets/experiments/07-multi-trajectory-splits/window_index.json">全局窗口索引</a>、<a href="../assets/experiments/07-multi-trajectory-splits/multi_trajectory_dataset.py">多轨迹Dataset</a>、<a href="../assets/experiments/07-multi-trajectory-splits/inspect_splits.py">离线入口</a>、<a href="../assets/experiments/07-multi-trajectory-splits/train_batch.npz">train首批</a>、<a href="../assets/experiments/07-multi-trajectory-splits/validation_batch.npz">validation首批</a>、<a href="../assets/experiments/07-multi-trajectory-splits/leakage_check.json">重复检查</a> 和 <a href="../assets/experiments/07-multi-trajectory-splits/validation.json">独立验收</a>。</p>
+<h2 id="section-2">第一步：锁定环境和新增采集范围</h2>
+<p>沿用Python3.11.9、ManiSkill3.0.1、SAPIEN3.0.3、NumPy2.4.6、PyTorch2.14.1+cpu、Pillow13.0.0、Gymnasium1.4.0。219份既有文件、82个包版本未改变，控制器/任务/后端6份源码哈希与第四篇一致。</p>
+<p>任务仍是PushCube-v1，panda、单环境、pd_joint_delta_pos，策略观测相机base_camera256×256、minimal shader，控制20Hz、物理100Hz。运行前核对控制器，前7维归一化动作对应<code>0.1*a</code> rad目标角增量，末维夹爪绝对目标为<code>0.015+0.025*a</code> m；它们不是实测关节运动。<a href="https://maniskill.readthedocs.io/en/latest/user_guide/concepts/controllers.html">ManiSkill控制器说明</a>可作为接口参考。</p>
+<p>两条新轨迹都沿用固定计划：第一关节五步+0.1、五步-0.1，再重复一次；其他机械臂输入0，夹爪输入1。seed43完成后才启动44，每个进程只运行一个环境。</p>
+<p><code>capture_trajectories.py</code>在每次尝试调用前将预算写盘并fsync，随后才调用env.step。两条各20次尝试、20次返回，合计40/40，成功后没有重跑。seed42只复制既有文件和来源哈希，没有重新初始化采集。</p>
+<p>渲染记录也要分层看：</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>记录</th>
+<th>本次观察</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>物理后端</td>
+<td>physx_cpu</td>
+</tr>
+<tr>
+<td>渲染后端接口标签</td>
+<td>sapien_cpu</td>
+</tr>
+<tr>
+<td>RGB传输</td>
+<td>CPU可访问uint8，复制为NumPy数组</td>
+</tr>
+<tr>
+<td>RenderSystem.device接口</td>
+<td>cpu；设备枚举另存在本机</td>
+</tr>
+<tr>
+<td>物理GPU选用与利用率</td>
+<td>本次未直接测量，不作全程无GPU渲染结论</td>
+</tr>
+</tbody></table></div>
+<p>后端标签、图像内存位置与物理图形执行是不同层次的证据。原始设备枚举留在本机；离线DataLoader不使用GPU张量。</p>
+<h2 id="section-3">第二步：把来源写进清单</h2>
+<p><a href="https://maniskill.readthedocs.io/en/latest/user_guide/concepts/rng.html">ManiSkill的随机数说明</a>介绍了reset时的seed与环境随机化。本次既保存seed，也保留真实观测和来源指纹；单凭seed不同不能证明数据内容不同或统计独立。</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>source_id</th>
+<th>trajectory_id</th>
+<th>来源</th>
+<th>划分</th>
+<th>动作/状态</th>
+<th>K4窗口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>seed-0042</td>
+<td>第四篇历史复用</td>
+<td>train</td>
+<td>20/21</td>
+<td>17</td>
+</tr>
+<tr>
+<td>1</td>
+<td>seed-0043</td>
+<td>本次新增</td>
+<td>train</td>
+<td>20/21</td>
+<td>17</td>
+</tr>
+<tr>
+<td>2</td>
+<td>seed-0044</td>
+<td>本次新增</td>
+<td>validation</td>
+<td>20/21</td>
+<td>17</td>
+</tr>
+</tbody></table></div>
+<p>来源共60个动作和63份状态，其中本次新增40个动作、42份状态。每条时间轴各自从0到1秒，没有拼成一条3秒轨迹，也不声称它们是三个已经结束的回合。</p>
+<p><code>dataset_manifest.json</code>记录来源文件相对路径、seed、实际步数、停止原因、配置、压缩文件SHA以及数值内容指纹。source_id是数值编号，trajectory_id是稳定的人类可读名称，两者有明确映射。</p>
+<p>初始机械臂角和图像差异实际如下：</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>来源对</th>
+<th>前7关节最大角差，rad</th>
+<th>两指最大位置差，m</th>
+<th>首帧变化像素数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>42与43</td>
+<td>0.041159</td>
+<td>0</td>
+<td>10150</td>
+</tr>
+<tr>
+<td>42与44</td>
+<td>0.062559</td>
+<td>0</td>
+<td>8497</td>
+</tr>
+<tr>
+<td>43与44</td>
+<td>0.046524</td>
+<td>0</td>
+<td>9250</td>
+</tr>
+</tbody></table></div>
+<p>机械臂角与手指位置分别统计，避免把混合单位的qpos差当成同一个物理量。图像差与关节差只证明本次保存内容有差异，不是独立性检验。</p>
+<h2 id="section-4">第三步：先分轨迹，再在内部切窗口</h2>
+<p>采集前固定的划分没有根据reward、success或画面变化调整：</p>
+<pre><code class="language-json">{
+  &quot;train&quot;: [&quot;seed-0042&quot;, &quot;seed-0043&quot;],
+  &quot;validation&quot;: [&quot;seed-0044&quot;]
+}
+</code></pre>
+<p>然后分别在每条轨迹内以K=4、stride=1取完整窗口，不填充、不跨reset、不连接不同文件的时间轴。每条20个动作对应17窗，所以train为34窗，validation为17窗。</p>
+<p>全局索引的边界最值得检查：</p>
+<pre><code class="language-text">global 16: source 0 / seed42 / local window16 / states16..20
+global 17: source 1 / seed43 / local window 0 / states 0..4
+global 33: source 1 / seed43 / local window16 / states16..20
+global 34: source 2 / seed44 / local window 0 / states 0..4
+</code></pre>
+<p>来源切换时，局部时间与索引重新从该轨迹取值。没有把seed42末尾的状态和seed43开头的状态拼成新窗口。<a href="https://docs.pytorch.org/docs/2.14/data.html">PyTorch提供数据集组合与子集接口</a>，本例用显式来源—局部窗口索引表保留追踪关系。</p>
+<h2 id="section-5">第四步：修正单轨迹编号的适用范围</h2>
+<p>第六篇只有一个来源，因此模块内source_id固定为0。直接把三个实例放在一起，会让输出都带0。旧模块保持原样，本篇适配层为返回窗口写入全局映射：</p>
+<pre><code class="language-python">m[&quot;source_id&quot;] = torch.tensor(row[&quot;source_id&quot;], dtype=torch.int64, device=&quot;cpu&quot;)
+m[&quot;trajectory_window_index&quot;] = m.pop(&quot;window_index&quot;)
+m[&quot;global_window_index&quot;] = torch.tensor(
+    row[&quot;global_window_index&quot;], dtype=torch.int64, device=&quot;cpu&quot;
+)
+m[&quot;trajectory_id&quot;] = row[&quot;trajectory_id&quot;]
+</code></pre>
+<p>这是类内部片段，完整实现随包提供。窗口仍只含qpos、qvel、RGB观测；source/split标签留在metadata。物体真值、控制器目标与success没有加入模型输入。</p>
+<p>RGB沿用float32/CHW并除以255，关节状态和动作保留原值，没有拟合任何跨集合归一化统计。以后需要拟合统计时，只能使用训练来源。</p>
+<h2 id="section-6">第五步：实际遍历两个集合</h2>
+<p>使用已有兼容Python，在完整文件包解压目录执行：</p>
+<pre><code class="language-powershell">python -B inspect_splits.py --input-dir trajectories --output-dir result
+</code></pre>
+<p>这条默认复现命令只做离线处理，不导入采集模块。目录已有同名导出会被保护，重复离线运行请换成result-2。新环境安装及其他平台组合需要另行验证；本次没有升级依赖。</p>
+<p>两边DataLoader都使用batch_size4、shuffleFalse、drop_lastFalse、num_workers0、pin_memoryFalse和CPU generator seed42。实际遍历结果为：</p>
+<pre><code class="language-text">train:      34 windows -&gt; [4,4,4,4,4,4,4,4,2]
+validation: 17 windows -&gt; [4,4,4,4,1]
+</code></pre>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>首批，B=4</th>
+<th>train末批，B=2</th>
+<th>validation末批，B=1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>qpos/qvel</td>
+<td><code>(4,5,9)</code></td>
+<td><code>(2,5,9)</code></td>
+<td><code>(1,5,9)</code></td>
+</tr>
+<tr>
+<td>RGB</td>
+<td><code>(4,5,3,256,256)</code></td>
+<td><code>(2,5,3,256,256)</code></td>
+<td><code>(1,5,3,256,256)</code></td>
+</tr>
+<tr>
+<td>actions</td>
+<td><code>(4,4,8)</code></td>
+<td><code>(2,4,8)</code></td>
+<td><code>(1,4,8)</code></td>
+</tr>
+</tbody></table></div>
+<p>没有用无条件squeeze删除B=2或B=1。一个批次可以包含来自不同轨迹的完整窗口，B依然不是连续时间轴。</p>
+<p>两个首批次NPZ各19个纯数值数组，可用<code>np.load(..., allow_pickle=False)</code>读取。trajectory_id字符串保留在Dataset/DataLoader元数据和batch_summary.json，NPZ用source_id与manifest映射对应，不创建object或Unicode数组来混装标签。</p>
+<h2 id="section-7">第六步：识别改名或重打包的副本</h2>
+<p>文件SHA检查的是压缩文件字节。ZIP成员顺序、压缩方式改变后，即使所有数值相同，文件SHA也可以不同。</p>
+<p>本篇另外计算两类内容指纹：全部数值字段的指纹，以及qpos/qvel/RGB/actions的模型内容指纹。规则包含排序后的字段名、形状、规范字节序类型和C序数值字节，不包含文件名或ZIP压缩细节。</p>
+<p>私有测试把历史seed42倒序写入一个无压缩NPZ，结果文件SHA不同，两个数值内容指纹均相同。改名或重打包不能把它变成新的来源。其他人工测试覆盖重叠划分、遗漏来源、重复source_id和越过来源边界的窗口，11项均通过；夹具不作为真实采集数据公开。</p>
+<p>实际来源集合没有交集，内容指纹不重复，train与validation的原始RGB精确重复数为0。这只覆盖明确的来源/内容重复与完全相同像素，不代表已经消除所有数据泄漏，更不保证统计独立。</p>
+<h2 id="section-8">第七步：重新读取并核对结果</h2>
+<p>66项真实数据、来源、索引和批次检查通过，覆盖63张PNG与NPZ逐像素一致、51窗内255次状态取用与204条transition对应、全局边界、末批B2/B1、独立存储及首批保存后重读。新seed首末图像与三首帧对照图都已重新打开。</p>
+<p>修改返回窗口的全部数值字段后，源缓存、重复读取、相邻窗口、其他来源和validation样本均保持不变。独立验收只读保存文件，没有重跑成功采集。</p>
+<p>三条来源的第一关节净变化约0.00176～0.00191 rad，方块净位移约7.66e-7～8.22e-7 m，success均为false。我们没有把这些小幅变化写成推物成功。</p>
+<h2 id="section-9">常见问题与本次限制</h2>
+<p><strong>为什么不用随机拆分51个窗口？</strong> 同一轨迹的相邻窗口共享观测。先随机分窗口，会让同一来源的内容进入两边。本篇先固定来源，再切窗；未来仍需要考虑同任务、相同资产、控制计划等其他相关性。</p>
+<p><strong>为什么seed不同还要算指纹？</strong> seed是生成条件之一，不能替代对真实保存内容的检查。文件复制、错误标注或重打包都可能让来源标签看似不同。</p>
+<p><strong>窗口编号能代表轨迹编号吗？</strong> 不能。轨迹内窗口编号会重复，全局窗口编号负责定位样本，source_id和trajectory_id负责追踪来源。</p>
+<p><strong>train和validation是否意味着已经得到模型效果？</strong> 没有。本次不设置测试集、不训练、不拟合归一化、不报告泛化。三条小片段只是演示来源管理与划分流程。</p>
+<p><strong>能否再运行采集脚本验收？</strong> 本次40次新增尝试已经完成。默认离线复现使用提供的真实数据；新采集属于另一个实验，不能用来替换当前成功结果或掩盖问题。</p>
+<p>公开包只含整理后的教程数据与代码。环境/字段JSON与本机原始记录分别保留；原始日志、机器路径、GPU原始枚举、账本、人工夹具和维护工具不公开。</p>
+<h2 id="section-10">官方参考资料</h2>
+<ul>
+<li><a href="https://maniskill.readthedocs.io/en/latest/user_guide/concepts/controllers.html">ManiSkill 3.0.1：控制器与动作空间</a></li>
+<li><a href="https://maniskill.readthedocs.io/en/latest/user_guide/concepts/rng.html">ManiSkill 3.0.1：随机数与可复现性</a></li>
+<li><a href="https://docs.pytorch.org/docs/2.14/data.html">PyTorch 2.14：Dataset、组合与批量加载</a></li>
+<li><a href="https://numpy.org/doc/2.4/reference/generated/numpy.load.html">NumPy 2.4：禁用pickle读取数值NPZ</a></li>
+<li><a href="https://pillow.readthedocs.io/en/stable/reference/Image.html">Pillow 13.0.0：Image模块</a></li>
+</ul>
+<footer class="article-next"><span class="eyebrow">接下来</span><h2>沿着学习路线继续探索。</h2><p>回到学习路线，查看已有文章与后续安排。</p><a class="text-link" href="../learn.html">回到学习路线 →</a></footer></article><aside class="article-toc" aria-label="文章目录"><details open><summary>本文目录</summary><ol><li><a href="#section-1">先看三份真实来源</a></li><li><a href="#section-2">第一步：锁定环境和新增采集范围</a></li><li><a href="#section-3">第二步：把来源写进清单</a></li><li><a href="#section-4">第三步：先分轨迹，再在内部切窗口</a></li><li><a href="#section-5">第四步：修正单轨迹编号的适用范围</a></li><li><a href="#section-6">第五步：实际遍历两个集合</a></li><li><a href="#section-7">第六步：识别改名或重打包的副本</a></li><li><a href="#section-8">第七步：重新读取并核对结果</a></li><li><a href="#section-9">常见问题与本次限制</a></li><li><a href="#section-10">官方参考资料</a></li></ol></details><a class="toc-back" href="../articles.html">← 全部文章</a></aside></div></main>
+<footer class="site-footer"><div><a class="footer-brand" href="../index.html">Lamone&#39;s Embodied Lab</a><p>从仿真开始，记录能被检查的学习与研究过程。</p></div><div class="footer-links"><a href="../learn.html">学习路线</a><a href="../about.html">关于本站</a><a href="https://github.com/lzr62626/embodied-lab">GitHub ↗</a><span>© 2026 Lamone&#39;s Embodied Lab</span></div></footer>
+<dialog class="search-dialog" aria-labelledby="search-heading"><form method="dialog" novalidate class="search-head"><h2 id="search-heading">搜索文章</h2><button class="icon-button" aria-label="关闭搜索" value="close"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></form><label for="site-search" class="visually-hidden">标题、主题或关键词</label><div class="search-field"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="site-search" type="search" placeholder="搜索观测、动作、世界模型……" autocomplete="off"><button class="icon-button search-clear" data-search-clear type="button" aria-label="清除搜索" hidden><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div><div class="search-results" aria-live="polite" aria-atomic="true"></div><p class="search-hint">按 Esc 关闭 · 仅搜索已有文章</p></dialog><script type="application/json" id="search-data">[{"title":"机器人数据长什么样：读懂一条观测与动作记录","description":"读取一条真实的 ManiSkill transition，区分观测、归一化动作、控制器目标与下一时刻的实际运动，并检查数据如何对应。","tags":["仿真实践","观测与动作","ManiSkill","机器人数据"],"url":"../articles/observations-and-actions.html"},{"title":"从一条记录到一段轨迹：保存机器人动作序列","description":"采集20个真实控制步，保存21份观测和原始相机帧，读懂轨迹的时间轴、回合边界及GIF回放，并检查数据是否一一对应。","tags":["仿真实践","机器人轨迹","ManiSkill","数据采集"],"url":"../articles/record-first-trajectory.html"},{"title":"把轨迹变成数据集：用 PyTorch 批量读取机器人样本","description":"离线读取第四篇的真实轨迹，将20个动作与21份观测整理为Dataset，实际加载5个批次，检查图像转换、时间对应和独立副本。","tags":["数据实践","PyTorch","Dataset","机器人轨迹"],"url":"../articles/trajectory-to-dataset.html"},{"title":"从单步到序列：构建机器人轨迹时间窗口","description":"从完整真实轨迹构造17个四步时间窗口，检查K与K+1、批次轴、重叠存储和回合边界，保留最后一个B=1批次。","tags":["数据实践","时间窗口","PyTorch","机器人轨迹"],"url":"../articles/trajectory-time-windows.html"},{"title":"从一条到多条轨迹：按轨迹划分训练与验证数据","description":"复用seed42并新增43、44两条真实片段，建立来源清单与数值指纹，先划分轨迹再切出34个train与17个validation窗口。","tags":["数据实践","数据划分","来源追踪","ManiSkill"],"url":"../articles/multi-trajectory-splits.html"},{"title":"没有实机，如何开始学习具身智能？","description":"从桌面推物理解观测、动作与闭环交互，为第一次机器人仿真实验确定目标和验收标准。","tags":["具身智能","机器人学习","仿真","世界模型"],"url":"../articles/start-without-robot.html"},{"title":"第一次机器人仿真实验：保存一张相机图像","description":"用 ManiSkill 初始化一个推方块任务，保存真实相机 RGB，检查图像、数据维度与运行配置，并记录一次控制器初始化问题。","tags":["仿真实践","ManiSkill","相机观测","具身智能"],"url":"../articles/capture-camera-frame.html"}]</script></body></html>

@@ -1,0 +1,953 @@
+{
+  "format": "time_stacked_numeric_arrays_v1",
+  "N": 20,
+  "observations": 21,
+  "stop_reason": "requested_step_limit",
+  "planned_action_segments": [
+    {
+      "steps_inclusive": [
+        1,
+        5
+      ],
+      "joint1_normalized_input": 0.1
+    },
+    {
+      "steps_inclusive": [
+        6,
+        10
+      ],
+      "joint1_normalized_input": -0.1
+    },
+    {
+      "steps_inclusive": [
+        11,
+        15
+      ],
+      "joint1_normalized_input": 0.1
+    },
+    {
+      "steps_inclusive": [
+        16,
+        20
+      ],
+      "joint1_normalized_input": -0.1
+    }
+  ],
+  "simulation_duration_s": 1.0,
+  "states": [
+    {
+      "index": 0,
+      "file": "frames/0000.png",
+      "sha256": "f0f17ddf0fccb21a71f919677541acad51c163fe92877dc0241e31b0efb090f3",
+      "time_s": 0.0
+    },
+    {
+      "index": 1,
+      "file": "frames/0001.png",
+      "sha256": "1e369a654ceaa337dfea79388c4a7eac1c6185d735f0142108b484db223edb26",
+      "time_s": 0.05
+    },
+    {
+      "index": 2,
+      "file": "frames/0002.png",
+      "sha256": "6bbef9ec1479172f28e6d341d2ffee57f0de35b5624f8c4bb44e0a747ef69a91",
+      "time_s": 0.1
+    },
+    {
+      "index": 3,
+      "file": "frames/0003.png",
+      "sha256": "4c15b01be9919afd201063623cdbdf172061ec77b3a3ffad4bd268340e849a95",
+      "time_s": 0.15000000000000002
+    },
+    {
+      "index": 4,
+      "file": "frames/0004.png",
+      "sha256": "b75cddc3f387bd6832d898efd1b01754470629b70b595772d508653091e19b85",
+      "time_s": 0.2
+    },
+    {
+      "index": 5,
+      "file": "frames/0005.png",
+      "sha256": "20e23d22f3cb62bc8fd79777e156d52bc9ef99f26f3b88e9ce1371afd1c6f71b",
+      "time_s": 0.25
+    },
+    {
+      "index": 6,
+      "file": "frames/0006.png",
+      "sha256": "1f79272586c78c0c7cd09afe3b764994e0da6df7d9e4f521491b9af42acd08e7",
+      "time_s": 0.30000000000000004
+    },
+    {
+      "index": 7,
+      "file": "frames/0007.png",
+      "sha256": "9518794a3060358498a9c79a85eb440cf33e04b271c84d331e923c38c6cb76e4",
+      "time_s": 0.35000000000000003
+    },
+    {
+      "index": 8,
+      "file": "frames/0008.png",
+      "sha256": "8bc65d639b439e5aa59471c9ab7985f2c289b57f9e0ccadbae56adb036f53559",
+      "time_s": 0.4
+    },
+    {
+      "index": 9,
+      "file": "frames/0009.png",
+      "sha256": "73b535573cd5db36e4b6aebab684821fb8c551c75152317e2389908ad3aacb6d",
+      "time_s": 0.45
+    },
+    {
+      "index": 10,
+      "file": "frames/0010.png",
+      "sha256": "db1a19584526139da103a5f21c693b6f57aa868fc6e40b9aa68c5f73ac5fa4c0",
+      "time_s": 0.5
+    },
+    {
+      "index": 11,
+      "file": "frames/0011.png",
+      "sha256": "23e6a09a16f9ff21a06cd2b849198f9c592604bac1941a7c7921d5b809448d0d",
+      "time_s": 0.55
+    },
+    {
+      "index": 12,
+      "file": "frames/0012.png",
+      "sha256": "6d35f0489f625b85f6c6d55a776227c571689ac41d9654644b3fed6148bb9351",
+      "time_s": 0.6000000000000001
+    },
+    {
+      "index": 13,
+      "file": "frames/0013.png",
+      "sha256": "893560112142e9974bebc1a8553bd1b7ba7a85c1ac8f443cac27d98da923bfee",
+      "time_s": 0.65
+    },
+    {
+      "index": 14,
+      "file": "frames/0014.png",
+      "sha256": "b72befee640d63db2ea61dfefda38fc6f9525621f3d84d364799e9f3fc5c7d9f",
+      "time_s": 0.7000000000000001
+    },
+    {
+      "index": 15,
+      "file": "frames/0015.png",
+      "sha256": "591c292877f7908a680f718303c18bc8b875a10789de78fa58f872de657ea625",
+      "time_s": 0.75
+    },
+    {
+      "index": 16,
+      "file": "frames/0016.png",
+      "sha256": "37a31915dbbdc9a560a4615d1fccffc2600c6379e61ac2004f27606dd98b39ce",
+      "time_s": 0.8
+    },
+    {
+      "index": 17,
+      "file": "frames/0017.png",
+      "sha256": "9b07e0f36711ecf38422fc9a0e7a58f5df86a4f7eedf450343f8b2150ba15c8c",
+      "time_s": 0.8500000000000001
+    },
+    {
+      "index": 18,
+      "file": "frames/0018.png",
+      "sha256": "4ceae8637cefdec879abd6d5c947105e95facb4cc2289e332adce93ab0e0abc2",
+      "time_s": 0.9
+    },
+    {
+      "index": 19,
+      "file": "frames/0019.png",
+      "sha256": "46f0e1fbf2635f48197aba813459924e19c8bca9182d8209bb4e872e7ab05ad3",
+      "time_s": 0.9500000000000001
+    },
+    {
+      "index": 20,
+      "file": "frames/0020.png",
+      "sha256": "c5223a2d3673238d741cd149d0abdcb9237f4eb2109d6232803f42c854da93c8",
+      "time_s": 1.0
+    }
+  ],
+  "transitions": [
+    {
+      "action_index": 0,
+      "obs_index": 0,
+      "next_obs_index": 1,
+      "time_t_s": 0.0,
+      "time_tp1_s": 0.05,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.005012293346226215,
+      "joint1_actual_delta_rad": 0.0025493307039141655,
+      "changed_pixels": 1873,
+      "reward": [
+        0.10438527166843414
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          1
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 1,
+      "obs_index": 1,
+      "next_obs_index": 2,
+      "time_t_s": 0.05,
+      "time_tp1_s": 0.1,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.00246296264231205,
+      "joint1_actual_delta_rad": 0.0036859912797808647,
+      "changed_pixels": 2299,
+      "reward": [
+        0.10490663349628448
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          2
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 2,
+      "obs_index": 2,
+      "next_obs_index": 3,
+      "time_t_s": 0.1,
+      "time_tp1_s": 0.15000000000000002,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.0012230286374688148,
+      "joint1_actual_delta_rad": 0.0039088549092411995,
+      "changed_pixels": 2362,
+      "reward": [
+        0.10544703900814056
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          3
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 3,
+      "obs_index": 3,
+      "next_obs_index": 4,
+      "time_t_s": 0.15000000000000002,
+      "time_tp1_s": 0.2,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.005131883546710014,
+      "joint1_actual_delta_rad": 0.003952743485569954,
+      "changed_pixels": 2393,
+      "reward": [
+        0.10596399009227753
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          4
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 4,
+      "obs_index": 4,
+      "next_obs_index": 5,
+      "time_t_s": 0.2,
+      "time_tp1_s": 0.25,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.009084627032279968,
+      "joint1_actual_delta_rad": 0.003961389418691397,
+      "changed_pixels": 2398,
+      "reward": [
+        0.10644890367984772
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          5
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 5,
+      "obs_index": 5,
+      "next_obs_index": 6,
+      "time_t_s": 0.25,
+      "time_tp1_s": 0.30000000000000004,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.006953985430300236,
+      "joint1_actual_delta_rad": -0.001135591184720397,
+      "changed_pixels": 414,
+      "reward": [
+        0.10648465156555176
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          6
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 6,
+      "obs_index": 6,
+      "next_obs_index": 7,
+      "time_t_s": 0.30000000000000004,
+      "time_tp1_s": 0.35000000000000003,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.008089575916528702,
+      "joint1_actual_delta_rad": -0.0034086143132299185,
+      "changed_pixels": 2216,
+      "reward": [
+        0.10610321164131165
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          7
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 7,
+      "obs_index": 7,
+      "next_obs_index": 8,
+      "time_t_s": 0.35000000000000003,
+      "time_tp1_s": 0.4,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.011498190462589264,
+      "joint1_actual_delta_rad": -0.0038542577531188726,
+      "changed_pixels": 2388,
+      "reward": [
+        0.10561537742614746
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          8
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 8,
+      "obs_index": 8,
+      "next_obs_index": 9,
+      "time_t_s": 0.4,
+      "time_tp1_s": 0.45,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.01535244844853878,
+      "joint1_actual_delta_rad": -0.003942015580832958,
+      "changed_pixels": 2396,
+      "reward": [
+        0.10507960617542267
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          9
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 9,
+      "obs_index": 9,
+      "next_obs_index": 10,
+      "time_t_s": 0.45,
+      "time_tp1_s": 0.5,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.019294463098049164,
+      "joint1_actual_delta_rad": -0.003959301859140396,
+      "changed_pixels": 2413,
+      "reward": [
+        0.10450835525989532
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          10
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 10,
+      "obs_index": 10,
+      "next_obs_index": 11,
+      "time_t_s": 0.5,
+      "time_tp1_s": 0.55,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.003253764472901821,
+      "joint1_actual_delta_rad": 0.0011359741911292076,
+      "changed_pixels": 418,
+      "reward": [
+        0.10445944964885712
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          11
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 11,
+      "obs_index": 11,
+      "next_obs_index": 12,
+      "time_t_s": 0.55,
+      "time_tp1_s": 0.6000000000000001,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.0021177902817726135,
+      "joint1_actual_delta_rad": 0.003408621996641159,
+      "changed_pixels": 2194,
+      "reward": [
+        0.10491932928562164
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          12
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 12,
+      "obs_index": 12,
+      "next_obs_index": 13,
+      "time_t_s": 0.6000000000000001,
+      "time_tp1_s": 0.65,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.0012908317148685455,
+      "joint1_actual_delta_rad": 0.0038542277179658413,
+      "changed_pixels": 2329,
+      "reward": [
+        0.10544818639755249
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          13
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 13,
+      "obs_index": 13,
+      "next_obs_index": 14,
+      "time_t_s": 0.65,
+      "time_tp1_s": 0.7000000000000001,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.005145059432834387,
+      "joint1_actual_delta_rad": 0.0039419857785105705,
+      "changed_pixels": 2390,
+      "reward": [
+        0.1059630811214447
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          14
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 14,
+      "obs_index": 14,
+      "next_obs_index": 15,
+      "time_t_s": 0.7000000000000001,
+      "time_tp1_s": 0.75,
+      "action": [
+        0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": 0.00908704474568367,
+      "joint1_actual_delta_rad": 0.00395926833152771,
+      "changed_pixels": 2391,
+      "reward": [
+        0.10644757747650146
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          15
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 15,
+      "obs_index": 15,
+      "next_obs_index": 16,
+      "time_t_s": 0.75,
+      "time_tp1_s": 0.8,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.006953687872737646,
+      "joint1_actual_delta_rad": -0.0011359895579516888,
+      "changed_pixels": 413,
+      "reward": [
+        0.10648347437381744
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          16
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 16,
+      "obs_index": 16,
+      "next_obs_index": 17,
+      "time_t_s": 0.8,
+      "time_tp1_s": 0.8500000000000001,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.008089677430689335,
+      "joint1_actual_delta_rad": -0.0034086834639310837,
+      "changed_pixels": 2221,
+      "reward": [
+        0.10610182583332062
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          17
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 17,
+      "obs_index": 17,
+      "next_obs_index": 18,
+      "time_t_s": 0.8500000000000001,
+      "time_tp1_s": 0.9,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.011498360894620419,
+      "joint1_actual_delta_rad": -0.0038542677648365498,
+      "changed_pixels": 2386,
+      "reward": [
+        0.10561394691467285
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          18
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 18,
+      "obs_index": 18,
+      "next_obs_index": 19,
+      "time_t_s": 0.9,
+      "time_tp1_s": 0.9500000000000001,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.015352629125118256,
+      "joint1_actual_delta_rad": -0.0039420160464942455,
+      "changed_pixels": 2396,
+      "reward": [
+        0.10507825016975403
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          19
+        ],
+        "success": [
+          false
+        ]
+      }
+    },
+    {
+      "action_index": 19,
+      "obs_index": 19,
+      "next_obs_index": 20,
+      "time_t_s": 0.9500000000000001,
+      "time_tp1_s": 1.0,
+      "action": [
+        -0.10000000149011612,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "joint1_target_rad": -0.01929464563727379,
+      "joint1_actual_delta_rad": -0.0039593009278178215,
+      "changed_pixels": 2412,
+      "reward": [
+        0.1045069694519043
+      ],
+      "terminated": [
+        false
+      ],
+      "truncated": [
+        false
+      ],
+      "info": {
+        "elapsed_steps": [
+          20
+        ],
+        "success": [
+          false
+        ]
+      }
+    }
+  ],
+  "snapshot_fingerprints": [
+    "d5a7c2475e83bd1f6f7bc51a2887f1459fe61954fcb688c6d70dcf9ffe9edcab",
+    "bb4d49652ed5e7d2e7eb7f9f0fb9cb6a2c6f56a69461259bc27a46236d2036cc",
+    "78bdc00c130523e30cfa5759ecf3cc32a1b9b1da8056c9ba135a7ea3e8681be8",
+    "ccff9b7cd4887d345001645cb7f8baec352473866fa0948b09d23959cbaa55fd",
+    "c3aef9e7b165e6ae220ecc2887a2a0cf0b1ed569fc76e7ed1054d089a06d7dd9",
+    "de5ef77de5fa67e90d48804cb50b9be3b5deb59c65ced227828401518cbe0dc6",
+    "a2a5e9c2dc3ebddb2fb2a456e81d12f1d3e4c733a734a6a54fd47244a78e0ef8",
+    "85e4843704d97790882087a2e87d8c1a6952209a2236d2f94d07743696dce7db",
+    "ef0432cda63d548ab595c43717042d288c79846ce6cae28a9efb433c264a7f27",
+    "d8eb5e54b06e447323c2febbc3614976fef603617420e98a47fe7a46449e5d55",
+    "53575258c7a4f16cc1b19c192e56deb3cb2cdf3c5fd180bc285026eadc5b6d6a",
+    "1fa7256b5681ce9789e69083a60ef6676c64fc8aad6f61da9a562ec3f09ba6d5",
+    "dfbfa4470cb187f236a4b90881381b10bf9d675f8fde879d51fbc191ddcc0d14",
+    "b70ea173b5c7a9b4373ea82022a193588c3a25da0cb84379973d76585c263cab",
+    "23aaecdf0b23c3e984b7714eb89141b74b92da0f1ce7707ca465c1e3a86894dc",
+    "34bea79542f833542df04c36a9c05e69b1cdc99e949546d79ca0a0bd1955fb56",
+    "9b1e73b591a8a8e4098efd7db4bfa17eae3cbaa2c964f71a15ab06beb3824372",
+    "711e1c3e362e6e5544f0a70acae2bfd20a068fbdb3ce4591662045d6e8cec635",
+    "35bfa58fd471ee43d0afcc8f232a32502dae12682faed43a1cfed280075c04ad",
+    "4865cfce8c33342874d0294795c74d847f6b2acd5db0e91e8d2f6184264eb22a",
+    "e9f49118549bce7e0d024d62c6e1ac25dbafc2ce55392fc8ebc6a3bf89756335"
+  ],
+  "independent_snapshots_unchanged": true,
+  "statistics": {
+    "joint1_start_rad": -0.015012294054031372,
+    "joint1_end_rad": -0.013253944925963879,
+    "joint1_min_rad": -0.015012294054031372,
+    "joint1_max_rad": 0.0030463128350675106,
+    "joint1_net_delta_rad": 0.0017583491280674934,
+    "cube_net_translation_m": [
+      [
+        -3.5762786865234375e-07,
+        -6.966292858123779e-07,
+        -7.264316082000732e-08
+      ]
+    ],
+    "cube_net_translation_norm_m": 7.864267672630376e-07,
+    "success_any": false,
+    "success_final": [
+      false
+    ],
+    "first_png_sha256": "f0f17ddf0fccb21a71f919677541acad51c163fe92877dc0241e31b0efb090f3",
+    "last_png_sha256": "c5223a2d3673238d741cd149d0abdcb9237f4eb2109d6232803f42c854da93c8"
+  },
+  "publication_note": "Complete numeric trajectory and all original PNGs included. Local derived GIF metadata omitted; raw local JSON retained privately."
+}

@@ -1,0 +1,33 @@
+{
+  "result": "PASS",
+  "trajectory_overlap": [],
+  "duplicate_numeric_content_groups": [],
+  "duplicate_model_content_groups": [],
+  "cross_split_exact_rgb_hashes": [],
+  "cross_split_exact_rgb_unique_count": 0,
+  "first_observation_pairwise": [
+    {
+      "a": "seed-0042",
+      "b": "seed-0043",
+      "qpos_max_abs_difference": 0.04115891456604004,
+      "rgb_changed_pixels": 10150,
+      "rgb_mean_abs_byte_difference": 7.4420827229817705
+    },
+    {
+      "a": "seed-0042",
+      "b": "seed-0044",
+      "qpos_max_abs_difference": 0.06255888938903809,
+      "rgb_changed_pixels": 8497,
+      "rgb_mean_abs_byte_difference": 7.0822906494140625
+    },
+    {
+      "a": "seed-0043",
+      "b": "seed-0044",
+      "qpos_max_abs_difference": 0.04652433842420578,
+      "rgb_changed_pixels": 9250,
+      "rgb_mean_abs_byte_difference": 7.396046956380208
+    }
+  ],
+  "normalization_fitted": false,
+  "scope_note": "Only explicit ID/content duplicates and exact RGB repeats checked. This is not proof of statistical independence, no leakage, or generalization. Future fitted statistics must use training sources only."
+}

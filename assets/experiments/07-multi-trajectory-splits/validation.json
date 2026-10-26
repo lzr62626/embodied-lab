@@ -1,0 +1,624 @@
+{
+  "result": "PASS",
+  "check_count": 66,
+  "checks": [
+    {
+      "name": "all_219_previous_file_hashes_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_82_package_versions_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_81_capture_files_and_scripts_immutable",
+      "pass": true
+    },
+    {
+      "name": "capture_ledger_frozen",
+      "pass": true
+    },
+    {
+      "name": "exactly_two_new_seeds_and_40_attempts",
+      "pass": true
+    },
+    {
+      "name": "sequential_20_attempts_each",
+      "pass": true
+    },
+    {
+      "name": "capture_guard_durable_before_call",
+      "pass": true
+    },
+    {
+      "name": "copied_readers_exact",
+      "pass": true
+    },
+    {
+      "name": "source_utils.py_offline_only",
+      "pass": true
+    },
+    {
+      "name": "multi_trajectory_dataset.py_offline_only",
+      "pass": true
+    },
+    {
+      "name": "inspect_splits.py_offline_only",
+      "pass": true
+    },
+    {
+      "name": "trajectory_dataset.py_offline_only",
+      "pass": true
+    },
+    {
+      "name": "trajectory_window_dataset.py_offline_only",
+      "pass": true
+    },
+    {
+      "name": "fixed_pre_capture_split_preserved",
+      "pass": true
+    },
+    {
+      "name": "three_unique_global_source_ids",
+      "pass": true
+    },
+    {
+      "name": "seed42_numeric_safe_N_Nplus1",
+      "pass": true
+    },
+    {
+      "name": "seed42_action_plan_and_bounds",
+      "pass": true
+    },
+    {
+      "name": "seed42_clock_and_termination_boundary",
+      "pass": true
+    },
+    {
+      "name": "seed42_all_original_PNGs_equal_RGB",
+      "pass": true
+    },
+    {
+      "name": "seed42_configuration_and_runtime_reference",
+      "pass": true
+    },
+    {
+      "name": "seed42_manifest_hash_fingerprints_counts",
+      "pass": true
+    },
+    {
+      "name": "seed42_only_reused_no_new_call",
+      "pass": true
+    },
+    {
+      "name": "seed43_numeric_safe_N_Nplus1",
+      "pass": true
+    },
+    {
+      "name": "seed43_action_plan_and_bounds",
+      "pass": true
+    },
+    {
+      "name": "seed43_clock_and_termination_boundary",
+      "pass": true
+    },
+    {
+      "name": "seed43_all_original_PNGs_equal_RGB",
+      "pass": true
+    },
+    {
+      "name": "seed43_configuration_and_runtime_reference",
+      "pass": true
+    },
+    {
+      "name": "seed43_manifest_hash_fingerprints_counts",
+      "pass": true
+    },
+    {
+      "name": "seed43_new_counter_and_render_record",
+      "pass": true
+    },
+    {
+      "name": "seed44_numeric_safe_N_Nplus1",
+      "pass": true
+    },
+    {
+      "name": "seed44_action_plan_and_bounds",
+      "pass": true
+    },
+    {
+      "name": "seed44_clock_and_termination_boundary",
+      "pass": true
+    },
+    {
+      "name": "seed44_all_original_PNGs_equal_RGB",
+      "pass": true
+    },
+    {
+      "name": "seed44_configuration_and_runtime_reference",
+      "pass": true
+    },
+    {
+      "name": "seed44_manifest_hash_fingerprints_counts",
+      "pass": true
+    },
+    {
+      "name": "seed44_new_counter_and_render_record",
+      "pass": true
+    },
+    {
+      "name": "numeric_content_and_model_content_unique",
+      "pass": true
+    },
+    {
+      "name": "actual_51_windows_34_train_17_validation",
+      "pass": true
+    },
+    {
+      "name": "saved_index_equals_constructed_per_source_windows",
+      "pass": true
+    },
+    {
+      "name": "disjoint_source_groups_not_random_windows",
+      "pass": true
+    },
+    {
+      "name": "all_255_selected_states_match_source",
+      "pass": true
+    },
+    {
+      "name": "all_RGB_transforms_and_integer_roundtrips",
+      "pass": true
+    },
+    {
+      "name": "all_204_transition_actions_match_source",
+      "pass": true
+    },
+    {
+      "name": "all_rewards_episode_flags_unchanged",
+      "pass": true
+    },
+    {
+      "name": "all_51_windows_source_global_local_indices_times_match",
+      "pass": true
+    },
+    {
+      "name": "all_offline_tensors_CPU_no_gradient",
+      "pass": true
+    },
+    {
+      "name": "model_inputs_only_qpos_qvel_RGB",
+      "pass": true
+    },
+    {
+      "name": "mutated_window_preserves_reread",
+      "pass": true
+    },
+    {
+      "name": "mutated_window_preserves_overlap_other_source_and_validation",
+      "pass": true
+    },
+    {
+      "name": "all_source_caches_still_original",
+      "pass": true
+    },
+    {
+      "name": "train_actual_batch_sizes_and_full_coverage",
+      "pass": true
+    },
+    {
+      "name": "train_string_IDs_parallel_numeric_mapping",
+      "pass": true
+    },
+    {
+      "name": "train_nineteen_pure_numeric_finite_fields",
+      "pass": true
+    },
+    {
+      "name": "train_saved_first_batch_equals_loader",
+      "pass": true
+    },
+    {
+      "name": "train_last_batch_B_preserved",
+      "pass": true
+    },
+    {
+      "name": "validation_actual_batch_sizes_and_full_coverage",
+      "pass": true
+    },
+    {
+      "name": "validation_string_IDs_parallel_numeric_mapping",
+      "pass": true
+    },
+    {
+      "name": "validation_nineteen_pure_numeric_finite_fields",
+      "pass": true
+    },
+    {
+      "name": "validation_saved_first_batch_equals_loader",
+      "pass": true
+    },
+    {
+      "name": "validation_last_batch_B_preserved",
+      "pass": true
+    },
+    {
+      "name": "no_cross_source_join_at_global_boundary",
+      "pass": true
+    },
+    {
+      "name": "schema_matches_numeric_batch_and_axes",
+      "pass": true
+    },
+    {
+      "name": "independent_exact_RGB_overlap_report",
+      "pass": true
+    },
+    {
+      "name": "initial_observation_differences_are_actual",
+      "pass": true
+    },
+    {
+      "name": "preview_reopens_560x984",
+      "pass": true
+    },
+    {
+      "name": "preview_three_original_tiles_and_labels",
+      "pass": true
+    }
+  ],
+  "source_count": 3,
+  "source_metrics": [
+    {
+      "source_id": 0,
+      "seed": 42,
+      "N": 20,
+      "observations": 21,
+      "joint1_net_delta_rad": 0.0019090324640274048,
+      "cube_net_translation_norm_m": 7.663692827009072e-07,
+      "success_any": false,
+      "terminated_any": false,
+      "truncated_any": false
+    },
+    {
+      "source_id": 1,
+      "seed": 43,
+      "N": 20,
+      "observations": 21,
+      "joint1_net_delta_rad": 0.0018787630833685398,
+      "cube_net_translation_norm_m": 8.215975526582042e-07,
+      "success_any": false,
+      "terminated_any": false,
+      "truncated_any": false
+    },
+    {
+      "source_id": 2,
+      "seed": 44,
+      "N": 20,
+      "observations": 21,
+      "joint1_net_delta_rad": 0.0017583491280674934,
+      "cube_net_translation_norm_m": 7.864267672630376e-07,
+      "success_any": false,
+      "terminated_any": false,
+      "truncated_any": false
+    }
+  ],
+  "new_step_attempts": 40,
+  "source_actions_total": 60,
+  "source_states_total": 63,
+  "window_count": 51,
+  "splits": {
+    "train": {
+      "windows": 34,
+      "sizes": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2
+      ],
+      "last_rgb_shape": [
+        2,
+        5,
+        3,
+        256,
+        256
+      ]
+    },
+    "validation": {
+      "windows": 17,
+      "sizes": [
+        4,
+        4,
+        4,
+        4,
+        1
+      ],
+      "last_rgb_shape": [
+        1,
+        5,
+        3,
+        256,
+        256
+      ]
+    }
+  },
+  "numeric_arrays_per_first_batch": 19,
+  "source_id_mapping": {
+    "0": "seed-0042",
+    "1": "seed-0043",
+    "2": "seed-0044"
+  },
+  "max_RGB_error_vs_numpy": 0.0,
+  "cross_split_exact_RGB_unique_count": 0,
+  "initial_pairwise_differences": [
+    {
+      "a": "seed-0042",
+      "b": "seed-0043",
+      "qpos_max_abs_difference": 0.04115891456604004,
+      "rgb_changed_pixels": 10150,
+      "rgb_mean_abs_byte_difference": 7.4420827229817705
+    },
+    {
+      "a": "seed-0042",
+      "b": "seed-0044",
+      "qpos_max_abs_difference": 0.06255888938903809,
+      "rgb_changed_pixels": 8497,
+      "rgb_mean_abs_byte_difference": 7.0822906494140625
+    },
+    {
+      "a": "seed-0043",
+      "b": "seed-0044",
+      "qpos_max_abs_difference": 0.04652433842420578,
+      "rgb_changed_pixels": 9250,
+      "rgb_mean_abs_byte_difference": 7.396046956380208
+    }
+  ],
+  "private_index_test_summary": {
+    "result": "PASS",
+    "type": "artificial_index_and_repack_tests",
+    "check_count": 11,
+    "note": "No new simulations, actions or images. Fixtures and maintenance validators excluded from publication."
+  },
+  "previous_files_preserved": 219,
+  "installed_package_versions_preserved": 82,
+  "capture_files_preserved": 81,
+  "training": false,
+  "fitted_normalization": false,
+  "processing_device": "cpu",
+  "visual_review": {
+    "status": "PASS",
+    "files": [
+      "trajectories/seed-0043/frames/0000.png",
+      "trajectories/seed-0043/frames/0020.png",
+      "trajectories/seed-0044/frames/0000.png",
+      "trajectories/seed-0044/frames/0020.png",
+      "split_preview.png"
+    ],
+    "robot_table_cube_visible": true,
+    "preview_labels_match": true,
+    "note": "Reopened new source endpoints and3real first-frame preview. Distinct initial poses/scenes; small motion,no visible cube transport. Labels outside original tiles."
+  },
+  "initial_joint_differences": [
+    {
+      "a": 42,
+      "b": 43,
+      "arm_max_abs_rad": 0.04115891456604004,
+      "finger_max_abs_m": 0.0
+    },
+    {
+      "a": 42,
+      "b": 44,
+      "arm_max_abs_rad": 0.06255888938903809,
+      "finger_max_abs_m": 0.0
+    },
+    {
+      "a": 43,
+      "b": 44,
+      "arm_max_abs_rad": 0.04652433842420578,
+      "finger_max_abs_m": 0.0
+    }
+  ],
+  "original_artifacts_sha256": {
+    "batch_summary.json": "5c5446db2b2733eee73610265074dc9c92debff1737fbfe129aa571eb6dedce0",
+    "capture-requirements.txt": "91dc86fb11e5b0bf164f7b3de2741aef950d96fb6719cc465dfdbc528ab9f06a",
+    "capture_one_trajectory.py": "5befca9ec42f5711ddbc28a05bdb935c820410b3af0479492549aca3cb58ee1c",
+    "capture_protocol.py": "5583bef27dcc6605b0de5295a28619b564186557b974ba60ffb52cc500b87ebc",
+    "capture_trajectories.py": "677ef675e91a1b54f803128272cc3c7fad4e61b848c2aefd166930a9dd875b87",
+    "dataset_manifest.json": "8c7a687c88476cc9d73ec3f21f213a3d976b21035d878ebfb22f213388a6f612",
+    "environment.json": "9096c30d838f888c32ca063160b346c0a1553ad1252f1560cef116038549ef36",
+    "inspect_splits.py": "5a415f78b145e14e9effe7a36db6d48c5d55e54b1240300c5ffa0ab258ee4c04",
+    "leakage_check.json": "6626612194acef1a0831f742991769457207d57bc209d1ab80b91d3fe0de4a81",
+    "multi_trajectory_dataset.py": "7e139a7ad32d8ee3b84133e33f7e434793607d3dfdfdb78f970413453693deb2",
+    "requirements.txt": "c428c64db934585da32e1104f029c95e4651915a4e494bf1799ca86f75866cb5",
+    "schema.json": "a8f62036f733887f86d1da5b635074cbc49799e7b0443e4f4447f1e86d169462",
+    "source_utils.py": "0e2b4b9834f40c7e4a89624bc4b7c50dae6a86100c30dfde06e12bd566558421",
+    "split_preview.png": "0795250bcacf05075fc8180fabb2b835f0f2d47378b34ba937bff9373c6485a2",
+    "splits.json": "3a82c75666241137b8ca584521afefa10f0d5f47d04a751334a469eefb05f9e3",
+    "train_batch.npz": "ad9b10ecea0917e2a00d2cbcc28ff14ace213cda15ac042036d3ab382abe12e6",
+    "trajectory_dataset.py": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc",
+    "trajectory_window_dataset.py": "e0acd5106e028a14b0194a8f179db9f178519135036437261e5f2cf9a041ee28",
+    "validation_batch.npz": "16e4a73f9164648a4778d78d75772b4fa3ab405751742150bd6b43868d6c604c",
+    "window_index.json": "ed342fe73cd9e0e0fc71f0615dc920a1122ca7338132a4aa7f7ae2bd8bd864a4"
+  },
+  "original_source_artifacts_sha256": {
+    "trajectories/seed-0042/environment.json": "4ce47ea938ec58896720080e5a2931e9f568ce1ad01911c52b2476811d6c95cb",
+    "trajectories/seed-0042/frames/0000.png": "89d665a348ce18c86542c12795cc6d63f673f7ed7922c946cb51cf6508a4f4e6",
+    "trajectories/seed-0042/frames/0001.png": "153e1fee471688883d4a9122152bb13426c451da8dfac63e18cd628615d1768b",
+    "trajectories/seed-0042/frames/0002.png": "53aaf81088358762d90f4cb0916cb33733d6bfdc5650cfc51f14c0add802ca50",
+    "trajectories/seed-0042/frames/0003.png": "fca5c2083fec357bc46dc428056ee2a6923b84d174f9a8ffe389d5604641f6c4",
+    "trajectories/seed-0042/frames/0004.png": "37b6a766d47922b03386475b6e21247713ad9cba20efe90a52db49aa4ba47069",
+    "trajectories/seed-0042/frames/0005.png": "a223d637a2d6421dc41774e7ed0d0243705afe09556f3232c9ad61e9d3c9cfb9",
+    "trajectories/seed-0042/frames/0006.png": "a0e4d3500c33b825b21c4de72c2c3428017119027a531e5aeefd7871d4383852",
+    "trajectories/seed-0042/frames/0007.png": "163d69e488060848f4ec5cff3bc80f279ebbf2c6e35c1fc506e7db7b0b3d659b",
+    "trajectories/seed-0042/frames/0008.png": "c3d79e26b3eac38a52353d489a8746bef178ab60ec2c21ebaa1851492b44ab48",
+    "trajectories/seed-0042/frames/0009.png": "cb7512d30be4048b3136453a584f054348470d9a21022da54a4e72cbda9f2a14",
+    "trajectories/seed-0042/frames/0010.png": "2ff6154b9870ed4b7fabaad8a5ff29a4e70fd30d97a0b9b6298645e6021ca809",
+    "trajectories/seed-0042/frames/0011.png": "91c8e1a60c328528e1ca0ccd88bca568c76eadcecdcea4ff6a09cdeb9eeda6a7",
+    "trajectories/seed-0042/frames/0012.png": "96ce1d14f324b2ccf3191da20efdb89e8630dd2fddf4eae5adceca2599583f67",
+    "trajectories/seed-0042/frames/0013.png": "ae68cc94aaebae30ad53621ee63aea0ad2e941cbd79ba0101e01b78b5c77eed3",
+    "trajectories/seed-0042/frames/0014.png": "6586dc5aa3af133d5a228940a580f1114372638676044ba31170e91cef7e2033",
+    "trajectories/seed-0042/frames/0015.png": "9a64b8502811ecc88393903326b132b6be569f7ab7602a1572567a6c2fa8412a",
+    "trajectories/seed-0042/frames/0016.png": "d4965ee661a8c902a5f24c4a360d962c54f4513aed22409a164f2c906dd503a4",
+    "trajectories/seed-0042/frames/0017.png": "445c94389bc5a53e7469b5ed4156687e18e4e06e289e24936d8344d4c2b99ece",
+    "trajectories/seed-0042/frames/0018.png": "ee4d46c02b58c0ea7b5510df2c8d26175743b324b4caf1578d18175669fba886",
+    "trajectories/seed-0042/frames/0019.png": "ad5ef6eedc36c6f159388f11cb632e929cfcd56ea1f73ab5868ecb2c63eff019",
+    "trajectories/seed-0042/frames/0020.png": "129bf646f5c14c31e8e92ed4da27948edc8b77fcd03a978ad5460f1d0bfac3cb",
+    "trajectories/seed-0042/schema.json": "ec7604801f1635f9d1f71f7a7d2cea37368e4cadbf2e3a1b168988e1df17d4f5",
+    "trajectories/seed-0042/trajectory.json": "9e6e3b0c3aa238eb2cb1e618d10500d58c148041111fbdd23c0dc84110c15fe8",
+    "trajectories/seed-0042/trajectory.npz": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+    "trajectories/seed-0043/environment.json": "ee5bab00f2161e43d84eeaeb3e039a3be9050db830def7fe1870703fc3bf8ede",
+    "trajectories/seed-0043/frames/0000.png": "6b2d5ae37cd885b8ef75b1a6ed3f65225d43af23b385aca0fa242c3ec996a2eb",
+    "trajectories/seed-0043/frames/0001.png": "aab41ee78d2285023e12b7cd39333a529594bb0035899f934e7179cee795989f",
+    "trajectories/seed-0043/frames/0002.png": "295bd7f71af32805becdf0dfd2bda7391e46a74cd8c533759c1f9924161fc5c5",
+    "trajectories/seed-0043/frames/0003.png": "6d5f9dd1ba5833dc97e0bec852dd77c99540d05ae32dc94f5ed2e469f6ccab1a",
+    "trajectories/seed-0043/frames/0004.png": "651544c026776e626430cd0ebb207544b19f56c8229ffbbe4079e382ab53cb53",
+    "trajectories/seed-0043/frames/0005.png": "1d120c482d216d4ff3e292bb11099c1f89090e23ffb053b4aad9cb8f236a52d3",
+    "trajectories/seed-0043/frames/0006.png": "f7aa1d1bec65d02c03c214adb957dac6ef827af7b05729e87f5867074a4d5c4e",
+    "trajectories/seed-0043/frames/0007.png": "cf58dd3ea10caae1001769c87cd96d6f6f96ee17ad905e18f9a19ed43255ab10",
+    "trajectories/seed-0043/frames/0008.png": "7373c2f20e1bf32229616b6c601f838ea3f63a08e57fbcefbd395624fb9fc5cb",
+    "trajectories/seed-0043/frames/0009.png": "2fb6235705aaf3f195c81558054d5bfe9725d36d4eac96f48ecb35c461e42657",
+    "trajectories/seed-0043/frames/0010.png": "227a833f3c2ecf9b75554c8d00ed73b88d908ff7ee6832c38585a3dacea68d94",
+    "trajectories/seed-0043/frames/0011.png": "13e23f3adfc056b0007d0ab8e92c70eefa228d2beba886921ffa04472ae46790",
+    "trajectories/seed-0043/frames/0012.png": "6850aa0fa203121ddba2f9fe11a98b19c2f249ee8775be3fb905846459ba4408",
+    "trajectories/seed-0043/frames/0013.png": "38a73258a11a5bb38c7af58322b031e2798bc5f0044ecf38c529476b058c2451",
+    "trajectories/seed-0043/frames/0014.png": "802275c209a21fcf9c315667fc7337f08e5b67dfb09716bbfcfb25c5eae338bd",
+    "trajectories/seed-0043/frames/0015.png": "d6726db5d512e74d57229645b67eb292d148ece9a0ccc9eb7a1511cdc7974a93",
+    "trajectories/seed-0043/frames/0016.png": "bbb1d10064562e1401dbb9d585971fbc86c40aa70f202579124db8db286f0ff3",
+    "trajectories/seed-0043/frames/0017.png": "3890e8c173f671d6d2ae3775f4b6bd3d7627fcead51a12b4c2ff5d807f094b2b",
+    "trajectories/seed-0043/frames/0018.png": "0b4b78f06863b027c74661a4a1cc338fcc41305230e3f27aff567229fc34e5df",
+    "trajectories/seed-0043/frames/0019.png": "63be5348b7af5979bfc0f70497a5145711540599263cffcdc0ca89ade37ac53f",
+    "trajectories/seed-0043/frames/0020.png": "de4670d817901318a70ebe61b5e4fc93e1d4c81f0c0bbec96c6ae96b6354687c",
+    "trajectories/seed-0043/schema.json": "ec7604801f1635f9d1f71f7a7d2cea37368e4cadbf2e3a1b168988e1df17d4f5",
+    "trajectories/seed-0043/trajectory.json": "7a06f460bfa68bf7d6316a1b3c4dc9f8d57e65cc705f42964e7a4df90a2f791b",
+    "trajectories/seed-0043/trajectory.npz": "d1248a7b265b5af8a3cbf3f58da1697fe4db0e8fafe5f0f3665d234e15c8753c",
+    "trajectories/seed-0044/environment.json": "3b842233e9649180c98073d63371071a970dbb39f3b81522de50a89efc17c585",
+    "trajectories/seed-0044/frames/0000.png": "f0f17ddf0fccb21a71f919677541acad51c163fe92877dc0241e31b0efb090f3",
+    "trajectories/seed-0044/frames/0001.png": "1e369a654ceaa337dfea79388c4a7eac1c6185d735f0142108b484db223edb26",
+    "trajectories/seed-0044/frames/0002.png": "6bbef9ec1479172f28e6d341d2ffee57f0de35b5624f8c4bb44e0a747ef69a91",
+    "trajectories/seed-0044/frames/0003.png": "4c15b01be9919afd201063623cdbdf172061ec77b3a3ffad4bd268340e849a95",
+    "trajectories/seed-0044/frames/0004.png": "b75cddc3f387bd6832d898efd1b01754470629b70b595772d508653091e19b85",
+    "trajectories/seed-0044/frames/0005.png": "20e23d22f3cb62bc8fd79777e156d52bc9ef99f26f3b88e9ce1371afd1c6f71b",
+    "trajectories/seed-0044/frames/0006.png": "1f79272586c78c0c7cd09afe3b764994e0da6df7d9e4f521491b9af42acd08e7",
+    "trajectories/seed-0044/frames/0007.png": "9518794a3060358498a9c79a85eb440cf33e04b271c84d331e923c38c6cb76e4",
+    "trajectories/seed-0044/frames/0008.png": "8bc65d639b439e5aa59471c9ab7985f2c289b57f9e0ccadbae56adb036f53559",
+    "trajectories/seed-0044/frames/0009.png": "73b535573cd5db36e4b6aebab684821fb8c551c75152317e2389908ad3aacb6d",
+    "trajectories/seed-0044/frames/0010.png": "db1a19584526139da103a5f21c693b6f57aa868fc6e40b9aa68c5f73ac5fa4c0",
+    "trajectories/seed-0044/frames/0011.png": "23e6a09a16f9ff21a06cd2b849198f9c592604bac1941a7c7921d5b809448d0d",
+    "trajectories/seed-0044/frames/0012.png": "6d35f0489f625b85f6c6d55a776227c571689ac41d9654644b3fed6148bb9351",
+    "trajectories/seed-0044/frames/0013.png": "893560112142e9974bebc1a8553bd1b7ba7a85c1ac8f443cac27d98da923bfee",
+    "trajectories/seed-0044/frames/0014.png": "b72befee640d63db2ea61dfefda38fc6f9525621f3d84d364799e9f3fc5c7d9f",
+    "trajectories/seed-0044/frames/0015.png": "591c292877f7908a680f718303c18bc8b875a10789de78fa58f872de657ea625",
+    "trajectories/seed-0044/frames/0016.png": "37a31915dbbdc9a560a4615d1fccffc2600c6379e61ac2004f27606dd98b39ce",
+    "trajectories/seed-0044/frames/0017.png": "9b07e0f36711ecf38422fc9a0e7a58f5df86a4f7eedf450343f8b2150ba15c8c",
+    "trajectories/seed-0044/frames/0018.png": "4ceae8637cefdec879abd6d5c947105e95facb4cc2289e332adce93ab0e0abc2",
+    "trajectories/seed-0044/frames/0019.png": "46f0e1fbf2635f48197aba813459924e19c8bca9182d8209bb4e872e7ab05ad3",
+    "trajectories/seed-0044/frames/0020.png": "c5223a2d3673238d741cd149d0abdcb9237f4eb2109d6232803f42c854da93c8",
+    "trajectories/seed-0044/schema.json": "ec7604801f1635f9d1f71f7a7d2cea37368e4cadbf2e3a1b168988e1df17d4f5",
+    "trajectories/seed-0044/trajectory.json": "0e12d759de5d739067b5fb1681e7d78167d50b35a201e21a6c421be8bd6e8fbb",
+    "trajectories/seed-0044/trajectory.npz": "25e84cf8e2346136e67a58e7b78b96a8c2f81a5bb92f15ff38092a137ffe56c0"
+  },
+  "public_artifacts_sha256": {
+    "batch_summary.json": "5c5446db2b2733eee73610265074dc9c92debff1737fbfe129aa571eb6dedce0",
+    "capture-requirements.txt": "91dc86fb11e5b0bf164f7b3de2741aef950d96fb6719cc465dfdbc528ab9f06a",
+    "capture_one_trajectory.py": "5befca9ec42f5711ddbc28a05bdb935c820410b3af0479492549aca3cb58ee1c",
+    "capture_protocol.py": "5583bef27dcc6605b0de5295a28619b564186557b974ba60ffb52cc500b87ebc",
+    "capture_trajectories.py": "677ef675e91a1b54f803128272cc3c7fad4e61b848c2aefd166930a9dd875b87",
+    "dataset_manifest.json": "8c7a687c88476cc9d73ec3f21f213a3d976b21035d878ebfb22f213388a6f612",
+    "environment.json": "c37b1e5db988a31ddfebc8d0ad53013ce8d0219bb4bea811a8c001f53215ee4a",
+    "inspect_splits.py": "5a415f78b145e14e9effe7a36db6d48c5d55e54b1240300c5ffa0ab258ee4c04",
+    "leakage_check.json": "6626612194acef1a0831f742991769457207d57bc209d1ab80b91d3fe0de4a81",
+    "multi_trajectory_dataset.py": "7e139a7ad32d8ee3b84133e33f7e434793607d3dfdfdb78f970413453693deb2",
+    "README.md": "aadd6e856c9e65811393e54592468cb0a01a75afbbf50215517bc54271e1d6b6",
+    "requirements.txt": "c428c64db934585da32e1104f029c95e4651915a4e494bf1799ca86f75866cb5",
+    "schema.json": "a8f62036f733887f86d1da5b635074cbc49799e7b0443e4f4447f1e86d169462",
+    "source_utils.py": "0e2b4b9834f40c7e4a89624bc4b7c50dae6a86100c30dfde06e12bd566558421",
+    "split_preview.png": "0795250bcacf05075fc8180fabb2b835f0f2d47378b34ba937bff9373c6485a2",
+    "splits.json": "3a82c75666241137b8ca584521afefa10f0d5f47d04a751334a469eefb05f9e3",
+    "train_batch.npz": "ad9b10ecea0917e2a00d2cbcc28ff14ace213cda15ac042036d3ab382abe12e6",
+    "trajectories/seed-0042/environment.json": "44f189b0538ca9b704e5432d0786ab9cb97a94e7cb57eee90b767cf754f7d476",
+    "trajectories/seed-0042/frames/0000.png": "89d665a348ce18c86542c12795cc6d63f673f7ed7922c946cb51cf6508a4f4e6",
+    "trajectories/seed-0042/frames/0001.png": "153e1fee471688883d4a9122152bb13426c451da8dfac63e18cd628615d1768b",
+    "trajectories/seed-0042/frames/0002.png": "53aaf81088358762d90f4cb0916cb33733d6bfdc5650cfc51f14c0add802ca50",
+    "trajectories/seed-0042/frames/0003.png": "fca5c2083fec357bc46dc428056ee2a6923b84d174f9a8ffe389d5604641f6c4",
+    "trajectories/seed-0042/frames/0004.png": "37b6a766d47922b03386475b6e21247713ad9cba20efe90a52db49aa4ba47069",
+    "trajectories/seed-0042/frames/0005.png": "a223d637a2d6421dc41774e7ed0d0243705afe09556f3232c9ad61e9d3c9cfb9",
+    "trajectories/seed-0042/frames/0006.png": "a0e4d3500c33b825b21c4de72c2c3428017119027a531e5aeefd7871d4383852",
+    "trajectories/seed-0042/frames/0007.png": "163d69e488060848f4ec5cff3bc80f279ebbf2c6e35c1fc506e7db7b0b3d659b",
+    "trajectories/seed-0042/frames/0008.png": "c3d79e26b3eac38a52353d489a8746bef178ab60ec2c21ebaa1851492b44ab48",
+    "trajectories/seed-0042/frames/0009.png": "cb7512d30be4048b3136453a584f054348470d9a21022da54a4e72cbda9f2a14",
+    "trajectories/seed-0042/frames/0010.png": "2ff6154b9870ed4b7fabaad8a5ff29a4e70fd30d97a0b9b6298645e6021ca809",
+    "trajectories/seed-0042/frames/0011.png": "91c8e1a60c328528e1ca0ccd88bca568c76eadcecdcea4ff6a09cdeb9eeda6a7",
+    "trajectories/seed-0042/frames/0012.png": "96ce1d14f324b2ccf3191da20efdb89e8630dd2fddf4eae5adceca2599583f67",
+    "trajectories/seed-0042/frames/0013.png": "ae68cc94aaebae30ad53621ee63aea0ad2e941cbd79ba0101e01b78b5c77eed3",
+    "trajectories/seed-0042/frames/0014.png": "6586dc5aa3af133d5a228940a580f1114372638676044ba31170e91cef7e2033",
+    "trajectories/seed-0042/frames/0015.png": "9a64b8502811ecc88393903326b132b6be569f7ab7602a1572567a6c2fa8412a",
+    "trajectories/seed-0042/frames/0016.png": "d4965ee661a8c902a5f24c4a360d962c54f4513aed22409a164f2c906dd503a4",
+    "trajectories/seed-0042/frames/0017.png": "445c94389bc5a53e7469b5ed4156687e18e4e06e289e24936d8344d4c2b99ece",
+    "trajectories/seed-0042/frames/0018.png": "ee4d46c02b58c0ea7b5510df2c8d26175743b324b4caf1578d18175669fba886",
+    "trajectories/seed-0042/frames/0019.png": "ad5ef6eedc36c6f159388f11cb632e929cfcd56ea1f73ab5868ecb2c63eff019",
+    "trajectories/seed-0042/frames/0020.png": "129bf646f5c14c31e8e92ed4da27948edc8b77fcd03a978ad5460f1d0bfac3cb",
+    "trajectories/seed-0042/schema.json": "1ce106271957d2d9d2aa018dea64dfeb00d882bb54adc45f720a62892035800e",
+    "trajectories/seed-0042/trajectory.json": "85cc0a0faadc8a86bb727dbb1f920b16d2479c98268d565efac856ed2ba6671a",
+    "trajectories/seed-0042/trajectory.npz": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+    "trajectories/seed-0043/environment.json": "4eed30700948c8338f1f71345c8be44ca95a19acd5262af536ad8926f775b5c4",
+    "trajectories/seed-0043/frames/0000.png": "6b2d5ae37cd885b8ef75b1a6ed3f65225d43af23b385aca0fa242c3ec996a2eb",
+    "trajectories/seed-0043/frames/0001.png": "aab41ee78d2285023e12b7cd39333a529594bb0035899f934e7179cee795989f",
+    "trajectories/seed-0043/frames/0002.png": "295bd7f71af32805becdf0dfd2bda7391e46a74cd8c533759c1f9924161fc5c5",
+    "trajectories/seed-0043/frames/0003.png": "6d5f9dd1ba5833dc97e0bec852dd77c99540d05ae32dc94f5ed2e469f6ccab1a",
+    "trajectories/seed-0043/frames/0004.png": "651544c026776e626430cd0ebb207544b19f56c8229ffbbe4079e382ab53cb53",
+    "trajectories/seed-0043/frames/0005.png": "1d120c482d216d4ff3e292bb11099c1f89090e23ffb053b4aad9cb8f236a52d3",
+    "trajectories/seed-0043/frames/0006.png": "f7aa1d1bec65d02c03c214adb957dac6ef827af7b05729e87f5867074a4d5c4e",
+    "trajectories/seed-0043/frames/0007.png": "cf58dd3ea10caae1001769c87cd96d6f6f96ee17ad905e18f9a19ed43255ab10",
+    "trajectories/seed-0043/frames/0008.png": "7373c2f20e1bf32229616b6c601f838ea3f63a08e57fbcefbd395624fb9fc5cb",
+    "trajectories/seed-0043/frames/0009.png": "2fb6235705aaf3f195c81558054d5bfe9725d36d4eac96f48ecb35c461e42657",
+    "trajectories/seed-0043/frames/0010.png": "227a833f3c2ecf9b75554c8d00ed73b88d908ff7ee6832c38585a3dacea68d94",
+    "trajectories/seed-0043/frames/0011.png": "13e23f3adfc056b0007d0ab8e92c70eefa228d2beba886921ffa04472ae46790",
+    "trajectories/seed-0043/frames/0012.png": "6850aa0fa203121ddba2f9fe11a98b19c2f249ee8775be3fb905846459ba4408",
+    "trajectories/seed-0043/frames/0013.png": "38a73258a11a5bb38c7af58322b031e2798bc5f0044ecf38c529476b058c2451",
+    "trajectories/seed-0043/frames/0014.png": "802275c209a21fcf9c315667fc7337f08e5b67dfb09716bbfcfb25c5eae338bd",
+    "trajectories/seed-0043/frames/0015.png": "d6726db5d512e74d57229645b67eb292d148ece9a0ccc9eb7a1511cdc7974a93",
+    "trajectories/seed-0043/frames/0016.png": "bbb1d10064562e1401dbb9d585971fbc86c40aa70f202579124db8db286f0ff3",
+    "trajectories/seed-0043/frames/0017.png": "3890e8c173f671d6d2ae3775f4b6bd3d7627fcead51a12b4c2ff5d807f094b2b",
+    "trajectories/seed-0043/frames/0018.png": "0b4b78f06863b027c74661a4a1cc338fcc41305230e3f27aff567229fc34e5df",
+    "trajectories/seed-0043/frames/0019.png": "63be5348b7af5979bfc0f70497a5145711540599263cffcdc0ca89ade37ac53f",
+    "trajectories/seed-0043/frames/0020.png": "de4670d817901318a70ebe61b5e4fc93e1d4c81f0c0bbec96c6ae96b6354687c",
+    "trajectories/seed-0043/schema.json": "1ce106271957d2d9d2aa018dea64dfeb00d882bb54adc45f720a62892035800e",
+    "trajectories/seed-0043/trajectory.json": "7b0cebc905cc235b932f87f42bd4e3351546fdde095448102446caed98624aac",
+    "trajectories/seed-0043/trajectory.npz": "d1248a7b265b5af8a3cbf3f58da1697fe4db0e8fafe5f0f3665d234e15c8753c",
+    "trajectories/seed-0044/environment.json": "55e408b5824610ddeae3fb85ce8a746483a47c53da14d95dd95d4c2624a2eaa8",
+    "trajectories/seed-0044/frames/0000.png": "f0f17ddf0fccb21a71f919677541acad51c163fe92877dc0241e31b0efb090f3",
+    "trajectories/seed-0044/frames/0001.png": "1e369a654ceaa337dfea79388c4a7eac1c6185d735f0142108b484db223edb26",
+    "trajectories/seed-0044/frames/0002.png": "6bbef9ec1479172f28e6d341d2ffee57f0de35b5624f8c4bb44e0a747ef69a91",
+    "trajectories/seed-0044/frames/0003.png": "4c15b01be9919afd201063623cdbdf172061ec77b3a3ffad4bd268340e849a95",
+    "trajectories/seed-0044/frames/0004.png": "b75cddc3f387bd6832d898efd1b01754470629b70b595772d508653091e19b85",
+    "trajectories/seed-0044/frames/0005.png": "20e23d22f3cb62bc8fd79777e156d52bc9ef99f26f3b88e9ce1371afd1c6f71b",
+    "trajectories/seed-0044/frames/0006.png": "1f79272586c78c0c7cd09afe3b764994e0da6df7d9e4f521491b9af42acd08e7",
+    "trajectories/seed-0044/frames/0007.png": "9518794a3060358498a9c79a85eb440cf33e04b271c84d331e923c38c6cb76e4",
+    "trajectories/seed-0044/frames/0008.png": "8bc65d639b439e5aa59471c9ab7985f2c289b57f9e0ccadbae56adb036f53559",
+    "trajectories/seed-0044/frames/0009.png": "73b535573cd5db36e4b6aebab684821fb8c551c75152317e2389908ad3aacb6d",
+    "trajectories/seed-0044/frames/0010.png": "db1a19584526139da103a5f21c693b6f57aa868fc6e40b9aa68c5f73ac5fa4c0",
+    "trajectories/seed-0044/frames/0011.png": "23e6a09a16f9ff21a06cd2b849198f9c592604bac1941a7c7921d5b809448d0d",
+    "trajectories/seed-0044/frames/0012.png": "6d35f0489f625b85f6c6d55a776227c571689ac41d9654644b3fed6148bb9351",
+    "trajectories/seed-0044/frames/0013.png": "893560112142e9974bebc1a8553bd1b7ba7a85c1ac8f443cac27d98da923bfee",
+    "trajectories/seed-0044/frames/0014.png": "b72befee640d63db2ea61dfefda38fc6f9525621f3d84d364799e9f3fc5c7d9f",
+    "trajectories/seed-0044/frames/0015.png": "591c292877f7908a680f718303c18bc8b875a10789de78fa58f872de657ea625",
+    "trajectories/seed-0044/frames/0016.png": "37a31915dbbdc9a560a4615d1fccffc2600c6379e61ac2004f27606dd98b39ce",
+    "trajectories/seed-0044/frames/0017.png": "9b07e0f36711ecf38422fc9a0e7a58f5df86a4f7eedf450343f8b2150ba15c8c",
+    "trajectories/seed-0044/frames/0018.png": "4ceae8637cefdec879abd6d5c947105e95facb4cc2289e332adce93ab0e0abc2",
+    "trajectories/seed-0044/frames/0019.png": "46f0e1fbf2635f48197aba813459924e19c8bca9182d8209bb4e872e7ab05ad3",
+    "trajectories/seed-0044/frames/0020.png": "c5223a2d3673238d741cd149d0abdcb9237f4eb2109d6232803f42c854da93c8",
+    "trajectories/seed-0044/schema.json": "1ce106271957d2d9d2aa018dea64dfeb00d882bb54adc45f720a62892035800e",
+    "trajectories/seed-0044/trajectory.json": "5a14c3dd235d2ffc869af44e4b85c6dfc1ea7b331b6aef0730ad3598f8f29ace",
+    "trajectories/seed-0044/trajectory.npz": "25e84cf8e2346136e67a58e7b78b96a8c2f81a5bb92f15ff38092a137ffe56c0",
+    "trajectory_dataset.py": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc",
+    "trajectory_window_dataset.py": "e0acd5106e028a14b0194a8f179db9f178519135036437261e5f2cf9a041ee28",
+    "validation_batch.npz": "16e4a73f9164648a4778d78d75772b4fa3ab405751742150bd6b43868d6c604c",
+    "window_index.json": "ed342fe73cd9e0e0fc71f0615dc920a1122ca7338132a4aa7f7ae2bd8bd864a4"
+  },
+  "publication_note": "Private raw audit/step ledger/logs/fixtures/validators excluded; source numerical arrays and all PNGs unchanged. Public JSON documents are curated copies."
+}
