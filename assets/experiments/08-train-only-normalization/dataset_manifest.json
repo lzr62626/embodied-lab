@@ -1,0 +1,301 @@
+{
+  "format": "article7-multi-trajectory-v1",
+  "K": 4,
+  "stride": 1,
+  "trajectories": [
+    {
+      "trajectory_id": "seed-0042",
+      "source_id": 0,
+      "seed": 42,
+      "reused": true,
+      "origin": "article4 historical capture",
+      "file": "seed-0042/trajectory.npz",
+      "file_sha256": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+      "numeric_content_fingerprint": "f18f911c1c2fcd9452abd4329e19c3650ec8b827c1763a1035478f16c8ab5d5b",
+      "model_content_fingerprint": "75a5e829f10b90256221ce28e7e3eeb3069b402292319bb1058d8126ca02d422",
+      "fingerprint_spec": "v1: sorted keys+shape+little-endian dtype+C-order bytes; model hash uses qpos/qvel/RGB/actions only",
+      "N": 20,
+      "observations": 21,
+      "windows": 17,
+      "stop_reason": "requested_step_limit",
+      "simulation_duration_s": 1.0,
+      "statistics": {
+        "joint1_start_rad": 0.00993428286164999,
+        "joint1_end_rad": 0.011843315325677395,
+        "joint1_min_rad": 0.00993428286164999,
+        "joint1_max_rad": 0.027844149619340897,
+        "joint1_net_delta_rad": 0.0019090324640274048,
+        "cube_net_translation_m": [
+          [
+            -3.501772880554199e-07,
+            -6.780028343200684e-07,
+            -7.078051567077637e-08
+          ]
+        ],
+        "cube_net_translation_norm_m": 7.663692827009072e-07,
+        "success_any": false,
+        "success_final": [
+          false
+        ],
+        "first_png_sha256": "89d665a348ce18c86542c12795cc6d63f673f7ed7922c946cb51cf6508a4f4e6",
+        "last_png_sha256": "129bf646f5c14c31e8e92ed4da27948edc8b77fcd03a978ad5460f1d0bfac3cb"
+      },
+      "current_job_step_attempts": 0,
+      "configuration": {
+        "task": "PushCube-v1",
+        "robot": "panda",
+        "num_envs": 1,
+        "obs_mode": "rgb",
+        "control_mode": "pd_joint_delta_pos",
+        "camera": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal",
+        "sim_backend": "cpu",
+        "render_backend": "cpu"
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "render_device_api": {
+        "render_system_device": null,
+        "device_is_cpu": null,
+        "device_is_cuda": null,
+        "image_transfer": null,
+        "physical_render_device_note": null
+      },
+      "rgb_frame_sha256": [
+        "bf0046dd98055dc12e86b7568212b9ae58c30bbebce6e22c2d95d1ab134addc8",
+        "a5a91b966cbb2eac54ceb01ca4c263687c4ec6b2bd40e1dba546396b7886227a",
+        "a185ebe1f857719e8931a8b9844ee6eab3fc368183c910b734447332a6a4774b",
+        "853219eb81da282f95f05b491854d57a463b159a2b3034de7da22dd578bdb1b4",
+        "2ed2a8a3fea792466c479c315d5890b137285e840fa1d9a015a1aeef64b30901",
+        "402edfc39aab5d95ebc8acf249e3c68594c26f8d207068171060cde3fd42a197",
+        "2ceb0f59329403018969affd1a85eaaec34121ec110fdd4d07df4a02e1667a94",
+        "e4baa7e33eb1be50e47d91723639b6d55162542f812ee9b072e35fd2e751442d",
+        "efe26665eb54e5651b53c6ad9c9f996b4b2632234f63b9f905049df9b906d7e7",
+        "018400370263fcdca132971b4e9fd9879cfac5680a4c8ced55419eb8e95df0d7",
+        "dcfb2e3eec1246491165b1912219d2f008287ef6ae7ff63552a2386487b99511",
+        "34d2092982bed999b6c8d638e2e10908b2a2342723cb9232938d884d4c35a265",
+        "ee24873b7ca8fd8f5e2d8619989cb0360fec4529e4de9fa84c719f2caa401ab8",
+        "f391906e7c1617d3cca503007e18e51451c9fe9ca9b59dc27fb30e163caf5e7b",
+        "90b35395ecb4f9ca71ac47a5d74ad1f259033aef2aff6fd8cda860b0b6c3d6d4",
+        "919111350ebe323f01078a9b4ecfb72d2852c5a32a4f14b8cfbc32cbcca452b0",
+        "1a72ff6696d77caa1f54cb7e30fb2f3a1eff1585d79951d3d081ee1efa974a64",
+        "0a86e66f9ab58d8eb405ea10988b4f83c28588f85796c0bd09f84892bda575ab",
+        "b8f78159c2678a97f1aba861c1f9e1e924a76a1551c2b67729cf15bc78a4d3ab",
+        "f4910cd8ee04ca1ac46618f5d0d10e97b905d9bb1c87a04ecddd2bd40c1e0c6e",
+        "c11edeb305345c7f39a9009dadadc3cdbfc48bafc64cdde820efb621011287a3"
+      ]
+    },
+    {
+      "trajectory_id": "seed-0043",
+      "source_id": 1,
+      "seed": 43,
+      "reused": false,
+      "origin": "article7 bounded capture",
+      "file": "seed-0043/trajectory.npz",
+      "file_sha256": "d1248a7b265b5af8a3cbf3f58da1697fe4db0e8fafe5f0f3665d234e15c8753c",
+      "numeric_content_fingerprint": "c21c38725a46408dfcc54bd83bcc146fd50909526cda499a28f94ed01548c00b",
+      "model_content_fingerprint": "b9ba5d6599a353abcef8a68b92f0fbbdf22a3ad71e81e839fde2c7c18337b2f3",
+      "fingerprint_spec": "v1: sorted keys+shape+little-endian dtype+C-order bytes; model hash uses qpos/qvel/RGB/actions only",
+      "N": 20,
+      "observations": 21,
+      "windows": 17,
+      "stop_reason": "requested_step_limit",
+      "simulation_duration_s": 1.0,
+      "statistics": {
+        "joint1_start_rad": 0.005147998686879873,
+        "joint1_end_rad": 0.007026761770248413,
+        "joint1_min_rad": 0.005147998686879873,
+        "joint1_max_rad": 0.023088090121746063,
+        "joint1_net_delta_rad": 0.0018787630833685398,
+        "cube_net_translation_m": [
+          [
+            -3.781169652938843e-07,
+            -7.227063179016113e-07,
+            -9.872019290924072e-08
+          ]
+        ],
+        "cube_net_translation_norm_m": 8.215975526582042e-07,
+        "success_any": false,
+        "success_final": [
+          false
+        ],
+        "first_png_sha256": "6b2d5ae37cd885b8ef75b1a6ed3f65225d43af23b385aca0fa242c3ec996a2eb",
+        "last_png_sha256": "de4670d817901318a70ebe61b5e4fc93e1d4c81f0c0bbec96c6ae96b6354687c"
+      },
+      "current_job_step_attempts": 20,
+      "configuration": {
+        "task": "PushCube-v1",
+        "robot": "panda",
+        "num_envs": 1,
+        "obs_mode": "rgb",
+        "control_mode": "pd_joint_delta_pos",
+        "camera": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal",
+        "sim_backend": "cpu",
+        "render_backend": "cpu"
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "render_device_api": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "image_transfer": "CPU-accessible RGB copied into numpy uint8; no CUDA image tensors",
+        "physical_render_device_note": "Device API and enumeration are recorded separately. CPU-accessible memory does not establish CPU-only rasterization. No GPU utilization benchmark performed."
+      },
+      "rgb_frame_sha256": [
+        "125f2c93a9a4b159a629fe37f4bd1d1ee1de99d23f5458c6c65a7c04a231a5f4",
+        "f51f10345a8a89999c483a7f4c4b426ab0a2b8ab1751056bc41952f6cb7e2622",
+        "ca480d733c329db3bf49d0445c8590c18d016a83d759c75c43ef6d843467ee38",
+        "f4a7ea28acaf0e05c1eb95987e2796afaf8cdd661d65f82fb82e941725e39d54",
+        "e92e99bab5a9c868d8c82b482706a915d4e82fcbf3b48cbb075c7bde3fb0a8ba",
+        "8e15f16aaf249a2ab136e59f410ce1c594219f40d57e2cd4b80cc23016449725",
+        "12fe0e39462760b132ab22e12abb18cc127be0466878537ac9291d717aedc1c6",
+        "490b337a44953b3a6c5267226ce26a0c023dfa46ad87b645c466878d34fddfdb",
+        "c8b5998cf621e5da541c33d7f73362ed2605a7864d4ee506a6755c2c6b067947",
+        "b6c5d0497809e44a10d078112c16533ac2ba76e77cbbc2d1839ef1f987df73f5",
+        "0de312ff39d652793a29d2cf26107d77c4b99c00fb2f6e7247afcb19ab829bf7",
+        "5219ad58f51cb81b088ccaf6bdad2a0e49f9fd35c58d717dd18308a871df4f81",
+        "5ff72d51e209ba07fc4e4d7b64a513b359708be2812c895fee98b5e7fdc70df4",
+        "3b311ec6b77399df87cf9ac9dc010f9cc3f8d2f554f58e84332d0177772f072a",
+        "ad3f0b5c354bbdcc56ac131c586f8826d144440190c9671a628aee50aa63a77a",
+        "73d0510dc4cb2dfc8f71de6bf77768102cb0ffa69637e5f1f268922e6e84e3ae",
+        "812afc3b86f90b3f8d03e1651dd2dc97c4c4a89a49735f8263845af636af4087",
+        "79273dbb4b7dd3cba90e0b2d9238edfb0440f732e0e86a021a420bb1dba9812c",
+        "a1004bbcce7241e7b5baad8d27ccc9f6d435db35f050b3f4c032a37335981c76",
+        "24c85a7862969c84867fb0c4f1cfd2b2905015b775f17440045e29c38f126689",
+        "c46f4d604ce0a9700a2d86d78f50675c683f36971866abb40057cd918e0a917d"
+      ]
+    },
+    {
+      "trajectory_id": "seed-0044",
+      "source_id": 2,
+      "seed": 44,
+      "reused": false,
+      "origin": "article7 bounded capture",
+      "file": "seed-0044/trajectory.npz",
+      "file_sha256": "25e84cf8e2346136e67a58e7b78b96a8c2f81a5bb92f15ff38092a137ffe56c0",
+      "numeric_content_fingerprint": "502e7e20adb05b29988d7c2d5b8b9a85bc2fa5ac35cfc3758fbf20b0fd6518d8",
+      "model_content_fingerprint": "98d06ddd3fd6eb3a7138cb8cab961c5cae2bdcb74b6b7fca17ff14664b1c3eab",
+      "fingerprint_spec": "v1: sorted keys+shape+little-endian dtype+C-order bytes; model hash uses qpos/qvel/RGB/actions only",
+      "N": 20,
+      "observations": 21,
+      "windows": 17,
+      "stop_reason": "requested_step_limit",
+      "simulation_duration_s": 1.0,
+      "statistics": {
+        "joint1_start_rad": -0.015012294054031372,
+        "joint1_end_rad": -0.013253944925963879,
+        "joint1_min_rad": -0.015012294054031372,
+        "joint1_max_rad": 0.0030463128350675106,
+        "joint1_net_delta_rad": 0.0017583491280674934,
+        "cube_net_translation_m": [
+          [
+            -3.5762786865234375e-07,
+            -6.966292858123779e-07,
+            -7.264316082000732e-08
+          ]
+        ],
+        "cube_net_translation_norm_m": 7.864267672630376e-07,
+        "success_any": false,
+        "success_final": [
+          false
+        ],
+        "first_png_sha256": "f0f17ddf0fccb21a71f919677541acad51c163fe92877dc0241e31b0efb090f3",
+        "last_png_sha256": "c5223a2d3673238d741cd149d0abdcb9237f4eb2109d6232803f42c854da93c8"
+      },
+      "current_job_step_attempts": 20,
+      "configuration": {
+        "task": "PushCube-v1",
+        "robot": "panda",
+        "num_envs": 1,
+        "obs_mode": "rgb",
+        "control_mode": "pd_joint_delta_pos",
+        "camera": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal",
+        "sim_backend": "cpu",
+        "render_backend": "cpu"
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "render_device_api": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "image_transfer": "CPU-accessible RGB copied into numpy uint8; no CUDA image tensors",
+        "physical_render_device_note": "Device API and enumeration are recorded separately. CPU-accessible memory does not establish CPU-only rasterization. No GPU utilization benchmark performed."
+      },
+      "rgb_frame_sha256": [
+        "54a59d0f6741d1522b9ae2402e9954f6f54a2afb2058bd92fcf571346ddad07a",
+        "666a950d9996c09b91520490d728c343c498e2f65ca1208b9149f3dc854d34e9",
+        "5e2e5f7478a326a13e9ec7f8eb4bfa9ba60b71d073c2e975b12104adac1a1b37",
+        "7ef5c370d1b1ded9e4971ea4bdbcf92703d68778fce39c5d324186f9572f3c32",
+        "03b648b032a5401555e586e96bc7b3a5dc8f5df26fdb640f407a45e1b1ed262d",
+        "84e1a8c4609d21aac048cb8aad934060260235b431778cab3fbe28019076b2a7",
+        "55a0e57ad3bb27823eb997ccab89e2f3bacc008dc432e43125d0ca6effc0bb69",
+        "20a47f9bcd6aa0bf09b267c5852caf08034b5913cfceebaa2d04cf42ca565d27",
+        "17ae3734da6d58fe30621a60f7a36a42c353c5f121765a39edb6914ca5f68bce",
+        "64caaefff5d415b152a53ed80b894761b9f10ad856f36e2a525e113e657d2ebe",
+        "07cb04a0be31c0fb6973f9e76f18246ea94bf598cca7cc60e9ca07fbec1b30d0",
+        "e937f3eea5362023d3fe46d836453aef0a7ca05b5b53eb41b017da28888b3d98",
+        "e560ef1691ff06922a2c870f17bfc03975ff5a8721433e51729400880001cafc",
+        "88d6a8aa151700beb2a04b3832e9653210c64ac4fd3bc2f71c712774e773fba7",
+        "76c863c60afc7a49c1ccc4e67d0966b0f9f4665481d4abbfc8ee3aeb0946063e",
+        "a38deb837ab23f3a0fd6ec9352bab94782dda692555fc56931f1e65e0f128d54",
+        "ad28fb161f20bb4d1c97c81a918f10f0b31c24461e412ffddfdb8d7069a7becd",
+        "edd2c3fb2ccb7d5f259f33f753a830b41a31e265f12ad2881b225b738a24ab2e",
+        "11c329edefc2ed634b13358df65ebfc897271dafd41377fa79e5f6133fb3dddc",
+        "23bad07c3aedd715d48104e4b2cf85c361ba631b9ae211a7d2b36b656b202daf",
+        "c7748599433fb7aa71e7012726f27a0d4fd24211473afbd55acf437ddf621dc3"
+      ]
+    }
+  ],
+  "trajectory_id_lookup": {
+    "0": "seed-0042",
+    "1": "seed-0043",
+    "2": "seed-0044"
+  },
+  "note": "Three saved fragments, not three completed episodes or proof of statistical independence. Seed42 reused, only43/44new."
+}

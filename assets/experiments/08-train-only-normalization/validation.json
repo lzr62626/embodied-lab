@@ -1,0 +1,425 @@
+{
+  "result": "PASS",
+  "checked_at_utc": "2026-10-26T15:42:56.123109+00:00",
+  "check_count": 58,
+  "checks": [
+    {
+      "name": "all_484_previous_files_preserved",
+      "pass": true
+    },
+    {
+      "name": "all_82_installed_versions_preserved",
+      "pass": true
+    },
+    {
+      "name": "four_exact_verified_reader_copies",
+      "pass": true
+    },
+    {
+      "name": "fixed_train_validation_sources",
+      "pass": true
+    },
+    {
+      "name": "verified_7_revolute_2_prismatic_units",
+      "pass": true
+    },
+    {
+      "name": "seed-0042_file_and_two_content_hashes",
+      "pass": true
+    },
+    {
+      "name": "seed-0042_N_Nplus1_finite_bounds",
+      "pass": true
+    },
+    {
+      "name": "seed-0043_file_and_two_content_hashes",
+      "pass": true
+    },
+    {
+      "name": "seed-0043_N_Nplus1_finite_bounds",
+      "pass": true
+    },
+    {
+      "name": "seed-0044_file_and_two_content_hashes",
+      "pass": true
+    },
+    {
+      "name": "seed-0044_N_Nplus1_finite_bounds",
+      "pass": true
+    },
+    {
+      "name": "42_distinct_source_index_identities",
+      "pass": true
+    },
+    {
+      "name": "initial_and_final_records_present",
+      "pass": true
+    },
+    {
+      "name": "train_only_fit_provenance",
+      "pass": true
+    },
+    {
+      "name": "no_window_weighting",
+      "pass": true
+    },
+    {
+      "name": "20_pure_numeric_statistics",
+      "pass": true
+    },
+    {
+      "name": "qpos_float64_statistics_match_source_axis0",
+      "pass": true
+    },
+    {
+      "name": "qpos_numpy_torch_population_agree",
+      "pass": true
+    },
+    {
+      "name": "qpos_epsilon_scale_and_masks",
+      "pass": true
+    },
+    {
+      "name": "qpos_unique_train_transform_formula_float32",
+      "pass": true
+    },
+    {
+      "name": "qpos_unprotected_unique_train_mean_std",
+      "pass": true
+    },
+    {
+      "name": "train_qpos_inverse_predeclared_tolerance",
+      "pass": true
+    },
+    {
+      "name": "train_qpos_report_matches_real_values",
+      "pass": true
+    },
+    {
+      "name": "validation_qpos_inverse_predeclared_tolerance",
+      "pass": true
+    },
+    {
+      "name": "validation_qpos_report_matches_real_values",
+      "pass": true
+    },
+    {
+      "name": "qvel_float64_statistics_match_source_axis0",
+      "pass": true
+    },
+    {
+      "name": "qvel_numpy_torch_population_agree",
+      "pass": true
+    },
+    {
+      "name": "qvel_epsilon_scale_and_masks",
+      "pass": true
+    },
+    {
+      "name": "qvel_unique_train_transform_formula_float32",
+      "pass": true
+    },
+    {
+      "name": "qvel_unprotected_unique_train_mean_std",
+      "pass": true
+    },
+    {
+      "name": "train_qvel_inverse_predeclared_tolerance",
+      "pass": true
+    },
+    {
+      "name": "train_qvel_report_matches_real_values",
+      "pass": true
+    },
+    {
+      "name": "validation_qvel_inverse_predeclared_tolerance",
+      "pass": true
+    },
+    {
+      "name": "validation_qvel_report_matches_real_values",
+      "pass": true
+    },
+    {
+      "name": "two_near_constant_finger_positions_no_exact_constants",
+      "pass": true
+    },
+    {
+      "name": "train_all_windows_formula_unchanged_fields_metadata_finite",
+      "pass": true
+    },
+    {
+      "name": "train_global_index_coverage",
+      "pass": true
+    },
+    {
+      "name": "train_actual_batches_cover_once",
+      "pass": true
+    },
+    {
+      "name": "train_last_B_and_full_time_axes",
+      "pass": true
+    },
+    {
+      "name": "train_21_numeric_export_arrays",
+      "pass": true
+    },
+    {
+      "name": "train_saved_batch_matches_loader",
+      "pass": true
+    },
+    {
+      "name": "train_export_audit_raw_fields_not_model_inputs",
+      "pass": true
+    },
+    {
+      "name": "train_summary_actual_sizes_shapes",
+      "pass": true
+    },
+    {
+      "name": "train_returned_storage_independent",
+      "pass": true
+    },
+    {
+      "name": "validation_all_windows_formula_unchanged_fields_metadata_finite",
+      "pass": true
+    },
+    {
+      "name": "validation_global_index_coverage",
+      "pass": true
+    },
+    {
+      "name": "validation_actual_batches_cover_once",
+      "pass": true
+    },
+    {
+      "name": "validation_last_B_and_full_time_axes",
+      "pass": true
+    },
+    {
+      "name": "validation_21_numeric_export_arrays",
+      "pass": true
+    },
+    {
+      "name": "validation_saved_batch_matches_loader",
+      "pass": true
+    },
+    {
+      "name": "validation_export_audit_raw_fields_not_model_inputs",
+      "pass": true
+    },
+    {
+      "name": "validation_summary_actual_sizes_shapes",
+      "pass": true
+    },
+    {
+      "name": "validation_returned_storage_independent",
+      "pass": true
+    },
+    {
+      "name": "frozen_public_access_returns_copies",
+      "pass": true
+    },
+    {
+      "name": "statistics_unchanged_through_all_loading_and_tests",
+      "pass": true
+    },
+    {
+      "name": "no_simulator_modules_imported",
+      "pass": true
+    },
+    {
+      "name": "input_hashes_unchanged_after_validation",
+      "pass": true
+    },
+    {
+      "name": "offline_CPU_no_reset_step_training",
+      "pass": true
+    }
+  ],
+  "fit_states": 42,
+  "fit_sources": [
+    "seed-0042",
+    "seed-0043"
+  ],
+  "validation_sources": [
+    "seed-0044"
+  ],
+  "statistics_arrays": 20,
+  "numeric_arrays_per_first_batch": 21,
+  "train_windows": 34,
+  "validation_windows": 17,
+  "train_batch_sizes": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    2
+  ],
+  "validation_batch_sizes": [
+    4,
+    4,
+    4,
+    4,
+    1
+  ],
+  "previous_files_preserved": 484,
+  "installed_versions_preserved": 82,
+  "helper_sha256": {
+    "source_utils.py": "0e2b4b9834f40c7e4a89624bc4b7c50dae6a86100c30dfde06e12bd566558421",
+    "trajectory_dataset.py": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc",
+    "trajectory_window_dataset.py": "e0acd5106e028a14b0194a8f179db9f178519135036437261e5f2cf9a041ee28",
+    "multi_trajectory_dataset.py": "7e139a7ad32d8ee3b84133e33f7e434793607d3dfdfdb78f970413453693deb2"
+  },
+  "numpy_torch_errors": {
+    "qpos": {
+      "mean_max_abs": 0.0,
+      "std_max_abs": 2.899156609226239e-16
+    },
+    "qvel": {
+      "mean_max_abs": 0.0,
+      "std_max_abs": 8.673617379884035e-19
+    }
+  },
+  "inverse_errors_by_raw_unit": {
+    "train/qpos": {
+      "max_abs_by_feature": [
+        3.0882222820660665e-10,
+        4.48722559109882e-10,
+        5.748989149317874e-10,
+        1.2003227300994013e-09,
+        6.035062831422078e-10,
+        8.006617591149734e-11,
+        5.595557350801528e-10,
+        0.0,
+        5.109107581446892e-14
+      ],
+      "units": [
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "m",
+        "m"
+      ]
+    },
+    "validation/qpos": {
+      "max_abs_by_feature": [
+        1.215580944929906e-09,
+        1.7507927885240804e-09,
+        1.2075627893459728e-09,
+        2.397539500265111e-09,
+        1.219560605281167e-09,
+        6.881100134137341e-10,
+        6.277078856697926e-10,
+        0.0,
+        8.51402282009417e-15
+      ],
+      "units": [
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "m",
+        "m"
+      ]
+    },
+    "train/qvel": {
+      "max_abs_by_feature": [
+        3.87472473550865e-09,
+        1.6811899528762497e-11,
+        2.786604315352381e-10,
+        4.688746651137707e-12,
+        9.170184468547393e-12,
+        8.844313289005888e-13,
+        1.5964631214769077e-12,
+        2.528184638635883e-11,
+        2.0443512984899548e-11
+      ],
+      "units": [
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "m/s",
+        "m/s"
+      ]
+    },
+    "validation/qvel": {
+      "max_abs_by_feature": [
+        3.849126226085353e-09,
+        1.659102900637005e-11,
+        2.5546110192509186e-10,
+        4.529420892171454e-12,
+        9.067796535346118e-12,
+        2.273685634299888e-12,
+        1.5312576442830066e-12,
+        1.1439113138710447e-11,
+        2.5806184879989535e-11
+      ],
+      "units": [
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "rad/s",
+        "m/s",
+        "m/s"
+      ]
+    }
+  },
+  "predeclared_tolerances": {
+    "numpy_torch_rtol": 1e-10,
+    "numpy_torch_atol": 1e-12,
+    "unprotected_mean_std_float64_atol": 1e-10,
+    "unprotected_mean_std_float32_atol": 1e-06,
+    "inverse_rtol": 1e-06,
+    "inverse_atol_each_raw_unit": 1e-07
+  },
+  "private_numeric_test_summary": {
+    "result": "PASS",
+    "type": "artificial_in_memory_numeric_tests",
+    "check_count": 12,
+    "note": "Private numeric/index cases and altered validation copy only; no real input overwritten or simulated data created."
+  },
+  "new_reset_calls": 0,
+  "new_step_calls": 0,
+  "training": false,
+  "processing_device": "cpu",
+  "artifacts_sha256": {
+    "batch_summary.json": "d2831934e159b58c9d918f0e988e19aaf1a585026f8257cf5b8af22c7e59645a",
+    "dataset_manifest.json": "8c7a687c88476cc9d73ec3f21f213a3d976b21035d878ebfb22f213388a6f612",
+    "environment.json": "1a3566c06558d26668632a7c320e84e76d3da6a918d243ca21a0544ef27c4719",
+    "fit_train_statistics.py": "ab63af6e63cabb8a500dab48ba911914e1cd2f494412a8afae1bd21c8122df27",
+    "inspect_normalization.py": "1637ae72c03925d35fe34e37f93f2d9890519266d3b96d6ca01dac3554db179c",
+    "multi_trajectory_dataset.py": "7e139a7ad32d8ee3b84133e33f7e434793607d3dfdfdb78f970413453693deb2",
+    "normalization.py": "8d146d823430026a754c56cc98f128936901bf93f3ca24fd42213192c3667dd8",
+    "normalization_report.json": "e5fb5f72c13db4968b0eb77abc4521351dd740951bb2425c56e7d33856560d00",
+    "normalized_window_dataset.py": "b65941b936f539b6547412b06e5fa017cf9d640a2c3439c17a8e210f0e4e14db",
+    "requirements.txt": "9e7cf55a1b3b38b1948bb4531a9556d6276e77ea22f8026e872d89d21dc5d0af",
+    "schema.json": "f2d0dce5996b17c342d1c5a826ac2e683d37fd4cfddede6b6aa65b6349da14fd",
+    "source_utils.py": "0e2b4b9834f40c7e4a89624bc4b7c50dae6a86100c30dfde06e12bd566558421",
+    "splits.json": "3a82c75666241137b8ca584521afefa10f0d5f47d04a751334a469eefb05f9e3",
+    "train_batch.npz": "465199587ee6cbe8cbde3c060bd59c6e48a092eb8b56748318582e871a50b681",
+    "train_stats.json": "0d4dbc564bac4ab736d713ff5934350f53372532778d0a06ebf186e24bb5c6ce",
+    "train_stats.npz": "3d8ed7d0970197758019411809507ed650735a3e9620295e29fcc7ac81d42de6",
+    "trajectory_dataset.py": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc",
+    "trajectory_window_dataset.py": "e0acd5106e028a14b0194a8f179db9f178519135036437261e5f2cf9a041ee28",
+    "validation_batch.npz": "bf38ea001dad409626f01d7afc4f2c045753378a8d5572a6b8b33320b2e71e83",
+    "window_index.json": "ed342fe73cd9e0e0fc71f0615dc920a1122ca7338132a4aa7f7ae2bd8bd864a4"
+  }
+}

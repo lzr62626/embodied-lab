@@ -1,0 +1,33 @@
+{
+  "python_version": "3.11.9",
+  "packages": {
+    "numpy": "2.4.6",
+    "torch": "2.14.1",
+    "pillow": "13.0.0"
+  },
+  "torch_runtime_version": "2.14.1+cpu",
+  "torch_cuda_build": null,
+  "processing_device": "cpu",
+  "simulator_created": false,
+  "reset_calls": 0,
+  "step_calls": 0,
+  "training": false,
+  "test_set": false,
+  "normalization_fit_split": "train",
+  "loader": {
+    "batch_size": 4,
+    "shuffle": false,
+    "drop_last": false,
+    "num_workers": 0,
+    "pin_memory": false,
+    "device": "cpu",
+    "generator_seed": 42
+  },
+  "input_configuration": "Unchanged article7 saved trajectories.",
+  "helper_sha256": {
+    "source_utils.py": "0e2b4b9834f40c7e4a89624bc4b7c50dae6a86100c30dfde06e12bd566558421",
+    "trajectory_dataset.py": "ba40e4e5d08ffdaaaf22cec00c38ef6866df033203a4cae9df9717c3380a8dfc",
+    "trajectory_window_dataset.py": "e0acd5106e028a14b0194a8f179db9f178519135036437261e5f2cf9a041ee28",
+    "multi_trajectory_dataset.py": "7e139a7ad32d8ee3b84133e33f7e434793607d3dfdfdb78f970413453693deb2"
+  }
+}

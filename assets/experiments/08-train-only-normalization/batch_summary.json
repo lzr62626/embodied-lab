@@ -1,0 +1,3007 @@
+{
+  "configuration": {
+    "batch_size": 4,
+    "shuffle": false,
+    "drop_last": false,
+    "num_workers": 0,
+    "pin_memory": false,
+    "device": "cpu",
+    "generator_seed": 42
+  },
+  "statistics_fitted_once": true,
+  "statistics_sha256": {
+    "train_stats.npz": "3d8ed7d0970197758019411809507ed650735a3e9620295e29fcc7ac81d42de6",
+    "train_stats.json": "0d4dbc564bac4ab736d713ff5934350f53372532778d0a06ebf186e24bb5c6ce"
+  },
+  "splits": {
+    "train": {
+      "windows": 34,
+      "batch_sizes": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2
+      ],
+      "first_batch": {
+        "observations/qpos": {
+          "shape": [
+            4,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "observations/qvel": {
+          "shape": [
+            4,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "observations/rgb": {
+          "shape": [
+            4,
+            5,
+            3,
+            256,
+            256
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            4,
+            4,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "rewards": {
+          "shape": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "terminated": {
+          "shape": [
+            4,
+            4
+          ],
+          "dtype": "bool"
+        },
+        "truncated": {
+          "shape": [
+            4,
+            4
+          ],
+          "dtype": "bool"
+        },
+        "metadata/source_id": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/start_index": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/end_index_exclusive": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/state_indices": {
+          "shape": [
+            4,
+            5
+          ],
+          "dtype": "int64"
+        },
+        "metadata/action_indices": {
+          "shape": [
+            4,
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/step_index": {
+          "shape": [
+            4,
+            5
+          ],
+          "dtype": "int64"
+        },
+        "metadata/time_s": {
+          "shape": [
+            4,
+            5
+          ],
+          "dtype": "float64"
+        },
+        "metadata/environment_index": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/ends_fragment": {
+          "shape": [
+            4
+          ],
+          "dtype": "bool"
+        },
+        "metadata/trajectory_window_index": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/global_window_index": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/split_code": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "raw_observations/qpos": {
+          "shape": [
+            4,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "raw_observations/qvel": {
+          "shape": [
+            4,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        }
+      },
+      "batches": [
+        {
+          "size": 4,
+          "global_window_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "source_ids": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "trajectory_ids": [
+            "seed-0042",
+            "seed-0042",
+            "seed-0042",
+            "seed-0042"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "source_ids": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "trajectory_ids": [
+            "seed-0042",
+            "seed-0042",
+            "seed-0042",
+            "seed-0042"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "source_ids": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "trajectory_ids": [
+            "seed-0042",
+            "seed-0042",
+            "seed-0042",
+            "seed-0042"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "source_ids": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "trajectory_ids": [
+            "seed-0042",
+            "seed-0042",
+            "seed-0042",
+            "seed-0042"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            16,
+            17,
+            18,
+            19
+          ],
+          "source_ids": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "trajectory_ids": [
+            "seed-0042",
+            "seed-0043",
+            "seed-0043",
+            "seed-0043"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            20,
+            21,
+            22,
+            23
+          ],
+          "source_ids": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trajectory_ids": [
+            "seed-0043",
+            "seed-0043",
+            "seed-0043",
+            "seed-0043"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            24,
+            25,
+            26,
+            27
+          ],
+          "source_ids": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trajectory_ids": [
+            "seed-0043",
+            "seed-0043",
+            "seed-0043",
+            "seed-0043"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            28,
+            29,
+            30,
+            31
+          ],
+          "source_ids": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trajectory_ids": [
+            "seed-0043",
+            "seed-0043",
+            "seed-0043",
+            "seed-0043"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 2,
+          "global_window_indices": [
+            32,
+            33
+          ],
+          "source_ids": [
+            1,
+            1
+          ],
+          "trajectory_ids": [
+            "seed-0043",
+            "seed-0043"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                2,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                2,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                2,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                2,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                2,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                2,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                2,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                2
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                2
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                2
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                2,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                2,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                2,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                2,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                2
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                2
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                2
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                2
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                2
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                2,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                2,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        }
+      ],
+      "last_batch_shapes": {
+        "observations/qpos": {
+          "shape": [
+            2,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "observations/qvel": {
+          "shape": [
+            2,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "observations/rgb": {
+          "shape": [
+            2,
+            5,
+            3,
+            256,
+            256
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            2,
+            4,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "rewards": {
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "terminated": {
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "bool"
+        },
+        "truncated": {
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "bool"
+        },
+        "metadata/source_id": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "metadata/start_index": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "metadata/end_index_exclusive": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "metadata/state_indices": {
+          "shape": [
+            2,
+            5
+          ],
+          "dtype": "int64"
+        },
+        "metadata/action_indices": {
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/step_index": {
+          "shape": [
+            2,
+            5
+          ],
+          "dtype": "int64"
+        },
+        "metadata/time_s": {
+          "shape": [
+            2,
+            5
+          ],
+          "dtype": "float64"
+        },
+        "metadata/environment_index": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "metadata/ends_fragment": {
+          "shape": [
+            2
+          ],
+          "dtype": "bool"
+        },
+        "metadata/trajectory_window_index": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "metadata/global_window_index": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "metadata/split_code": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "raw_observations/qpos": {
+          "shape": [
+            2,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "raw_observations/qvel": {
+          "shape": [
+            2,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    "validation": {
+      "windows": 17,
+      "batch_sizes": [
+        4,
+        4,
+        4,
+        4,
+        1
+      ],
+      "first_batch": {
+        "observations/qpos": {
+          "shape": [
+            4,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "observations/qvel": {
+          "shape": [
+            4,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "observations/rgb": {
+          "shape": [
+            4,
+            5,
+            3,
+            256,
+            256
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            4,
+            4,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "rewards": {
+          "shape": [
+            4,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "terminated": {
+          "shape": [
+            4,
+            4
+          ],
+          "dtype": "bool"
+        },
+        "truncated": {
+          "shape": [
+            4,
+            4
+          ],
+          "dtype": "bool"
+        },
+        "metadata/source_id": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/start_index": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/end_index_exclusive": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/state_indices": {
+          "shape": [
+            4,
+            5
+          ],
+          "dtype": "int64"
+        },
+        "metadata/action_indices": {
+          "shape": [
+            4,
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/step_index": {
+          "shape": [
+            4,
+            5
+          ],
+          "dtype": "int64"
+        },
+        "metadata/time_s": {
+          "shape": [
+            4,
+            5
+          ],
+          "dtype": "float64"
+        },
+        "metadata/environment_index": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/ends_fragment": {
+          "shape": [
+            4
+          ],
+          "dtype": "bool"
+        },
+        "metadata/trajectory_window_index": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/global_window_index": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/split_code": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "raw_observations/qpos": {
+          "shape": [
+            4,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "raw_observations/qvel": {
+          "shape": [
+            4,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        }
+      },
+      "batches": [
+        {
+          "size": 4,
+          "global_window_indices": [
+            34,
+            35,
+            36,
+            37
+          ],
+          "source_ids": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "trajectory_ids": [
+            "seed-0044",
+            "seed-0044",
+            "seed-0044",
+            "seed-0044"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            38,
+            39,
+            40,
+            41
+          ],
+          "source_ids": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "trajectory_ids": [
+            "seed-0044",
+            "seed-0044",
+            "seed-0044",
+            "seed-0044"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            42,
+            43,
+            44,
+            45
+          ],
+          "source_ids": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "trajectory_ids": [
+            "seed-0044",
+            "seed-0044",
+            "seed-0044",
+            "seed-0044"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 4,
+          "global_window_indices": [
+            46,
+            47,
+            48,
+            49
+          ],
+          "source_ids": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "trajectory_ids": [
+            "seed-0044",
+            "seed-0044",
+            "seed-0044",
+            "seed-0044"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                4,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                4,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                4,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                4,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                4
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                4,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        {
+          "size": 1,
+          "global_window_indices": [
+            50
+          ],
+          "source_ids": [
+            2
+          ],
+          "trajectory_ids": [
+            "seed-0044"
+          ],
+          "shapes": {
+            "observations/qpos": {
+              "shape": [
+                1,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/qvel": {
+              "shape": [
+                1,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "observations/rgb": {
+              "shape": [
+                1,
+                5,
+                3,
+                256,
+                256
+              ],
+              "dtype": "float32"
+            },
+            "actions": {
+              "shape": [
+                1,
+                4,
+                8
+              ],
+              "dtype": "float32"
+            },
+            "rewards": {
+              "shape": [
+                1,
+                4
+              ],
+              "dtype": "float32"
+            },
+            "terminated": {
+              "shape": [
+                1,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "truncated": {
+              "shape": [
+                1,
+                4
+              ],
+              "dtype": "bool"
+            },
+            "metadata/source_id": {
+              "shape": [
+                1
+              ],
+              "dtype": "int64"
+            },
+            "metadata/start_index": {
+              "shape": [
+                1
+              ],
+              "dtype": "int64"
+            },
+            "metadata/end_index_exclusive": {
+              "shape": [
+                1
+              ],
+              "dtype": "int64"
+            },
+            "metadata/state_indices": {
+              "shape": [
+                1,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/action_indices": {
+              "shape": [
+                1,
+                4
+              ],
+              "dtype": "int64"
+            },
+            "metadata/step_index": {
+              "shape": [
+                1,
+                5
+              ],
+              "dtype": "int64"
+            },
+            "metadata/time_s": {
+              "shape": [
+                1,
+                5
+              ],
+              "dtype": "float64"
+            },
+            "metadata/environment_index": {
+              "shape": [
+                1
+              ],
+              "dtype": "int64"
+            },
+            "metadata/ends_fragment": {
+              "shape": [
+                1
+              ],
+              "dtype": "bool"
+            },
+            "metadata/trajectory_window_index": {
+              "shape": [
+                1
+              ],
+              "dtype": "int64"
+            },
+            "metadata/global_window_index": {
+              "shape": [
+                1
+              ],
+              "dtype": "int64"
+            },
+            "metadata/split_code": {
+              "shape": [
+                1
+              ],
+              "dtype": "int64"
+            },
+            "raw_observations/qpos": {
+              "shape": [
+                1,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            },
+            "raw_observations/qvel": {
+              "shape": [
+                1,
+                5,
+                9
+              ],
+              "dtype": "float32"
+            }
+          }
+        }
+      ],
+      "last_batch_shapes": {
+        "observations/qpos": {
+          "shape": [
+            1,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "observations/qvel": {
+          "shape": [
+            1,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "observations/rgb": {
+          "shape": [
+            1,
+            5,
+            3,
+            256,
+            256
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            1,
+            4,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "rewards": {
+          "shape": [
+            1,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "terminated": {
+          "shape": [
+            1,
+            4
+          ],
+          "dtype": "bool"
+        },
+        "truncated": {
+          "shape": [
+            1,
+            4
+          ],
+          "dtype": "bool"
+        },
+        "metadata/source_id": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "metadata/start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "metadata/end_index_exclusive": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "metadata/state_indices": {
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "int64"
+        },
+        "metadata/action_indices": {
+          "shape": [
+            1,
+            4
+          ],
+          "dtype": "int64"
+        },
+        "metadata/step_index": {
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "int64"
+        },
+        "metadata/time_s": {
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "float64"
+        },
+        "metadata/environment_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "metadata/ends_fragment": {
+          "shape": [
+            1
+          ],
+          "dtype": "bool"
+        },
+        "metadata/trajectory_window_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "metadata/global_window_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "metadata/split_code": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "raw_observations/qpos": {
+          "shape": [
+            1,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "raw_observations/qvel": {
+          "shape": [
+            1,
+            5,
+            9
+          ],
+          "dtype": "float32"
+        }
+      }
+    }
+  }
+}

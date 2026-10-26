@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>只用训练集计算统计量：标准化机器人状态 · Lamone&#39;s Embodied Lab</title><meta name="description" content="从两条训练轨迹的42份唯一状态拟合统计，冻结后应用到train与validation窗口，核对近似常量、逆变换和末批维度。"><link rel="canonical" href="https://lzr62626.github.io/embodied-lab/articles/train-only-normalization.html"><meta property="og:url" content="https://lzr62626.github.io/embodied-lab/articles/train-only-normalization.html"><meta property="og:title" content="只用训练集计算统计量：标准化机器人状态"><meta property="og:description" content="从两条训练轨迹的42份唯一状态拟合统计，冻结后应用到train与validation窗口，核对近似常量、逆变换和末批维度。"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="Lamone&#39;s Embodied Lab"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/style.css?v=c3c46ed7081c"><script src="../assets/theme.js"></script><script defer src="../assets/site.js?v=4f9e24fa93d8"></script></head>
+<body class="reading-page"><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Lamone&#39;s Embodied Lab首页"><span class="brand-symbol"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15V3h12M9 17h8V9"/><circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/></svg></span><span class="brand-copy"><span class="brand-title">Lamone&#39;s Embodied Lab</span><small>具身智能 · 研究与实践</small></span></a><nav aria-label="主导航"><a href="../index.html">首页</a><a href="../learn.html">开始学习</a><a href="../articles.html" aria-current="page">文章</a><a href="../about.html">关于</a></nav><div class="header-actions"><button type="button" class="icon-button search-trigger" data-search-open aria-label="搜索文章" aria-keyshortcuts="Control+K Meta+K"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><span class="search-label">搜索</span><kbd>Ctrl K</kbd></button><button type="button" class="icon-button theme-toggle" data-theme-toggle aria-label="切换深浅主题" title="切换深浅主题"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 3a7 7 0 0 1 0 14Z" fill="currentColor" stroke="none"/></svg></button></div></div></header>
+<main id="main" class="article-main wrap"><div class="breadcrumbs"><a href="../learn.html">开始学习</a><span aria-hidden="true">/</span><span>没有机器人，也能开始的具身智能实践</span></div><header class="article-heading"><p class="eyebrow">入门路线 · 第 8 篇</p><h1>只用训练集计算统计量：标准化机器人状态</h1><p class="article-summary">从两条训练轨迹的42份唯一状态拟合统计，冻结后应用到train与validation窗口，核对近似常量、逆变换和末批维度。</p><div class="article-meta"><time datetime="2026-10-26">2026-10-26</time><span>约 7 分钟</span><a href="../sources/train-only-normalization.md" download>下载 Markdown ↗</a></div><div class="tags"><span>数据实践</span><span>标准化</span><span>数据泄漏</span><span>PyTorch</span></div></header><div class="article-layout"><article class="prose"><p><a href="multi-trajectory-splits.html">第七篇</a>把三份真实来源固定分成train与validation。接下来处理关节状态的数值尺度：统计从哪里来，哪些记录计数，又怎样把同一份变换应用到两个集合？</p>
+<p>本篇于2026-10-26完成验证。只用seed42、43的42份原始状态拟合qpos/qvel统计，保存并冻结，再处理34个训练窗口与17个验证窗口。58项真实数据检查、12项单独标注的私有数值测试通过；35文件公开包独立解压运行，97项包检查通过。没有启动仿真、reset、step、新采集、GPU计算或模型训练。</p>
+<p><a href="../assets/experiments/08-train-only-normalization/normalization-files.zip">下载完整离线示例</a>，包含3份完整真实数值轨迹、训练统计、批次和便携代码。也可查看<a href="../assets/experiments/08-train-only-normalization/train_stats.json">统计说明</a>、<a href="../assets/experiments/08-train-only-normalization/train_stats.npz">20数组统计文件</a>、<a href="../assets/experiments/08-train-only-normalization/normalization_report.json">18维详细报告</a>、<a href="../assets/experiments/08-train-only-normalization/validation.json">独立验收</a>和<a href="../assets/experiments/08-train-only-normalization/README.md">运行说明</a>。</p>
+<h2 id="section-1">第一步：确定哪些状态参与拟合</h2>
+<p>划分保持不变，先确定来源再计算统计：</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>集合</th>
+<th>来源</th>
+<th align="right">原始状态记录</th>
+<th align="right">窗口数</th>
+<th align="right">窗口内状态取用次数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>train</td>
+<td>seed42、seed43</td>
+<td align="right">21+21=42</td>
+<td align="right">34</td>
+<td align="right">34×5=170</td>
+</tr>
+<tr>
+<td>validation</td>
+<td>seed44</td>
+<td align="right">21</td>
+<td align="right">17</td>
+<td align="right">17×5=85</td>
+</tr>
+</tbody></table></div>
+<p>一个K=4窗口含5份状态。相邻窗口共享状态；从窗口累计均值和标准差，会重复加权位于轨迹中间的记录。本例直接读取两条训练来源的obs[0:N+1]，包括初始与最后观测。</p>
+<p>“唯一”指trajectory_id与状态索引组成的记录身份。同一来源的状态3只计一次；两个时刻数值碰巧相同，也仍是两条记录，不按值去重。两个集合的均值、标准差不分别拟合，validation也不参与阈值选择。</p>
+<pre><code class="language-python"># raw_qpos的形状为(T+1,E,J)，此处E=1。
+states = raw_qpos[:, 0, :].astype(np.float64, copy=True)
+# 只拼接训练来源的状态记录，不能先拼接来源后切时间窗口。
+train_states = np.concatenate(train_state_chunks, axis=0)  # (42,9)
+mean = train_states.mean(axis=0, dtype=np.float64)
+std = train_states.std(axis=0, dtype=np.float64, ddof=0)
+</code></pre>
+<p>这里拼接的是用于离线统计的训练记录，没有改变任何轨迹边界。使用训练轨迹全部状态也不代表窗口起点能看到未来观测；模型的上下文与预测目标仍需另行定义。</p>
+<h2 id="section-2">第二步：按关节分别计算，不混合单位</h2>
+<p>实际环境为Python3.11.9、NumPy2.4.6、PyTorch2.14.1+cpu（包元数据2.14.1）、Pillow13.0.0，复用原环境。484份既有文件、82个包版本保持不变。读取前核对了第七篇清单、划分、字段、窗口、验收、重复报告与3份完整NPZ。</p>
+<p>本地ManiSkill3.0.1的panda模块与panda_v2.urdf确认前7个为转动关节，最后2个为手指移动关节。qpos单位分别为rad、m，qvel分别为rad/s、m/s。每个字段各计算9个均值与标准差，不能把混合单位合成一个总均值。</p>
+<p>统计使用float64和总体标准差。<a href="https://numpy.org/doc/2.4/reference/generated/numpy.std.html">NumPy的std接口</a>在axis=0沿记录轴计算，显式ddof=0。<a href="https://docs.pytorch.org/docs/2.14/generated/torch.std.html">PyTorch的std接口</a>默认correction=1，本篇核对时显式改为0，避免统计口径不同。</p>
+<p>以下为真实训练统计，表格做有效位数舍入，精确值保存在JSON和NPZ。每行样本数均为42。</p>
+<h3>qpos：位置统计</h3>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table class="state-statistics">
+<thead>
+<tr>
+<th>字段</th>
+<th>原始单位</th>
+<th align="right">train均值</th>
+<th align="right">总体std</th>
+<th align="right">实际scale</th>
+<th>保护</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>关节1</td>
+<td>rad</td>
+<td align="right">0.0169537</td>
+<td align="right">0.00615026</td>
+<td align="right">0.00615026</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节2</td>
+<td>rad</td>
+<td align="right">0.382238</td>
+<td align="right">0.00770221</td>
+<td align="right">0.00770221</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节3</td>
+<td>rad</td>
+<td align="right">0.00272402</td>
+<td align="right">0.0102961</td>
+<td align="right">0.0102961</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节4</td>
+<td>rad</td>
+<td align="right">-1.9536</td>
+<td align="right">0.0205822</td>
+<td align="right">0.0205822</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节5</td>
+<td>rad</td>
+<td align="right">0.00623744</td>
+<td align="right">0.0109223</td>
+<td align="right">0.0109223</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节6</td>
+<td>rad</td>
+<td align="right">2.34972</td>
+<td align="right">0.00178891</td>
+<td align="right">0.00178891</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节7</td>
+<td>rad</td>
+<td align="right">0.806172</td>
+<td align="right">0.0108102</td>
+<td align="right">0.0108102</td>
+<td>否</td>
+</tr>
+<tr>
+<td>手指1</td>
+<td>m</td>
+<td align="right">0.0399998</td>
+<td align="right">3.40683e-07</td>
+<td align="right">1e-06</td>
+<td>近似常量</td>
+</tr>
+<tr>
+<td>手指2</td>
+<td>m</td>
+<td align="right">0.0399998</td>
+<td align="right">2.70433e-07</td>
+<td align="right">1e-06</td>
+<td>近似常量</td>
+</tr>
+</tbody></table></div>
+<h3>qvel：速度统计</h3>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table class="state-statistics">
+<thead>
+<tr>
+<th>字段</th>
+<th>原始单位</th>
+<th align="right">train均值</th>
+<th align="right">总体std</th>
+<th align="right">实际scale</th>
+<th>保护</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>关节1</td>
+<td>rad/s</td>
+<td align="right">0.000700452</td>
+<td align="right">0.0652216</td>
+<td align="right">0.0652216</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节2</td>
+<td>rad/s</td>
+<td align="right">-1.59595e-05</td>
+<td align="right">0.000144927</td>
+<td align="right">0.000144927</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节3</td>
+<td>rad/s</td>
+<td align="right">0.000359153</td>
+<td align="right">0.00479784</td>
+<td align="right">0.00479784</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节4</td>
+<td>rad/s</td>
+<td align="right">-2.50102e-06</td>
+<td align="right">8.03566e-05</td>
+<td align="right">8.03566e-05</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节5</td>
+<td>rad/s</td>
+<td align="right">-1.06763e-05</td>
+<td align="right">0.00015533</td>
+<td align="right">0.00015533</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节6</td>
+<td>rad/s</td>
+<td align="right">2.31128e-06</td>
+<td align="right">1.16791e-05</td>
+<td align="right">1.16791e-05</td>
+<td>否</td>
+</tr>
+<tr>
+<td>关节7</td>
+<td>rad/s</td>
+<td align="right">-2.23951e-06</td>
+<td align="right">2.77377e-05</td>
+<td align="right">2.77377e-05</td>
+<td>否</td>
+</tr>
+<tr>
+<td>手指1</td>
+<td>m/s</td>
+<td align="right">3.12221e-05</td>
+<td align="right">0.0002386</td>
+<td align="right">0.0002386</td>
+<td>否</td>
+</tr>
+<tr>
+<td>手指2</td>
+<td>m/s</td>
+<td align="right">-5.48428e-06</td>
+<td align="right">0.000238674</td>
+<td align="right">0.000238674</td>
+<td>否</td>
+</tr>
+</tbody></table></div>
+<h2 id="section-3">第三步：保护近似常量维度，再冻结统计</h2>
+<p>本篇在查看验证结果之前固定每维epsilon数值为1e-6，其单位跟随原始字段。它是本教程的数值保护配置，并非所有机器人的通用选择。</p>
+<pre><code class="language-python">scale = np.maximum(std, epsilon)
+z64 = (raw.astype(np.float64) - mean) / scale
+z32 = z64.astype(np.float32)
+</code></pre>
+<p>两根手指qpos的标准差约3.406835e-7m和2.704333e-7m，均小于epsilon，实际scale使用1e-6m。它们是近似常量，真实来源没有精确常量维度。qvel各维均未触发保护。</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>qpos维度</th>
+<th align="right">原std，m</th>
+<th align="right">实际scale，m</th>
+<th align="right">训练状态变换后std</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手指1</td>
+<td align="right">3.406835e-7</td>
+<td align="right">1e-6</td>
+<td align="right">0.340683</td>
+</tr>
+<tr>
+<td>手指2</td>
+<td align="right">2.704333e-7</td>
+<td align="right">1e-6</td>
+<td align="right">0.270433</td>
+</tr>
+</tbody></table></div>
+<p>受保护维度的标准差小于1是公式的实际结果。精确常量按原始min==max识别；protected按std&lt;=epsilon识别；near_constant是受保护且并非精确常量。不会因为std很小就把真实值写成全0。</p>
+<p><a href="../assets/experiments/08-train-only-normalization/normalization.py">normalization.py</a>保存均值、原std、最小/最大值、epsilon、实际scale、三类掩码和计数，共20个纯数值数组。JSON还记录训练来源、状态索引、来源SHA与数值指纹、字段顺序、单位及算法版本。</p>
+<p>统计保存后不再随getitem或验证加载更新。FrozenNormalizer用不可写bytes支撑内部数组，公开属性返回副本；加载时核对NPZ的SHA、JSON数值以及算法/顺序/单位。接入Dataset时再核对训练组和来源指纹，不能靠改文件名套用另一份统计。</p>
+<h2 id="section-4">第四步：用同一份统计读取两个集合</h2>
+<p>公开包解压后，在包含input目录与脚本的位置使用已有兼容Python执行：</p>
+<pre><code class="language-powershell">python -B inspect_normalization.py --input-dir input --output-dir result
+</code></pre>
+<p>此命令先从train拟合一次，保存并冻结，然后读取validation与窗口并导出报告。结果目录已有同名文件会被保护，再次离线复现请改用result-2。也可用<a href="../assets/experiments/08-train-only-normalization/fit_train_statistics.py">fit_train_statistics.py</a>单独生成统计，再用FrozenNormalizer.load读取；<a href="../assets/experiments/08-train-only-normalization/normalized_window_dataset.py">标准化窗口包装器</a>只应用变换。</p>
+<pre><code class="language-python">sample = base[index]  # 第七篇已验证的独立窗口
+for field in (&quot;qpos&quot;, &quot;qvel&quot;):
+    sample[&quot;observations&quot;][field] = normalizer.transform(
+        field, sample[&quot;observations&quot;][field]
+    )
+</code></pre>
+<p>原有K4/stride1、来源映射、全局/局部窗口索引和时间保持不变。<a href="https://docs.pytorch.org/docs/2.14/data.html">DataLoader</a>采用batch_size4、shuffleFalse、drop_lastFalse、num_workers0、pin_memoryFalse与CPU generator seed42，实际遍历为：</p>
+<pre><code class="language-text">train:      34 windows -&gt; [4,4,4,4,4,4,4,4,2]
+validation: 17 windows -&gt; [4,4,4,4,1]
+</code></pre>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>首批B4</th>
+<th>train末批B2</th>
+<th>validation末批B1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>标准化qpos/qvel</td>
+<td>(4,5,9)</td>
+<td>(2,5,9)</td>
+<td>(1,5,9)</td>
+</tr>
+<tr>
+<td>RGB</td>
+<td>(4,5,3,256,256)</td>
+<td>(2,5,3,256,256)</td>
+<td>(1,5,3,256,256)</td>
+</tr>
+<tr>
+<td>actions</td>
+<td>(4,4,8)</td>
+<td>(2,4,8)</td>
+<td>(1,4,8)</td>
+</tr>
+</tbody></table></div>
+<p>B是批次轴，5是K+1状态时间轴。没有用无条件squeeze删除末批维度。qpos/qvel先以float64计算，再返回float32 CPU张量；RGB继续CHW并除以255，不拟合图像通道统计。</p>
+<p>actions保持原始归一化控制指令，reward、terminated、truncated及所有索引未改。控制器把归一化动作映射成目标，与这里把观测减均值、除尺度是不同操作。物体真值、控制器目标、success及来源/集合标签仍不进入模型观测。</p>
+<h2 id="section-5">第五步：验收原值、变换与逆变换</h2>
+<p><a href="../assets/experiments/08-train-only-normalization/train_batch.npz">train首批</a>和<a href="../assets/experiments/08-train-only-normalization/validation_batch.npz">validation首批</a>各21个纯数值数组，均可allow_pickle=False读取。新增raw_observations/qpos与qvel仅供导出核对，Dataset的模型观测仍只有qpos、qvel、RGB，不自动把原始核对副本加入输入。</p>
+<p>逆变换为raw_hat=z*scale+mean。验收之前已固定rtol=1e-6、每原始单位atol=1e-7，实际float32舍入误差逐维记录。两集合合计最大误差按物理单位分别为：</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>原始字段范围</th>
+<th align="right">最大绝对还原误差</th>
+<th>单位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>qpos机械臂7维</td>
+<td align="right">2.39754e-9</td>
+<td>rad</td>
+</tr>
+<tr>
+<td>qpos手指2维</td>
+<td align="right">5.10911e-14</td>
+<td>m</td>
+</tr>
+<tr>
+<td>qvel机械臂7维</td>
+<td align="right">3.87472e-9</td>
+<td>rad/s</td>
+</tr>
+<tr>
+<td>qvel手指2维</td>
+<td align="right">2.58062e-11</td>
+<td>m/s</td>
+</tr>
+</tbody></table></div>
+<p>58项真实数据验收覆盖42份记录、全体窗口公式、原值与来源对应、未修改字段、B2/B1、冻结统计、首批重读及独立副本。修改返回窗口不会影响来源、再次读取或相邻窗口；修改公开返回的统计副本也不会改变冻结值。</p>
+<p>12项私有测试另外覆盖常量、近似常量、非有限值、错误维度/字段顺序/训练组/来源指纹。在私有内存测试中改变validation数值，训练均值、std和scale完全不变；记录到的拟合读取只有两条train NPZ。人工测试不作为真实轨迹公开，也没有覆盖原始数据。</p>
+<p>主导出首次通过。验收工具前两次分别遇到单窗口字符串与批次列表的适配问题、对NumPy数组误用Tensor的fill_；仅修正私有验收代码后通过，失败日志仍在本机，没有重写成功导出或重新采集。</p>
+<h2 id="section-6">常见问题与本次限制</h2>
+<p><strong>为什么不能分别标准化train和validation？</strong> 那会让验证变换依赖验证资料的分布。本篇固定训练统计后，validation第一关节qpos的变换均值约-3.66646、标准差约0.927608。这是这份资料在固定尺度下的实际结果，不据此重拟合。</p>
+<p><strong>为什么不要求每个训练批次均值0、标准差1？</strong> 统计对象是42份唯一训练状态，批次包含的窗口重复权重与状态范围不同。只对未受保护维度的完整唯一训练记录检查接近0/1，不能把这个要求强加给单个窗口或批次。</p>
+<p><strong>相同数值要去重吗？</strong> 不按值去重。记录身份是来源加状态索引；窗口重复引用同一记录才是本篇避免的重复加权。</p>
+<p><strong>标准化后能否直接解释为弧度或米？</strong> z是逐维无量纲结果。需要物理量时用相同统计逆变换；不要混淆观测标准分数与动作的[-1,1]控制输入。</p>
+<p><strong>是否证明模型更好或数据已经独立？</strong> 没有。本次不训练、不设测试集、不报告泛化。3条同任务短片段仅演示预处理；只用train拟合也不能证明所有泄漏已经消除。</p>
+<h2 id="section-7">官方参考资料</h2>
+<ul>
+<li><a href="https://numpy.org/doc/2.4/reference/generated/numpy.std.html">NumPy2.4：std的axis、dtype与ddof</a></li>
+<li><a href="https://docs.pytorch.org/docs/2.14/generated/torch.std.html">PyTorch2.14：std与correction</a></li>
+<li><a href="https://docs.pytorch.org/docs/2.14/data.html">PyTorch2.14：Dataset与DataLoader</a></li>
+<li><a href="https://numpy.org/doc/2.4/reference/generated/numpy.load.html">NumPy2.4：禁用pickle读取数值文件</a></li>
+<li><a href="https://pillow.readthedocs.io/en/stable/releasenotes/13.0.0.html">Pillow13.0.0版本资料</a></li>
+</ul>
+<footer class="article-next"><span class="eyebrow">接下来</span><h2>沿着学习路线继续探索。</h2><p>回到学习路线，查看已有文章与后续安排。</p><a class="text-link" href="../learn.html">回到学习路线 →</a></footer></article><aside class="article-toc" aria-label="文章目录"><details open><summary>本文目录</summary><ol><li><a href="#section-1">第一步：确定哪些状态参与拟合</a></li><li><a href="#section-2">第二步：按关节分别计算，不混合单位</a></li><li><a href="#section-3">第三步：保护近似常量维度，再冻结统计</a></li><li><a href="#section-4">第四步：用同一份统计读取两个集合</a></li><li><a href="#section-5">第五步：验收原值、变换与逆变换</a></li><li><a href="#section-6">常见问题与本次限制</a></li><li><a href="#section-7">官方参考资料</a></li></ol></details><a class="toc-back" href="../articles.html">← 全部文章</a></aside></div></main>
+<footer class="site-footer"><div><a class="footer-brand" href="../index.html">Lamone&#39;s Embodied Lab</a><p>从仿真开始，记录能被检查的学习与研究过程。</p></div><div class="footer-links"><a href="../learn.html">学习路线</a><a href="../about.html">关于本站</a><a href="https://github.com/lzr62626/embodied-lab">GitHub ↗</a><span>© 2026 Lamone&#39;s Embodied Lab</span></div></footer>
+<dialog class="search-dialog" aria-labelledby="search-heading"><form method="dialog" novalidate class="search-head"><h2 id="search-heading">搜索文章</h2><button class="icon-button" aria-label="关闭搜索" value="close"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></form><label for="site-search" class="visually-hidden">标题、主题或关键词</label><div class="search-field"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="site-search" type="search" placeholder="搜索观测、动作、世界模型……" autocomplete="off"><button class="icon-button search-clear" data-search-clear type="button" aria-label="清除搜索" hidden><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div><div class="search-results" aria-live="polite" aria-atomic="true"></div><p class="search-hint">按 Esc 关闭 · 仅搜索已有文章</p></dialog><script type="application/json" id="search-data">[{"title":"机器人数据长什么样：读懂一条观测与动作记录","description":"读取一条真实的 ManiSkill transition，区分观测、归一化动作、控制器目标与下一时刻的实际运动，并检查数据如何对应。","tags":["仿真实践","观测与动作","ManiSkill","机器人数据"],"url":"../articles/observations-and-actions.html"},{"title":"从一条记录到一段轨迹：保存机器人动作序列","description":"采集20个真实控制步，保存21份观测和原始相机帧，读懂轨迹的时间轴、回合边界及GIF回放，并检查数据是否一一对应。","tags":["仿真实践","机器人轨迹","ManiSkill","数据采集"],"url":"../articles/record-first-trajectory.html"},{"title":"把轨迹变成数据集：用 PyTorch 批量读取机器人样本","description":"离线读取第四篇的真实轨迹，将20个动作与21份观测整理为Dataset，实际加载5个批次，检查图像转换、时间对应和独立副本。","tags":["数据实践","PyTorch","Dataset","机器人轨迹"],"url":"../articles/trajectory-to-dataset.html"},{"title":"从单步到序列：构建机器人轨迹时间窗口","description":"从完整真实轨迹构造17个四步时间窗口，检查K与K+1、批次轴、重叠存储和回合边界，保留最后一个B=1批次。","tags":["数据实践","时间窗口","PyTorch","机器人轨迹"],"url":"../articles/trajectory-time-windows.html"},{"title":"从一条到多条轨迹：按轨迹划分训练与验证数据","description":"复用seed42并新增43、44两条真实片段，建立来源清单与数值指纹，先划分轨迹再切出34个train与17个validation窗口。","tags":["数据实践","数据划分","来源追踪","ManiSkill"],"url":"../articles/multi-trajectory-splits.html"},{"title":"只用训练集计算统计量：标准化机器人状态","description":"从两条训练轨迹的42份唯一状态拟合统计，冻结后应用到train与validation窗口，核对近似常量、逆变换和末批维度。","tags":["数据实践","标准化","数据泄漏","PyTorch"],"url":"../articles/train-only-normalization.html"},{"title":"没有实机，如何开始学习具身智能？","description":"从桌面推物理解观测、动作与闭环交互，为第一次机器人仿真实验确定目标和验收标准。","tags":["具身智能","机器人学习","仿真","世界模型"],"url":"../articles/start-without-robot.html"},{"title":"第一次机器人仿真实验：保存一张相机图像","description":"用 ManiSkill 初始化一个推方块任务，保存真实相机 RGB，检查图像、数据维度与运行配置，并记录一次控制器初始化问题。","tags":["仿真实践","ManiSkill","相机观测","具身智能"],"url":"../articles/capture-camera-frame.html"}]</script></body></html>

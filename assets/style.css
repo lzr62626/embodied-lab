@@ -148,6 +148,7 @@ kbd { font:10px/1.6 var(--mono-font-family); color:var(--muted); margin-left:8px
 .prose th { text-align:left; color:var(--ink); font-weight:500; border-top:1px solid var(--line); }
 .prose td,.prose th { padding:13px 15px; border-bottom:1px solid var(--line); vertical-align:top; }
 .prose td:first-child { white-space:nowrap; }
+.prose table.state-statistics td,.prose table.state-statistics th { white-space:nowrap; }
 .prose pre { position:relative; max-width:100%; overflow-x:auto; padding:45px 20px 21px; margin:28px 0; border:1px solid var(--line); border-radius:var(--radius-control); background:var(--paper); font-size:13px; line-height:1.9; }
 .prose pre code { font-family:var(--mono-font-family); }
 .copy-code { position:absolute; top:8px; right:10px; min-width:64px; height:29px; padding:3px 7px; border:1px solid var(--line); border-radius:var(--radius-small); background:var(--bg); color:var(--muted); font-size:11px; }
