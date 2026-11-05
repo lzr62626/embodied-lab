@@ -1,0 +1,39 @@
+{
+  "arrays": "Pure numeric or boolean arrays, read with allow_pickle=False.",
+  "states": "qpos/qvel (N+1,E=1,9), environment 0 is selected explicitly.",
+  "qpos_units": [
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "m",
+    "m"
+  ],
+  "qvel_units": [
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "m/s",
+    "m/s"
+  ],
+  "actions": "(N,8), original normalized controller commands",
+  "rgb": "(N+1,1,256,256,3), uint8 HWC, pixels equal numbered PNGs",
+  "cube_pose": "(N+1,1,7), diagnostic world xyz(m) and quaternion wxyz",
+  "model_inputs": "Frozen qpos then qvel. Single state for article10; four 18D states for article11.",
+  "history": "Oldest to newest, ending at t, repeat initial state on the left. Never includes t+1.",
+  "non_observation_fields": [
+    "reward",
+    "terminated",
+    "truncated",
+    "success",
+    "controller targets",
+    "cube pose"
+  ]
+}

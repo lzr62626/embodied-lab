@@ -145,7 +145,7 @@ kbd { font:10px/1.6 var(--mono-font-family); color:var(--muted); margin-left:8px
 .prose blockquote p { margin:0; }
 .table-scroll { max-width:100%; overflow-x:auto; margin:28px 0; scrollbar-gutter:stable; }
 .prose table { border-collapse:collapse; width:100%; min-width:430px; font-size:14px; line-height:1.9; }
-.prose th { text-align:left; color:var(--ink); font-weight:500; border-top:1px solid var(--line); }
+.prose th { text-align:left; color:var(--ink); font-weight:500; border-top:1px solid var(--line); white-space:nowrap; }
 .prose td,.prose th { padding:13px 15px; border-bottom:1px solid var(--line); vertical-align:top; }
 .prose td:first-child { white-space:nowrap; }
 .prose table.state-statistics td,.prose table.state-statistics th { white-space:nowrap; }

@@ -1,0 +1,173 @@
+{
+  "status": "passed",
+  "offline_only": true,
+  "simulator_calls_during_validation": 0,
+  "input_hashes_unchanged": 30,
+  "step_attempts": {
+    "A-script": 20,
+    "B-constant": 20,
+    "C-mlp": 20
+  },
+  "step_attempts_total": 60,
+  "explicit_reset_calls_total": 3,
+  "verified_png_count": 63,
+  "pngs_match_numpy_rgb_exactly": true,
+  "comparison_image_verified": true,
+  "contact_sheet_pixels_match_numpy_rgb_exactly": true,
+  "n_and_n_plus_one_layout": true,
+  "dtypes_and_finite_values": true,
+  "time_and_info_alignment": true,
+  "action_bounds_and_recorded_commands": true,
+  "terminal_flags_preserved": true,
+  "initial_conditions": {
+    "A-script": {
+      "historical_seed44": {
+        "obs/agent/qpos": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        },
+        "obs/agent/qvel": {
+          "max_abs_error": 0.0,
+          "atol": 1e-05,
+          "passed": true
+        },
+        "diagnostic/cube_pose": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        }
+      }
+    },
+    "B-constant": {
+      "historical_seed44": {
+        "obs/agent/qpos": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        },
+        "obs/agent/qvel": {
+          "max_abs_error": 0.0,
+          "atol": 1e-05,
+          "passed": true
+        },
+        "diagnostic/cube_pose": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        }
+      },
+      "new_group_A": {
+        "obs/agent/qpos": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        },
+        "obs/agent/qvel": {
+          "max_abs_error": 0.0,
+          "atol": 1e-05,
+          "passed": true
+        },
+        "diagnostic/cube_pose": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        }
+      }
+    },
+    "C-mlp": {
+      "historical_seed44": {
+        "obs/agent/qpos": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        },
+        "obs/agent/qvel": {
+          "max_abs_error": 0.0,
+          "atol": 1e-05,
+          "passed": true
+        },
+        "diagnostic/cube_pose": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        }
+      },
+      "new_group_A": {
+        "obs/agent/qpos": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        },
+        "obs/agent/qvel": {
+          "max_abs_error": 0.0,
+          "atol": 1e-05,
+          "passed": true
+        },
+        "diagnostic/cube_pose": {
+          "max_abs_error": 0.0,
+          "atol": 1e-06,
+          "passed": true
+        }
+      }
+    }
+  },
+  "A_reference_numerical": {
+    "obs/agent/qpos": {
+      "max_abs_error": 0.0,
+      "atol": 1e-06,
+      "passed": true
+    },
+    "obs/agent/qvel": {
+      "max_abs_error": 0.0,
+      "atol": 1e-05,
+      "passed": true
+    },
+    "diagnostic/cube_pose": {
+      "max_abs_error": 0.0,
+      "atol": 1e-06,
+      "passed": true
+    },
+    "rewards": {
+      "max_abs_error": 0.0,
+      "atol": 1e-05,
+      "passed": true
+    },
+    "diagnostic/arm_target_qpos": {
+      "max_abs_error": 0.0,
+      "atol": 1e-06,
+      "passed": true
+    },
+    "diagnostic/gripper_target_qpos": {
+      "max_abs_error": 0.0,
+      "atol": 1e-06,
+      "passed": true
+    },
+    "actions": {
+      "passed": true
+    },
+    "step_index": {
+      "passed": true
+    },
+    "time_s": {
+      "passed": true
+    },
+    "terminated": {
+      "passed": true
+    },
+    "truncated": {
+      "passed": true
+    },
+    "info/success": {
+      "passed": true
+    }
+  },
+  "A_reference_rgb_exact": true,
+  "mlp_action_recompute_atol": 1e-06,
+  "mlp_action_recompute_max_abs": 1.0617077350616455e-07,
+  "rollout_sha256": {
+    "A-script": "4eb5e1870fa6b8502ee27f30bbe30098b4531f62f23b086daff176a72dc5e46a",
+    "B-constant": "c4eef70f0802f4ef88a81e0b283a1230f68c7206db68fc85ef756622621c21ba",
+    "C-mlp": "fdf1fa228129ff2ad77a112896c19d5e094a6b5c1335a8ad0b58af0987470c35"
+  }
+}

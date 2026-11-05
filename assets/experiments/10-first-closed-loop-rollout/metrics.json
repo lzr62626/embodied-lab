@@ -1,0 +1,131 @@
+{
+  "common_horizon_steps": 20,
+  "groups": {
+    "A-script": {
+      "group": "A-script",
+      "seed": 44,
+      "explicit_reset_calls": 1,
+      "step_attempts": 20,
+      "completed_steps": 20,
+      "stopping_reason": "step_budget",
+      "success_any": false,
+      "simulated_seconds": 1.0,
+      "joint1_initial_rad": -0.015012294054031372,
+      "joint1_final_rad": -0.013253944925963879,
+      "joint1_net_change_rad": 0.0017583491280674934,
+      "joint1_max_excursion_rad": 0.018058606889098883,
+      "joint1_first_state_diff_from_script_above_1e_6_rad": null,
+      "joint1_max_diff_from_script_common_horizon_rad": 0.0,
+      "cube_final_xyz_delta_m": [
+        -3.5762786865234375e-07,
+        -6.966292858123779e-07,
+        -7.264316082000732e-08
+      ],
+      "cube_final_displacement_m": 7.864267817808618e-07,
+      "cube_max_displacement_m": 7.938474751485996e-07,
+      "reward_sum": 2.10996513068676,
+      "reward_last": 0.1045069694519043,
+      "success_steps": 0,
+      "success_final": false,
+      "terminated_final": false,
+      "truncated_final": false
+    },
+    "B-constant": {
+      "group": "B-constant",
+      "seed": 44,
+      "explicit_reset_calls": 1,
+      "step_attempts": 20,
+      "completed_steps": 20,
+      "stopping_reason": "step_budget",
+      "success_any": false,
+      "simulated_seconds": 1.0,
+      "joint1_initial_rad": -0.015012294054031372,
+      "joint1_final_rad": -0.015012294054031372,
+      "joint1_net_change_rad": 0.0,
+      "joint1_max_excursion_rad": 0.0,
+      "joint1_first_state_diff_from_script_above_1e_6_rad": 1,
+      "joint1_max_diff_from_script_common_horizon_rad": 0.018058606889098883,
+      "cube_final_xyz_delta_m": [
+        -3.5762786865234375e-07,
+        -6.966292858123779e-07,
+        -7.264316082000732e-08
+      ],
+      "cube_final_displacement_m": 7.864267817808618e-07,
+      "cube_max_displacement_m": 7.938474751485996e-07,
+      "reward_sum": 2.08218152821064,
+      "reward_last": 0.10410907864570618,
+      "success_steps": 0,
+      "success_final": false,
+      "terminated_final": false,
+      "truncated_final": false
+    },
+    "C-mlp": {
+      "group": "C-mlp",
+      "seed": 44,
+      "explicit_reset_calls": 1,
+      "step_attempts": 20,
+      "completed_steps": 20,
+      "stopping_reason": "step_budget",
+      "success_any": false,
+      "simulated_seconds": 1.0,
+      "joint1_initial_rad": -0.015012294054031372,
+      "joint1_final_rad": 0.022630101069808006,
+      "joint1_net_change_rad": 0.03764239512383938,
+      "joint1_max_excursion_rad": 0.040520740672945976,
+      "joint1_first_state_diff_from_script_above_1e_6_rad": 6,
+      "joint1_max_diff_from_script_common_horizon_rad": 0.036946394480764866,
+      "cube_final_xyz_delta_m": [
+        -3.5762786865234375e-07,
+        -6.966292858123779e-07,
+        -7.264316082000732e-08
+      ],
+      "cube_final_displacement_m": 7.864267817808618e-07,
+      "cube_max_displacement_m": 7.938474751485996e-07,
+      "reward_sum": 2.1479959189891815,
+      "reward_last": 0.10843314230442047,
+      "success_steps": 0,
+      "success_final": false,
+      "terminated_final": false,
+      "truncated_final": false
+    }
+  },
+  "switches": [
+    {
+      "t": 5,
+      "time_s": 0.25,
+      "script_u1": -0.10000000149011612,
+      "constant_u1": 0.0,
+      "offline_mlp_u1": 0.09999999403953552,
+      "closed_loop_mlp_u1": 0.09999999403953552,
+      "script_q1_after_rad": 0.0019104243256151676,
+      "closed_loop_q1_after_rad": 0.0070091066882014275
+    },
+    {
+      "t": 10,
+      "time_s": 0.5,
+      "script_u1": 0.10000000149011612,
+      "constant_u1": 0.0,
+      "offline_mlp_u1": 0.10000000149011612,
+      "closed_loop_mlp_u1": 0.024735530838370323,
+      "script_q1_after_rad": -0.01211779098957777,
+      "closed_loop_q1_after_rad": 0.024828603491187096
+    },
+    {
+      "t": 15,
+      "time_s": 0.75,
+      "script_u1": -0.10000000149011612,
+      "constant_u1": 0.0,
+      "offline_mlp_u1": 0.09999999403953552,
+      "closed_loop_mlp_u1": 0.10000000149011612,
+      "script_q1_after_rad": 0.0019103232771158218,
+      "closed_loop_q1_after_rad": 0.017853455618023872
+    }
+  ],
+  "offline_vs_closed_loop": {
+    "difference_threshold_normalized_u1": 1e-06,
+    "first_action_index_above_threshold": 6,
+    "max_abs_prediction_difference": 0.20000000298023224,
+    "mean_abs_prediction_difference": 0.07438873453065753,
+    "interpretation": "Same-index predictions on different states; not an expert-label error."
+  }
+}

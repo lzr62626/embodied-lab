@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "checks": [
+    "all source and reference SHA-256 values",
+    "all 60 current-state/action pairs",
+    "source split, action constants and switch steps",
+    "model shapes and finite CPU values",
+    "100 epochs and 500 optimizer updates",
+    "first and last shuffled training batches",
+    "parameter differences from seeded initialization",
+    "strict numeric weight reload",
+    "prediction CSV/NPZ agreement and independently recomputed metrics"
+  ],
+  "samples": {
+    "train": 40,
+    "validation": 20
+  },
+  "optimizer_updates": 500,
+  "simulator_calls": 0,
+  "reset_calls": 0,
+  "simulation_step_calls": 0,
+  "new_captures": 0,
+  "weights_sha256": "f72fa9894dd1a8d04c3ea955197fa0ea3b3d874d6998c0f6f097c2f1ffb0db13",
+  "source_files_preserved": 10
+}

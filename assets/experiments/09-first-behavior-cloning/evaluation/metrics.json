@@ -1,0 +1,44 @@
+{
+  "baseline_train_mean": 0.0,
+  "train_samples_for_mean": 40,
+  "validation_trajectory": "seed-0044",
+  "validation_batch_sizes": [
+    8,
+    8,
+    4
+  ],
+  "reload_max_abs_difference": 0.0,
+  "validation": {
+    "mean_baseline": {
+      "samples": 20,
+      "mse": 0.010000000298023226,
+      "rmse": 0.10000000149011612,
+      "mae": 0.10000000149011612
+    },
+    "mlp": {
+      "samples": 20,
+      "mse": 0.015998936786999797,
+      "rmse": 0.12648690361851617,
+      "mae": 0.08000696972012519
+    }
+  },
+  "switch_steps": {
+    "t": [
+      5,
+      10,
+      15
+    ],
+    "mean_baseline": {
+      "samples": 3,
+      "mse": 0.010000000298023226,
+      "rmse": 0.10000000149011612,
+      "mae": 0.10000000149011612
+    },
+    "mlp": {
+      "samples": 3,
+      "mse": 0.026666665474573786,
+      "rmse": 0.16329931253552107,
+      "mae": 0.1333333303531011
+    }
+  }
+}

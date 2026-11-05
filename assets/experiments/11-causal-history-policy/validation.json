@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "offline_validation": {
+    "status": "passed",
+    "split_counts": {
+      "train": 40,
+      "validation": 20
+    },
+    "all_source_rows_independently_checked": true,
+    "same_initial_parameters_and_actual_orders": true,
+    "journal_updates": {
+      "S": 500,
+      "H": 500
+    },
+    "saved_predictions_and_metrics_recomputed": true,
+    "validation_evaluated_after_training_only": true,
+    "simulator_calls": 0
+  },
+  "historical_inputs_unchanged": 27,
+  "simulation_steps_by_group": {
+    "S": 20,
+    "H": 20
+  },
+  "simulation_steps_total": 40,
+  "explicit_resets_total": 2,
+  "simulator_calls_during_verification": 0,
+  "verified_pngs": 42,
+  "n_and_n_plus_one_layout": true,
+  "time_and_info_alignment": true,
+  "original_terminal_flags": true,
+  "png_pixels_equal_rgb": true,
+  "contact_sheet_pixels_equal_rgb": true,
+  "initial_checks": {
+    "S": {
+      "obs/agent/qpos": {
+        "max_abs_error": 0.0,
+        "atol": 1e-06,
+        "passed": true
+      },
+      "obs/agent/qvel": {
+        "max_abs_error": 0.0,
+        "atol": 1e-05,
+        "passed": true
+      },
+      "diagnostic/cube_pose": {
+        "max_abs_error": 0.0,
+        "atol": 1e-06,
+        "passed": true
+      }
+    },
+    "H": {
+      "obs/agent/qpos": {
+        "max_abs_error": 0.0,
+        "atol": 1e-06,
+        "passed": true
+      },
+      "obs/agent/qvel": {
+        "max_abs_error": 0.0,
+        "atol": 1e-05,
+        "passed": true
+      },
+      "diagnostic/cube_pose": {
+        "max_abs_error": 0.0,
+        "atol": 1e-06,
+        "passed": true
+      }
+    }
+  },
+  "input_features_equal_independent_reconstruction": true,
+  "command_recompute_atol": 1e-06,
+  "command_recompute_max_abs_by_group": {
+    "S": 4.0978193283081055e-08,
+    "H": 4.470348358154297e-08
+  },
+  "rollout_sha256": {
+    "S": "b05e99607317c70b23ca8582031ddc3588564b011b5998b5dfdc5596b644fa60",
+    "H": "85ff09621a1bc77432368b75e199a622c42bd379d1e9ef09436c396793e2e9a4"
+  }
+}

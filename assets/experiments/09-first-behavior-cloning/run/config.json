@@ -1,0 +1,25 @@
+{
+  "seed": 2027,
+  "epochs": 100,
+  "batch_size": 8,
+  "learning_rate": 0.001,
+  "optimizer": "Adam",
+  "loss": "MSELoss",
+  "cpu_threads": 1,
+  "shuffle_train": true,
+  "architecture": [
+    18,
+    32,
+    32,
+    1
+  ],
+  "hidden_activation": "ReLU",
+  "output": "0.1 * tanh(logit)",
+  "action_index": 0,
+  "environment_index": 0,
+  "feature_order": [
+    "qpos",
+    "qvel"
+  ],
+  "maximum_optimizer_updates": 500
+}

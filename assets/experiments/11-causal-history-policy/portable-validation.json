@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "zip_sha256": "f5f280c5fa7f957a6b1a6fdc15c47d2086c2c25bca4ca7cf36b2db8c02de2874",
+  "zip_bytes": 17893981,
+  "groups": [
+    "S",
+    "H"
+  ],
+  "pngs_verified": 42,
+  "training_calls": 0,
+  "simulation_calls": 0
+}

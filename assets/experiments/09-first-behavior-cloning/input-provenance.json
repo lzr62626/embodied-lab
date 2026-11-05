@@ -1,0 +1,15 @@
+{
+  "sha256": {
+    "input/dataset_manifest.json": "8c7a687c88476cc9d73ec3f21f213a3d976b21035d878ebfb22f213388a6f612",
+    "input/splits.json": "3a82c75666241137b8ca584521afefa10f0d5f47d04a751334a469eefb05f9e3",
+    "input/schema.json": "a8f62036f733887f86d1da5b635074cbc49799e7b0443e4f4447f1e86d169462",
+    "input/trajectories/seed-0042/trajectory.npz": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+    "input/trajectories/seed-0043/trajectory.npz": "d1248a7b265b5af8a3cbf3f58da1697fe4db0e8fafe5f0f3665d234e15c8753c",
+    "input/trajectories/seed-0044/trajectory.npz": "25e84cf8e2346136e67a58e7b78b96a8c2f81a5bb92f15ff38092a137ffe56c0",
+    "input/normalization/train_stats.npz": "3d8ed7d0970197758019411809507ed650735a3e9620295e29fcc7ac81d42de6",
+    "input/normalization/train_stats.json": "0d4dbc564bac4ab736d713ff5934350f53372532778d0a06ebf186e24bb5c6ce",
+    "normalization.py": "8d146d823430026a754c56cc98f128936901bf93f3ca24fd42213192c3667dd8",
+    "source_utils.py": "0e2b4b9834f40c7e4a89624bc4b7c50dae6a86100c30dfde06e12bd566558421"
+  },
+  "matches_originals_before_and_after": true
+}
