@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "review_method": "Opened real saved PNG contact sheet and numeric comparison/audit figures",
+  "seeds": [
+    45,
+    46
+  ],
+  "new_E_state_indices": [
+    0,
+    8,
+    9,
+    20
+  ],
+  "robot_table_cube_recognizable": true,
+  "small_motion_not_claimed_as_push_success": true,
+  "image_tiles_equal_saved_RGB": true,
+  "first_last_and_intervention_neighborhood_reviewed": true,
+  "raw_pixels_edited": false,
+  "labels_outside_tiles": true
+}

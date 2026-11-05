@@ -1,0 +1,27 @@
+{
+  "scope": "Portable offline acceptance only",
+  "historical_runs_reused": 6,
+  "new_E_runs": 2,
+  "source_modules": {
+    "inspect_results.py": "9dffd8688fa20e2fa14d761855e05ae37eee78500c4242cbf089e9c69550aef0",
+    "paired_common.py": "f1100c4497daf8f46b606f0e8edf4dbaae96511f9292c2c982035dc07145f581",
+    "saved_checks.py": "b22249315b7558be7116b6fb0bec4b7fc97c43a43d5ad26b555f0b650080954f",
+    "feedback_controller.py": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd"
+  },
+  "feedback_origin": {
+    "article": 15,
+    "sha256": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd",
+    "byte_identical": true
+  },
+  "public_adaptation": "AST removal of private collection ledger/local inventory checks; relative sources; raw hardware enumeration omitted",
+  "source_rollout_sha256": {
+    "seed-0045-U": "3ebfc8849a49663cfd159fe2a8a1b74fe63b1f9954ba7f10e6d31468c3a9e00d",
+    "seed-0045-A": "2c177921e284855e72ff8c27e38cf5b906ee9c9e8345f34340bbc502207605af",
+    "seed-0045-D": "a0f30aff5d229148695eeef250c5c973490b82552ed88c5bb29ac6f2bf1cc564",
+    "seed-0045-E": "15ece0def19577b675290f8061ff5d5155e8463ecbf29ccaf8dab96fb2c36845",
+    "seed-0046-U": "7c6fddd982d7f4535808846d26494962ed8ad8e5a7beba32cd008e8072fe7fa6",
+    "seed-0046-A": "0fbf1dedd6bad1d6da340a1d3ae560ec94681f2ef867823339ba5dc374e4a134",
+    "seed-0046-D": "6fad6ee4bcee916dc8ea597cea1b053d52e117b0f6d1286a1dde73e7cb849774",
+    "seed-0046-E": "aa3b17f959e3705ab89d94527accb47a6215a9605567832bbf26f9d306c3f385"
+  }
+}

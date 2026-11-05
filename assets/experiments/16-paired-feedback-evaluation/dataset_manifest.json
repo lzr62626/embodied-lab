@@ -1,0 +1,112 @@
+{
+  "version": "paired-sources-v1",
+  "sources": [
+    {
+      "source_id": 0,
+      "seed": 45,
+      "condition": "U",
+      "group": "A-script",
+      "trajectory_id": "seed-0045-U",
+      "path": "trajectories/seed-0045/U",
+      "reused_historical_run": true,
+      "intervention": false,
+      "outer_reference_feedback": false,
+      "rollout_sha256": "3ebfc8849a49663cfd159fe2a8a1b74fe63b1f9954ba7f10e6d31468c3a9e00d",
+      "completed_steps": 20
+    },
+    {
+      "source_id": 1,
+      "seed": 45,
+      "condition": "A",
+      "group": "A-script-continuation",
+      "trajectory_id": "seed-0045-A",
+      "path": "trajectories/seed-0045/A",
+      "reused_historical_run": true,
+      "intervention": true,
+      "outer_reference_feedback": false,
+      "rollout_sha256": "2c177921e284855e72ff8c27e38cf5b906ee9c9e8345f34340bbc502207605af",
+      "completed_steps": 20
+    },
+    {
+      "source_id": 2,
+      "seed": 45,
+      "condition": "D",
+      "group": "D-reference-feedback",
+      "trajectory_id": "seed-0045-D",
+      "path": "trajectories/seed-0045/D",
+      "reused_historical_run": true,
+      "intervention": true,
+      "outer_reference_feedback": true,
+      "rollout_sha256": "a0f30aff5d229148695eeef250c5c973490b82552ed88c5bb29ac6f2bf1cc564",
+      "completed_steps": 20
+    },
+    {
+      "source_id": 3,
+      "seed": 45,
+      "condition": "E",
+      "group": "E-unperturbed-reference-feedback",
+      "trajectory_id": "seed-0045-E",
+      "path": "trajectories/seed-0045/E",
+      "reused_historical_run": false,
+      "intervention": false,
+      "outer_reference_feedback": true,
+      "rollout_sha256": "15ece0def19577b675290f8061ff5d5155e8463ecbf29ccaf8dab96fb2c36845",
+      "completed_steps": 20
+    },
+    {
+      "source_id": 4,
+      "seed": 46,
+      "condition": "U",
+      "group": "A-script",
+      "trajectory_id": "seed-0046-U",
+      "path": "trajectories/seed-0046/U",
+      "reused_historical_run": true,
+      "intervention": false,
+      "outer_reference_feedback": false,
+      "rollout_sha256": "7c6fddd982d7f4535808846d26494962ed8ad8e5a7beba32cd008e8072fe7fa6",
+      "completed_steps": 20
+    },
+    {
+      "source_id": 5,
+      "seed": 46,
+      "condition": "A",
+      "group": "A-script-continuation",
+      "trajectory_id": "seed-0046-A",
+      "path": "trajectories/seed-0046/A",
+      "reused_historical_run": true,
+      "intervention": true,
+      "outer_reference_feedback": false,
+      "rollout_sha256": "0fbf1dedd6bad1d6da340a1d3ae560ec94681f2ef867823339ba5dc374e4a134",
+      "completed_steps": 20
+    },
+    {
+      "source_id": 6,
+      "seed": 46,
+      "condition": "D",
+      "group": "D-reference-feedback",
+      "trajectory_id": "seed-0046-D",
+      "path": "trajectories/seed-0046/D",
+      "reused_historical_run": true,
+      "intervention": true,
+      "outer_reference_feedback": true,
+      "rollout_sha256": "6fad6ee4bcee916dc8ea597cea1b053d52e117b0f6d1286a1dde73e7cb849774",
+      "completed_steps": 20
+    },
+    {
+      "source_id": 7,
+      "seed": 46,
+      "condition": "E",
+      "group": "E-unperturbed-reference-feedback",
+      "trajectory_id": "seed-0046-E",
+      "path": "trajectories/seed-0046/E",
+      "reused_historical_run": false,
+      "intervention": false,
+      "outer_reference_feedback": true,
+      "rollout_sha256": "aa3b17f959e3705ab89d94527accb47a6215a9605567832bbf26f9d306c3f385",
+      "completed_steps": 20
+    }
+  ],
+  "source_path_base": "directory containing this manifest",
+  "historical_run_count": 6,
+  "new_run_count": 2
+}

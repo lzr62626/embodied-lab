@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "zip": "paired-feedback-files.zip",
+  "zip_sha256": "7e92b7c5fdce3ca29d9db0a5ba89a7d8e23da105d70f3153df12f65a28660213",
+  "zip_bytes": 34277996,
+  "standalone_extraction_evaluated": true,
+  "verified_pngs": 168,
+  "metrics_equal": true,
+  "comparison_arrays_equal": true,
+  "simulation_calls": 0,
+  "training_calls": 0,
+  "read_only_command": "python -B evaluate.py --output-dir result-r001",
+  "result": "PASS",
+  "article": 16,
+  "pngs_verified": 168
+}

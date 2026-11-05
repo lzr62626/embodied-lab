@@ -1,0 +1,43 @@
+{
+  "version": "paired-feedback-evaluation-v1",
+  "source_mapping": "dataset_manifest.json;source_id0..7 unique across seed and condition",
+  "conditions": {
+    "U": "historical13:no intervention,no outer reference feedback",
+    "A": "historical14:intervention,script continuation",
+    "D": "historical15:intervention,reference feedback",
+    "E": "new16:no intervention,reference feedback"
+  },
+  "source_count": 8,
+  "new_run_count": 2,
+  "historical_run_count": 6,
+  "rollout_axes": {
+    "N": "actual completed action count",
+    "N+1": "state count",
+    "E": "single environment axis; explicitly select0"
+  },
+  "raw_qpos": "(N+1,1,9)float32;arm7rad,finger2m",
+  "raw_qvel": "(N+1,1,9)float32;arm7rad/s,finger2m/s",
+  "raw_rgb": "(N+1,1,256,256,3)uint8,HWC,0..255;policy base_camera",
+  "actions": "(N,8)float32;first joint varies,arm2..7zero,gripper1;normalized controller commands",
+  "time": "step_index(N+1,1)int32;time_s(N+1,1)float64;control20Hz,physics100Hz",
+  "flags_reward_info": "each N records;original terminated/truncated preserved;budget end does not change flags",
+  "E_provenance": {
+    "audit/action_source": "(N,)int64:0original script0..8,2feedback9onward",
+    "audit/feedback_active": "(N,)bool:true at t>=9",
+    "audit/intervention": "(N,)bool:always false"
+  },
+  "feedback_audit": "M=N-9 actual decisions only;t/reference_state_index/actual_state_index int64(M,);q_ref,q_actual,error_rad,u_ff,correction,u_raw,u_clipped_float64 float64(M,);u_sent float32(M,);was_clipped/sent_at_bound bool(M,);controller_target_qpos float32(M,7)",
+  "feedback_units": {
+    "q_ref_q_actual_error": "rad",
+    "correction_u_ff_u_raw_u_sent": "dimensionless normalized instruction",
+    "controller_target_qpos": "rad"
+  },
+  "feedback_inputs": "raw current joint1 angle,known same-seed reference obs[t] joint1,reference actions[t,0];no state standardization",
+  "diagnostics": "cube pose xyz(m)+wxyz quaternion;arm/gripper target;success;not feedback inputs",
+  "comparison": "states9..minimum completed steps inclusive;both observed21states and20actions in every current source",
+  "r_off_rad": "q_A[k]-q_U[k]",
+  "r_on_rad": "q_D[k]-q_E[k]",
+  "r_on_minus_r_off_rad": "signed finite-condition contrast,not a general causal-effect estimate",
+  "tracking_deviation_rad": "q_group[k]-q_U[k];opposite sign to feedback error q_ref-q_actual",
+  "scope": "two already used seeds,known reference and clock;no training,parameter fitting,significance tests or task-success inference"
+}

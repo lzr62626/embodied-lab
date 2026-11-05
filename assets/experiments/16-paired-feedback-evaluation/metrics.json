@@ -1,0 +1,349 @@
+{
+  "version": "paired-feedback-evaluation-v1",
+  "seeds": {
+    "45": {
+      "comparison_state_indices": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "common_completed_actions": 20,
+      "r_off_A_minus_U": {
+        "max_abs_rad": 0.007927501108497381,
+        "rmse_rad": 0.007663299179186823,
+        "end_signed_rad": 0.007927501108497381,
+        "end_abs_rad": 0.007927501108497381
+      },
+      "r_on_D_minus_E": {
+        "max_abs_rad": 0.007320881122723222,
+        "rmse_rad": 0.0033276133867848386,
+        "end_signed_rad": 7.393257692456245e-05,
+        "end_abs_rad": 7.393257692456245e-05
+      },
+      "tracking_relative_to_U": {
+        "A": {
+          "max_abs_rad": 0.007927501108497381,
+          "rmse_rad": 0.007663299179186823,
+          "end_signed_rad": 0.007927501108497381,
+          "end_abs_rad": 0.007927501108497381
+        },
+        "D": {
+          "max_abs_rad": 0.007320881122723222,
+          "rmse_rad": 0.0033276133867848386,
+          "end_signed_rad": 7.393257692456245e-05,
+          "end_abs_rad": 7.393257692456245e-05
+        },
+        "E": {
+          "max_abs_rad": 0.0,
+          "rmse_rad": 0.0,
+          "end_signed_rad": 0.0,
+          "end_abs_rad": 0.0
+        }
+      },
+      "E_vs_U_without_intervention": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "angle": {
+          "max_abs_rad": 0.0,
+          "rmse_rad": 0.0,
+          "end_signed_rad": 0.0,
+          "end_abs_rad": 0.0
+        },
+        "actions_exact": true,
+        "max_abs_action0_difference": 0.0,
+        "actions_changed_count": 0,
+        "qpos_exact": true,
+        "qvel_exact": true,
+        "RGB_exact": true
+      },
+      "outcomes": {
+        "U": {
+          "reused_historical_run": true,
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "cube_net_xyz_m": [
+            -3.8743019104003906e-07,
+            -6.854534149169922e-07,
+            -8.195638656616211e-08
+          ],
+          "cube_net_displacement_m": 7.916219970728893e-07,
+          "reward_sum": 1.3658495843410492,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "stopping_reason": "step_budget"
+        },
+        "A": {
+          "reused_historical_run": true,
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "cube_net_xyz_m": [
+            -3.8743019104003906e-07,
+            -6.854534149169922e-07,
+            -8.195638656616211e-08
+          ],
+          "cube_net_displacement_m": 7.916219970728893e-07,
+          "reward_sum": 1.381884142756462,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "stopping_reason": "step_budget"
+        },
+        "D": {
+          "reused_historical_run": true,
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "cube_net_xyz_m": [
+            -3.8743019104003906e-07,
+            -6.854534149169922e-07,
+            -8.195638656616211e-08
+          ],
+          "cube_net_displacement_m": 7.916219970728893e-07,
+          "reward_sum": 1.3704736977815628,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "stopping_reason": "step_budget",
+          "feedback_decisions": 11,
+          "clipped_decisions": 6,
+          "sent_at_bound_decisions": 6,
+          "touch_without_clipping": 0,
+          "max_abs_correction": 0.07320881122723222
+        },
+        "E": {
+          "reused_historical_run": false,
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "cube_net_xyz_m": [
+            -3.8743019104003906e-07,
+            -6.854534149169922e-07,
+            -8.195638656616211e-08
+          ],
+          "cube_net_displacement_m": 7.916219970728893e-07,
+          "reward_sum": 1.3658495843410492,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "stopping_reason": "step_budget",
+          "feedback_decisions": 11,
+          "clipped_decisions": 0,
+          "sent_at_bound_decisions": 11,
+          "touch_without_clipping": 11,
+          "max_abs_correction": 0.0
+        }
+      },
+      "interpretation": "Signed paired responses under the frozen rules; no significance test, independence or task-success claim."
+    },
+    "46": {
+      "comparison_state_indices": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "common_completed_actions": 20,
+      "r_off_A_minus_U": {
+        "max_abs_rad": 0.00792724173516035,
+        "rmse_rad": 0.00766869836788222,
+        "end_signed_rad": 0.00792724173516035,
+        "end_abs_rad": 0.00792724173516035
+      },
+      "r_on_D_minus_E": {
+        "max_abs_rad": 0.007347689010202885,
+        "rmse_rad": 0.0033327638906353375,
+        "end_signed_rad": 8.790567517280579e-05,
+        "end_abs_rad": 8.790567517280579e-05
+      },
+      "tracking_relative_to_U": {
+        "A": {
+          "max_abs_rad": 0.00792724173516035,
+          "rmse_rad": 0.00766869836788222,
+          "end_signed_rad": 0.00792724173516035,
+          "end_abs_rad": 0.00792724173516035
+        },
+        "D": {
+          "max_abs_rad": 0.007347689010202885,
+          "rmse_rad": 0.0033327638906353375,
+          "end_signed_rad": 8.790567517280579e-05,
+          "end_abs_rad": 8.790567517280579e-05
+        },
+        "E": {
+          "max_abs_rad": 0.0,
+          "rmse_rad": 0.0,
+          "end_signed_rad": 0.0,
+          "end_abs_rad": 0.0
+        }
+      },
+      "E_vs_U_without_intervention": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "angle": {
+          "max_abs_rad": 0.0,
+          "rmse_rad": 0.0,
+          "end_signed_rad": 0.0,
+          "end_abs_rad": 0.0
+        },
+        "actions_exact": true,
+        "max_abs_action0_difference": 0.0,
+        "actions_changed_count": 0,
+        "qpos_exact": true,
+        "qvel_exact": true,
+        "RGB_exact": true
+      },
+      "outcomes": {
+        "U": {
+          "reused_historical_run": true,
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "cube_net_xyz_m": [
+            -3.8370490074157715e-07,
+            -7.37607479095459e-07,
+            -6.51925802230835e-08
+          ],
+          "cube_net_displacement_m": 8.339929955262243e-07,
+          "reward_sum": 1.5284648388624191,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "stopping_reason": "step_budget"
+        },
+        "A": {
+          "reused_historical_run": true,
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "cube_net_xyz_m": [
+            -3.8370490074157715e-07,
+            -7.37607479095459e-07,
+            -6.51925802230835e-08
+          ],
+          "cube_net_displacement_m": 8.339929955262243e-07,
+          "reward_sum": 1.5053210854530334,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "stopping_reason": "step_budget"
+        },
+        "D": {
+          "reused_historical_run": true,
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "cube_net_xyz_m": [
+            -3.8370490074157715e-07,
+            -7.37607479095459e-07,
+            -6.51925802230835e-08
+          ],
+          "cube_net_displacement_m": 8.339929955262243e-07,
+          "reward_sum": 1.5218659043312073,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "stopping_reason": "step_budget",
+          "feedback_decisions": 11,
+          "clipped_decisions": 6,
+          "sent_at_bound_decisions": 6,
+          "touch_without_clipping": 0,
+          "max_abs_correction": 0.07347689010202885
+        },
+        "E": {
+          "reused_historical_run": false,
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "cube_net_xyz_m": [
+            -3.8370490074157715e-07,
+            -7.37607479095459e-07,
+            -6.51925802230835e-08
+          ],
+          "cube_net_displacement_m": 8.339929955262243e-07,
+          "reward_sum": 1.5284648388624191,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "stopping_reason": "step_budget",
+          "feedback_decisions": 11,
+          "clipped_decisions": 0,
+          "sent_at_bound_decisions": 11,
+          "touch_without_clipping": 11,
+          "max_abs_correction": 0.0
+        }
+      },
+      "interpretation": "Signed paired responses under the frozen rules; no significance test, independence or task-success claim."
+    }
+  },
+  "new_runs": 2,
+  "historical_runs_reused": 6,
+  "units": {
+    "angle": "rad",
+    "velocity": "rad/s",
+    "cube_displacement": "m",
+    "time": "s"
+  },
+  "no_significance_test": true,
+  "no_training": true
+}

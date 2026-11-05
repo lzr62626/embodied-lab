@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "raw_tiles_checked": 8,
+  "tiles_equal_original_RGB": true,
+  "label_placement": "outside original image tiles",
+  "tiles": [
+    {
+      "seed": 45,
+      "state_index": 0,
+      "origin": [
+        20,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "state_index": 8,
+      "origin": [
+        296,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "state_index": 9,
+      "origin": [
+        572,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "state_index": 20,
+      "origin": [
+        848,
+        78
+      ]
+    },
+    {
+      "seed": 46,
+      "state_index": 0,
+      "origin": [
+        20,
+        396
+      ]
+    },
+    {
+      "seed": 46,
+      "state_index": 8,
+      "origin": [
+        296,
+        396
+      ]
+    },
+    {
+      "seed": 46,
+      "state_index": 9,
+      "origin": [
+        572,
+        396
+      ]
+    },
+    {
+      "seed": 46,
+      "state_index": 20,
+      "origin": [
+        848,
+        396
+      ]
+    }
+  ]
+}
