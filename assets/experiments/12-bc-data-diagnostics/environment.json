@@ -1,0 +1,18 @@
+{
+  "python": "3.11.9",
+  "packages": {
+    "numpy": "2.4.6",
+    "torch": "2.14.1",
+    "Pillow": "13.0.0"
+  },
+  "offline_execution": "CPU",
+  "task": "PushCube-v1",
+  "camera": "base_camera",
+  "camera_size": [
+    256,
+    256
+  ],
+  "physics_frequency_hz": 100,
+  "control_frequency_hz": 20,
+  "image_transfer": "Original RGB saved through a CPU-accessible interface; render utilization was not measured."
+}

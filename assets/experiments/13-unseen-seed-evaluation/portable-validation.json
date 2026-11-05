@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "article": 13,
+  "pngs_verified": 126,
+  "training_calls": 0,
+  "simulation_calls": 0,
+  "zip_sha256": "98505aadfb2627c06c395c86b67f0c62b67f1fd7fbd3cd097e2abf1471b25115",
+  "zip_bytes": 31857691,
+  "standalone_extraction_evaluated": true
+}

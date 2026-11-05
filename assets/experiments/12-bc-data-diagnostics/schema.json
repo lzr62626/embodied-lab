@@ -1,0 +1,365 @@
+{
+  "source_mapping": [
+    {
+      "source_id": 0,
+      "trajectory_id": "seed-0042",
+      "seed": 42
+    },
+    {
+      "source_id": 1,
+      "trajectory_id": "seed-0043",
+      "seed": 43
+    },
+    {
+      "source_id": 2,
+      "trajectory_id": "seed-0044",
+      "seed": 44
+    }
+  ],
+  "source_and_time_are_metadata": true,
+  "environment_index_selected": 0,
+  "C": "Current qpos[0:9] then qvel[0:9], frozen-standardized float32, no history duplication.",
+  "H": "Four 18D states in oldest-to-current order, left pad with this source's initial state.",
+  "distance": "RMS feature difference, float64, dimensionless; no similarity threshold.",
+  "exact_equality": "Exact numeric input equality, +0 and -0 equal, non-finite values rejected.",
+  "candidate_order": [
+    "distance",
+    "source_id",
+    "t"
+  ],
+  "train_neighbor_columns": [
+    "other",
+    "same_label",
+    "opposite_label"
+  ],
+  "pair_slots": "C raw deltas (rank,1,9); H raw deltas (rank,4,9), left minus right.",
+  "raw_units": {
+    "qpos": [
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "rad",
+      "m",
+      "m"
+    ],
+    "qvel": [
+      "rad/s",
+      "rad/s",
+      "rad/s",
+      "rad/s",
+      "rad/s",
+      "rad/s",
+      "rad/s",
+      "m/s",
+      "m/s"
+    ]
+  },
+  "target": "Original normalized first controller input, actions[t,0].",
+  "npz_fields": {
+    "samples.npz": {
+      "train_C": {
+        "shape": [
+          40,
+          18
+        ],
+        "dtype": "float32"
+      },
+      "train_H": {
+        "shape": [
+          40,
+          72
+        ],
+        "dtype": "float32"
+      },
+      "train_source_id": {
+        "shape": [
+          40
+        ],
+        "dtype": "int64"
+      },
+      "train_seed": {
+        "shape": [
+          40
+        ],
+        "dtype": "int64"
+      },
+      "train_t": {
+        "shape": [
+          40
+        ],
+        "dtype": "int64"
+      },
+      "train_history_index": {
+        "shape": [
+          40,
+          4
+        ],
+        "dtype": "int64"
+      },
+      "train_target": {
+        "shape": [
+          40
+        ],
+        "dtype": "float32"
+      },
+      "train_raw_qpos": {
+        "shape": [
+          40,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "train_raw_qvel": {
+        "shape": [
+          40,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "validation_C": {
+        "shape": [
+          20,
+          18
+        ],
+        "dtype": "float32"
+      },
+      "validation_H": {
+        "shape": [
+          20,
+          72
+        ],
+        "dtype": "float32"
+      },
+      "validation_source_id": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "validation_seed": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "validation_t": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "validation_history_index": {
+        "shape": [
+          20,
+          4
+        ],
+        "dtype": "int64"
+      },
+      "validation_target": {
+        "shape": [
+          20
+        ],
+        "dtype": "float32"
+      },
+      "validation_raw_qpos": {
+        "shape": [
+          20,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "validation_raw_qvel": {
+        "shape": [
+          20,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "validation_prediction_S": {
+        "shape": [
+          20
+        ],
+        "dtype": "float32"
+      },
+      "validation_prediction_H": {
+        "shape": [
+          20
+        ],
+        "dtype": "float32"
+      }
+    },
+    "train_neighbors.npz": {
+      "C_distances": {
+        "shape": [
+          40,
+          40
+        ],
+        "dtype": "float64"
+      },
+      "C_neighbor_rows": {
+        "shape": [
+          40,
+          3
+        ],
+        "dtype": "int64"
+      },
+      "C_neighbor_distances": {
+        "shape": [
+          40,
+          3
+        ],
+        "dtype": "float64"
+      },
+      "H_distances": {
+        "shape": [
+          40,
+          40
+        ],
+        "dtype": "float64"
+      },
+      "H_neighbor_rows": {
+        "shape": [
+          40,
+          3
+        ],
+        "dtype": "int64"
+      },
+      "H_neighbor_distances": {
+        "shape": [
+          40,
+          3
+        ],
+        "dtype": "float64"
+      }
+    },
+    "validation_neighbors.npz": {
+      "C_distances": {
+        "shape": [
+          20,
+          40
+        ],
+        "dtype": "float64"
+      },
+      "C_neighbor_row": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "C_nearest_distance": {
+        "shape": [
+          20
+        ],
+        "dtype": "float64"
+      },
+      "C_prediction": {
+        "shape": [
+          20
+        ],
+        "dtype": "float32"
+      },
+      "H_distances": {
+        "shape": [
+          20,
+          40
+        ],
+        "dtype": "float64"
+      },
+      "H_neighbor_row": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "H_nearest_distance": {
+        "shape": [
+          20
+        ],
+        "dtype": "float64"
+      },
+      "H_prediction": {
+        "shape": [
+          20
+        ],
+        "dtype": "float32"
+      }
+    },
+    "opposite_pairs.npz": {
+      "C_rows": {
+        "shape": [
+          10,
+          2
+        ],
+        "dtype": "int64"
+      },
+      "C_distance": {
+        "shape": [
+          10
+        ],
+        "dtype": "float64"
+      },
+      "C_normalized_squared_delta": {
+        "shape": [
+          10,
+          18
+        ],
+        "dtype": "float64"
+      },
+      "C_qpos_delta": {
+        "shape": [
+          10,
+          1,
+          9
+        ],
+        "dtype": "float64"
+      },
+      "C_qvel_delta": {
+        "shape": [
+          10,
+          1,
+          9
+        ],
+        "dtype": "float64"
+      },
+      "H_rows": {
+        "shape": [
+          10,
+          2
+        ],
+        "dtype": "int64"
+      },
+      "H_distance": {
+        "shape": [
+          10
+        ],
+        "dtype": "float64"
+      },
+      "H_normalized_squared_delta": {
+        "shape": [
+          10,
+          72
+        ],
+        "dtype": "float64"
+      },
+      "H_qpos_delta": {
+        "shape": [
+          10,
+          4,
+          9
+        ],
+        "dtype": "float64"
+      },
+      "H_qvel_delta": {
+        "shape": [
+          10,
+          4,
+          9
+        ],
+        "dtype": "float64"
+      }
+    }
+  }
+}

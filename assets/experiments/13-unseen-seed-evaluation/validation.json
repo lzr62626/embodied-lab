@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "step_attempts_by_run": {
+    "seed-0045/A-script": 20,
+    "seed-0045/B-H-MLP": 20,
+    "seed-0045/C-H-1NN": 20,
+    "seed-0046/A-script": 20,
+    "seed-0046/B-H-MLP": 20,
+    "seed-0046/C-H-1NN": 20
+  },
+  "step_attempts_total": 120,
+  "explicit_reset_calls": 6,
+  "verified_pngs": 126,
+  "PNG_pixels_equal_RGB": true,
+  "display_sheet_pixels_equal_original": true,
+  "N_and_N_plus_one": true,
+  "step_time_info_alignment": true,
+  "episode_flags_preserved": true,
+  "causal_inputs_equal_saved_policy_inputs": true,
+  "candidate_sources": [
+    42,
+    43
+  ],
+  "candidate_rows": 40,
+  "command_recompute_max_abs": {
+    "seed-0045/B-H-MLP": 3.725290298461914e-08,
+    "seed-0045/C-H-1NN": 0.0,
+    "seed-0046/B-H-MLP": 7.450580596923828e-09,
+    "seed-0046/C-H-1NN": 0.0
+  },
+  "nearest_distance_recompute_max_abs": 0.0,
+  "offline_predictions_saved_reloaded_and_metrics_recomputed": true,
+  "referenced_files_unchanged": 35,
+  "earlier_results_and_site_files_unchanged": 331,
+  "model_training_calls": 0,
+  "statistics_fits": 0,
+  "simulator_calls_during_verification": 0,
+  "rollout_sha256": {
+    "seed-0045/A-script": "3ebfc8849a49663cfd159fe2a8a1b74fe63b1f9954ba7f10e6d31468c3a9e00d",
+    "seed-0045/B-H-MLP": "8f6dd435251505903531325d9a53058366625850ef5a633187d4bf729f1c6e45",
+    "seed-0045/C-H-1NN": "3ebfc8849a49663cfd159fe2a8a1b74fe63b1f9954ba7f10e6d31468c3a9e00d",
+    "seed-0046/A-script": "7c6fddd982d7f4535808846d26494962ed8ad8e5a7beba32cd008e8072fe7fa6",
+    "seed-0046/B-H-MLP": "371259a2c95753f4b55abb24e6315505ebbd332d3e6844691e5789c8ed208c33",
+    "seed-0046/C-H-1NN": "7c6fddd982d7f4535808846d26494962ed8ad8e5a7beba32cd008e8072fe7fa6"
+  }
+}

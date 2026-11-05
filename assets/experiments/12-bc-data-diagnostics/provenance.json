@@ -1,0 +1,48 @@
+{
+  "article": 12,
+  "inputs": {
+    "inputs/seed-0042.npz": {
+      "sha256": "6280626ba4fddd7dbc9c392a7c72e72661a9b177c35c47c4832a9b18ebed6b85",
+      "kind": "unaltered original numeric or image artifact"
+    },
+    "inputs/seed-0043.npz": {
+      "sha256": "d1248a7b265b5af8a3cbf3f58da1697fe4db0e8fafe5f0f3665d234e15c8753c",
+      "kind": "unaltered original numeric or image artifact"
+    },
+    "inputs/seed-0044.npz": {
+      "sha256": "25e84cf8e2346136e67a58e7b78b96a8c2f81a5bb92f15ff38092a137ffe56c0",
+      "kind": "unaltered original numeric or image artifact"
+    },
+    "stats/train_stats.npz": {
+      "sha256": "3d8ed7d0970197758019411809507ed650735a3e9620295e29fcc7ac81d42de6",
+      "kind": "unaltered original numeric or image artifact"
+    },
+    "weights/H.npz": {
+      "sha256": "a56d3e1f0a25e193a2b1dc0305ee94fdd4fd714208afdfeb5bcd9c524f990c8c",
+      "kind": "unaltered original numeric or image artifact"
+    },
+    "weights/S.npz": {
+      "sha256": "ee05f24116327f9f1107c21bd730dd145c520609435cb7942043cd452e88287c",
+      "kind": "unaltered original numeric or image artifact"
+    },
+    "results/samples.npz": {
+      "sha256": "39da8cb536417c4f7c8c0b91f457a0445d71047066e18e5773c50a17fb1da49d",
+      "kind": "unaltered original numeric or image artifact"
+    },
+    "results/train_neighbors.npz": {
+      "sha256": "816429165f42272a677f4368c1872bd3dfbaf74982c40becf2b60c9e2e8eba53",
+      "kind": "unaltered original numeric or image artifact"
+    },
+    "results/validation_neighbors.npz": {
+      "sha256": "a9b27cf75e98fd9bfaf6a7c1a1df3ceda84ddc4a0da881ea1c9ce6a029b423ce",
+      "kind": "unaltered original numeric or image artifact"
+    },
+    "results/opposite_pairs.npz": {
+      "sha256": "5310561b24111a21c6ec427549b1614e8bd61844d3bdb4a5e111c7cddae89cc2",
+      "kind": "unaltered original numeric or image artifact"
+    }
+  },
+  "new_capture_in_public_reproduction": false,
+  "weights_and_statistics_frozen": true,
+  "published_scope": "Curated tutorial and original numeric/image artifacts; no private logs or local metadata."
+}

@@ -1,0 +1,222 @@
+{
+  "seeds": {
+    "45": {
+      "common_control_steps": 20,
+      "comparison_state_indices": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "groups": {
+        "U": {
+          "source": "article13 unperturbed A-script",
+          "reused_historical_run": true,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.0,
+          "angle_RMSE_rad": 0.0,
+          "common_end_signed_deviation_rad": 0.0,
+          "common_end_abs_deviation_rad": 0.0
+        },
+        "A": {
+          "source": "article14 A-script-continuation",
+          "reused_historical_run": true,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.007927501108497381,
+          "angle_RMSE_rad": 0.007663299179186823,
+          "common_end_signed_deviation_rad": 0.007927501108497381,
+          "common_end_abs_deviation_rad": 0.007927501108497381
+        },
+        "B": {
+          "source": "article14 B-H-MLP",
+          "reused_historical_run": true,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.01745038339868188,
+          "angle_RMSE_rad": 0.012291042754874604,
+          "common_end_signed_deviation_rad": 0.01745038339868188,
+          "common_end_abs_deviation_rad": 0.01745038339868188
+        },
+        "C": {
+          "source": "article14 C-H-1NN",
+          "reused_historical_run": true,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.007927501108497381,
+          "angle_RMSE_rad": 0.007663299179186823,
+          "common_end_signed_deviation_rad": 0.007927501108497381,
+          "common_end_abs_deviation_rad": 0.007927501108497381
+        },
+        "D": {
+          "source": "article15 D-reference-feedback",
+          "reused_historical_run": false,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.007320881122723222,
+          "angle_RMSE_rad": 0.0033276133867848386,
+          "common_end_signed_deviation_rad": 7.393257692456245e-05,
+          "common_end_abs_deviation_rad": 7.393257692456245e-05
+        }
+      },
+      "D_vs_same_intervention_A": {
+        "max_abs_angle_difference_rad": 0.007853568531572819,
+        "angle_difference_RMSE_rad": 0.006273633825183949,
+        "common_end_signed_difference_rad": -0.007853568531572819
+      },
+      "new_D_outcome": {
+        "run_id": "seed-0045/D-reference-feedback",
+        "group": "D-reference-feedback",
+        "seed": 45,
+        "explicit_reset_calls": 1,
+        "step_cap": 20,
+        "step_attempts": 20,
+        "completed_steps": 20,
+        "stopping_reason": "step_budget",
+        "feedback_decisions": 11,
+        "intervention_calls": 1,
+        "success_any": false,
+        "simulation_time_s": 1.0,
+        "clipped_decisions": 6,
+        "sent_at_bound_decisions": 6,
+        "touch_without_clipping_decisions": 0,
+        "clipped_action_indices": [
+          9,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "cube_net_xyz_m": [
+          -3.8743019104003906e-07,
+          -6.854534149169922e-07,
+          -8.195638656616211e-08
+        ],
+        "cube_net_displacement_m": 7.916219970728893e-07,
+        "reward_sum": 1.3704736977815628,
+        "success_steps": 0,
+        "success_final": false,
+        "terminated_final": false,
+        "truncated_final": false
+      }
+    },
+    "46": {
+      "common_control_steps": 20,
+      "comparison_state_indices": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "groups": {
+        "U": {
+          "source": "article13 unperturbed A-script",
+          "reused_historical_run": true,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.0,
+          "angle_RMSE_rad": 0.0,
+          "common_end_signed_deviation_rad": 0.0,
+          "common_end_abs_deviation_rad": 0.0
+        },
+        "A": {
+          "source": "article14 A-script-continuation",
+          "reused_historical_run": true,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.00792724173516035,
+          "angle_RMSE_rad": 0.00766869836788222,
+          "common_end_signed_deviation_rad": 0.00792724173516035,
+          "common_end_abs_deviation_rad": 0.00792724173516035
+        },
+        "B": {
+          "source": "article14 B-H-MLP",
+          "reused_historical_run": true,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.008284017443656921,
+          "angle_RMSE_rad": 0.006157696693402451,
+          "common_end_signed_deviation_rad": 0.004552486352622509,
+          "common_end_abs_deviation_rad": 0.004552486352622509
+        },
+        "C": {
+          "source": "article14 C-H-1NN",
+          "reused_historical_run": true,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.00792724173516035,
+          "angle_RMSE_rad": 0.00766869836788222,
+          "common_end_signed_deviation_rad": 0.00792724173516035,
+          "common_end_abs_deviation_rad": 0.00792724173516035
+        },
+        "D": {
+          "source": "article15 D-reference-feedback",
+          "reused_historical_run": false,
+          "actual_control_steps": 20,
+          "max_abs_angle_deviation_rad": 0.007347689010202885,
+          "angle_RMSE_rad": 0.0033327638906353375,
+          "common_end_signed_deviation_rad": 8.790567517280579e-05,
+          "common_end_abs_deviation_rad": 8.790567517280579e-05
+        }
+      },
+      "D_vs_same_intervention_A": {
+        "max_abs_angle_difference_rad": 0.007839336059987545,
+        "angle_difference_RMSE_rad": 0.006270041228334994,
+        "common_end_signed_difference_rad": -0.007839336059987545
+      },
+      "new_D_outcome": {
+        "run_id": "seed-0046/D-reference-feedback",
+        "group": "D-reference-feedback",
+        "seed": 46,
+        "explicit_reset_calls": 1,
+        "step_cap": 20,
+        "step_attempts": 20,
+        "completed_steps": 20,
+        "stopping_reason": "step_budget",
+        "feedback_decisions": 11,
+        "intervention_calls": 1,
+        "success_any": false,
+        "simulation_time_s": 1.0,
+        "clipped_decisions": 6,
+        "sent_at_bound_decisions": 6,
+        "touch_without_clipping_decisions": 0,
+        "clipped_action_indices": [
+          9,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "cube_net_xyz_m": [
+          -3.8370490074157715e-07,
+          -7.37607479095459e-07,
+          -6.51925802230835e-08
+        ],
+        "cube_net_displacement_m": 8.339929955262243e-07,
+        "reward_sum": 1.5218659043312073,
+        "success_steps": 0,
+        "success_final": false,
+        "terminated_final": false,
+        "truncated_final": false
+      }
+    }
+  },
+  "group_mapping": {
+    "U": "article13 unperturbed A-script",
+    "A": "article14 A-script-continuation",
+    "B": "article14 B-H-MLP",
+    "C": "article14 C-H-1NN",
+    "D": "article15 D-reference-feedback"
+  },
+  "comparison_note": "D has reference trajectory and clock; H strategies do not have these inputs."
+}

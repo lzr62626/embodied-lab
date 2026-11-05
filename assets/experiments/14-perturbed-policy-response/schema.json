@@ -1,0 +1,1142 @@
+{
+  "version": "perturbed-policy-response-v1",
+  "N": "actual successful steps per run; all six are 20",
+  "axes": {
+    "N": "action/transition time",
+    "N+1": "state time including final next observation",
+    "E": "single source environment, explicitly index 0",
+    "M": "actual policy queries N-9; here 11",
+    "H": "four causal states, oldest to current",
+    "C": "three RGB channels"
+  },
+  "policy_observation_fields": [
+    "obs/agent/qpos",
+    "obs/agent/qvel"
+  ],
+  "policy_features": "Each state: normalized qpos[9] then qvel[9]; four states flatten to 72 float32 CPU values",
+  "qpos_units": [
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "m",
+    "m"
+  ],
+  "qvel_units": [
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "m/s",
+    "m/s"
+  ],
+  "normalization": "Article 8 frozen train-only mean/scale, float64 transform then float32; no fitting here",
+  "RGB": "(N+1,1,256,256,3) uint8 HWC 0..255, unmodified PNG; not input to the policies",
+  "actions": "(N,8) float32 normalized controller inputs; dims 1..6 zero, dim7 one (indices start at0)",
+  "controller": "Arm: normalized [-1,1] maps to delta [-0.1,0.1]rad, anchored to current qpos. Gripper1 ->0.04m target",
+  "audit/action_source": {
+    "0": "shared script prefix",
+    "1": "forced override at t8",
+    "2": "A script continuation",
+    "3": "B frozen H-MLP decision",
+    "4": "C frozen H-1NN decision"
+  },
+  "audit/policy_active": "(N,)bool, true only for B/C at t>=9",
+  "audit/intervention": "(N,)bool, true only at t8",
+  "policy-inputs.npz": {
+    "t": "(M,)int64 actual query action index,9..19",
+    "x": "(M,72)float32 actual causal input",
+    "state_indices": "(M,4)int64; first row[6,7,8,9]"
+  },
+  "nearest-neighbors.npz": {
+    "query_t": "(M,)int64 current query audit index",
+    "row": "(M,)int64 selected frozen candidate row,0..39",
+    "source_id": "(M,)int64;0=seed42,1=seed43",
+    "train_t": "(M,)int64 action index in selected training trajectory",
+    "distance": "(M,)float64 RMS in frozen-standardized input space, dimensionless",
+    "label": "(M,)float64 audit copy of selected normalized action0"
+  },
+  "comparison_series_mapping": {
+    "unperturbed": "article13 A-script",
+    "0": "A-script-continuation",
+    "1": "B-H-MLP",
+    "2": "C-H-1NN"
+  },
+  "diagnostic_fields": {
+    "diagnostic/cube_pose": "(N+1,1,7):xyz in m then wxyz quaternion, simulator ground truth",
+    "diagnostic/arm_target_qpos": "Controller target in rad; not measured movement or policy input",
+    "diagnostic/gripper_target_qpos": "Controller target in m; not policy input",
+    "info/success": "Task success, per action; not policy input"
+  },
+  "time": "Control20Hz, physics100Hz; obs[s] time=s*0.05s. Override action8 spans0.40..0.45s; takeover action9 at0.45s",
+  "raw_fields_by_run": {
+    "seed-0045/A-script-continuation": {
+      "obs/agent/qpos": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/agent/qvel": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/extra/tcp_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/extrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/cam2world_gl": {
+        "shape": [
+          21,
+          1,
+          4,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/intrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_data/base_camera/rgb": {
+        "shape": [
+          21,
+          1,
+          256,
+          256,
+          3
+        ],
+        "dtype": "uint8"
+      },
+      "diagnostic/cube_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "step_index": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/elapsed_steps": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/success": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "actions": {
+        "shape": [
+          20,
+          8
+        ],
+        "dtype": "float32"
+      },
+      "rewards": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "float32"
+      },
+      "terminated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "truncated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "audit/action_source": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "audit/policy_active": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "audit/intervention": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "diagnostic/arm_target_qpos": {
+        "shape": [
+          20,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "diagnostic/gripper_target_qpos": {
+        "shape": [
+          20,
+          1,
+          2
+        ],
+        "dtype": "float32"
+      },
+      "reset_info/elapsed_steps": {
+        "shape": [
+          1
+        ],
+        "dtype": "int32"
+      },
+      "reset_info/success": {
+        "shape": [
+          1
+        ],
+        "dtype": "bool"
+      },
+      "reset_info/reconfigure": {
+        "shape": [],
+        "dtype": "bool"
+      },
+      "time_s": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "float64"
+      }
+    },
+    "seed-0045/B-H-MLP": {
+      "obs/agent/qpos": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/agent/qvel": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/extra/tcp_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/extrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/cam2world_gl": {
+        "shape": [
+          21,
+          1,
+          4,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/intrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_data/base_camera/rgb": {
+        "shape": [
+          21,
+          1,
+          256,
+          256,
+          3
+        ],
+        "dtype": "uint8"
+      },
+      "diagnostic/cube_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "step_index": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/elapsed_steps": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/success": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "actions": {
+        "shape": [
+          20,
+          8
+        ],
+        "dtype": "float32"
+      },
+      "rewards": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "float32"
+      },
+      "terminated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "truncated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "audit/action_source": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "audit/policy_active": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "audit/intervention": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "diagnostic/arm_target_qpos": {
+        "shape": [
+          20,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "diagnostic/gripper_target_qpos": {
+        "shape": [
+          20,
+          1,
+          2
+        ],
+        "dtype": "float32"
+      },
+      "reset_info/elapsed_steps": {
+        "shape": [
+          1
+        ],
+        "dtype": "int32"
+      },
+      "reset_info/success": {
+        "shape": [
+          1
+        ],
+        "dtype": "bool"
+      },
+      "reset_info/reconfigure": {
+        "shape": [],
+        "dtype": "bool"
+      },
+      "time_s": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "float64"
+      }
+    },
+    "seed-0045/C-H-1NN": {
+      "obs/agent/qpos": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/agent/qvel": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/extra/tcp_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/extrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/cam2world_gl": {
+        "shape": [
+          21,
+          1,
+          4,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/intrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_data/base_camera/rgb": {
+        "shape": [
+          21,
+          1,
+          256,
+          256,
+          3
+        ],
+        "dtype": "uint8"
+      },
+      "diagnostic/cube_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "step_index": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/elapsed_steps": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/success": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "actions": {
+        "shape": [
+          20,
+          8
+        ],
+        "dtype": "float32"
+      },
+      "rewards": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "float32"
+      },
+      "terminated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "truncated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "audit/action_source": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "audit/policy_active": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "audit/intervention": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "diagnostic/arm_target_qpos": {
+        "shape": [
+          20,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "diagnostic/gripper_target_qpos": {
+        "shape": [
+          20,
+          1,
+          2
+        ],
+        "dtype": "float32"
+      },
+      "reset_info/elapsed_steps": {
+        "shape": [
+          1
+        ],
+        "dtype": "int32"
+      },
+      "reset_info/success": {
+        "shape": [
+          1
+        ],
+        "dtype": "bool"
+      },
+      "reset_info/reconfigure": {
+        "shape": [],
+        "dtype": "bool"
+      },
+      "time_s": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "float64"
+      }
+    },
+    "seed-0046/A-script-continuation": {
+      "obs/agent/qpos": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/agent/qvel": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/extra/tcp_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/extrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/cam2world_gl": {
+        "shape": [
+          21,
+          1,
+          4,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/intrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_data/base_camera/rgb": {
+        "shape": [
+          21,
+          1,
+          256,
+          256,
+          3
+        ],
+        "dtype": "uint8"
+      },
+      "diagnostic/cube_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "step_index": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/elapsed_steps": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/success": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "actions": {
+        "shape": [
+          20,
+          8
+        ],
+        "dtype": "float32"
+      },
+      "rewards": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "float32"
+      },
+      "terminated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "truncated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "audit/action_source": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "audit/policy_active": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "audit/intervention": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "diagnostic/arm_target_qpos": {
+        "shape": [
+          20,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "diagnostic/gripper_target_qpos": {
+        "shape": [
+          20,
+          1,
+          2
+        ],
+        "dtype": "float32"
+      },
+      "reset_info/elapsed_steps": {
+        "shape": [
+          1
+        ],
+        "dtype": "int32"
+      },
+      "reset_info/success": {
+        "shape": [
+          1
+        ],
+        "dtype": "bool"
+      },
+      "reset_info/reconfigure": {
+        "shape": [],
+        "dtype": "bool"
+      },
+      "time_s": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "float64"
+      }
+    },
+    "seed-0046/B-H-MLP": {
+      "obs/agent/qpos": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/agent/qvel": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/extra/tcp_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/extrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/cam2world_gl": {
+        "shape": [
+          21,
+          1,
+          4,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/intrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_data/base_camera/rgb": {
+        "shape": [
+          21,
+          1,
+          256,
+          256,
+          3
+        ],
+        "dtype": "uint8"
+      },
+      "diagnostic/cube_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "step_index": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/elapsed_steps": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/success": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "actions": {
+        "shape": [
+          20,
+          8
+        ],
+        "dtype": "float32"
+      },
+      "rewards": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "float32"
+      },
+      "terminated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "truncated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "audit/action_source": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "audit/policy_active": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "audit/intervention": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "diagnostic/arm_target_qpos": {
+        "shape": [
+          20,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "diagnostic/gripper_target_qpos": {
+        "shape": [
+          20,
+          1,
+          2
+        ],
+        "dtype": "float32"
+      },
+      "reset_info/elapsed_steps": {
+        "shape": [
+          1
+        ],
+        "dtype": "int32"
+      },
+      "reset_info/success": {
+        "shape": [
+          1
+        ],
+        "dtype": "bool"
+      },
+      "reset_info/reconfigure": {
+        "shape": [],
+        "dtype": "bool"
+      },
+      "time_s": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "float64"
+      }
+    },
+    "seed-0046/C-H-1NN": {
+      "obs/agent/qpos": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/agent/qvel": {
+        "shape": [
+          21,
+          1,
+          9
+        ],
+        "dtype": "float32"
+      },
+      "obs/extra/tcp_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/extrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/cam2world_gl": {
+        "shape": [
+          21,
+          1,
+          4,
+          4
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_param/base_camera/intrinsic_cv": {
+        "shape": [
+          21,
+          1,
+          3,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "obs/sensor_data/base_camera/rgb": {
+        "shape": [
+          21,
+          1,
+          256,
+          256,
+          3
+        ],
+        "dtype": "uint8"
+      },
+      "diagnostic/cube_pose": {
+        "shape": [
+          21,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "step_index": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/elapsed_steps": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "int32"
+      },
+      "info/success": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "actions": {
+        "shape": [
+          20,
+          8
+        ],
+        "dtype": "float32"
+      },
+      "rewards": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "float32"
+      },
+      "terminated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "truncated": {
+        "shape": [
+          20,
+          1
+        ],
+        "dtype": "bool"
+      },
+      "audit/action_source": {
+        "shape": [
+          20
+        ],
+        "dtype": "int64"
+      },
+      "audit/policy_active": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "audit/intervention": {
+        "shape": [
+          20
+        ],
+        "dtype": "bool"
+      },
+      "diagnostic/arm_target_qpos": {
+        "shape": [
+          20,
+          1,
+          7
+        ],
+        "dtype": "float32"
+      },
+      "diagnostic/gripper_target_qpos": {
+        "shape": [
+          20,
+          1,
+          2
+        ],
+        "dtype": "float32"
+      },
+      "reset_info/elapsed_steps": {
+        "shape": [
+          1
+        ],
+        "dtype": "int32"
+      },
+      "reset_info/success": {
+        "shape": [
+          1
+        ],
+        "dtype": "bool"
+      },
+      "reset_info/reconfigure": {
+        "shape": [],
+        "dtype": "bool"
+      },
+      "time_s": {
+        "shape": [
+          21,
+          1
+        ],
+        "dtype": "float64"
+      }
+    }
+  }
+}

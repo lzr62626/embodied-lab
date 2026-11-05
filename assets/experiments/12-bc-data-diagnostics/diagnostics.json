@@ -1,0 +1,174 @@
+{
+  "algorithm": "bc-data-diagnostics-v1",
+  "sample_counts": {
+    "train": 40,
+    "validation": 20
+  },
+  "exact_duplicates": {
+    "C": {
+      "unique_inputs": 40,
+      "duplicate_groups": 0,
+      "same_label_duplicate_groups": 0,
+      "conflicting_duplicate_groups": 0,
+      "empirical_mse_lower_bound": 0.0,
+      "groups": []
+    },
+    "H": {
+      "unique_inputs": 40,
+      "duplicate_groups": 0,
+      "same_label_duplicate_groups": 0,
+      "conflicting_duplicate_groups": 0,
+      "empirical_mse_lower_bound": 0.0,
+      "groups": []
+    }
+  },
+  "validation_metrics": {
+    "C_1NN": {
+      "samples": 20,
+      "mse": 0.01600000047683716,
+      "mae": 0.0800000011920929,
+      "sign_agreement": 12
+    },
+    "H_1NN": {
+      "samples": 20,
+      "mse": 0.00400000011920929,
+      "mae": 0.020000000298023225,
+      "sign_agreement": 18
+    },
+    "S_MLP": {
+      "samples": 20,
+      "mse": 0.015986310839783795,
+      "mae": 0.07996578812599182,
+      "sign_agreement": 12
+    },
+    "H_MLP": {
+      "samples": 20,
+      "mse": 0.00779781331776023,
+      "mae": 0.04116425029933453,
+      "sign_agreement": 16
+    }
+  },
+  "switch_rows": [
+    {
+      "t": 5,
+      "source_id": 2,
+      "target": -0.10000000149011612,
+      "is_script_switch": true,
+      "S_MLP": 0.09999926388263702,
+      "S_MLP_abs_error": 0.19999926537275314,
+      "H_MLP": 0.09692996740341187,
+      "H_MLP_abs_error": 0.19692996889352798,
+      "C_neighbor_source_id": 1,
+      "C_neighbor_t": 2,
+      "C_distance": 3.9942207667916,
+      "C_1NN": 0.10000000149011612,
+      "H_neighbor_source_id": 1,
+      "H_neighbor_t": 3,
+      "H_distance": 4.02698300705086,
+      "H_1NN": 0.10000000149011612
+    },
+    {
+      "t": 10,
+      "source_id": 2,
+      "target": 0.10000000149011612,
+      "is_script_switch": true,
+      "S_MLP": 0.10000000149011612,
+      "S_MLP_abs_error": 0.0,
+      "H_MLP": 0.0999998077750206,
+      "H_MLP_abs_error": 1.9371509552001953e-07,
+      "C_neighbor_source_id": 1,
+      "C_neighbor_t": 10,
+      "C_distance": 4.0445427244591174,
+      "C_1NN": 0.10000000149011612,
+      "H_neighbor_source_id": 1,
+      "H_neighbor_t": 10,
+      "H_distance": 4.040107856240351,
+      "H_1NN": 0.10000000149011612
+    },
+    {
+      "t": 15,
+      "source_id": 2,
+      "target": -0.10000000149011612,
+      "is_script_switch": true,
+      "S_MLP": 0.09999930113554001,
+      "S_MLP_abs_error": 0.19999930262565613,
+      "H_MLP": 0.09939292818307877,
+      "H_MLP_abs_error": 0.19939292967319489,
+      "C_neighbor_source_id": 1,
+      "C_neighbor_t": 2,
+      "C_distance": 3.9938351316136904,
+      "C_1NN": 0.10000000149011612,
+      "H_neighbor_source_id": 1,
+      "H_neighbor_t": 4,
+      "H_distance": 4.024801555299859,
+      "H_1NN": 0.10000000149011612
+    }
+  ],
+  "closest_opposite_pair": {
+    "C": {
+      "rows": [
+        24,
+        25
+      ],
+      "distance": 0.15189638278375678
+    },
+    "H": {
+      "rows": [
+        24,
+        35
+      ],
+      "distance": 0.2659609474372915
+    }
+  },
+  "frozen_statistics": {
+    "qpos": {
+      "scale": [
+        0.006150260366555071,
+        0.0077022130325596185,
+        0.01029609294947942,
+        0.020582167903677794,
+        0.010922307568310296,
+        0.0017889057110310827,
+        0.010810201240865142,
+        1e-06,
+        1e-06
+      ],
+      "protected_mask": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true
+      ]
+    },
+    "qvel": {
+      "scale": [
+        0.06522162683055481,
+        0.00014492660628208695,
+        0.004797844553411892,
+        8.035658017593822e-05,
+        0.0001553297465089761,
+        1.1679082322074141e-05,
+        2.7737685625697257e-05,
+        0.00023860047540263842,
+        0.00023867432529206788
+      ],
+      "protected_mask": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "interpretation": "Ranked proximity is diagnostic evidence, with no similarity cutoff or claim of a unique cause."
+}

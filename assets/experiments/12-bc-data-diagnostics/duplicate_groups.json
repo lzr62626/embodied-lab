@@ -1,0 +1,18 @@
+{
+  "C": {
+    "unique_inputs": 40,
+    "duplicate_groups": 0,
+    "same_label_duplicate_groups": 0,
+    "conflicting_duplicate_groups": 0,
+    "empirical_mse_lower_bound": 0.0,
+    "groups": []
+  },
+  "H": {
+    "unique_inputs": 40,
+    "duplicate_groups": 0,
+    "same_label_duplicate_groups": 0,
+    "conflicting_duplicate_groups": 0,
+    "empirical_mse_lower_bound": 0.0,
+    "groups": []
+  }
+}

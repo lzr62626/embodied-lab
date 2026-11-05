@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "new_runs": 2,
+  "historical_runs_recollected": 0,
+  "step_attempts_by_run": {
+    "seed-0045/D-reference-feedback": 20,
+    "seed-0046/D-reference-feedback": 20
+  },
+  "step_attempts_total": 40,
+  "explicit_reset_calls": 2,
+  "verified_PNGs": 42,
+  "PNG_pixels_equal_RGB": true,
+  "display_tiles_equal_original_RGB": true,
+  "N_and_N_plus_one": true,
+  "time_and_step_alignment": true,
+  "episode_and_budget_flags_preserved": true,
+  "reference_and_actual_indices_are_t": true,
+  "feedback_formulas_independently_recomputed": true,
+  "sent_actions_exact_float32_match": true,
+  "clipping_and_touch_flags_independently_recomputed": true,
+  "numeric_audit_max_abs_differences": {
+    "45": {
+      "q_ref": 0.0,
+      "q_actual": 0.0,
+      "error_rad": 0.0,
+      "u_ff": 0.0,
+      "correction": 0.0,
+      "u_raw": 0.0,
+      "u_clipped_float64": 0.0
+    },
+    "46": {
+      "q_ref": 0.0,
+      "q_actual": 0.0,
+      "error_rad": 0.0,
+      "u_ff": 0.0,
+      "correction": 0.0,
+      "u_raw": 0.0,
+      "u_clipped_float64": 0.0
+    }
+  },
+  "controller_target_max_abs_error_rad": {
+    "45": 1.4901161207725444e-09,
+    "46": 1.4901161207725444e-09
+  },
+  "metrics_reopened_and_recomputed": true,
+  "reference_files_unchanged": 39,
+  "earlier_files_logs_and_site_unchanged": 2790,
+  "training_calls": 0,
+  "statistics_fits": 0,
+  "model_updates": 0,
+  "candidate_expansions": 0,
+  "simulator_calls_during_verification": 0,
+  "rollout_sha256": {
+    "45": "a0f30aff5d229148695eeef250c5c973490b82552ed88c5bb29ac6f2bf1cc564",
+    "46": "6fad6ee4bcee916dc8ea597cea1b053d52e117b0f6d1286a1dde73e7cb849774"
+  }
+}
