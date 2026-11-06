@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "scope": "Read-only publication acceptance; no inference, training or simulation rerun.",
+  "sealed_result_files_verified": 159,
+  "formal_episodes": 50,
+  "smoke_episodes": 2,
+  "successes": 35,
+  "success_rate": 0.7,
+  "complete_videos_decoded": 52,
+  "video_fps": 10,
+  "video_dimensions": [
+    384,
+    384
+  ],
+  "checks": [
+    "All sealed artifact SHA256 values unchanged",
+    "Prescribed seed order",
+    "Per-step raw coverage, normalized reward and success relation",
+    "Trace/CSV/summary consistency",
+    "All video frame counts, dimensions and FPS",
+    "Frozen protocol hash",
+    "Existing visual sample review PASS"
+  ],
+  "model_revision": "84a7c23178445c6bbf7e1a884ff497017910f653",
+  "lerobot_commit": "b883328e6c95681ca90a18b102e4ae5e1f91e2bf"
+}

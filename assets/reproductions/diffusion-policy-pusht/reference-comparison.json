@@ -1,0 +1,14 @@
+{
+  "official_500": {
+    "n_episodes": 500,
+    "success_rate": 0.654,
+    "avg_max_reward": 0.9551318575760519
+  },
+  "matching_env_seeds_1000_1049": {
+    "n_episodes": 50,
+    "successes": 37,
+    "success_rate": 0.74,
+    "avg_max_reward": 0.9614077206234021
+  },
+  "note": "Environment seed labels match; sampling protocol, batch size and software/backend differ."
+}

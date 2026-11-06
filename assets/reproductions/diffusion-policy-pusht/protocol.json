@@ -1,0 +1,177 @@
+{
+  "title": "Diffusion Policy (LeRobot implementation), PushT pretrained-policy evaluation",
+  "scope": "inference-only; no training or finetuning; small-sample independent evaluation",
+  "lerobot_commit": "b883328e6c95681ca90a18b102e4ae5e1f91e2bf",
+  "model_repo": "lerobot/diffusion_pusht",
+  "model_revision": "84a7c23178445c6bbf7e1a884ff497017910f653",
+  "smoke_excluded_seeds": [
+    9000,
+    9001
+  ],
+  "formal_env_seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019,
+    1020,
+    1021,
+    1022,
+    1023,
+    1024,
+    1025,
+    1026,
+    1027,
+    1028,
+    1029,
+    1030,
+    1031,
+    1032,
+    1033,
+    1034,
+    1035,
+    1036,
+    1037,
+    1038,
+    1039,
+    1040,
+    1041,
+    1042,
+    1043,
+    1044,
+    1045,
+    1046,
+    1047,
+    1048,
+    1049
+  ],
+  "n_episodes": 50,
+  "batch_size": 1,
+  "sampling_seed": "20261106 + env_seed; reset Python/NumPy/torch/CUDA RNG before each episode",
+  "env": {
+    "id": "gym_pusht/PushT-v0",
+    "gym_pusht": "0.1.5",
+    "gymnasium": "0.29.1",
+    "pymunk": "6.11.1",
+    "max_episode_steps": 300,
+    "fps": 10,
+    "observation_pixels_hwc": [
+      96,
+      96,
+      3
+    ],
+    "render_hwc": [
+      384,
+      384,
+      3
+    ],
+    "obs_type": "pixels_agent_pos",
+    "success": "coverage > 0.95 (upstream predicate)",
+    "reward": "clip(coverage / 0.95, 0, 1); distinct from raw coverage"
+  },
+  "policy": {
+    "beta_end": 0.02,
+    "beta_schedule": "squaredcos_cap_v2",
+    "beta_start": 0.0001,
+    "clip_sample": true,
+    "clip_sample_range": 1.0,
+    "crop_is_random": true,
+    "crop_shape": [
+      84,
+      84
+    ],
+    "diffusion_step_embed_dim": 128,
+    "do_mask_loss_for_padding": false,
+    "down_dims": [
+      512,
+      1024,
+      2048
+    ],
+    "drop_n_last_frames": 7,
+    "horizon": 16,
+    "input_features": {
+      "observation.image": {
+        "shape": [
+          3,
+          96,
+          96
+        ],
+        "type": "VISUAL"
+      },
+      "observation.state": {
+        "shape": [
+          2
+        ],
+        "type": "STATE"
+      }
+    },
+    "kernel_size": 5,
+    "n_action_steps": 8,
+    "n_groups": 8,
+    "n_obs_steps": 2,
+    "device": "cuda",
+    "use_amp": false,
+    "noise_scheduler_type": "DDPM",
+    "normalization_mapping": {
+      "ACTION": "MIN_MAX",
+      "STATE": "MIN_MAX",
+      "VISUAL": "MEAN_STD"
+    },
+    "num_inference_steps": null,
+    "num_train_timesteps": 100,
+    "optimizer_betas": [
+      0.95,
+      0.999
+    ],
+    "optimizer_eps": 1e-08,
+    "optimizer_lr": 0.0001,
+    "optimizer_weight_decay": 1e-06,
+    "output_features": {
+      "action": {
+        "shape": [
+          2
+        ],
+        "type": "ACTION"
+      }
+    },
+    "prediction_type": "epsilon",
+    "pretrained_backbone_weights": null,
+    "scheduler_name": "cosine",
+    "scheduler_warmup_steps": 500,
+    "spatial_softmax_num_keypoints": 32,
+    "type": "diffusion",
+    "use_film_scale_modulation": true,
+    "use_group_norm": true,
+    "use_separate_rgb_encoder_per_camera": false,
+    "vision_backbone": "resnet18"
+  },
+  "actual_diffusion_steps": 100,
+  "precision": "float32 parameters/tensors; AMP disabled; TF32 enabled; cudnn deterministic=true, benchmark=false",
+  "episode_end": "first terminated or truncated; no autoreset; reset policy action/observation queues",
+  "metrics": [
+    "success_rate",
+    "avg_max_coverage (raw geometric coverage)",
+    "avg_max_reward (official threshold-normalized reward)",
+    "avg_sum_reward",
+    "elapsed_s"
+  ],
+  "limitations": [
+    "Different seeds, batch size, dependency stack and arithmetic from reference 500 episodes.",
+    "No claim of original-paper training or complete benchmark reproduction."
+  ]
+}

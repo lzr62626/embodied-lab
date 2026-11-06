@@ -1,0 +1,8 @@
+{
+  "n_episodes": 50,
+  "successes": 35,
+  "success_rate": 0.7,
+  "avg_max_coverage": 0.9160316602608962,
+  "avg_max_reward": 0.9562042545338052,
+  "avg_sum_reward": 102.19419979887476
+}
