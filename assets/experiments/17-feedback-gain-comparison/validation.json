@@ -1,0 +1,1193 @@
+{
+  "status": "passed",
+  "scope": "Independent offline numeric acceptance plus actual image/figure review",
+  "new_runs": 4,
+  "new_pngs": 84,
+  "verified_pngs": 210,
+  "checks": {
+    "45-U": {
+      "verified_pngs": 21,
+      "fields": 21,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.0244548334648051e-09
+    },
+    "45-G0": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "45-G05": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "45-G1": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "45-G2": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "45-G05-comparability": {
+      "initial": {
+        "U": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G0": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G1": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      },
+      "prefix": {
+        "G0_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G1_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "U_states_0_to_8": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      }
+    },
+    "45-G2-comparability": {
+      "initial": {
+        "U": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G0": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G1": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      },
+      "prefix": {
+        "G0_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G1_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "U_states_0_to_8": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      }
+    },
+    "46-U": {
+      "verified_pngs": 21,
+      "fields": 21,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "46-G0": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "46-G05": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "46-G1": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "46-G2": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "46-G05-comparability": {
+      "initial": {
+        "U": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G0": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G1": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      },
+      "prefix": {
+        "G0_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G1_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "U_states_0_to_8": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      }
+    },
+    "46-G2-comparability": {
+      "initial": {
+        "U": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G0": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G1": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      },
+      "prefix": {
+        "G0_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "G1_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "U_states_0_to_8": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      }
+    }
+  },
+  "numeric_content_fingerprints": {
+    "45-U": "5726bb1cd2f45ccea4e68fc2b3430dbf120bfd7d2d0cb61fa2ecf14b3d353314",
+    "45-G0": "0fefbbace6feca9c96dd82fd1bd326ebd868a05716f92a9d0705dca467a9d765",
+    "45-G05": "35edc99aeb979566a16288f952ba8eb59b9024d4887b8af7805c2ce1602cabc1",
+    "45-G1": "cf3bbe8c0a8424feec7c6bb1c31558c389a738dd5ba9ebb074b1be3f742156ad",
+    "45-G2": "22a1388db4da8a2a68eb920759d2a5f239488391d5a7ad12b2d3c6ece7a93e10",
+    "46-U": "53cf4eff7c49215ed8fc36e16bf53f289531a754e99ec522c45726dce40dd331",
+    "46-G0": "d2082063ee148de0680eff8b7c015f796d452c235f375b8ad5e350e13a1b6cd5",
+    "46-G05": "eaeecd4ea063fc2e0157f0bef8f1c5eec6157061a91b8b69f63f35bfdf35cd04",
+    "46-G1": "3834c3c68f7f351c2abd0768755284d2f45b8a1f32007ff0b9d6411509365922",
+    "46-G2": "158adefc6f80befa8cb358b5108dc8870062c5610bcf6afd04a9e0f6d821cc36"
+  },
+  "local_integrity": {
+    "performed": true,
+    "old_files_unchanged": 3216,
+    "dependency_versions_unchanged": true,
+    "step_attempts_by_run": {
+      "seed-0045/G05-reference-feedback": 20,
+      "seed-0045/G2-reference-feedback": 20,
+      "seed-0046/G05-reference-feedback": 20,
+      "seed-0046/G2-reference-feedback": 20
+    },
+    "step_attempts_total": 80,
+    "explicit_seeded_resets": 4,
+    "historical_runs_recollected": 0,
+    "gain_order_verified": true,
+    "reproduction_note": "Private attempt ledger and old-file inventory were verified by author; portable evaluation recomputes numeric evidence only."
+  },
+  "N_and_N_plus_one": true,
+  "PNG_pixels_equal_RGB": true,
+  "feedback_recomputed_independently": true,
+  "metrics_reopened_and_recomputed": true,
+  "G0_action_equivalence_checks": 22,
+  "G0_fabricated_audits": false,
+  "pure_numeric_npz": true,
+  "simulation_calls": 0,
+  "training_calls": 0,
+  "statistics_fits": 0,
+  "visual_review": {
+    "status": "passed",
+    "review_method": "Opened actual saved PNG sheet and full-size numeric comparison/limit figures",
+    "reviewed_new_runs": 4,
+    "reviewed_states": "initial,8,9,actual final",
+    "raw_tiles_reviewed": 16,
+    "robot_table_cube_recognizable": true,
+    "labels_outside_tiles": true,
+    "raw_pixels_edited": false,
+    "tiles_equal_original_RGB": true,
+    "small_motion_not_push_success": true
+  }
+}

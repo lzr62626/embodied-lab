@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "review_method": "Opened actual saved PNG sheet and full-size numeric comparison/limit figures",
+  "reviewed_new_runs": 4,
+  "reviewed_states": "initial,8,9,actual final",
+  "raw_tiles_reviewed": 16,
+  "robot_table_cube_recognizable": true,
+  "labels_outside_tiles": true,
+  "raw_pixels_edited": false,
+  "tiles_equal_original_RGB": true,
+  "small_motion_not_push_success": true
+}

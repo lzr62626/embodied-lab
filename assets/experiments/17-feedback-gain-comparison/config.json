@@ -1,0 +1,102 @@
+{
+  "version": "feedback-gain-comparison-v1",
+  "seeds": [
+    45,
+    46
+  ],
+  "group_gains": {
+    "G0": 0.0,
+    "G05": 0.5,
+    "G1": 1.0,
+    "G2": 2.0
+  },
+  "new_gains": [
+    0.5,
+    2.0
+  ],
+  "new_groups": {
+    "G05": "G05-reference-feedback",
+    "G2": "G2-reference-feedback"
+  },
+  "run_order": [
+    [
+      45,
+      "G05"
+    ],
+    [
+      45,
+      "G2"
+    ],
+    [
+      46,
+      "G05"
+    ],
+    [
+      46,
+      "G2"
+    ]
+  ],
+  "new_runs": 4,
+  "max_steps_per_run": 20,
+  "max_step_attempts_total": 80,
+  "joint_delta_scale_rad": 0.1,
+  "command_limit_nominal": 0.1,
+  "command_limit_float32": 0.10000000149011612,
+  "clip_limit_float64_from_float32": 0.10000000149011612,
+  "boundary_rule": "Clip in float64 against the existing float32 interface bound, then cast to float32",
+  "clipped_flag": "unclipped value strictly outside the fixed interface bounds",
+  "touch_flag": "actual float32 sent value equals either fixed bound; not synonymous with clipping",
+  "reference_observation_index": "t, never t+1",
+  "actual_observation_index": "t",
+  "formula": "e=q_ref[t]-q_actual[t]; c=gain*e/0.1rad; raw=u_ff[t]+c; sent=float32(clip(raw))",
+  "prefix_action_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "override_t": 8,
+  "override_action0": 0.1,
+  "feedback_takeover_t": 9,
+  "action_source_labels": {
+    "0": "common_script_prefix",
+    "1": "forced_override",
+    "2": "reference_feedback"
+  },
+  "G0_source2_note": "Historical source2 means script continuation; policy_active always false; no real outer-feedback queries.",
+  "initial_and_prefix_atol": {
+    "obs/agent/qpos": 1e-06,
+    "obs/agent/qvel": 1e-05,
+    "diagnostic/cube_pose": 1e-06
+  },
+  "numeric_audit_atol": 1e-12,
+  "numeric_audit_rtol": 0.0,
+  "sent_action_comparison": "exact float32 equality",
+  "controller_target_atol_rad": 1e-06,
+  "metric_calculation_dtype": "float64",
+  "comparison_start_state_index": 9,
+  "compute_device": "cpu",
+  "training_calls": 0,
+  "statistics_fits": 0,
+  "model_updates": 0,
+  "candidate_expansions": 0,
+  "task": {
+    "task": "PushCube-v1",
+    "robot": "panda",
+    "num_envs": 1,
+    "obs_mode": "rgb",
+    "control_mode": "pd_joint_delta_pos",
+    "camera": "base_camera",
+    "width": 256,
+    "height": 256,
+    "shader_pack": "minimal",
+    "sim_backend": "cpu",
+    "render_backend": "cpu"
+  },
+  "reset_note": "One explicit seeded reset per new run; constructor initialization recorded separately.",
+  "interpretation": "Two previously used seeds; G0 is historical script action-equivalent to gain0, G1 historical gain1; only G05/G2 newly collected. No new clean-condition controls or gain selection."
+}

@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "article": 17,
+  "zip": "gain-comparison-files.zip",
+  "zip_sha256": "c384e9f1366b6caa9b8eb48ed0108449542a24c0163ad6de2c3ace82a9172de0",
+  "zip_bytes": 43052472,
+  "standalone_extraction_evaluated": true,
+  "pngs_verified": 210,
+  "metrics_equal": true,
+  "comparison_arrays_equal": true,
+  "simulation_calls": 0,
+  "training_calls": 0,
+  "read_only_command": "python -B evaluate.py --output-dir result-r001"
+}

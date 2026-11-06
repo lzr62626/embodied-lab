@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>增益改了会怎样：参考反馈的固定参数对照 · Lamone&#39;s Embodied Lab</title><meta name="description" content="只新增0.5与2.0两档增益，完整比较峰值、RMSE、末端偏差和限幅，不按单项指标挑选最佳控制器。"><link rel="canonical" href="https://lzr62626.github.io/embodied-lab/articles/feedback-gain-comparison.html"><meta property="og:url" content="https://lzr62626.github.io/embodied-lab/articles/feedback-gain-comparison.html"><meta property="og:title" content="增益改了会怎样：参考反馈的固定参数对照"><meta property="og:description" content="只新增0.5与2.0两档增益，完整比较峰值、RMSE、末端偏差和限幅，不按单项指标挑选最佳控制器。"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="Lamone&#39;s Embodied Lab"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/tokens.css"><link rel="stylesheet" href="../assets/style.css?v=c02398664a58"><script src="../assets/theme.js"></script><script defer src="../assets/site.js?v=4f9e24fa93d8"></script></head>
+<body class="reading-page"><a class="skip-link" href="#main">跳到正文</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Lamone&#39;s Embodied Lab首页"><span class="brand-symbol"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15V3h12M9 17h8V9"/><circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/></svg></span><span class="brand-copy"><span class="brand-title">Lamone&#39;s Embodied Lab</span><small>具身智能 · 研究与实践</small></span></a><nav aria-label="主导航"><a href="../index.html">首页</a><a href="../learn.html">开始学习</a><a href="../articles.html" aria-current="page">文章</a><a href="../about.html">关于</a></nav><div class="header-actions"><button type="button" class="icon-button search-trigger" data-search-open aria-label="搜索文章" aria-keyshortcuts="Control+K Meta+K"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><span class="search-label">搜索</span><kbd>Ctrl K</kbd></button><button type="button" class="icon-button theme-toggle" data-theme-toggle aria-label="切换深浅主题" title="切换深浅主题"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 3a7 7 0 0 1 0 14Z" fill="currentColor" stroke="none"/></svg></button></div></div></header>
+<main id="main" class="article-main wrap"><div class="breadcrumbs"><a href="../learn.html">开始学习</a><span aria-hidden="true">/</span><span>没有机器人，也能开始的具身智能实践</span></div><header class="article-heading"><p class="eyebrow">入门路线 · 第 17 篇</p><h1>增益改了会怎样：参考反馈的固定参数对照</h1><p class="article-summary">只新增0.5与2.0两档增益，完整比较峰值、RMSE、末端偏差和限幅，不按单项指标挑选最佳控制器。</p><div class="article-meta"><time datetime="2026-11-06">2026-11-06</time><span>约 8 分钟</span><a href="../sources/feedback-gain-comparison.md" download>下载 Markdown ↗</a></div><div class="tags"><span>增益对照</span><span>参考反馈</span><span>仿真实验</span></div></header><div class="article-layout"><article class="prose"><p><a href="../assets/experiments/17-feedback-gain-comparison/gain-comparison-files.zip">下载完整离线复核包</a> · <a href="../assets/experiments/17-feedback-gain-comparison/README.md">运行说明</a> · <a href="../assets/experiments/17-feedback-gain-comparison/portable-validation.json">独立解压验收</a></p>
+<p><a href="paired-feedback-evaluation.html">第十六篇</a>补齐了无干预反馈对照：gain=1时，E与原脚本U完全相同。本篇保持任务、覆盖动作、接管位置和限幅不变，只新增gain=0.5与2.0两档，观察增益变化后的真实闭环运动。</p>
+<p>两个seed都出现了一个值得分别看指标的结果：gain=2的角度RMSE低于gain=1，但末端绝对偏差更大。三个实际反馈档的峰值在各自seed内相同。所有增益条件的任务success仍为false，因此本篇完整报告结果，不挑选一个“最佳增益”，也不把角度跟踪改善写成推物成功。</p>
+<h2 id="section-1">四档增益，不是四档都重新采集</h2>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>gain</th>
+<th>实际来源</th>
+<th>本次是否新增</th>
+<th>实际外层反馈查询</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G0</td>
+<td>0</td>
+<td>第14篇有干预脚本续写A</td>
+<td>否</td>
+<td>没有，只验证动作等价</td>
+</tr>
+<tr>
+<td>G05</td>
+<td>0.5</td>
+<td>本篇新运行</td>
+<td>是</td>
+<td>有</td>
+</tr>
+<tr>
+<td>G1</td>
+<td>1</td>
+<td>第15篇D-reference-feedback</td>
+<td>否</td>
+<td>有，保留原始审计</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>2</td>
+<td>本篇新运行</td>
+<td>是</td>
+<td>有</td>
+</tr>
+</tbody></table></div>
+<p>U仍是第13篇同seed无干预脚本参考。每个seed包含U加四档来源，两个seed共10条数值轨迹，其中6条历史复用含参考，4条新增。没有重采U、G0、G1。</p>
+<p>G0的严谨说法是“gain=0的动作等价对照”。它历史上实际执行脚本，没有查询外层参考反馈。离线将gain设为0，确实能复现接管区间的脚本发送动作，但不能因此补造一份实际反馈审计。底层PD控制器仍一直工作，“无外层反馈”不代表系统完全没有反馈。</p>
+<p>本篇只新增两档增益的有干预运行，没有新增gain0.5、2.0的无干预条件。第16篇gain1时E=U的实测结论，不能直接推广到这些新增益。</p>
+<h2 id="section-2">环境与物理尺度保持不变</h2>
+<p>实际复用Python3.11.9、NumPy2.4.6、PyTorch2.14.1+cpu、Pillow13.0.0、ManiSkill3.0.1、SAPIEN3.0.3、Gymnasium1.4.0。依赖版本与第16篇一致，没有安装或升级。</p>
+<p>任务仍为PushCube-v1、Panda、单环境、pd_joint_delta_pos、RGB、base_camera256×256、minimal着色配置。控制20Hz、物理100Hz，每次step推进0.05秒、5个物理子步。反馈计算及物理在CPU；图像传输、渲染后端接口和实际设备记录分别保留，未用CPU张量推断全过程没有GPU渲染，也未测GPU实际利用率。</p>
+<p>本地控制器实现与原哈希一致，use_delta=true、use_target=false、normalize_action=true。机械臂输入[-1,1]约映射到[-0.1,0.1]rad目标增量，并以当前关节位置为锚点。因此演示输入0.1对应约0.01rad目标增量，实际下一时刻角度仍由PD和动力学决定，不能直接写成0.1rad运动。夹爪输入1维持0.04m打开目标。<a href="https://github.com/mani-skill/ManiSkill/blob/v3.0.1/mani_skill/agents/controllers/pd_joint_pos.py">ManiSkill3.0.1控制器实现</a></p>
+<h2 id="section-3">唯一改变的是外层增益</h2>
+<p>新控制器显式接收gain，旧第15、16篇文件没有修改：</p>
+<pre><code class="language-python">error_rad = np.float64(q_ref) - np.float64(q_actual)
+correction = np.float64(gain) * error_rad / np.float64(0.1)
+u_raw = np.float64(u_ff) + correction
+limit = np.float64(np.float32(0.1))
+u_sent = np.float32(np.clip(u_raw, -limit, limit))
+</code></pre>
+<p>q_ref来自同seed参考obs[t]第一关节，q_actual来自当步实际obs[t]，u_ff来自参考actions[t,0]。没有误用obs[t+1]。误差与尺度都用rad，gain无量纲，修正项成为归一化动作量；不使用状态统计标准化来代替单位换算。</p>
+<p>实际限幅边界继续是0.10000000149011612，即既有float32接口边界的float64精确值。was_clipped只在u_raw严格超界时为true；sent_at_bound表示实际发送值触边，二者分别记录。<a href="https://numpy.org/doc/2.4/reference/generated/numpy.clip.html">NumPy2.4 clip</a></p>
+<p>没有改变频率、尺度、限幅或底层控制器，没有速度项、积分项、滤波、死区和按结果增加的停止规则。模型、训练统计和最近邻候选都没有更新。本篇是固定参数对照，不是根据验证结果寻找增益。</p>
+<h2 id="section-4">先证明代码能复算旧记录</h2>
+<p>启动环境前，用新函数gain=1复算第15篇两条D组共22次真实反馈，标量审计与两个边界标志一致，实际float32发送动作逐项相同。gain=0另外核对第14篇共22条脚本动作等价，实际反馈查询数仍为0。</p>
+<p>私有人工数值用例检查零误差、正负误差、截断、触边与12种非有限输入拒绝。在同一个误差输入上，gain2的修正是gain0.5的4倍；这是固定输入的数值检查，不是对实际闭环轨迹的结论。人工数据没有替换真实轨迹，也不作为仿真图片公开。</p>
+<p>初始化和前缀容差继承已有逐字段配置，qpos为1e-6、qvel为1e-5、cube_pose为1e-6，按各字段物理单位分别核对。反馈float64审计沿用atol=1e-12、rtol=0，控制器目标容差1e-6rad。没有看到结果后放宽。</p>
+<h2 id="section-5">四次新增运行与80次预算</h2>
+<p>执行顺序固定为seed45的G05、G2，再seed46的G05、G2。每次只创建一个环境、显式带seed reset一次，并单独记录构造器内部初始化。</p>
+<p>所有新增组共用以下计划：</p>
+<pre><code class="language-text">t=0..7  原脚本
+t=8     第一维+0.1，覆盖原脚本的-0.1
+t=9..19 用本组固定gain参考反馈
+其余机械臂维度0，夹爪维度1
+</code></pre>
+<p>obs[8]经覆盖动作action[8]得到obs[9]；读取obs[9]后才发送首个反馈action[9]。状态9是0.45秒，不能把动作8、状态9和接管动作9混为同一条记录。</p>
+<p>四组初始化与历史U、G0、G1可比；发送t=9前，状态0～9与有干预G0、G1逐项相同，状态0～8与无干预参考U逐项相同。每组20步、21份观测、11次反馈，共80次step尝试、84张新增PNG。账本在每次调用前持久化。没有额外热身、补步、重试或重采旧组。</p>
+<p>四组均因20步预算结束，末步terminated与truncated保持false；没有为了结束采集把回合标志改成true。</p>
+<h2 id="section-6">峰值、RMSE和末端一起报告</h2>
+<p>固定跟踪偏差为q_group[k]-q_U[k]，其中k是状态索引。共同比较区间实际为状态9～20，共12份状态，时间0.45～1.00秒。全部角度指标单位rad；RMSE按这些状态计算，不是动作预测误差。</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>seed</th>
+<th>档位</th>
+<th>gain</th>
+<th>最大绝对偏差rad</th>
+<th>角度RMSE rad</th>
+<th>末端有符号偏差rad</th>
+<th>末端绝对偏差rad</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>45</td>
+<td>G0</td>
+<td>0</td>
+<td>0.007927501108</td>
+<td>0.007663299179</td>
+<td>+0.007927501108</td>
+<td>0.007927501108</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G05</td>
+<td>0.5</td>
+<td>0.007320881123</td>
+<td>0.004358416499</td>
+<td>+0.002388615627</td>
+<td>0.002388615627</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G1</td>
+<td>1</td>
+<td>0.007320881123</td>
+<td>0.003327613387</td>
+<td>+0.000073932577</td>
+<td>0.000073932577</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G2</td>
+<td>2</td>
+<td>0.007320881123</td>
+<td>0.002918374100</td>
+<td>+0.000300678657</td>
+<td>0.000300678657</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G0</td>
+<td>0</td>
+<td>0.007927241735</td>
+<td>0.007668698368</td>
+<td>+0.007927241735</td>
+<td>0.007927241735</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G05</td>
+<td>0.5</td>
+<td>0.007347689010</td>
+<td>0.004362549440</td>
+<td>+0.002391778864</td>
+<td>0.002391778864</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G1</td>
+<td>1</td>
+<td>0.007347689010</td>
+<td>0.003332763891</td>
+<td>+0.000087905675</td>
+<td>0.000087905675</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G2</td>
+<td>2</td>
+<td>0.007347689010</td>
+<td>0.002921980445</td>
+<td>+0.000285881571</td>
+<td>0.000285881571</td>
+</tr>
+</tbody></table></div>
+<p>G2在两个seed中的RMSE都较G1小，但末端绝对偏差较G1大。G05的RMSE及末端偏差又呈现不同数值。不能只留下支持某种判断的那一列，也没有依据这些值更改本次参数或再增加一档。</p>
+<figure class="experiment-figure"><img src="../assets/experiments/17-feedback-gain-comparison/seed-0045-comparison.png" alt="seed45四档增益的真实动作、关节角度、参考偏差和反馈修正" width="1500" height="1625" loading="lazy" decoding="async"><figcaption>seed45：动作8覆盖、动作9接管；角度横轴是状态k，反馈横轴是动作t。U为无干预参考，不是G0。 <a href="../assets/experiments/17-feedback-gain-comparison/seed-0045-comparison.png" download>下载原尺寸图 ↗</a></figcaption></figure>
+
+<figure class="experiment-figure"><img src="../assets/experiments/17-feedback-gain-comparison/seed-0046-comparison.png" alt="seed46四档固定增益的完整对照" width="1500" height="1625" loading="lazy" decoding="async"><figcaption>seed46使用相同规则与比较状态9～20，没有按结果改变统计范围。 <a href="../assets/experiments/17-feedback-gain-comparison/seed-0046-comparison.png" download>下载原尺寸图 ↗</a></figcaption></figure>
+
+<h2 id="section-7">限幅会改变实际发送的修正</h2>
+<p>首个反馈动作t=9，三个真实反馈档u_raw不同，但发送值都落在同一个负边界：</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>seed</th>
+<th>档位</th>
+<th>t=9的u_raw</th>
+<th>t=9实际u_sent</th>
+<th>严格截断</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>45</td>
+<td>G05</td>
+<td>-0.125096241478</td>
+<td>-0.100000001490</td>
+<td>true</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G1</td>
+<td>-0.150192481466</td>
+<td>-0.100000001490</td>
+<td>true</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G2</td>
+<td>-0.200384961441</td>
+<td>-0.100000001490</td>
+<td>true</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G05</td>
+<td>-0.125315304846</td>
+<td>-0.100000001490</td>
+<td>true</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G1</td>
+<td>-0.150630608201</td>
+<td>-0.100000001490</td>
+<td>true</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G2</td>
+<td>-0.201261214912</td>
+<td>-0.100000001490</td>
+<td>true</td>
+</tr>
+</tbody></table></div>
+<p>这也是为什么不能把gain的比例直接当成实际动作或实际运动的比例。后续各组运行到不同状态，误差也随之不同；实际correction不需要始终保持4倍或2倍关系。比例测试只适用于相同误差输入。</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>seed</th>
+<th>档位</th>
+<th>真实反馈次数</th>
+<th>最大绝对修正</th>
+<th>严格截断次数</th>
+<th>触边次数</th>
+<th>截断动作索引</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>45</td>
+<td>G0</td>
+<td>0</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G05</td>
+<td>11</td>
+<td>0.036604405614</td>
+<td>6</td>
+<td>6</td>
+<td>9, 15, 16, 17, 18, 19</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G1</td>
+<td>11</td>
+<td>0.073208811227</td>
+<td>6</td>
+<td>6</td>
+<td>9, 15, 16, 17, 18, 19</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G2</td>
+<td>11</td>
+<td>0.146417622454</td>
+<td>5</td>
+<td>5</td>
+<td>9, 13, 14, 18, 19</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G0</td>
+<td>0</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>不适用</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G05</td>
+<td>11</td>
+<td>0.036738445051</td>
+<td>6</td>
+<td>6</td>
+<td>9, 15, 16, 17, 18, 19</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G1</td>
+<td>11</td>
+<td>0.073476890102</td>
+<td>6</td>
+<td>6</td>
+<td>9, 15, 16, 17, 18, 19</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G2</td>
+<td>11</td>
+<td>0.146953780204</td>
+<td>5</td>
+<td>5</td>
+<td>9, 13, 14, 18, 19</td>
+</tr>
+</tbody></table></div>
+<p>G05、G1每组6次截断，G2每组5次。G2的实际曲线也出现了修正方向变化，但不能凭1秒曲线证明一般稳定性或不稳定性。边界、频率均未提高，结果没有因动作接近或变化很小而被替换。</p>
+<p>G0的反馈统计为不适用。它在接管时段的真实脚本动作触边次数可以从动作数组另算，但不能冒充反馈查询或截断审计。</p>
+<figure class="experiment-figure"><img src="../assets/experiments/17-feedback-gain-comparison/seed-0045-limits.png" alt="seed45三档真实反馈的未限幅值与实际发送值" width="1500" height="1125" loading="lazy" decoding="async"><figcaption>只画实际执行过反馈的G05、G1、G2；叉号表示严格截断，G0没有伪造审计。 <a href="../assets/experiments/17-feedback-gain-comparison/seed-0045-limits.png" download>下载原尺寸图 ↗</a></figcaption></figure>
+
+<figure class="experiment-figure"><img src="../assets/experiments/17-feedback-gain-comparison/seed-0046-limits.png" alt="seed46三档反馈的真实限幅审计" width="1500" height="1125" loading="lazy" decoding="async"><figcaption>相同指令边界下，u_raw与u_sent分别保存；闭环误差不同，不能套用固定比例。 <a href="../assets/experiments/17-feedback-gain-comparison/seed-0046-limits.png" download>下载原尺寸图 ↗</a></figcaption></figure>
+
+<h2 id="section-8">真实画面与任务结果</h2>
+<figure class="experiment-figure"><img src="../assets/experiments/17-feedback-gain-comparison/new-gain-frames.png" alt="四条新增增益轨迹的首末和状态8、9真实相机图像" width="1128" height="1360" loading="lazy" decoding="async"><figcaption>16张原始base_camera图块，标签在外；图片没有缩放写回原始PNG。 <a href="../assets/experiments/17-feedback-gain-comparison/new-gain-frames.png" download>下载原尺寸图 ↗</a></figcaption></figure>
+
+<p>拼图覆盖四条新增运行的状态0、8、9和末状态20，共16个真实图块。每块256×256原始RGB不变，标签放在图外，重新打开后逐像素核对。机器人、木质桌面和蓝色方块可辨认。</p>
+<div class="table-scroll" tabindex="0" aria-label="可横向滚动的表格"><table>
+<thead>
+<tr>
+<th>seed</th>
+<th>档位</th>
+<th>动作数</th>
+<th>仿真时长s</th>
+<th>方块净位移m</th>
+<th>reward之和</th>
+<th>success曾为true</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>45</td>
+<td>G0</td>
+<td>20</td>
+<td>1.00</td>
+<td>7.91621997073e-07</td>
+<td>1.381884143</td>
+<td>false</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G05</td>
+<td>20</td>
+<td>1.00</td>
+<td>7.91621997073e-07</td>
+<td>1.374353066</td>
+<td>false</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G1</td>
+<td>20</td>
+<td>1.00</td>
+<td>7.91621997073e-07</td>
+<td>1.370473698</td>
+<td>false</td>
+</tr>
+<tr>
+<td>45</td>
+<td>G2</td>
+<td>20</td>
+<td>1.00</td>
+<td>7.91621997073e-07</td>
+<td>1.368207559</td>
+<td>false</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G0</td>
+<td>20</td>
+<td>1.00</td>
+<td>8.33992995526e-07</td>
+<td>1.505321085</td>
+<td>false</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G05</td>
+<td>20</td>
+<td>1.00</td>
+<td>8.33992995526e-07</td>
+<td>1.516286701</td>
+<td>false</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G1</td>
+<td>20</td>
+<td>1.00</td>
+<td>8.33992995526e-07</td>
+<td>1.521865904</td>
+<td>false</td>
+</tr>
+<tr>
+<td>46</td>
+<td>G2</td>
+<td>20</td>
+<td>1.00</td>
+<td>8.33992995526e-07</td>
+<td>1.525129363</td>
+<td>false</td>
+</tr>
+</tbody></table></div>
+<p>所有增益条件success始终为false，方块净位移在约8×10⁻⁷m量级。关节偏差、reward和任务成功分别报告，没有将小幅连续运动写成推物成功。</p>
+<h2 id="section-9">下载后只读复算</h2>
+<p>公开包约43.1MB，包含10份完整数值来源、210张原始PNG、真实反馈审计、相对路径来源清单及字段配置。G0保留原始脚本数据，没有feedback_audit.npz。</p>
+<p>解压后在README所在目录，使用已有兼容Python环境执行：</p>
+<pre><code class="language-text">python -B evaluate.py --output-dir result-r001
+</code></pre>
+<p>输出目录必须不存在。程序只执行CPU离线验收，不导入或创建仿真环境、不reset、不step、不训练或拟合。正式发布包已在独立目录解压运行，210张PNG通过，指标与逐步数组和本地原结果一致。files.json的包内SHA-256也在入口核对。</p>
+<pre><code class="language-python">with np.load(&quot;seed-0045-comparison.npz&quot;, allow_pickle=False) as saved:
+    k = saved[&quot;comparison_state_indices&quot;]
+    delta = saved[&quot;G2/joint1_qpos_rad&quot;][k].astype(np.float64)
+    delta -= saved[&quot;U/joint1_qpos_rad&quot;][k].astype(np.float64)
+    rmse = np.sqrt(np.mean(delta * delta, dtype=np.float64))
+</code></pre>
+<p>qpos/qvel为(21,1,9)，RGB为(21,1,256,256,3)，动作(20,8)，reward和回合标志各(20,1)。环境轴显式取0。每份观测先独立复制，所有NPZ是纯数值数组，读取禁用pickle，来源字符串映射放JSON。</p>
+<p>新反馈审计只有t=9～19实际发生的11行，包括gain、尺度、参考与实际索引、误差、修正、未截断值、发送值、边界标志和实际目标。前缀与t=8覆盖不算反馈输出，没有用NaN填充。方块真值、控制器目标和success单列为诊断，不参与反馈公式。</p>
+<p><a href="../assets/experiments/17-feedback-gain-comparison/metrics.json">完整指标</a> · <a href="../assets/experiments/17-feedback-gain-comparison/schema.json">字段与单位</a> · <a href="../assets/experiments/17-feedback-gain-comparison/validation.json">验收记录</a></p>
+<p><a href="../assets/experiments/17-feedback-gain-comparison/seed-0045-states.csv">seed45逐步状态</a> · <a href="../assets/experiments/17-feedback-gain-comparison/seed-0046-states.csv">seed46逐步状态</a> · <a href="../assets/experiments/17-feedback-gain-comparison/seed-0045-actions.csv">seed45动作</a> · <a href="../assets/experiments/17-feedback-gain-comparison/seed-0046-actions.csv">seed46动作</a></p>
+<h2 id="section-10">验收与限制</h2>
+<p>独立验收只读取保存文件，核对10份来源的N/N+1、类型、有限值、时间、回合标志及210张PNG。用独立标量运算与min/max重算反馈和发送值，并区分控制器目标与实际运动。重新打开数值导出后计算指标，RMSE也用逐项平方求和交叉核对。</p>
+<p>3216个既有文件、引用源码和依赖版本保持不变，私有账本确认四次新增运行、80次尝试、4次显式seeded reset，历史组重采为0。没有参数搜索、模型更新、统计拟合或候选扩充。原始日志保留可选Pinocchio缺失警告，现用关节控制及验收正常，没有为此安装依赖。</p>
+<p>两个seed已经使用过，完整参考轨迹与时钟已知，每组只有1秒；未新增两档增益的无干预对照，也未做显著性检验。本篇不能证明最优增益、普遍稳定性、恢复能力或推物能力。私人日志、调用账本、设备原始枚举、人工用例与维护工具不在公开包中。</p>
+<h2 id="section-11">官方资料</h2>
+<ul>
+<li><a href="https://github.com/mani-skill/ManiSkill/blob/v3.0.1/mani_skill/agents/controllers/pd_joint_pos.py">ManiSkill3.0.1关节位置控制器</a>：与本地源码哈希及use_delta/use_target配置一起核对目标生成。</li>
+<li><a href="https://maniskill.readthedocs.io/en/latest/user_guide/concepts/controllers.html">ManiSkill控制器与动作空间</a>：区分用户动作与底层控制接口。</li>
+<li><a href="https://numpy.org/doc/2.4/reference/generated/numpy.clip.html">NumPy2.4 clip</a>：固定区间限幅；触边标记由本篇另外核对。</li>
+<li><a href="https://numpy.org/doc/2.4/reference/generated/numpy.load.html">NumPy2.4 load</a>：纯数值NPZ读取。</li>
+<li><a href="https://pillow.readthedocs.io/en/stable/reference/Image.html">Pillow13.0 Image</a>：原始PNG读取与拼图，原像素一致性由数组比较验证。</li>
+</ul>
+<footer class="article-next"><span class="eyebrow">接下来</span><h2>沿着学习路线继续探索。</h2><p>回到学习路线，查看已有文章与后续安排。</p><a class="text-link" href="../learn.html">回到学习路线 →</a></footer></article><aside class="article-toc" aria-label="文章目录"><details open><summary>本文目录</summary><ol><li><a href="#section-1">四档增益，不是四档都重新采集</a></li><li><a href="#section-2">环境与物理尺度保持不变</a></li><li><a href="#section-3">唯一改变的是外层增益</a></li><li><a href="#section-4">先证明代码能复算旧记录</a></li><li><a href="#section-5">四次新增运行与80次预算</a></li><li><a href="#section-6">峰值、RMSE和末端一起报告</a></li><li><a href="#section-7">限幅会改变实际发送的修正</a></li><li><a href="#section-8">真实画面与任务结果</a></li><li><a href="#section-9">下载后只读复算</a></li><li><a href="#section-10">验收与限制</a></li><li><a href="#section-11">官方资料</a></li></ol></details><a class="toc-back" href="../articles.html">← 全部文章</a></aside></div></main>
+<footer class="site-footer"><div><a class="footer-brand" href="../index.html">Lamone&#39;s Embodied Lab</a><p>从仿真开始，记录能被检查的学习与研究过程。</p></div><div class="footer-links"><a href="../learn.html">学习路线</a><a href="../about.html">关于本站</a><a href="https://github.com/lzr62626/embodied-lab">GitHub ↗</a><span>© 2026 Lamone&#39;s Embodied Lab</span></div></footer>
+<dialog class="search-dialog" aria-labelledby="search-heading"><form method="dialog" novalidate class="search-head"><h2 id="search-heading">搜索文章</h2><button class="icon-button" aria-label="关闭搜索" value="close"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></form><label for="site-search" class="visually-hidden">标题、主题或关键词</label><div class="search-field"><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="site-search" type="search" placeholder="搜索观测、动作、世界模型……" autocomplete="off"><button class="icon-button search-clear" data-search-clear type="button" aria-label="清除搜索" hidden><svg class="ui-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div><div class="search-results" aria-live="polite" aria-atomic="true"></div><p class="search-hint">按 Esc 关闭 · 仅搜索已有文章</p></dialog><script type="application/json" id="search-data">[{"title":"换个起点还成立吗：冻结策略的新种子评估","description":"固定已有历史模型和最近邻规则，在两个新 seed 上分别核对离线预测、真实指令与闭环轨迹。","tags":["行为克隆","冻结评估","闭环评估"],"url":"../articles/unseen-seed-evaluation.html"},{"title":"偏离参考之后：冻结策略的扰动响应评估","description":"共同前缀后覆盖一次动作，再从相同历史比较脚本、冻结历史MLP和最近邻策略的实际响应。","tags":["闭环评估","动作干预","因果历史"],"url":"../articles/perturbed-policy-response.html"},{"title":"把偏差变成反馈：一个参考轨迹跟踪基线","description":"在同一动作干预之后，用预先固定的参考误差修正，记录前馈、限幅、实际目标与运动。","tags":["参考跟踪","反馈控制","仿真实验"],"url":"../articles/reference-feedback-baseline.html"},{"title":"有干预，也要有对照：参考反馈的配对评估","description":"补齐无干预反馈条件，复用历史运行，区分参考跟踪偏差与同一控制规则下的干预响应。","tags":["配对对照","参考反馈","仿真实验"],"url":"../articles/paired-feedback-evaluation.html"},{"title":"增益改了会怎样：参考反馈的固定参数对照","description":"只新增0.5与2.0两档增益，完整比较峰值、RMSE、末端偏差和限幅，不按单项指标挑选最佳控制器。","tags":["增益对照","参考反馈","仿真实验"],"url":"../articles/feedback-gain-comparison.html"},{"title":"只看过去和现在：用短历史预测机器人动作","description":"用同结构 MLP 对比当前关节状态与四状态历史，分开观察离线换向和闭环轨迹。","tags":["行为克隆","时间窗口","闭环评估"],"url":"../articles/causal-history-policy.html"},{"title":"先查数据：诊断行为克隆的换向误差","description":"检查冻结输入的精确重复和训练邻居，用真实样本分开理解整体误差与换向误差。","tags":["行为克隆","数据诊断","最近邻"],"url":"../articles/bc-data-diagnostics.html"},{"title":"用 PyTorch 训练第一个行为克隆基线","description":"将当前关节状态与演示动作对齐，训练一个 CPU 小模型，并用均值基线和逐步预测理解 MSE 与 MAE 的差异。","tags":["行为克隆","PyTorch","离线评估"],"url":"../articles/first-behavior-cloning.html"},{"title":"把模型放回仿真：第一次闭环行为克隆评估","description":"用同一仿真起点比较脚本、常数基线与闭环 MLP，观察一次错误换向如何改变后续状态。","tags":["行为克隆","闭环评估","ManiSkill"],"url":"../articles/first-closed-loop-rollout.html"},{"title":"机器人数据长什么样：读懂一条观测与动作记录","description":"读取一条真实的 ManiSkill transition，区分观测、归一化动作、控制器目标与下一时刻的实际运动，并检查数据如何对应。","tags":["仿真实践","观测与动作","ManiSkill","机器人数据"],"url":"../articles/observations-and-actions.html"},{"title":"从一条记录到一段轨迹：保存机器人动作序列","description":"采集20个真实控制步，保存21份观测和原始相机帧，读懂轨迹的时间轴、回合边界及GIF回放，并检查数据是否一一对应。","tags":["仿真实践","机器人轨迹","ManiSkill","数据采集"],"url":"../articles/record-first-trajectory.html"},{"title":"把轨迹变成数据集：用 PyTorch 批量读取机器人样本","description":"离线读取第四篇的真实轨迹，将20个动作与21份观测整理为Dataset，实际加载5个批次，检查图像转换、时间对应和独立副本。","tags":["数据实践","PyTorch","Dataset","机器人轨迹"],"url":"../articles/trajectory-to-dataset.html"},{"title":"从单步到序列：构建机器人轨迹时间窗口","description":"从完整真实轨迹构造17个四步时间窗口，检查K与K+1、批次轴、重叠存储和回合边界，保留最后一个B=1批次。","tags":["数据实践","时间窗口","PyTorch","机器人轨迹"],"url":"../articles/trajectory-time-windows.html"},{"title":"从一条到多条轨迹：按轨迹划分训练与验证数据","description":"复用seed42并新增43、44两条真实片段，建立来源清单与数值指纹，先划分轨迹再切出34个train与17个validation窗口。","tags":["数据实践","数据划分","来源追踪","ManiSkill"],"url":"../articles/multi-trajectory-splits.html"},{"title":"只用训练集计算统计量：标准化机器人状态","description":"从两条训练轨迹的42份唯一状态拟合统计，冻结后应用到train与validation窗口，核对近似常量、逆变换和末批维度。","tags":["数据实践","标准化","数据泄漏","PyTorch"],"url":"../articles/train-only-normalization.html"},{"title":"没有实机，如何开始学习具身智能？","description":"从桌面推物理解观测、动作与闭环交互，为第一次机器人仿真实验确定目标和验收标准。","tags":["具身智能","机器人学习","仿真","世界模型"],"url":"../articles/start-without-robot.html"},{"title":"第一次机器人仿真实验：保存一张相机图像","description":"用 ManiSkill 初始化一个推方块任务，保存真实相机 RGB，检查图像、数据维度与运行配置，并记录一次控制器初始化问题。","tags":["仿真实践","ManiSkill","相机观测","具身智能"],"url":"../articles/capture-camera-frame.html"}]</script></body></html>

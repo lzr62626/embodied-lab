@@ -1,0 +1,38 @@
+{
+  "version": "feedback-gain-comparison-v1",
+  "source_mapping": "dataset_manifest.json:10distinct IDs across two seeds and five roles",
+  "conditions": {
+    "U": "historical13unperturbed reference",
+    "G0": "historical14script, gain0-action-equivalent only",
+    "G05": "new gain0.5",
+    "G1": "historical15actual gain1feedback",
+    "G2": "new gain2"
+  },
+  "new_runs": 4,
+  "historical_runs_including_references": 6,
+  "axes": {
+    "N": "actual action count",
+    "N+1": "state count",
+    "E": "one environment axis,explicitly index0",
+    "M": "actual feedback decisions after action9,N-9"
+  },
+  "qpos": "(N+1,1,9)float32:arm7rad,finger2m",
+  "qvel": "(N+1,1,9)float32:arm7rad/s,finger2m/s",
+  "RGB": "(N+1,1,256,256,3)uint8:HWC,0..255;policy base_camera;PNG retained",
+  "actions": "(N,8)float32 normalized controller commands;arm2..7zero,gripper1",
+  "reward_and_episode_flags": "(N,1);original flags preserved;budget exhaustion is not episode termination",
+  "step_index_time": "(N+1,1)int32 step_index,float64 time_s;control20Hz,physics100Hz,0.05s per action",
+  "action_source": "new/G1:0common prefix0..7,1override8,2actual feedback9onward;historicalG0source2is script continuation,policy_active=false",
+  "feedback_input_units": {
+    "q_ref_q_actual_error": "rad",
+    "joint_delta_scale": "rad",
+    "gain": "dimensionless",
+    "commands_correction": "dimensionless normalized controller input"
+  },
+  "new_feedback_audit": "M rows only;gain/joint_delta_scale/q_ref/q_actual/error_rad/u_ff/correction/u_raw/u_clipped_float64 float64;u_sent float32;limit flags bool;indices int64;actual target(M,7)float32rad",
+  "G1_feedback_audit": "original article15audit retained unchanged;fixed gain1/scale0.1rad declared in source configuration,not added as fabricated original fields",
+  "G0_feedback_statistics": "JSONnull/not applicable;no actual outer feedback query or feedback_audit.npz;gain0action equivalence verified offline",
+  "diagnostics": "cube xyz(m)+wxyz quaternion,arm/gripper targets,success;not feedback inputs",
+  "comparison": "state9..common actual end inclusive,12states in present full runs;deviation=q_group-q_U,rad;RMSE over these states",
+  "scope": "previously evaluated seeds,known reference clock,only gains0.5/2new;no clean-condition runs for new gains,no fitting/no best-gain selection/no significance testing"
+}

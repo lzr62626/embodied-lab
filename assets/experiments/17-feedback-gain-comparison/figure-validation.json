@@ -1,0 +1,152 @@
+{
+  "status": "passed",
+  "raw_tiles_checked": 16,
+  "tiles_equal_original_RGB": true,
+  "labels_outside_tiles": true,
+  "tiles": [
+    {
+      "seed": 45,
+      "condition": "G05",
+      "state_index": 0,
+      "origin": [
+        20,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "G05",
+      "state_index": 8,
+      "origin": [
+        296,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "G05",
+      "state_index": 9,
+      "origin": [
+        572,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "G05",
+      "state_index": 20,
+      "origin": [
+        848,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "G2",
+      "state_index": 0,
+      "origin": [
+        20,
+        396
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "G2",
+      "state_index": 8,
+      "origin": [
+        296,
+        396
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "G2",
+      "state_index": 9,
+      "origin": [
+        572,
+        396
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "G2",
+      "state_index": 20,
+      "origin": [
+        848,
+        396
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "G05",
+      "state_index": 0,
+      "origin": [
+        20,
+        714
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "G05",
+      "state_index": 8,
+      "origin": [
+        296,
+        714
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "G05",
+      "state_index": 9,
+      "origin": [
+        572,
+        714
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "G05",
+      "state_index": 20,
+      "origin": [
+        848,
+        714
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "G2",
+      "state_index": 0,
+      "origin": [
+        20,
+        1032
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "G2",
+      "state_index": 8,
+      "origin": [
+        296,
+        1032
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "G2",
+      "state_index": 9,
+      "origin": [
+        572,
+        1032
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "G2",
+      "state_index": 20,
+      "origin": [
+        848,
+        1032
+      ]
+    }
+  ]
+}
