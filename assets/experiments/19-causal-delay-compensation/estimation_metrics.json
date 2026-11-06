@@ -1,0 +1,130 @@
+{
+  "version": "causal-delay-compensation-v1",
+  "seeds": {
+    "45": {
+      "CE": {
+        "decision_action_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "estimated": {
+          "samples": 11,
+          "max_abs_rad": 0.0050095850601792336,
+          "rmse_rad": 0.0023603517561723137,
+          "mean_signed_rad": 9.108123115517877e-06
+        },
+        "hold_latest": {
+          "samples": 11,
+          "max_abs_rad": 0.003958200803026557,
+          "rmse_rad": 0.003463866250298896,
+          "mean_signed_rad": 0.00035764027217572385
+        },
+        "unit": "rad",
+        "truth": "same run actual obs[t],offline evaluation only;never outer input",
+        "hold_latest_scope": "same-run estimation comparison,not another executed closed-loop controller"
+      },
+      "PE": {
+        "decision_action_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "estimated": {
+          "samples": 11,
+          "max_abs_rad": 0.004918914288282394,
+          "rmse_rad": 0.002490641177470479,
+          "mean_signed_rad": 9.233682331713764e-06
+        },
+        "hold_latest": {
+          "samples": 11,
+          "max_abs_rad": 0.003938447218388319,
+          "rmse_rad": 0.002752848607166063,
+          "mean_signed_rad": 0.0002483954568478194
+        },
+        "unit": "rad",
+        "truth": "same run actual obs[t],offline evaluation only;never outer input",
+        "hold_latest_scope": "same-run estimation comparison,not another executed closed-loop controller"
+      }
+    },
+    "46": {
+      "CE": {
+        "decision_action_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "estimated": {
+          "samples": 11,
+          "max_abs_rad": 0.005054367706179619,
+          "rmse_rad": 0.0023739377511694023,
+          "mean_signed_rad": 8.51144167509946e-06
+        },
+        "hold_latest": {
+          "samples": 11,
+          "max_abs_rad": 0.003958762623369694,
+          "rmse_rad": 0.0034738988188556894,
+          "mean_signed_rad": 0.0003579004921696403
+        },
+        "unit": "rad",
+        "truth": "same run actual obs[t],offline evaluation only;never outer input",
+        "hold_latest_scope": "same-run estimation comparison,not another executed closed-loop controller"
+      },
+      "PE": {
+        "decision_action_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "estimated": {
+          "samples": 11,
+          "max_abs_rad": 0.0049693044275045395,
+          "rmse_rad": 0.0025156106571566465,
+          "mean_signed_rad": 8.625063029202549e-06
+        },
+        "hold_latest": {
+          "samples": 11,
+          "max_abs_rad": 0.0039408523589372635,
+          "rmse_rad": 0.0027698778273393294,
+          "mean_signed_rad": 0.0002472324466163462
+        },
+        "unit": "rad",
+        "truth": "same run actual obs[t],offline evaluation only;never outer input",
+        "hold_latest_scope": "same-run estimation comparison,not another executed closed-loop controller"
+      }
+    }
+  },
+  "scope": "Both estimates evaluated on the same actual run and action indices;current truth offline only;not another executed hold controller."
+}

@@ -1,0 +1,463 @@
+{
+  "version": "causal-delay-compensation-v1",
+  "source_mapping": "dataset_manifest.json;14 unique IDs,7 roles per seed;prior article18 IDs separately retained",
+  "conditions": {
+    "U": "13 unperturbed reference",
+    "C0": "16 E clean immediate",
+    "P0": "15 D perturbed immediate",
+    "C1": "18 clean delayed",
+    "P1": "18 perturbed delayed",
+    "CE": "new clean extrapolated",
+    "PE": "new perturbed extrapolated"
+  },
+  "axes": {
+    "N": "actual actions",
+    "N+1": "independent states",
+    "E": "one environment,explicitly select0",
+    "M": "actual feedback decisions,t>=9;N-9"
+  },
+  "rollout_fields_actual_20_steps": {
+    "obs/agent/qpos": {
+      "shape": [
+        21,
+        1,
+        9
+      ],
+      "dtype": "float32"
+    },
+    "obs/agent/qvel": {
+      "shape": [
+        21,
+        1,
+        9
+      ],
+      "dtype": "float32"
+    },
+    "obs/extra/tcp_pose": {
+      "shape": [
+        21,
+        1,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "obs/sensor_param/base_camera/extrinsic_cv": {
+      "shape": [
+        21,
+        1,
+        3,
+        4
+      ],
+      "dtype": "float32"
+    },
+    "obs/sensor_param/base_camera/cam2world_gl": {
+      "shape": [
+        21,
+        1,
+        4,
+        4
+      ],
+      "dtype": "float32"
+    },
+    "obs/sensor_param/base_camera/intrinsic_cv": {
+      "shape": [
+        21,
+        1,
+        3,
+        3
+      ],
+      "dtype": "float32"
+    },
+    "obs/sensor_data/base_camera/rgb": {
+      "shape": [
+        21,
+        1,
+        256,
+        256,
+        3
+      ],
+      "dtype": "uint8"
+    },
+    "diagnostic/cube_pose": {
+      "shape": [
+        21,
+        1,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "step_index": {
+      "shape": [
+        21,
+        1
+      ],
+      "dtype": "int32"
+    },
+    "info/elapsed_steps": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "int32"
+    },
+    "info/success": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "bool"
+    },
+    "actions": {
+      "shape": [
+        20,
+        8
+      ],
+      "dtype": "float32"
+    },
+    "rewards": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "float32"
+    },
+    "terminated": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "bool"
+    },
+    "truncated": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "bool"
+    },
+    "audit/action_source": {
+      "shape": [
+        20
+      ],
+      "dtype": "int64"
+    },
+    "audit/feedback_active": {
+      "shape": [
+        20
+      ],
+      "dtype": "bool"
+    },
+    "audit/intervention": {
+      "shape": [
+        20
+      ],
+      "dtype": "bool"
+    },
+    "diagnostic/arm_target_qpos": {
+      "shape": [
+        20,
+        1,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "diagnostic/gripper_target_qpos": {
+      "shape": [
+        20,
+        1,
+        2
+      ],
+      "dtype": "float32"
+    },
+    "reset_info/elapsed_steps": {
+      "shape": [
+        1
+      ],
+      "dtype": "int32"
+    },
+    "reset_info/success": {
+      "shape": [
+        1
+      ],
+      "dtype": "bool"
+    },
+    "reset_info/reconfigure": {
+      "shape": [],
+      "dtype": "bool"
+    },
+    "time_s": {
+      "shape": [
+        21,
+        1
+      ],
+      "dtype": "float64"
+    }
+  },
+  "compensation_audit_actual_11_decisions": {
+    "q_ref": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "u_ff": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "correction": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "u_raw": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "u_clipped_float64": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "u_sent": {
+      "shape": [
+        11
+      ],
+      "dtype": "float32"
+    },
+    "was_clipped": {
+      "shape": [
+        11
+      ],
+      "dtype": "bool"
+    },
+    "sent_at_bound": {
+      "shape": [
+        11
+      ],
+      "dtype": "bool"
+    },
+    "q_estimated": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "error_estimated_rad": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "q_previous": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "q_latest": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "previous_measurement_state_index": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "measurement_state_index": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "previous_measurement_time_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "measurement_time_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "t": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "reference_state_index": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "actual_state_index": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "prediction_target_state_index": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "delay_steps": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "prediction_horizon_steps": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "gain": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "joint_delta_scale": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "delta_q": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "velocity_estimated": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "q_current": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "estimate_error_rad": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "hold_error_rad": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "error_current_rad": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "current_time_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "reference_time_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "measurement_age_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "previous_measurement_age_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "measurement_interval_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "prediction_horizon_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "controller_target_qpos": {
+      "shape": [
+        11,
+        7
+      ],
+      "dtype": "float32"
+    }
+  },
+  "units": {
+    "qpos": "arm7 rad,finger2 m",
+    "qvel": "arm7 rad/s,finger2 m/s",
+    "cube_and_tcp_pose": "xyz m,wxyz unit quaternion",
+    "arm_target_qpos": "rad",
+    "gripper_target_qpos": "m",
+    "all_q_and_position_errors_delta_q": "rad",
+    "velocity_estimated": "rad/s,past-position average change rate;not simulator qvel",
+    "time_age_interval_horizon": "s",
+    "gain": "dimensionless",
+    "joint_delta_scale": "rad",
+    "u_ff_correction_raw_sent": "dimensionless normalized command"
+  },
+  "RGB": "policy base_camera,(N+1,1,256,256,3)uint8,HWC,0..255;lossless original PNG",
+  "transition": "obs[t]->actual actions[t]->obs[t+1];final obs[N] has no extra action/query",
+  "action_source": "0original prefix,1PE-only override t8,2actual extrapolated outer feedback t>=9",
+  "outer_inputs": "known q_ref[t],known u_ff[t],same-run q_latest[t-1],q_previous[t-2];no actual current angle/velocity/RGB/truth/history actions",
+  "calculation_order": "float64 delta=latest-previous;estimated=latest+delta;error=q_ref-estimated;correction=error/0.1;raw=u_ff+correction;clip original bound then float32",
+  "indices": "action9 uses states7/8 to estimate9;action10 uses8/9 to estimate10;action19 uses17/18 to estimate19",
+  "delay": "newest measurement age1control step0.05s;older measurement age2steps0.10s;prediction horizon1step0.05s;not a two-step-delay experiment",
+  "current_truth": "read only after outer command is computed;used for audit/metrics,not control",
+  "controller_anchor": "bottom PD remains current actual qpos[t]+normalized command*0.1rad,use_target=false",
+  "boundary_flags": {
+    "was_clipped": "u_raw strictly exceeds original float32 interface bound",
+    "sent_at_bound": "actual float32 sent value equals either bound"
+  },
+  "legacy_audits": "C0/P0 current-q_actual fields and C1/P1 delayed-q_used fields kept unchanged;no estimated audit fabricated for historical controls",
+  "estimate_error_rad": "q_estimated[t]-same-run q_current[t]",
+  "hold_error_rad": "q_latest[t-1]-same-run q_current[t];not another executed controller",
+  "estimation_metric_range": "actual decision indices9..N-1;currently11values9..19",
+  "tracking_metric_range": "common state indices9..min actual N;currently12values9..20",
+  "tracking_deviation_rad": "q_group[k]-q_U[k]",
+  "paired": {
+    "r0": "P0-C0",
+    "r1": "P1-C1",
+    "rE": "PE-CE",
+    "rE_minus_r1": "rE-r1",
+    "CE_minus_C1": "CE-C1",
+    "PE_minus_P1": "PE-P1"
+  },
+  "diagnostics": "cube truth,success,controller targets,RGB and qvel do not enter the outer estimator",
+  "scope": "two known seeds,known reference/clock,one-second runs,historical controls reused;no training,parameter search,randomized causal or general task-success claim"
+}

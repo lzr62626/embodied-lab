@@ -1,0 +1,35 @@
+{
+  "article": 19,
+  "scope": "portable CPU offline acceptance",
+  "source_modules_sha256": {
+    "inspect_compensation.py": "f974a990d1e4d9f65a003042468f1cb34d8bf4cd0fabc79fc63a6212576239f1",
+    "compensation_common.py": "cb60b124e79cab185b13a85dc0b3a4191c1804db016f378a8d3c25f6d74c74fd",
+    "numeric_helpers.py": "238eb3ebcefe92b5522289d53e000cc8f0e8aeea6d9f1937e15f4368e672c41d",
+    "saved_checks.py": "2834c97c678f0f9c55de5eac7fe0a6b88ab747efd6fd482a8e2a0e8da24a1053",
+    "feedback_controller.py": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd",
+    "causal_extrapolation.py": "ceac5b2ee6476f5620df93411ceefac81e848204e886684181fd6e2357284f61",
+    "legacy_delay_checks.py": "9c07a599e58dbf7412b9b13fc7a2ee106015ac8c438c6b68ad9bd9a05e197f1c",
+    "saved_compensation.py": "4bba5e0eaaae0312c1fa3aa48abcc746c92e52139e0ac6c0cf9c38ee876eec35",
+    "verify_exports.py": "94eb6bdc28da62d69ff8d057f66b9a13abc5961384b81729f7402fe049ebbd58"
+  },
+  "source_rollout_sha256": {
+    "seed-0045-U": "3ebfc8849a49663cfd159fe2a8a1b74fe63b1f9954ba7f10e6d31468c3a9e00d",
+    "seed-0045-C0": "15ece0def19577b675290f8061ff5d5155e8463ecbf29ccaf8dab96fb2c36845",
+    "seed-0045-P0": "a0f30aff5d229148695eeef250c5c973490b82552ed88c5bb29ac6f2bf1cc564",
+    "seed-0045-C1": "a177a232947b69ffbd3d44f2726866b859e9d528ebf238b2ad357d54de903d91",
+    "seed-0045-P1": "0eaabe293fca99c73f423cf69432f460c653974a36ebd7ea8dc0a943e466e56a",
+    "seed-0045-CE": "444e4740fa5332524183d1d6906d536a8bc9eb757fe816764dad05d2f8b920be",
+    "seed-0045-PE": "6537eb4a7f21d40b8587f2d1aa55d5a2155954acda3e364982afbcb1d8cc26c3",
+    "seed-0046-U": "7c6fddd982d7f4535808846d26494962ed8ad8e5a7beba32cd008e8072fe7fa6",
+    "seed-0046-C0": "aa3b17f959e3705ab89d94527accb47a6215a9605567832bbf26f9d306c3f385",
+    "seed-0046-P0": "6fad6ee4bcee916dc8ea597cea1b053d52e117b0f6d1286a1dde73e7cb849774",
+    "seed-0046-C1": "3d1c9f17b9d50402f21d75723a651075407431dd5f1ba9e8d2e8803c97aa8600",
+    "seed-0046-P1": "c6351e1704ca42ffabe0a01d7fd0018a155ab77de518e007fb55869babd03587",
+    "seed-0046-CE": "1d7c7b4e1eee921202bfb7a675fd93e2d496594975072a25c0fad768cfa18dd4",
+    "seed-0046-PE": "6586ca8b10f1660e66e0635dd9d391f50fb7033499d75a7592bda7108f3c2862"
+  },
+  "new_runs": 4,
+  "historical_runs_including_U": 10,
+  "measurement_delay_steps": 1,
+  "public_adaptation": "Only private ledger/inventory hooks removed; source paths relative;raw hardware enumeration excluded."
+}

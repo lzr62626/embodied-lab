@@ -1,0 +1,39 @@
+{
+  "modules": [
+    {
+      "module": "numeric_helpers.py",
+      "source": "outputs/18-delayed-feedback-evaluation/numeric_helpers.py",
+      "source_sha256": "238eb3ebcefe92b5522289d53e000cc8f0e8aeea6d9f1937e15f4368e672c41d",
+      "copy_sha256": "238eb3ebcefe92b5522289d53e000cc8f0e8aeea6d9f1937e15f4368e672c41d",
+      "adaptation": "Byte-identical copy."
+    },
+    {
+      "module": "feedback_controller.py",
+      "source": "outputs/18-delayed-feedback-evaluation/feedback_controller.py",
+      "source_sha256": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd",
+      "copy_sha256": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd",
+      "adaptation": "Byte-identical copy."
+    },
+    {
+      "module": "capture_helpers.py",
+      "source": "outputs/18-delayed-feedback-evaluation/capture_helpers.py",
+      "source_sha256": "9c77948483e292a35cf2b77e5cb0b90ce956608f7c1066adf609b2ce0844c104",
+      "copy_sha256": "cef415d1884a83517750294a48618a0ca6c9d92251813b5e7213a60876bc988c",
+      "adaptation": "Only the protocol-helper import changed."
+    },
+    {
+      "module": "saved_checks.py",
+      "source": "outputs/18-delayed-feedback-evaluation/saved_checks.py",
+      "source_sha256": "5c3b9cd294366ec52b0df7f43f97f56d5bd8e92e373038d875ba281d640369b9",
+      "copy_sha256": "2834c97c678f0f9c55de5eac7fe0a6b88ab747efd6fd482a8e2a0e8da24a1053",
+      "adaptation": "Only the protocol-helper import changed."
+    },
+    {
+      "module": "legacy_delay_checks.py",
+      "source": "outputs/18-delayed-feedback-evaluation/inspect_delay.py",
+      "source_sha256": "f61c53b49319c09ce5e71035d2728e71c966f5a9fd192088d47eef2b9270a33f",
+      "copy_sha256": "9c07a599e58dbf7412b9b13fc7a2ee106015ac8c438c6b68ad9bd9a05e197f1c",
+      "adaptation": "Unchanged function bodies:check_delayed and numeric_fingerprint;pure imports only."
+    }
+  ]
+}

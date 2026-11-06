@@ -1,0 +1,160 @@
+{
+  "status": "passed",
+  "source_NPZ_SHA256": {
+    "seed-0045-comparison.npz": "fe23b69d9bbbd62f058fdae8158133a8482dbc261ebc8e5a6cb75b32f2d4045a",
+    "seed-0045-CE-estimation.npz": "ac3f525943aa454019d9eb9f341828eef3e2060c0b80278a00c06310e1e40b90",
+    "seed-0045-PE-estimation.npz": "53cc6ea7b7c1dafb04d3cdde62294c0bd2f24cf706856ac5e451258f24fa07de",
+    "seed-0046-comparison.npz": "1294fe0685f2d131d2896bea5a0198b36b2a43b7b04939e594027ac222d70e39",
+    "seed-0046-CE-estimation.npz": "c8a413432c680abad8d9780f55d1585caf40c12382fdf510234e1de70bcce29f",
+    "seed-0046-PE-estimation.npz": "3ef823e26d0b4485bfa44c7e78455e8c4fada7fdf19d9b98dd2cf1ece1e4d7ec"
+  },
+  "raw_tiles_checked": 16,
+  "tiles_equal_original_RGB": true,
+  "labels_outside_tiles": true,
+  "tiles": [
+    {
+      "seed": 45,
+      "condition": "CE",
+      "state_index": 0,
+      "origin": [
+        20,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "CE",
+      "state_index": 8,
+      "origin": [
+        296,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "CE",
+      "state_index": 9,
+      "origin": [
+        572,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "CE",
+      "state_index": 20,
+      "origin": [
+        848,
+        78
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "PE",
+      "state_index": 0,
+      "origin": [
+        20,
+        396
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "PE",
+      "state_index": 8,
+      "origin": [
+        296,
+        396
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "PE",
+      "state_index": 9,
+      "origin": [
+        572,
+        396
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "PE",
+      "state_index": 20,
+      "origin": [
+        848,
+        396
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CE",
+      "state_index": 0,
+      "origin": [
+        20,
+        714
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CE",
+      "state_index": 8,
+      "origin": [
+        296,
+        714
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CE",
+      "state_index": 9,
+      "origin": [
+        572,
+        714
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CE",
+      "state_index": 20,
+      "origin": [
+        848,
+        714
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "PE",
+      "state_index": 0,
+      "origin": [
+        20,
+        1032
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "PE",
+      "state_index": 8,
+      "origin": [
+        296,
+        1032
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "PE",
+      "state_index": 9,
+      "origin": [
+        572,
+        1032
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "PE",
+      "state_index": 20,
+      "origin": [
+        848,
+        1032
+      ]
+    }
+  ]
+}

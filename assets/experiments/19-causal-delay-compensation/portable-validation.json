@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "article": 19,
+  "zip": "causal-compensation-files.zip",
+  "zip_sha256": "7374107bc35de22ebab6822773fd4436bac9b4943a8c65574e0e4ef852df9e65",
+  "zip_bytes": 60037984,
+  "standalone_extraction_evaluated": true,
+  "pngs_verified": 294,
+  "metrics_equal": true,
+  "comparison_arrays_equal": true,
+  "estimation_metrics_equal": true,
+  "estimation_arrays_equal": true,
+  "CSV_files_verified": 20,
+  "simulation_calls": 0,
+  "training_calls": 0,
+  "read_only_command": "python -B evaluate.py --output-dir result-r001"
+}

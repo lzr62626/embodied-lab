@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "robot_table_cube_recognizable": true,
+  "reviewed_real_tiles": 16,
+  "original_states": [
+    0,
+    8,
+    9,
+    20
+  ],
+  "new_runs_reviewed": 4,
+  "graphs_reviewed": [
+    "seed-0045-comparison.png",
+    "seed-0046-comparison.png",
+    "seed-0045-estimation.png",
+    "seed-0046-estimation.png"
+  ],
+  "observation": "All real tiles show Panda,wood table,blue cube and target. Motion is small;no visible pushing success.Seven source roles,action/state axes,estimation error curves and clipping marks are readable.",
+  "raw_tiles_equal_RGB": true,
+  "labels_outside_tiles": true
+}
