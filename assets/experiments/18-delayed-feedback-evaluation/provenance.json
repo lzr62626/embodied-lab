@@ -1,0 +1,28 @@
+{
+  "article": 18,
+  "scope": "portable CPU offline acceptance",
+  "source_modules_sha256": {
+    "inspect_delay.py": "f61c53b49319c09ce5e71035d2728e71c966f5a9fd192088d47eef2b9270a33f",
+    "delay_common.py": "3bd578c4863c7f215dbc023096384cdb3ab3eab52901f7631d78745e339594ac",
+    "numeric_helpers.py": "238eb3ebcefe92b5522289d53e000cc8f0e8aeea6d9f1937e15f4368e672c41d",
+    "saved_checks.py": "5c3b9cd294366ec52b0df7f43f97f56d5bd8e92e373038d875ba281d640369b9",
+    "feedback_controller.py": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd",
+    "delayed_feedback.py": "5da547be41a616aad26dffd9ec5fb064dcc6ad4ee8989ef613dc85ebef83b81e"
+  },
+  "source_rollout_sha256": {
+    "seed-0045-U": "3ebfc8849a49663cfd159fe2a8a1b74fe63b1f9954ba7f10e6d31468c3a9e00d",
+    "seed-0045-C0": "15ece0def19577b675290f8061ff5d5155e8463ecbf29ccaf8dab96fb2c36845",
+    "seed-0045-P0": "a0f30aff5d229148695eeef250c5c973490b82552ed88c5bb29ac6f2bf1cc564",
+    "seed-0045-C1": "a177a232947b69ffbd3d44f2726866b859e9d528ebf238b2ad357d54de903d91",
+    "seed-0045-P1": "0eaabe293fca99c73f423cf69432f460c653974a36ebd7ea8dc0a943e466e56a",
+    "seed-0046-U": "7c6fddd982d7f4535808846d26494962ed8ad8e5a7beba32cd008e8072fe7fa6",
+    "seed-0046-C0": "aa3b17f959e3705ab89d94527accb47a6215a9605567832bbf26f9d306c3f385",
+    "seed-0046-P0": "6fad6ee4bcee916dc8ea597cea1b053d52e117b0f6d1286a1dde73e7cb849774",
+    "seed-0046-C1": "3d1c9f17b9d50402f21d75723a651075407431dd5f1ba9e8d2e8803c97aa8600",
+    "seed-0046-P1": "c6351e1704ca42ffabe0a01d7fd0018a155ab77de518e007fb55869babd03587"
+  },
+  "new_runs": 4,
+  "historical_runs_including_U": 6,
+  "measurement_delay_steps": 1,
+  "public_adaptation": "Only private ledger/inventory hooks removed; source paths relative;raw hardware enumeration excluded."
+}

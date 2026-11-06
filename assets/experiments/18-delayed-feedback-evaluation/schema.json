@@ -1,0 +1,383 @@
+{
+  "version": "delayed-feedback-evaluation-v1",
+  "source_mapping": "dataset_manifest.json;10 unique source IDs across two seeds and five roles",
+  "conditions": {
+    "U": "article13 unperturbed script reference",
+    "C0": "article16 E:clean/immediate gain1",
+    "P0": "article15 D:perturbed/immediate gain1",
+    "C1": "new:clean/delay1 gain1",
+    "P1": "new:perturbed/delay1 gain1"
+  },
+  "axes": {
+    "N": "actual completed actions",
+    "N+1": "state records",
+    "E": "one environment;explicitly select0",
+    "M": "actual feedback decisions at t>=9;N-9"
+  },
+  "rollout_fields_actual_20_steps": {
+    "obs/agent/qpos": {
+      "shape": [
+        21,
+        1,
+        9
+      ],
+      "dtype": "float32"
+    },
+    "obs/agent/qvel": {
+      "shape": [
+        21,
+        1,
+        9
+      ],
+      "dtype": "float32"
+    },
+    "obs/extra/tcp_pose": {
+      "shape": [
+        21,
+        1,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "obs/sensor_param/base_camera/extrinsic_cv": {
+      "shape": [
+        21,
+        1,
+        3,
+        4
+      ],
+      "dtype": "float32"
+    },
+    "obs/sensor_param/base_camera/cam2world_gl": {
+      "shape": [
+        21,
+        1,
+        4,
+        4
+      ],
+      "dtype": "float32"
+    },
+    "obs/sensor_param/base_camera/intrinsic_cv": {
+      "shape": [
+        21,
+        1,
+        3,
+        3
+      ],
+      "dtype": "float32"
+    },
+    "obs/sensor_data/base_camera/rgb": {
+      "shape": [
+        21,
+        1,
+        256,
+        256,
+        3
+      ],
+      "dtype": "uint8"
+    },
+    "diagnostic/cube_pose": {
+      "shape": [
+        21,
+        1,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "step_index": {
+      "shape": [
+        21,
+        1
+      ],
+      "dtype": "int32"
+    },
+    "info/elapsed_steps": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "int32"
+    },
+    "info/success": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "bool"
+    },
+    "actions": {
+      "shape": [
+        20,
+        8
+      ],
+      "dtype": "float32"
+    },
+    "rewards": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "float32"
+    },
+    "terminated": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "bool"
+    },
+    "truncated": {
+      "shape": [
+        20,
+        1
+      ],
+      "dtype": "bool"
+    },
+    "audit/action_source": {
+      "shape": [
+        20
+      ],
+      "dtype": "int64"
+    },
+    "audit/feedback_active": {
+      "shape": [
+        20
+      ],
+      "dtype": "bool"
+    },
+    "audit/intervention": {
+      "shape": [
+        20
+      ],
+      "dtype": "bool"
+    },
+    "diagnostic/arm_target_qpos": {
+      "shape": [
+        20,
+        1,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "diagnostic/gripper_target_qpos": {
+      "shape": [
+        20,
+        1,
+        2
+      ],
+      "dtype": "float32"
+    },
+    "reset_info/elapsed_steps": {
+      "shape": [
+        1
+      ],
+      "dtype": "int32"
+    },
+    "reset_info/success": {
+      "shape": [
+        1
+      ],
+      "dtype": "bool"
+    },
+    "reset_info/reconfigure": {
+      "shape": [],
+      "dtype": "bool"
+    },
+    "time_s": {
+      "shape": [
+        21,
+        1
+      ],
+      "dtype": "float64"
+    }
+  },
+  "feedback_audit_actual_11_decisions": {
+    "q_ref": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "u_ff": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "correction": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "u_raw": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "u_clipped_float64": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "u_sent": {
+      "shape": [
+        11
+      ],
+      "dtype": "float32"
+    },
+    "was_clipped": {
+      "shape": [
+        11
+      ],
+      "dtype": "bool"
+    },
+    "sent_at_bound": {
+      "shape": [
+        11
+      ],
+      "dtype": "bool"
+    },
+    "q_used": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "error_used_rad": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "t": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "reference_state_index": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "actual_state_index": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "measurement_state_index": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "delay_steps": {
+      "shape": [
+        11
+      ],
+      "dtype": "int64"
+    },
+    "gain": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "joint_delta_scale": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "q_current": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "error_current_rad": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "current_time_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "reference_time_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "measurement_time_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "measurement_age_s": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64"
+    },
+    "controller_target_qpos": {
+      "shape": [
+        11,
+        7
+      ],
+      "dtype": "float32"
+    }
+  },
+  "units": {
+    "qpos": "first7 rad,last2 m",
+    "qvel": "first7 rad/s,last2 m/s",
+    "cube_pose": "xyz m,wxyz unit quaternion",
+    "tcp_pose": "xyz m,wxyz unit quaternion",
+    "arm_target_qpos": "rad",
+    "gripper_target_qpos": "m",
+    "q_ref_q_current_q_used_error_used_error_current": "rad",
+    "times_measurement_age": "s",
+    "u_ff_correction_u_raw_u_sent": "dimensionless normalized command",
+    "gain": "dimensionless",
+    "joint_delta_scale": "rad"
+  },
+  "RGB": "raw policy base_camera uint8,HWC,0..255;no resize or palette conversion;PNG lossless",
+  "transition": "obs[t] -> actual actions[t] -> obs[t+1];final obs[N] has no extra action/query",
+  "provenance": {
+    "audit/action_source": "0original script prefix,1P1-only override at t8,2actual delayed feedback t>=9",
+    "audit/intervention": "true only P1 action8",
+    "audit/feedback_active": "true at t>=9"
+  },
+  "outer_inputs": "q_ref[t],same-run actual q_used[t-1],u_ff[t];current qpos diagnostic is appended after command calculation",
+  "reference_clock": "t (not delayed)",
+  "measurement_clock": "t-1;one20Hz control period0.05s;not one100Hz physics substep",
+  "error_used_rad": "q_ref[t]-q_used[t-1],participates in outer correction",
+  "error_current_rad": "q_ref[t]-q_current[t],diagnostic only",
+  "controller_anchor": "underlying PD target uses current actual qpos[t]+actual command*0.1rad;use_target=false",
+  "boundary_flags": {
+    "was_clipped": "raw value strictly outside original float32 interface bound",
+    "sent_at_bound": "actual float32 sent value equals either bound"
+  },
+  "legacy_audits": "C0/P0 retain original q_actual/error_rad fields,meaning current measurement;no history or records rewritten",
+  "diagnostics": "cube truth,success,controller targets,RGB,qvel are not outer formula inputs",
+  "comparison": "shared state indices9..minimum completed actions;all currently9..20 inclusive",
+  "tracking_deviation_rad": "q_group[k]-q_U[k] (opposite sign to instantaneous feedback error)",
+  "paired_responses": {
+    "r0_rad": "P0-C0",
+    "r1_rad": "P1-C1",
+    "r1_minus_r0_rad": "r1-r0",
+    "C1_minus_C0_rad": "delay contrast without intervention",
+    "P1_minus_P0_rad": "delay contrast with intervention"
+  },
+  "scope": "known seeds,fixed one-second runs,known reference and clock,historical baselines reused;no randomized causal or stability claim"
+}

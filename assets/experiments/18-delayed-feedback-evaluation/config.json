@@ -1,0 +1,90 @@
+{
+  "version": "delayed-feedback-evaluation-v1",
+  "seeds": [
+    45,
+    46
+  ],
+  "gain": 1.0,
+  "new_groups": {
+    "C1": "C1-delayed-clean",
+    "P1": "P1-delayed-perturbed"
+  },
+  "run_order": [
+    [
+      45,
+      "C1"
+    ],
+    [
+      45,
+      "P1"
+    ],
+    [
+      46,
+      "C1"
+    ],
+    [
+      46,
+      "P1"
+    ]
+  ],
+  "condition_delays": {
+    "C0": 0,
+    "P0": 0,
+    "C1": 1,
+    "P1": 1
+  },
+  "new_runs": 4,
+  "max_steps_per_run": 20,
+  "max_step_attempts_total": 80,
+  "joint_delta_scale_rad": 0.1,
+  "command_limit_nominal": 0.1,
+  "command_limit_float32": 0.10000000149011612,
+  "clip_limit_float64_from_float32": 0.10000000149011612,
+  "boundary_rule": "Clip in float64 against the existing float32 interface bound, then cast to float32",
+  "reference_observation_index": "t, never t-1 or t+1",
+  "actual_observation_index": "t",
+  "measurement_observation_index": "t-delay_steps from the same actual run",
+  "formula": "error_used=q_ref[t]-q_used[t-delay]; correction=error_used/0.1rad; sent=float32(clip(u_ff[t]+correction))",
+  "feedback_takeover_t": 9,
+  "override_t": 8,
+  "override_condition": "P1 only",
+  "control_dt_s": 0.05,
+  "measurement_age_atol_s": 1e-12,
+  "initial_and_prefix_atol": {
+    "obs/agent/qpos": 1e-06,
+    "obs/agent/qvel": 1e-05,
+    "diagnostic/cube_pose": 1e-06
+  },
+  "numeric_audit_atol": 1e-12,
+  "numeric_audit_rtol": 0.0,
+  "sent_action_comparison": "exact float32 equality",
+  "controller_target_atol_rad": 1e-06,
+  "comparison_start_state_index": 9,
+  "metric_calculation_dtype": "float64",
+  "action_source_labels": {
+    "0": "original_script_prefix",
+    "1": "P1_forced_override_t8",
+    "2": "actual_delayed_outer_feedback"
+  },
+  "compute_device": "cpu",
+  "training_calls": 0,
+  "statistics_fits": 0,
+  "model_updates": 0,
+  "candidate_expansions": 0,
+  "task": {
+    "task": "PushCube-v1",
+    "robot": "panda",
+    "num_envs": 1,
+    "obs_mode": "rgb",
+    "control_mode": "pd_joint_delta_pos",
+    "camera": "base_camera",
+    "width": 256,
+    "height": 256,
+    "shader_pack": "minimal",
+    "sim_backend": "cpu",
+    "render_backend": "cpu"
+  },
+  "reset_note": "One explicit seeded reset per new run; constructor initialization separately recorded.",
+  "delay_scope": "Only the outer first-joint measurement is stale. Reference/feedforward clock and underlying PD/current-position anchor remain current; no action queue or wall-clock sleep.",
+  "interpretation": "Known seeds, historical C0/P0 reused, fixed gain1 for matched conditions; no parameter selection, randomized causal-effect claim or real-robot latency claim."
+}

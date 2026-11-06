@@ -1,0 +1,623 @@
+{
+  "status": "passed",
+  "scope": "Saved-file independent CPU numerical acceptance;visual QA separate",
+  "new_runs": 4,
+  "new_pngs": 84,
+  "verified_pngs": 210,
+  "checks": {
+    "45-U": {
+      "verified_pngs": 21,
+      "fields": 21,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.0244548334648051e-09
+    },
+    "45-C0": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.0244548334648051e-09
+    },
+    "45-P0": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "45-C1": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "delayed_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_current": 0.0,
+        "q_used": 0.0,
+        "error_used_rad": 0.0,
+        "error_current_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "measurement_time_s": 0.0,
+        "measurement_age_s": 0.0
+      }
+    },
+    "45-P1": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "delayed_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_current": 0.0,
+        "q_used": 0.0,
+        "error_used_rad": 0.0,
+        "error_current_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "measurement_time_s": 0.0,
+        "measurement_age_s": 0.0
+      }
+    },
+    "46-U": {
+      "verified_pngs": 21,
+      "fields": 21,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "46-C0": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "46-P0": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_actual": 0.0,
+        "error_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0
+      },
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "46-C1": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "delayed_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_current": 0.0,
+        "q_used": 0.0,
+        "error_used_rad": 0.0,
+        "error_current_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "measurement_time_s": 0.0,
+        "measurement_age_s": 0.0
+      }
+    },
+    "46-P1": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "delayed_formula_max_abs_errors": {
+        "q_ref": 0.0,
+        "q_current": 0.0,
+        "q_used": 0.0,
+        "error_used_rad": 0.0,
+        "error_current_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "measurement_time_s": 0.0,
+        "measurement_age_s": 0.0
+      }
+    }
+  },
+  "numeric_content_fingerprints": {
+    "45-U": "5726bb1cd2f45ccea4e68fc2b3430dbf120bfd7d2d0cb61fa2ecf14b3d353314",
+    "45-C0": "df536795ba60d0e7c3f5e5179db9766a7e20356da579be104ce979dad2c237dc",
+    "45-P0": "cf3bbe8c0a8424feec7c6bb1c31558c389a738dd5ba9ebb074b1be3f742156ad",
+    "45-C1": "c5089e6c74f5ea0b623785fceb80132f0b8632d3389c4a170214c11c626b5978",
+    "45-P1": "7c165395d1566cf146c863c13894830fc0623d5d0e0865d2aace711ae0fe678a",
+    "46-U": "53cf4eff7c49215ed8fc36e16bf53f289531a754e99ec522c45726dce40dd331",
+    "46-C0": "abca3dbe8daa714be4a9b8f66e5b882fabb4c724e3778be5e47285b784b873e5",
+    "46-P0": "3834c3c68f7f351c2abd0768755284d2f45b8a1f32007ff0b9d6411509365922",
+    "46-C1": "f66b17dc59857e3433794ac05b553a7650b403ba56c3b8438981fb10c430ce40",
+    "46-P1": "7759f534b83ec9b9318f8023177ee11065bdaadd7dda2e421386a8f136ed08b0"
+  },
+  "paired_prefixes": {
+    "45": {
+      "C1_vs_C0_states_0_to_9": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "fields": {
+          "obs/agent/qpos": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad",
+            "finger_unit": "m"
+          },
+          "obs/agent/qvel": {
+            "atol": 1e-05,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad/s",
+            "finger_unit": "m/s"
+          },
+          "diagnostic/cube_pose": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "xyz_max_abs_m": 0.0,
+            "quaternion_max_abs": 0.0
+          }
+        },
+        "within_tolerance": true,
+        "exact": true
+      },
+      "C1_vs_U_states_0_to_9": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "fields": {
+          "obs/agent/qpos": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad",
+            "finger_unit": "m"
+          },
+          "obs/agent/qvel": {
+            "atol": 1e-05,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad/s",
+            "finger_unit": "m/s"
+          },
+          "diagnostic/cube_pose": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "xyz_max_abs_m": 0.0,
+            "quaternion_max_abs": 0.0
+          }
+        },
+        "within_tolerance": true,
+        "exact": true
+      },
+      "P1_vs_P0_states_0_to_9": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "fields": {
+          "obs/agent/qpos": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad",
+            "finger_unit": "m"
+          },
+          "obs/agent/qvel": {
+            "atol": 1e-05,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad/s",
+            "finger_unit": "m/s"
+          },
+          "diagnostic/cube_pose": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "xyz_max_abs_m": 0.0,
+            "quaternion_max_abs": 0.0
+          }
+        },
+        "within_tolerance": true,
+        "exact": true
+      },
+      "P1_vs_C1_states_0_to_8": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "fields": {
+          "obs/agent/qpos": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad",
+            "finger_unit": "m"
+          },
+          "obs/agent/qvel": {
+            "atol": 1e-05,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad/s",
+            "finger_unit": "m/s"
+          },
+          "diagnostic/cube_pose": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "xyz_max_abs_m": 0.0,
+            "quaternion_max_abs": 0.0
+          }
+        },
+        "within_tolerance": true,
+        "exact": true
+      }
+    },
+    "46": {
+      "C1_vs_C0_states_0_to_9": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "fields": {
+          "obs/agent/qpos": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad",
+            "finger_unit": "m"
+          },
+          "obs/agent/qvel": {
+            "atol": 1e-05,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad/s",
+            "finger_unit": "m/s"
+          },
+          "diagnostic/cube_pose": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "xyz_max_abs_m": 0.0,
+            "quaternion_max_abs": 0.0
+          }
+        },
+        "within_tolerance": true,
+        "exact": true
+      },
+      "C1_vs_U_states_0_to_9": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "fields": {
+          "obs/agent/qpos": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad",
+            "finger_unit": "m"
+          },
+          "obs/agent/qvel": {
+            "atol": 1e-05,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad/s",
+            "finger_unit": "m/s"
+          },
+          "diagnostic/cube_pose": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "xyz_max_abs_m": 0.0,
+            "quaternion_max_abs": 0.0
+          }
+        },
+        "within_tolerance": true,
+        "exact": true
+      },
+      "P1_vs_P0_states_0_to_9": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "fields": {
+          "obs/agent/qpos": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad",
+            "finger_unit": "m"
+          },
+          "obs/agent/qvel": {
+            "atol": 1e-05,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad/s",
+            "finger_unit": "m/s"
+          },
+          "diagnostic/cube_pose": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "xyz_max_abs_m": 0.0,
+            "quaternion_max_abs": 0.0
+          }
+        },
+        "within_tolerance": true,
+        "exact": true
+      },
+      "P1_vs_C1_states_0_to_8": {
+        "state_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "fields": {
+          "obs/agent/qpos": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad",
+            "finger_unit": "m"
+          },
+          "obs/agent/qvel": {
+            "atol": 1e-05,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "arm_max_abs": 0.0,
+            "finger_max_abs": 0.0,
+            "arm_unit": "rad/s",
+            "finger_unit": "m/s"
+          },
+          "diagnostic/cube_pose": {
+            "atol": 1e-06,
+            "max_abs": 0.0,
+            "exact": true,
+            "within_tolerance": true,
+            "xyz_max_abs_m": 0.0,
+            "quaternion_max_abs": 0.0
+          }
+        },
+        "within_tolerance": true,
+        "exact": true
+      }
+    }
+  },
+  "local_integrity": {
+    "performed": true,
+    "old_files_unchanged": 4129,
+    "dependency_versions_unchanged": true,
+    "step_attempts_by_run": {
+      "seed-0045/C1-delayed-clean": 20,
+      "seed-0045/P1-delayed-perturbed": 20,
+      "seed-0046/C1-delayed-clean": 20,
+      "seed-0046/P1-delayed-perturbed": 20
+    },
+    "step_attempts_total": 80,
+    "explicit_seeded_resets": 4,
+    "historical_runs_recollected": 0,
+    "condition_order_verified": true,
+    "reproduction_note": "Private attempt ledger and old-file inventory were verified by author; portable evaluation recomputes numeric evidence only."
+  },
+  "N_and_N_plus_one": true,
+  "PNG_pixels_equal_RGB": true,
+  "delayed_formula_recomputed_independently": true,
+  "current_PD_anchor_verified": true,
+  "reference_clock_not_delayed": true,
+  "same_run_measurement_t_minus_one": true,
+  "measurement_age_s": 0.05,
+  "metrics_reopened_and_recomputed": true,
+  "pure_numeric_npz": true,
+  "simulation_calls": 0,
+  "training_calls": 0,
+  "statistics_fits": 0,
+  "visual_review": {
+    "status": "passed",
+    "robot_table_cube_recognizable": true,
+    "reviewed_real_tiles": 16,
+    "original_states": [
+      0,
+      8,
+      9,
+      20
+    ],
+    "new_runs_reviewed": 4,
+    "graphs_reviewed": [
+      "seed-0045-comparison.png",
+      "seed-0046-comparison.png",
+      "seed-0045-measurement.png",
+      "seed-0046-measurement.png"
+    ],
+    "observation": "Panda, wood table, blue cube and target are recognizable in all new source sheets; arm motion is small. No visible cube-pushing success. Axes, five source roles and measurement/correction legends are readable.",
+    "raw_tiles_equal_RGB": true,
+    "labels_outside_tiles": true
+  },
+  "private_cache_tests": {
+    "status": "passed",
+    "private_artificial_only": true,
+    "future_current_mutation_outer_command_unchanged": true,
+    "current_diagnostics_changed": true,
+    "past_mutation_selected_input_changed": true,
+    "invalid_cases_rejected": 17,
+    "no_padding_or_cross_run_cache": true,
+    "simulation_calls": 0,
+    "disclosure": "Only the test outcome is public; artificial fixture values remain private and are not experimental data."
+  }
+}

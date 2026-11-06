@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "article": 18,
+  "zip": "delayed-feedback-files.zip",
+  "zip_sha256": "02719d4f344686e4522aa8e4b8530edd13188fccb31e164968ecf5bd01f9befa",
+  "zip_bytes": 43054175,
+  "standalone_extraction_evaluated": true,
+  "pngs_verified": 210,
+  "metrics_equal": true,
+  "comparison_arrays_equal": true,
+  "simulation_calls": 0,
+  "training_calls": 0,
+  "read_only_command": "python -B evaluate.py --output-dir result-r001"
+}
