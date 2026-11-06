@@ -1,0 +1,410 @@
+{
+  "version": "estimation-action-diagnostics-v1",
+  "diagnostic_axis": "D=44 actual historical compensation decisions, not time or batch axis.",
+  "raw_axes": {
+    "qpos": "(T_state,E,J)=(21,1,9), environment explicitly [t,0,0] for first joint.",
+    "rgb": "(T_state,E,H,W,C)=(21,1,256,256,3), uint8 0..255.",
+    "actions": "(T_action,A)=(20,8), no environment axis; first dimension actions[t,0]."
+  },
+  "qpos_units": [
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "rad",
+    "m",
+    "m"
+  ],
+  "qvel_units": [
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "rad/s",
+    "m/s",
+    "m/s"
+  ],
+  "record_fields": {
+    "q_previous_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "q previous rad"
+    },
+    "q_latest_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "q latest rad"
+    },
+    "q_current_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "q current rad"
+    },
+    "q_ref_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "q ref rad"
+    },
+    "delta_previous_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "q[t-1]-q[t-2] in this same historical run."
+    },
+    "delta_current_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "q[t]-q[t-1]; observed offline for diagnosis."
+    },
+    "q_estimated_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "q estimated rad"
+    },
+    "estimate_error_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "(q[t-1]+(q[t-1]-q[t-2]))-q[t]; not acceleration."
+    },
+    "hold_error_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "hold error rad"
+    },
+    "error_est_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "error est rad"
+    },
+    "error_current_rad": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "rad",
+      "meaning": "error current rad"
+    },
+    "u_ff": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "u ff"
+    },
+    "correction_est": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "correction est"
+    },
+    "correction_current": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "correction current"
+    },
+    "raw_est": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "raw est"
+    },
+    "raw_current": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "raw current"
+    },
+    "clipped_est": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "clipped est"
+    },
+    "clipped_current": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "clipped current"
+    },
+    "sent_est": {
+      "shape": [
+        44
+      ],
+      "dtype": "float32",
+      "unit": "normalized_command",
+      "meaning": "Historical actual command, reconstructed and bit-identical to rollout actions[t,0] and actual audit."
+    },
+    "sent_current": {
+      "shape": [
+        44
+      ],
+      "dtype": "float32",
+      "unit": "normalized_command",
+      "meaning": "Same-state current-angle offline recomputation; never sent, not an optimal/correct label."
+    },
+    "raw_gap": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "raw_est-raw_current; approximately -gain*estimate_error_rad/0.1."
+    },
+    "clipped_gap": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "float64 clip-est minus float64 clip-current, original exact interface bound."
+    },
+    "sent_gap": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "float64(sent_est)-float64(sent_current)."
+    },
+    "rounding_residual": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "normalized_command",
+      "meaning": "sent_gap-clipped_gap; separate from clipping."
+    },
+    "est_strict_clipped": {
+      "shape": [
+        44
+      ],
+      "dtype": "bool",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "est strict clipped"
+    },
+    "current_strict_clipped": {
+      "shape": [
+        44
+      ],
+      "dtype": "bool",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "current strict clipped"
+    },
+    "est_sent_at_bound": {
+      "shape": [
+        44
+      ],
+      "dtype": "bool",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "est sent at bound"
+    },
+    "current_sent_at_bound": {
+      "shape": [
+        44
+      ],
+      "dtype": "bool",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "current sent at bound"
+    },
+    "sent_numeric_equal": {
+      "shape": [
+        44
+      ],
+      "dtype": "bool",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "Exact numeric comparison; signed zero equal."
+    },
+    "sent_bits_equal": {
+      "shape": [
+        44
+      ],
+      "dtype": "bool",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "Exact float32 bit comparison; signed zero distinct."
+    },
+    "category": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "0=A raw equal;1=B raw different/clipped equal;2=C clipped different/sent equal;3=D sent different."
+    },
+    "sample_id": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "sample id"
+    },
+    "source_id": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "source id"
+    },
+    "article19_source_id": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "article19 source id"
+    },
+    "seed": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "seed"
+    },
+    "condition_id": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "condition id"
+    },
+    "t": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "t"
+    },
+    "previous_state_index": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "previous state index"
+    },
+    "latest_state_index": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "latest state index"
+    },
+    "current_state_index": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "current state index"
+    },
+    "next_state_index": {
+      "shape": [
+        44
+      ],
+      "dtype": "int64",
+      "unit": "unitless_metadata_or_flag",
+      "meaning": "next state index"
+    },
+    "previous_time_s": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "s",
+      "meaning": "previous time s"
+    },
+    "latest_time_s": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "s",
+      "meaning": "latest time s"
+    },
+    "current_time_s": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "s",
+      "meaning": "current time s"
+    },
+    "next_time_s": {
+      "shape": [
+        44
+      ],
+      "dtype": "float64",
+      "unit": "s",
+      "meaning": "next time s"
+    }
+  },
+  "source_id_mapping": {
+    "0": "seed-0045-U",
+    "1": "seed-0045-CE",
+    "2": "seed-0045-PE",
+    "3": "seed-0046-U",
+    "4": "seed-0046-CE",
+    "5": "seed-0046-PE"
+  },
+  "category_mapping": {
+    "0": "A:raw_equal",
+    "1": "B:raw_diff_clipped_equal",
+    "2": "C:clipped_diff_sent_equal",
+    "3": "D:sent_diff"
+  },
+  "positive_negative_zero": "Equal numerically, separate bit equality flag.",
+  "state_action_alignment": "obs[t] -> actions[t] -> obs[t+1]; state20 has no decision.",
+  "source_preservation": "All six sources and every raw frame are historical reuse. No imaginary reward/next-state/success exists for sent_current."
+}

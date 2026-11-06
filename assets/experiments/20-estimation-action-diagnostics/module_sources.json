@@ -1,0 +1,25 @@
+{
+  "modules": [
+    {
+      "module": "numeric_helpers.py",
+      "source": "outputs/19-causal-delay-compensation/numeric_helpers.py",
+      "source_sha256": "238eb3ebcefe92b5522289d53e000cc8f0e8aeea6d9f1937e15f4368e672c41d",
+      "copy_sha256": "8174cf9ef2d6665c38355b9a01b8f285ebe0f6da3468a939eab5d414662f722c",
+      "adaptation": "Remove unused training/ledger helpers, or redirect pure numeric imports only; saved checker function bodies unchanged."
+    },
+    {
+      "module": "saved_checks.py",
+      "source": "outputs/19-causal-delay-compensation/saved_checks.py",
+      "source_sha256": "2834c97c678f0f9c55de5eac7fe0a6b88ab747efd6fd482a8e2a0e8da24a1053",
+      "copy_sha256": "4c5146e04758ab0c0bc6cbe6a05c9f6cce4c316085a9916694b895e563f84301",
+      "adaptation": "Remove unused training/ledger helpers, or redirect pure numeric imports only; saved checker function bodies unchanged."
+    },
+    {
+      "module": "saved_compensation.py",
+      "source": "outputs/19-causal-delay-compensation/saved_compensation.py",
+      "source_sha256": "4bba5e0eaaae0312c1fa3aa48abcc746c92e52139e0ac6c0cf9c38ee876eec35",
+      "copy_sha256": "13e04b6e5359af6f6fed73b02d05c36ca8c7327ccea1f772eec45e7661fce77e",
+      "adaptation": "Remove unused training/ledger helpers, or redirect pure numeric imports only; saved checker function bodies unchanged."
+    }
+  ]
+}

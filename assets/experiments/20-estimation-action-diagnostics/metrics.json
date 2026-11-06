@@ -1,0 +1,372 @@
+{
+  "version": "estimation-action-diagnostics-v1",
+  "new_runs": 0,
+  "simulation_calls": 0,
+  "historical_sources": 6,
+  "groups": {
+    "45-CE": {
+      "decisions": 11,
+      "estimate_error_rad": {
+        "samples": 11,
+        "max_abs": 0.0050095850601792336,
+        "rmse": 0.0023603517561723137,
+        "mean_signed": 9.108123115517877e-06
+      },
+      "hold_error_rad": {
+        "samples": 11,
+        "max_abs": 0.003958200803026557,
+        "rmse": 0.003463866250298896,
+        "mean_signed": 0.00035764027217572385
+      },
+      "command_gaps": {
+        "raw_gap": {
+          "samples": 11,
+          "max_abs": 0.050095850601792336,
+          "rmse": 0.023603517561723134,
+          "mean_signed": -9.108123115517877e-05
+        },
+        "clipped_gap": {
+          "samples": 11,
+          "max_abs": 0.0002106931060552597,
+          "rmse": 8.971835368694513e-05,
+          "mean_signed": -8.00302421504801e-07
+        },
+        "sent_gap": {
+          "samples": 11,
+          "max_abs": 0.000210687518119812,
+          "rmse": 8.971742165529788e-05,
+          "mean_signed": -8.005987514149059e-07
+        }
+      },
+      "rounding_residual_range": [
+        -5.587935447692871e-09,
+        3.725290298461914e-09
+      ],
+      "categories": {
+        "A": 0,
+        "B": 8,
+        "C": 0,
+        "D": 3
+      },
+      "boundary_counts": {
+        "est_strict_clipped": 9,
+        "current_strict_clipped": 7,
+        "est_sent_at_bound": 9,
+        "current_sent_at_bound": 9,
+        "est_touch_without_clipping": 0,
+        "current_touch_without_clipping": 2
+      },
+      "sent_numeric_equal": 8,
+      "sent_bits_equal": 8,
+      "historical_tracking_rad": {
+        "samples": 12,
+        "max_abs": 8.316710591316223e-06,
+        "rmse": 5.244588866603073e-06,
+        "mean_signed": -2.214335836470127e-06,
+        "state_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "end_signed": 3.3082906156778336e-06,
+        "origin_article": 19
+      }
+    },
+    "45-PE": {
+      "decisions": 11,
+      "estimate_error_rad": {
+        "samples": 11,
+        "max_abs": 0.004918914288282394,
+        "rmse": 0.002490641177470479,
+        "mean_signed": 9.233682331713764e-06
+      },
+      "hold_error_rad": {
+        "samples": 11,
+        "max_abs": 0.003938447218388319,
+        "rmse": 0.002752848607166063,
+        "mean_signed": 0.0002483954568478194
+      },
+      "command_gaps": {
+        "raw_gap": {
+          "samples": 11,
+          "max_abs": 0.049189142882823944,
+          "rmse": 0.02490641177470479,
+          "mean_signed": -9.233682331713763e-05
+        },
+        "clipped_gap": {
+          "samples": 11,
+          "max_abs": 0.027386052533984184,
+          "rmse": 0.01203881703976038,
+          "mean_signed": 0.0022716278379613705
+        },
+        "sent_gap": {
+          "samples": 11,
+          "max_abs": 0.02738605299964547,
+          "rmse": 0.012038817384841843,
+          "mean_signed": 0.0022716279649599032
+        }
+      },
+      "rounding_residual_range": [
+        -1.862645149230957e-09,
+        1.862645149230957e-09
+      ],
+      "categories": {
+        "A": 0,
+        "B": 6,
+        "C": 0,
+        "D": 5
+      },
+      "boundary_counts": {
+        "est_strict_clipped": 6,
+        "current_strict_clipped": 6,
+        "est_sent_at_bound": 6,
+        "current_sent_at_bound": 6,
+        "est_touch_without_clipping": 0,
+        "current_touch_without_clipping": 0
+      },
+      "sent_numeric_equal": 6,
+      "sent_bits_equal": 6,
+      "historical_tracking_rad": {
+        "samples": 12,
+        "max_abs": 0.007320881122723222,
+        "rmse": 0.0033234522181120113,
+        "mean_signed": 0.0026601722153524556,
+        "state_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "end_signed": 0.0012047146447002888,
+        "origin_article": 19
+      }
+    },
+    "46-CE": {
+      "decisions": 11,
+      "estimate_error_rad": {
+        "samples": 11,
+        "max_abs": 0.005054367706179619,
+        "rmse": 0.0023739377511694023,
+        "mean_signed": 8.51144167509946e-06
+      },
+      "hold_error_rad": {
+        "samples": 11,
+        "max_abs": 0.003958762623369694,
+        "rmse": 0.0034738988188556894,
+        "mean_signed": 0.0003579004921696403
+      },
+      "command_gaps": {
+        "raw_gap": {
+          "samples": 11,
+          "max_abs": 0.05054367706179619,
+          "rmse": 0.023739377511694023,
+          "mean_signed": -8.511441675099459e-05
+        },
+        "clipped_gap": {
+          "samples": 11,
+          "max_abs": 0.0001911073923110962,
+          "rmse": 8.135109076749534e-05,
+          "mean_signed": -6.476925178007646e-07
+        },
+        "sent_gap": {
+          "samples": 11,
+          "max_abs": 0.0001911073923110962,
+          "rmse": 8.135069466711711e-05,
+          "mean_signed": -6.475231864235618e-07
+        }
+      },
+      "rounding_residual_range": [
+        0.0,
+        1.862645149230957e-09
+      ],
+      "categories": {
+        "A": 0,
+        "B": 8,
+        "C": 0,
+        "D": 3
+      },
+      "boundary_counts": {
+        "est_strict_clipped": 9,
+        "current_strict_clipped": 7,
+        "est_sent_at_bound": 9,
+        "current_sent_at_bound": 9,
+        "est_touch_without_clipping": 0,
+        "current_touch_without_clipping": 2
+      },
+      "sent_numeric_equal": 8,
+      "sent_bits_equal": 8,
+      "historical_tracking_rad": {
+        "samples": 12,
+        "max_abs": 7.534399628639221e-06,
+        "rmse": 4.764341613354938e-06,
+        "mean_signed": -1.9918661564588547e-06,
+        "state_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "end_signed": 3.0277296900749207e-06,
+        "origin_article": 19
+      }
+    },
+    "46-PE": {
+      "decisions": 11,
+      "estimate_error_rad": {
+        "samples": 11,
+        "max_abs": 0.0049693044275045395,
+        "rmse": 0.0025156106571566465,
+        "mean_signed": 8.625063029202549e-06
+      },
+      "hold_error_rad": {
+        "samples": 11,
+        "max_abs": 0.0039408523589372635,
+        "rmse": 0.0027698778273393294,
+        "mean_signed": 0.0002472324466163462
+      },
+      "command_gaps": {
+        "raw_gap": {
+          "samples": 11,
+          "max_abs": 0.049693044275045395,
+          "rmse": 0.025156106571566465,
+          "mean_signed": -8.625063029202548e-05
+        },
+        "clipped_gap": {
+          "samples": 11,
+          "max_abs": 0.027974620461463928,
+          "rmse": 0.012240003699559915,
+          "mean_signed": 0.002259344539859078
+        },
+        "sent_gap": {
+          "samples": 11,
+          "max_abs": 0.027974620461463928,
+          "rmse": 0.012240002021133144,
+          "mean_signed": 0.002259343523870815
+        }
+      },
+      "rounding_residual_range": [
+        -7.450580596923828e-09,
+        0.0
+      ],
+      "categories": {
+        "A": 0,
+        "B": 6,
+        "C": 0,
+        "D": 5
+      },
+      "boundary_counts": {
+        "est_strict_clipped": 6,
+        "current_strict_clipped": 6,
+        "est_sent_at_bound": 6,
+        "current_sent_at_bound": 6,
+        "est_touch_without_clipping": 0,
+        "current_touch_without_clipping": 0
+      },
+      "sent_numeric_equal": 6,
+      "sent_bits_equal": 6,
+      "historical_tracking_rad": {
+        "samples": 12,
+        "max_abs": 0.007347689010202885,
+        "rmse": 0.003328606586380907,
+        "mean_signed": 0.002666809984172384,
+        "state_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "end_signed": 0.00122012197971344,
+        "origin_article": 19
+      }
+    }
+  },
+  "total": {
+    "decisions": 44,
+    "estimate_error_rad": {
+      "samples": 44,
+      "max_abs": 0.005054367706179619,
+      "rmse": 0.002436105052774028,
+      "mean_signed": 8.869577537883412e-06
+    },
+    "hold_error_rad": {
+      "samples": 44,
+      "max_abs": 0.003958762623369694,
+      "rmse": 0.00313515314761372,
+      "mean_signed": 0.00030279216695238244
+    },
+    "command_gaps": {
+      "raw_gap": {
+        "samples": 44,
+        "max_abs": 0.05054367706179619,
+        "rmse": 0.024361050527740277,
+        "mean_signed": -8.869577537883411e-05
+      },
+      "clipped_gap": {
+        "samples": 44,
+        "max_abs": 0.027974620461463928,
+        "rmse": 0.008584367677135904,
+        "mean_signed": 0.0011323810957202857
+      },
+      "sent_gap": {
+        "samples": 44,
+        "max_abs": 0.027974620461463928,
+        "rmse": 0.008584367196453458,
+        "mean_signed": 0.0011323808417232199
+      }
+    },
+    "rounding_residual_range": [
+      -7.450580596923828e-09,
+      3.725290298461914e-09
+    ],
+    "categories": {
+      "A": 0,
+      "B": 28,
+      "C": 0,
+      "D": 16
+    },
+    "boundary_counts": {
+      "est_strict_clipped": 30,
+      "current_strict_clipped": 26,
+      "est_sent_at_bound": 30,
+      "current_sent_at_bound": 30,
+      "est_touch_without_clipping": 0,
+      "current_touch_without_clipping": 4
+    },
+    "sent_numeric_equal": 28,
+    "sent_bits_equal": 28
+  },
+  "interpretation": "Same-state current-angle commands are offline diagnostics only, never executed trajectories or correct labels. Historical motion comes from article19."
+}

@@ -1,0 +1,102 @@
+{
+  "article": 20,
+  "title": "从估计误差到动作指令：拆解延迟补偿与限幅",
+  "sources": [
+    {
+      "trajectory_id": "seed-0045-U",
+      "source_id": 0,
+      "article19_source_id": 0,
+      "original_collection_article": 13,
+      "seed": 45,
+      "condition": "U",
+      "rollout_sha256": "3ebfc8849a49663cfd159fe2a8a1b74fe63b1f9954ba7f10e6d31468c3a9e00d",
+      "numeric_content_fingerprint": "5726bb1cd2f45ccea4e68fc2b3430dbf120bfd7d2d0cb61fa2ecf14b3d353314",
+      "audit_sha256": null,
+      "historical_reuse": true
+    },
+    {
+      "trajectory_id": "seed-0045-CE",
+      "source_id": 1,
+      "article19_source_id": 5,
+      "original_collection_article": 19,
+      "seed": 45,
+      "condition": "CE",
+      "rollout_sha256": "444e4740fa5332524183d1d6906d536a8bc9eb757fe816764dad05d2f8b920be",
+      "numeric_content_fingerprint": "5f3e61019cd3eda07867b5788fc179b3a36368429605dc0906b0dbcd41e6373d",
+      "audit_sha256": "6886e1b73129b091c079cc6665108477f167dfc01272ec724d29747b08602b37",
+      "historical_reuse": true
+    },
+    {
+      "trajectory_id": "seed-0045-PE",
+      "source_id": 2,
+      "article19_source_id": 6,
+      "original_collection_article": 19,
+      "seed": 45,
+      "condition": "PE",
+      "rollout_sha256": "6537eb4a7f21d40b8587f2d1aa55d5a2155954acda3e364982afbcb1d8cc26c3",
+      "numeric_content_fingerprint": "05fc498ed975dd6e5d580fd465db25ded8a8e79922a6724169cd2f85f7c8d9a3",
+      "audit_sha256": "ffc48d3a9315f1bba23deac583454b5f90dc3ce94f1069a623ae2f6b9ac17227",
+      "historical_reuse": true
+    },
+    {
+      "trajectory_id": "seed-0046-U",
+      "source_id": 3,
+      "article19_source_id": 7,
+      "original_collection_article": 13,
+      "seed": 46,
+      "condition": "U",
+      "rollout_sha256": "7c6fddd982d7f4535808846d26494962ed8ad8e5a7beba32cd008e8072fe7fa6",
+      "numeric_content_fingerprint": "53cf4eff7c49215ed8fc36e16bf53f289531a754e99ec522c45726dce40dd331",
+      "audit_sha256": null,
+      "historical_reuse": true
+    },
+    {
+      "trajectory_id": "seed-0046-CE",
+      "source_id": 4,
+      "article19_source_id": 12,
+      "original_collection_article": 19,
+      "seed": 46,
+      "condition": "CE",
+      "rollout_sha256": "1d7c7b4e1eee921202bfb7a675fd93e2d496594975072a25c0fad768cfa18dd4",
+      "numeric_content_fingerprint": "73ce98b3ffcc79717a86f8cee94ded2a1b951dbcf2842a85c1b4056826adec82",
+      "audit_sha256": "1940baee1de7b85c277349bc1902755ec848b93b315435ff48a6b8f8ac1238a1",
+      "historical_reuse": true
+    },
+    {
+      "trajectory_id": "seed-0046-PE",
+      "source_id": 5,
+      "article19_source_id": 13,
+      "original_collection_article": 19,
+      "seed": 46,
+      "condition": "PE",
+      "rollout_sha256": "6586ca8b10f1660e66e0635dd9d391f50fb7033499d75a7592bda7108f3c2862",
+      "numeric_content_fingerprint": "26faf5d392cac1b777b4cc98a65ea15bc35da5f081870941726fea655fbcd322",
+      "audit_sha256": "b091ccd1e29a667930ed73698b09e6c2f2c26ede6fe7a97a209bb013e527a8a4",
+      "historical_reuse": true
+    }
+  ],
+  "article19_reference_file_sha256": {
+    "dataset_manifest.json": "2b9707326eeadb97e76cad64bf892db1311e78d7cf42e9915fea6c93be716a5f",
+    "config.json": "cc30f3ff8c795e1d88e5f3dfc8ae0534b1be5a4e07dea898707191ab67471eab",
+    "environment.json": "32e4d9bb67e0f6e443bae30a3a1fdad70c17655361f28c6463ab0e625ec571d0",
+    "schema.json": "de06a4b6d6a1f215f7ebe3e495ccb91297dc2845351ca2bcc3dad1eaff429c6a",
+    "validation.json": "f5007da6a76102e9a17bcec234c26da05edeab26026b39b65bcccab62eeff048",
+    "metrics.json": "c8ae50e8aed4201c53881399907a5aca8f02fd871b811ea3fd668561bcbddc4f",
+    "estimation_metrics.json": "759b4c58e81620d11361df52778ebe8a2a398959d19b39c925b100e9a7ca8297",
+    "module_sources.json": "6a4869bca1e5a446a40aa70ca976c4b8935a44000cdfecd5e1f6b797a54e5596",
+    "causal_extrapolation.py": "ceac5b2ee6476f5620df93411ceefac81e848204e886684181fd6e2357284f61",
+    "feedback_controller.py": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd",
+    "numeric_helpers.py": "238eb3ebcefe92b5522289d53e000cc8f0e8aeea6d9f1937e15f4368e672c41d",
+    "saved_checks.py": "2834c97c678f0f9c55de5eac7fe0a6b88ab747efd6fd482a8e2a0e8da24a1053",
+    "saved_compensation.py": "4bba5e0eaaae0312c1fa3aa48abcc746c92e52139e0ac6c0cf9c38ee876eec35",
+    "inspect_compensation.py": "f974a990d1e4d9f65a003042468f1cb34d8bf4cd0fabc79fc63a6212576239f1",
+    "legacy_delay_checks.py": "9c07a599e58dbf7412b9b13fc7a2ee106015ac8c438c6b68ad9bd9a05e197f1c",
+    "seed-0045-CE-estimation.npz": "ac3f525943aa454019d9eb9f341828eef3e2060c0b80278a00c06310e1e40b90",
+    "seed-0045-PE-estimation.npz": "53cc6ea7b7c1dafb04d3cdde62294c0bd2f24cf706856ac5e451258f24fa07de",
+    "seed-0046-CE-estimation.npz": "c8a413432c680abad8d9780f55d1585caf40c12382fdf510234e1de70bcce29f",
+    "seed-0046-PE-estimation.npz": "3ef823e26d0b4485bfa44c7e78455e8c4fada7fdf19d9b98dd2cf1ece1e4d7ec"
+  },
+  "no_new_simulation": true,
+  "raw_PNGs": 126,
+  "public_scope": "Curated CPU offline evidence only; no logs, collection tools, local device enumeration or artificial fixtures."
+}

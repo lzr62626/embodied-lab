@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "article": 20,
+  "pngs_verified": 126,
+  "diagnostic_records": 44,
+  "categories": {
+    "A": 0,
+    "B": 28,
+    "C": 0,
+    "D": 16
+  },
+  "standalone_extraction_evaluated": true,
+  "metrics_equal": true,
+  "record_arrays_equal": true,
+  "CSV_equal": true,
+  "zip_sha256": "fbf442f3cd1e2fe664775b8666c443d568fd885aa4bac451827cf05aef3358b2",
+  "zip_bytes": 27012892,
+  "historical_sources": 6,
+  "new_runs": 0,
+  "simulation_calls": 0,
+  "reset_calls": 0,
+  "step_calls": 0,
+  "training_calls": 0,
+  "statistics_fits": 0
+}

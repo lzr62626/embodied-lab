@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "figures_inspected": [
+    "seed-0045-estimation.png",
+    "seed-0045-commands.png",
+    "seed-0046-estimation.png",
+    "seed-0046-commands.png",
+    "historical-motion.png",
+    "category-counts.png",
+    "case_frames.png"
+  ],
+  "robot_table_cube_recognizable": true,
+  "six_sources_first_last_and_intervention_states_opened": true,
+  "units_and_labels_legible": true,
+  "labels_outside_30_raw_tiles": true,
+  "review_note": "All seven final figures reopened. Actual robot, wooden table, blue cube and target recognizable; small motion not interpreted as task success."
+}

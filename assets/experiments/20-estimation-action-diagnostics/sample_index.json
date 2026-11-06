@@ -1,0 +1,675 @@
+{
+  "version": "estimation-action-diagnostics-v1",
+  "samples": [
+    {
+      "sample_id": 0,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 9,
+      "state_indices": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "sample_id": 1,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 10,
+      "state_indices": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "sample_id": 2,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 11,
+      "state_indices": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "sample_id": 3,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 12,
+      "state_indices": [
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "sample_id": 4,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 13,
+      "state_indices": [
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "sample_id": 5,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 14,
+      "state_indices": [
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "sample_id": 6,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 15,
+      "state_indices": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "sample_id": 7,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 16,
+      "state_indices": [
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "sample_id": 8,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 17,
+      "state_indices": [
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "sample_id": 9,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 18,
+      "state_indices": [
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "sample_id": 10,
+      "source_id": 1,
+      "article19_source_id": 5,
+      "trajectory_id": "seed-0045-CE",
+      "seed": 45,
+      "condition": "CE",
+      "t": 19,
+      "state_indices": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "sample_id": 11,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 9,
+      "state_indices": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "sample_id": 12,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 10,
+      "state_indices": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "sample_id": 13,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 11,
+      "state_indices": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "sample_id": 14,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 12,
+      "state_indices": [
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "sample_id": 15,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 13,
+      "state_indices": [
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "sample_id": 16,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 14,
+      "state_indices": [
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "sample_id": 17,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 15,
+      "state_indices": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "sample_id": 18,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 16,
+      "state_indices": [
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "sample_id": 19,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 17,
+      "state_indices": [
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "sample_id": 20,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 18,
+      "state_indices": [
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "sample_id": 21,
+      "source_id": 2,
+      "article19_source_id": 6,
+      "trajectory_id": "seed-0045-PE",
+      "seed": 45,
+      "condition": "PE",
+      "t": 19,
+      "state_indices": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "sample_id": 22,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 9,
+      "state_indices": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "sample_id": 23,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 10,
+      "state_indices": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "sample_id": 24,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 11,
+      "state_indices": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "sample_id": 25,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 12,
+      "state_indices": [
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "sample_id": 26,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 13,
+      "state_indices": [
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "sample_id": 27,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 14,
+      "state_indices": [
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "sample_id": 28,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 15,
+      "state_indices": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "sample_id": 29,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 16,
+      "state_indices": [
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "sample_id": 30,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 17,
+      "state_indices": [
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "sample_id": 31,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 18,
+      "state_indices": [
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "sample_id": 32,
+      "source_id": 4,
+      "article19_source_id": 12,
+      "trajectory_id": "seed-0046-CE",
+      "seed": 46,
+      "condition": "CE",
+      "t": 19,
+      "state_indices": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "sample_id": 33,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 9,
+      "state_indices": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "sample_id": 34,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 10,
+      "state_indices": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "sample_id": 35,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 11,
+      "state_indices": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "sample_id": 36,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 12,
+      "state_indices": [
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "sample_id": 37,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 13,
+      "state_indices": [
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "sample_id": 38,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 14,
+      "state_indices": [
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "sample_id": 39,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 15,
+      "state_indices": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "sample_id": 40,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 16,
+      "state_indices": [
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "sample_id": 41,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 17,
+      "state_indices": [
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "sample_id": 42,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 18,
+      "state_indices": [
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "sample_id": 43,
+      "source_id": 5,
+      "article19_source_id": 13,
+      "trajectory_id": "seed-0046-PE",
+      "seed": 46,
+      "condition": "PE",
+      "t": 19,
+      "state_indices": [
+        17,
+        18,
+        19,
+        20
+      ]
+    }
+  ],
+  "condition_ids": {
+    "0": "CE",
+    "1": "PE"
+  },
+  "category_ids": {
+    "0": "A:raw_equal",
+    "1": "B:raw_diff_clipped_equal",
+    "2": "C:clipped_diff_sent_equal",
+    "3": "D:sent_diff"
+  }
+}

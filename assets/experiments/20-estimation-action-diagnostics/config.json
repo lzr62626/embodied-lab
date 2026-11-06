@@ -1,0 +1,92 @@
+{
+  "version": "estimation-action-diagnostics-v1",
+  "seeds": [
+    45,
+    46
+  ],
+  "gain": 1.0,
+  "condition_delays": {
+    "C0": 0,
+    "P0": 0,
+    "C1": 1,
+    "P1": 1,
+    "CE": 1,
+    "PE": 1
+  },
+  "compensated_conditions": [
+    "CE",
+    "PE"
+  ],
+  "new_runs": 0,
+  "joint_delta_scale_rad": 0.1,
+  "command_limit_nominal": 0.1,
+  "command_limit_float32": 0.10000000149011612,
+  "clip_limit_float64_from_float32": 0.10000000149011612,
+  "boundary_rule": "Clip in float64 against the existing float32 interface bound, then cast to float32",
+  "reference_observation_index": "t, never delayed",
+  "actual_observation_index": "t,diagnostic only",
+  "measurement_observation_indices": [
+    "t-2 previous",
+    "t-1 latest available"
+  ],
+  "prediction_target_index": "t",
+  "prediction_horizon_control_steps": 1,
+  "formula_order": "delta=q_latest-q_previous;q_estimated=q_latest+delta;error=q_ref-q_estimated;correction=error/0.1;raw=u_ff+correction;sent=float32(clip(raw))",
+  "feedback_takeover_t": 9,
+  "override_t": 8,
+  "override_condition": "PE only",
+  "control_dt_s": 0.05,
+  "measurement_age_atol_s": 1e-12,
+  "initial_and_prefix_atol": {
+    "obs/agent/qpos": 1e-06,
+    "obs/agent/qvel": 1e-05,
+    "diagnostic/cube_pose": 1e-06
+  },
+  "numeric_audit_atol": 1e-12,
+  "numeric_audit_rtol": 0.0,
+  "sent_action_comparison": "exact float32 equality",
+  "controller_target_atol_rad": 1e-06,
+  "comparison_start_state_index": 9,
+  "metric_calculation_dtype": "float64",
+  "action_source_labels": {
+    "0": "original_script_prefix",
+    "1": "PE_forced_override_t8",
+    "2": "actual_causal_extrapolated_feedback"
+  },
+  "compute_device": "cpu",
+  "training_calls": 0,
+  "statistics_fits": 0,
+  "model_updates": 0,
+  "candidate_expansions": 0,
+  "task": {
+    "task": "PushCube-v1",
+    "robot": "panda",
+    "num_envs": 1,
+    "obs_mode": "rgb",
+    "control_mode": "pd_joint_delta_pos",
+    "camera": "base_camera",
+    "width": 256,
+    "height": 256,
+    "shader_pack": "minimal",
+    "sim_backend": "cpu",
+    "render_backend": "cpu"
+  },
+  "delay_scope": "Newest outer measurement is t-1;also read older t-2.No current angle,qvel,RGB,truth,history actions or future values enter the estimate.Reference/feedforward and bottom PD anchor remain current.",
+  "interpretation": "Fixed hand-written one-step extrapolation,not a trained dynamics model.Two known seeds,known reference/clock,historical controls reused.No parameter search or general stability/task-success claim.",
+  "simulation_calls": 0,
+  "reset_calls": 0,
+  "step_calls": 0,
+  "equality_rule": "Exact numeric equality; positive and negative zero compare equal. Float32 bit equality recorded separately.",
+  "category_labels": {
+    "0": "A:raw_equal",
+    "1": "B:raw_diff_clipped_equal",
+    "2": "C:clipped_diff_sent_equal",
+    "3": "D:sent_diff"
+  },
+  "same_state_current_command": "Offline diagnostic only; not executed, optimal, or a correct action label.",
+  "analysis_conditions": [
+    "U",
+    "CE",
+    "PE"
+  ]
+}
