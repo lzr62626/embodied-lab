@@ -1,0 +1,39 @@
+{
+  "modules": [
+    {
+      "module": "numeric_helpers.py",
+      "source": "outputs/19-causal-delay-compensation/numeric_helpers.py",
+      "source_sha256": "238eb3ebcefe92b5522289d53e000cc8f0e8aeea6d9f1937e15f4368e672c41d",
+      "copy_sha256": "238eb3ebcefe92b5522289d53e000cc8f0e8aeea6d9f1937e15f4368e672c41d",
+      "adaptation": "Pure imports redirected; saved checker adds filename argument only. Scalar feedback and numeric helpers byte-identical."
+    },
+    {
+      "module": "feedback_controller.py",
+      "source": "outputs/19-causal-delay-compensation/feedback_controller.py",
+      "source_sha256": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd",
+      "copy_sha256": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd",
+      "adaptation": "Pure imports redirected; saved checker adds filename argument only. Scalar feedback and numeric helpers byte-identical."
+    },
+    {
+      "module": "capture_helpers.py",
+      "source": "outputs/19-causal-delay-compensation/capture_helpers.py",
+      "source_sha256": "cef415d1884a83517750294a48618a0ca6c9d92251813b5e7213a60876bc988c",
+      "copy_sha256": "a3e6f22a3e3255759ad4c827f613b198c944e0e3f7b84dcbb365eb55bb2fbc3c",
+      "adaptation": "Pure imports redirected; saved checker adds filename argument only. Scalar feedback and numeric helpers byte-identical."
+    },
+    {
+      "module": "saved_checks.py",
+      "source": "outputs/19-causal-delay-compensation/saved_checks.py",
+      "source_sha256": "2834c97c678f0f9c55de5eac7fe0a6b88ab747efd6fd482a8e2a0e8da24a1053",
+      "copy_sha256": "139807435c9e41ec56636d2594b1a564165b45b14d4b92685c640d6005670519",
+      "adaptation": "Pure imports redirected; saved checker adds filename argument only. Scalar feedback and numeric helpers byte-identical."
+    },
+    {
+      "module": "saved_compensation.py",
+      "source": "outputs/19-causal-delay-compensation/saved_compensation.py",
+      "source_sha256": "4bba5e0eaaae0312c1fa3aa48abcc746c92e52139e0ac6c0cf9c38ee876eec35",
+      "copy_sha256": "13e04b6e5359af6f6fed73b02d05c36ca8c7327ccea1f772eec45e7661fce77e",
+      "adaptation": "Pure imports redirected; saved checker adds filename argument only. Scalar feedback and numeric helpers byte-identical."
+    }
+  ]
+}

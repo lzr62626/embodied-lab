@@ -1,0 +1,358 @@
+{
+  "version": "delayed-velocity-prediction-v1",
+  "seeds": {
+    "45": {
+      "CV": {
+        "decision_action_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "methods": {
+          "hold": {
+            "samples": 11,
+            "max_abs": 0.003958200803026557,
+            "rmse": 0.0034461163426215257,
+            "mean_signed": 0.00035230252383784813,
+            "unit": "rad"
+          },
+          "position": {
+            "samples": 11,
+            "max_abs": 0.004914787597954273,
+            "rmse": 0.002329501828284277,
+            "mean_signed": 8.867757225578481e-06,
+            "unit": "rad"
+          },
+          "velocity": {
+            "samples": 11,
+            "max_abs": 0.004524003015831116,
+            "rmse": 0.001995715994034512,
+            "mean_signed": 3.716595978899393e-05,
+            "unit": "rad"
+          }
+        },
+        "peaks": {
+          "hold": [
+            10
+          ],
+          "position": [
+            11
+          ],
+          "velocity": [
+            11
+          ]
+        },
+        "velocity_gap": {
+          "samples": 11,
+          "max_abs": 0.02797961514443161,
+          "rmse": 0.013172271028007373,
+          "mean_signed": 0.0005659640512683175,
+          "unit": "rad/s"
+        },
+        "command_gaps": {
+          "raw_gap": {
+            "samples": 11,
+            "max_abs": 0.013989807572215823,
+            "rmse": 0.006586135514003687,
+            "mean_signed": -0.00028298202563415494,
+            "unit": "normalized"
+          },
+          "clipped_gap": {
+            "samples": 11,
+            "max_abs": 0.0037774397060275217,
+            "rmse": 0.0016081183841440403,
+            "mean_signed": -1.1041252450471657e-06,
+            "unit": "normalized"
+          },
+          "sent_gap": {
+            "samples": 11,
+            "max_abs": 0.003777436912059784,
+            "rmse": 0.0016081189769426834,
+            "mean_signed": -1.1033632538535378e-06,
+            "unit": "normalized"
+          }
+        },
+        "categories": {
+          "A": 0,
+          "B": 9,
+          "C": 0,
+          "D": 2
+        },
+        "candidate_clipped": 9,
+        "candidate_touched": 9
+      },
+      "PV": {
+        "decision_action_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "methods": {
+          "hold": {
+            "samples": 11,
+            "max_abs": 0.00393859064206481,
+            "rmse": 0.002769589793255706,
+            "mean_signed": 0.0002723555927249518,
+            "unit": "rad"
+          },
+          "position": {
+            "samples": 11,
+            "max_abs": 0.004918914288282394,
+            "rmse": 0.0025124476971297846,
+            "mean_signed": 9.24672084775838e-06,
+            "unit": "rad"
+          },
+          "velocity": {
+            "samples": 11,
+            "max_abs": 0.004603502713143824,
+            "rmse": 0.0024615779697944105,
+            "mean_signed": 2.9308712956579727e-05,
+            "unit": "rad"
+          }
+        },
+        "peaks": {
+          "hold": [
+            19
+          ],
+          "position": [
+            9
+          ],
+          "velocity": [
+            9
+          ]
+        },
+        "velocity_gap": {
+          "samples": 11,
+          "max_abs": 0.02807340025901794,
+          "rmse": 0.014566530411835688,
+          "mean_signed": 0.0004012398421764298,
+          "unit": "rad/s"
+        },
+        "command_gaps": {
+          "raw_gap": {
+            "samples": 11,
+            "max_abs": 0.014036700129508958,
+            "rmse": 0.007283265205917842,
+            "mean_signed": -0.00020061992108821237,
+            "unit": "normalized"
+          },
+          "clipped_gap": {
+            "samples": 11,
+            "max_abs": 0.014036700129508958,
+            "rmse": 0.005775486697930923,
+            "mean_signed": -0.0013737658208066716,
+            "unit": "normalized"
+          },
+          "sent_gap": {
+            "samples": 11,
+            "max_abs": 0.014036699663847685,
+            "rmse": 0.005775486456074133,
+            "mean_signed": -0.0013737657784738324,
+            "unit": "normalized"
+          }
+        },
+        "categories": {
+          "A": 0,
+          "B": 6,
+          "C": 0,
+          "D": 5
+        },
+        "candidate_clipped": 6,
+        "candidate_touched": 6
+      }
+    },
+    "46": {
+      "CV": {
+        "decision_action_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "methods": {
+          "hold": {
+            "samples": 11,
+            "max_abs": 0.003958762623369694,
+            "rmse": 0.0034556992705784538,
+            "mean_signed": 0.0003524668176065792,
+            "unit": "rad"
+          },
+          "position": {
+            "samples": 11,
+            "max_abs": 0.004957156255841255,
+            "rmse": 0.002342093716027034,
+            "mean_signed": 8.283521641384471e-06,
+            "unit": "rad"
+          },
+          "velocity": {
+            "samples": 11,
+            "max_abs": 0.004561189748346808,
+            "rmse": 0.0020105242463882506,
+            "mean_signed": 3.742309795184594e-05,
+            "unit": "rad"
+          }
+        },
+        "peaks": {
+          "hold": [
+            10
+          ],
+          "position": [
+            11
+          ],
+          "velocity": [
+            11
+          ]
+        },
+        "velocity_gap": {
+          "samples": 11,
+          "max_abs": 0.027815256267786043,
+          "rmse": 0.013158272496295063,
+          "mean_signed": 0.0005827915262092243,
+          "unit": "rad/s"
+        },
+        "command_gaps": {
+          "raw_gap": {
+            "samples": 11,
+            "max_abs": 0.01390762813389304,
+            "rmse": 0.006579136248147525,
+            "mean_signed": -0.0002913957631046172,
+            "unit": "normalized"
+          },
+          "clipped_gap": {
+            "samples": 11,
+            "max_abs": 0.003840111196041107,
+            "rmse": 0.0016349170958791614,
+            "mean_signed": -1.0718676176900295e-06,
+            "unit": "normalized"
+          },
+          "sent_gap": {
+            "samples": 11,
+            "max_abs": 0.003840111196041107,
+            "rmse": 0.001634916302866893,
+            "mean_signed": -1.07220628044822e-06,
+            "unit": "normalized"
+          }
+        },
+        "categories": {
+          "A": 0,
+          "B": 9,
+          "C": 0,
+          "D": 2
+        },
+        "candidate_clipped": 9,
+        "candidate_touched": 9
+      },
+      "PV": {
+        "decision_action_indices": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "methods": {
+          "hold": {
+            "samples": 11,
+            "max_abs": 0.00394098088145256,
+            "rmse": 0.002786716339543298,
+            "mean_signed": 0.00027112154798074204,
+            "unit": "rad"
+          },
+          "position": {
+            "samples": 11,
+            "max_abs": 0.0049693044275045395,
+            "rmse": 0.0025379011057672985,
+            "mean_signed": 8.636746894229542e-06,
+            "unit": "rad"
+          },
+          "velocity": {
+            "samples": 11,
+            "max_abs": 0.004644319042563436,
+            "rmse": 0.0024853286430488474,
+            "mean_signed": 2.9320633885534947e-05,
+            "unit": "rad"
+          }
+        },
+        "peaks": {
+          "hold": [
+            19
+          ],
+          "position": [
+            9
+          ],
+          "velocity": [
+            9
+          ]
+        },
+        "velocity_gap": {
+          "samples": 11,
+          "max_abs": 0.02793512493371963,
+          "rmse": 0.014561078789363847,
+          "mean_signed": 0.00041367773982610873,
+          "unit": "rad/s"
+        },
+        "command_gaps": {
+          "raw_gap": {
+            "samples": 11,
+            "max_abs": 0.013967562466859831,
+            "rmse": 0.007280539394681934,
+            "mean_signed": -0.00020683886991305155,
+            "unit": "normalized"
+          },
+          "clipped_gap": {
+            "samples": 11,
+            "max_abs": 0.013967562466859831,
+            "rmse": 0.005768479924467864,
+            "mean_signed": -0.0013604413887316506,
+            "unit": "normalized"
+          },
+          "sent_gap": {
+            "samples": 11,
+            "max_abs": 0.013967562466859818,
+            "rmse": 0.005768480145487177,
+            "mean_signed": -0.0013604414733973417,
+            "unit": "normalized"
+          }
+        },
+        "categories": {
+          "A": 0,
+          "B": 6,
+          "C": 0,
+          "D": 5
+        },
+        "candidate_clipped": 6,
+        "candidate_touched": 6
+      }
+    }
+  },
+  "scope": "Same-run estimation; only velocity was executed in CV/PV."
+}

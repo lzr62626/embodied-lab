@@ -1,0 +1,18 @@
+{
+  "adapted_from_article": 19,
+  "original_script_sha256": "988cae1bf14eaf8ffedd8c1e026c6a4e8b2595f42f4feb83aa3168d595a35986",
+  "new_capture_sha256": "ccb2a4393117bbc4a26397e98d72b36f884453e4d8aba45f1578bc7e46b9722f",
+  "adaptation": "Same bounded capture, changed measurement cache, conditions/prefix comparisons and audit name; scalar feedback unchanged.",
+  "frozen_collection_code_sha256": {
+    "velocity_common.py": "26936ae56f095defca28edd62e7a67ac1e4d112aca55c6b5258171e56979a171",
+    "numeric_helpers.py": "238eb3ebcefe92b5522289d53e000cc8f0e8aeea6d9f1937e15f4368e672c41d",
+    "capture_helpers.py": "a3e6f22a3e3255759ad4c827f613b198c944e0e3f7b84dcbb365eb55bb2fbc3c",
+    "feedback_controller.py": "28f58682a0c64b78c7f8d4a5073dcb92bcdd996452905638e485b1b8aa2497fd",
+    "delayed_velocity_predictor.py": "66d99780847934886ae44787402246735c1209337ec43332e3a2da2c701173c2",
+    "run_velocity_prediction.py": "ccb2a4393117bbc4a26397e98d72b36f884453e4d8aba45f1578bc7e46b9722f",
+    "preflight.py": "78b4f1c97fbd5ac704f6a2f92b5ee3d9b803271985d9636dd3c9250ce4caf458",
+    "module_sources.json": "3078db283ae6327d441c27c72606ff5cffcbcfc2922732432739882ed091dfce",
+    "config.json": "848a12ff74b684fe8558fd048d484e68806365a89ced3832925cfa00d100c7fd",
+    "history_manifest.json": "85b58bb05c45332ca7df6d79734e1e09d5312002faa5c4f39b52a8c2f3231594"
+  }
+}

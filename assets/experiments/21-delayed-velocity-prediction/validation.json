@@ -1,0 +1,1141 @@
+{
+  "status": "passed",
+  "new_runs": 4,
+  "new_pngs": 84,
+  "verified_pngs": 210,
+  "historical_sources": 6,
+  "prediction_decisions": 44,
+  "completed_steps_total": 80,
+  "checks": {
+    "45-U": {
+      "verified_pngs": 21,
+      "fields": 21,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.0244548334648051e-09
+    },
+    "45-CE": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.0244548334648051e-09,
+      "historical_position_audit_errors": {
+        "q_ref": 0.0,
+        "q_previous": 0.0,
+        "q_latest": 0.0,
+        "delta_q": 0.0,
+        "q_estimated": 0.0,
+        "velocity_estimated": 0.0,
+        "q_current": 0.0,
+        "error_estimated_rad": 0.0,
+        "estimate_error_rad": 0.0,
+        "hold_error_rad": 0.0,
+        "error_current_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "previous_measurement_time_s": 0.0,
+        "measurement_time_s": 0.0,
+        "measurement_age_s": 0.0,
+        "previous_measurement_age_s": 0.0,
+        "measurement_interval_s": 0.0,
+        "prediction_horizon_s": 0.0
+      }
+    },
+    "45-PE": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "historical_position_audit_errors": {
+        "q_ref": 0.0,
+        "q_previous": 0.0,
+        "q_latest": 0.0,
+        "delta_q": 0.0,
+        "q_estimated": 0.0,
+        "velocity_estimated": 0.0,
+        "q_current": 0.0,
+        "error_estimated_rad": 0.0,
+        "estimate_error_rad": 0.0,
+        "hold_error_rad": 0.0,
+        "error_current_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "previous_measurement_time_s": 0.0,
+        "measurement_time_s": 0.0,
+        "measurement_age_s": 0.0,
+        "previous_measurement_age_s": 0.0,
+        "measurement_interval_s": 0.0,
+        "prediction_horizon_s": 0.0
+      }
+    },
+    "45-CV": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "velocity_audit_errors": {
+        "q_latest": 0.0,
+        "v_latest": 0.0,
+        "measurement_time_s": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "measurement_age_s": 0.0,
+        "predicted_increment": 0.0,
+        "q_pred_velocity": 0.0,
+        "q_ref": 0.0,
+        "u_ff": 0.0,
+        "error_rad": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "q_current_diagnostic": 0.0,
+        "estimate_error_rad": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0
+      },
+      "initial_checks": {
+        "U": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "CE": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "PE": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      },
+      "prefix_checks": {
+        "CE_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "U_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      }
+    },
+    "45-PV": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "velocity_audit_errors": {
+        "q_latest": 0.0,
+        "v_latest": 0.0,
+        "measurement_time_s": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "measurement_age_s": 0.0,
+        "predicted_increment": 0.0,
+        "q_pred_velocity": 0.0,
+        "q_ref": 0.0,
+        "u_ff": 0.0,
+        "error_rad": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "q_current_diagnostic": 0.0,
+        "estimate_error_rad": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0
+      },
+      "initial_checks": {
+        "U": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "CE": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "PE": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      },
+      "prefix_checks": {
+        "PE_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "CV_states_0_to_8": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      }
+    },
+    "46-U": {
+      "verified_pngs": 21,
+      "fields": 21,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+    },
+    "46-CE": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "historical_position_audit_errors": {
+        "q_ref": 0.0,
+        "q_previous": 0.0,
+        "q_latest": 0.0,
+        "delta_q": 0.0,
+        "q_estimated": 0.0,
+        "velocity_estimated": 0.0,
+        "q_current": 0.0,
+        "error_estimated_rad": 0.0,
+        "estimate_error_rad": 0.0,
+        "hold_error_rad": 0.0,
+        "error_current_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "previous_measurement_time_s": 0.0,
+        "measurement_time_s": 0.0,
+        "measurement_age_s": 0.0,
+        "previous_measurement_age_s": 0.0,
+        "measurement_interval_s": 0.0,
+        "prediction_horizon_s": 0.0
+      }
+    },
+    "46-PE": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.862645149230957e-09,
+      "historical_position_audit_errors": {
+        "q_ref": 0.0,
+        "q_previous": 0.0,
+        "q_latest": 0.0,
+        "delta_q": 0.0,
+        "q_estimated": 0.0,
+        "velocity_estimated": 0.0,
+        "q_current": 0.0,
+        "error_estimated_rad": 0.0,
+        "estimate_error_rad": 0.0,
+        "hold_error_rad": 0.0,
+        "error_current_rad": 0.0,
+        "u_ff": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "previous_measurement_time_s": 0.0,
+        "measurement_time_s": 0.0,
+        "measurement_age_s": 0.0,
+        "previous_measurement_age_s": 0.0,
+        "measurement_interval_s": 0.0,
+        "prediction_horizon_s": 0.0
+      }
+    },
+    "46-CV": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "velocity_audit_errors": {
+        "q_latest": 0.0,
+        "v_latest": 0.0,
+        "measurement_time_s": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "measurement_age_s": 0.0,
+        "predicted_increment": 0.0,
+        "q_pred_velocity": 0.0,
+        "q_ref": 0.0,
+        "u_ff": 0.0,
+        "error_rad": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "q_current_diagnostic": 0.0,
+        "estimate_error_rad": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0
+      },
+      "initial_checks": {
+        "U": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "CE": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "PE": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      },
+      "prefix_checks": {
+        "CE_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "U_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      }
+    },
+    "46-PV": {
+      "verified_pngs": 21,
+      "fields": 24,
+      "steps": 20,
+      "feedback_formula_max_abs_errors": null,
+      "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+      "velocity_audit_errors": {
+        "q_latest": 0.0,
+        "v_latest": 0.0,
+        "measurement_time_s": 0.0,
+        "current_time_s": 0.0,
+        "reference_time_s": 0.0,
+        "measurement_age_s": 0.0,
+        "predicted_increment": 0.0,
+        "q_pred_velocity": 0.0,
+        "q_ref": 0.0,
+        "u_ff": 0.0,
+        "error_rad": 0.0,
+        "correction": 0.0,
+        "u_raw": 0.0,
+        "u_clipped_float64": 0.0,
+        "q_current_diagnostic": 0.0,
+        "estimate_error_rad": 0.0,
+        "gain": 0.0,
+        "joint_delta_scale": 0.0
+      },
+      "initial_checks": {
+        "U": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "CE": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "PE": {
+          "state_indices": [
+            0
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      },
+      "prefix_checks": {
+        "PE_states_0_to_9": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        },
+        "CV_states_0_to_8": {
+          "state_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "fields": {
+            "obs/agent/qpos": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad",
+              "finger_unit": "m"
+            },
+            "obs/agent/qvel": {
+              "atol": 1e-05,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "arm_max_abs": 0.0,
+              "finger_max_abs": 0.0,
+              "arm_unit": "rad/s",
+              "finger_unit": "m/s"
+            },
+            "diagnostic/cube_pose": {
+              "atol": 1e-06,
+              "max_abs": 0.0,
+              "exact": true,
+              "within_tolerance": true,
+              "xyz_max_abs_m": 0.0,
+              "quaternion_max_abs": 0.0
+            }
+          },
+          "within_tolerance": true,
+          "exact": true
+        }
+      }
+    }
+  },
+  "scalar_independent_of_live_predictor": true,
+  "same_run_t_minus_one_qpos_qvel": true,
+  "current_truth_diagnostic_only": true,
+  "reference_clock_not_delayed": true,
+  "actual_float32_action_bits_exact": true,
+  "N_and_N_plus_one": true,
+  "PNG_pixels_equal_RGB": true,
+  "CSV_exports_reopened_and_exact": 8,
+  "exact_expected_exports_checked": 17,
+  "case_tiles_pixel_exact": 22,
+  "simulation_calls": 0,
+  "training_calls": 0,
+  "statistics_fits": 0,
+  "pure_numeric_npz": true,
+  "visual_review": {
+    "status": "passed",
+    "all_seven_figures_reopened": true,
+    "robot_table_cube_recognizable": true,
+    "first_last_8_9_peak_and_next_state_inspected": true,
+    "case_tiles_pixel_exact": 22,
+    "units_and_index_labels_legible": true,
+    "small_motion_not_success_claim": true
+  },
+  "local_integrity": {
+    "status": "passed",
+    "explicit_seeded_resets": 4,
+    "constructor_initializations": 4,
+    "step_attempts_by_run": {
+      "seed-0045/CV-velocity-clean": 20,
+      "seed-0045/PV-velocity-perturbed": 20,
+      "seed-0046/CV-velocity-clean": 20,
+      "seed-0046/PV-velocity-perturbed": 20
+    },
+    "step_attempts_total": 80,
+    "completed_steps_total": 80,
+    "historical_runs_recollected": 0,
+    "condition_order_verified": true,
+    "budget_accounted_before_call": true,
+    "old_files_unchanged": 6806,
+    "reference_files_unchanged": 196,
+    "dependency_versions_unchanged": true,
+    "frozen_code_unchanged": true
+  },
+  "private_causal_tests": "passed",
+  "historical_article19_metrics_equal": true,
+  "scope": "Independent saved-file numerical and visual acceptance. simulation_calls counts verifier calls; real collection is recorded under local_integrity."
+}

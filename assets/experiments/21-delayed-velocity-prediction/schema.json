@@ -1,0 +1,522 @@
+{
+  "version": "delayed-velocity-prediction-v1",
+  "trajectory": {
+    "qpos": "float32 (N+1,1,9); first 7 rad, 2 gripper positions m; first joint [k,0,0]",
+    "qvel": "float32 (N+1,1,9); first 7 rad/s, 2 gripper velocities m/s; first joint [k,0,0]",
+    "actions": "float32 (N,8), no environment axis; first joint [t,0]; actions[t] transitions obs[t] to obs[t+1]",
+    "RGB": "uint8 (N+1,1,256,256,3); base_camera originals match PNGs",
+    "reward_terminated_truncated_info": "One entry per actual transition. Step budget is not a done signal.",
+    "diagnostic_targets": "Actual arm/gripper controller targets and cube pose are independent from predictor inputs."
+  },
+  "velocity_audit_fields": {
+    "q_ref": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "error_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "u_ff": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "correction": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "u_raw": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "u_clipped_float64": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "u_sent": {
+      "dtype": "float32",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "was_clipped": {
+      "dtype": "bool",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "sent_at_bound": {
+      "dtype": "bool",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "q_latest": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "v_latest": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad/s"
+    },
+    "measurement_time_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "current_time_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "measurement_age_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "predicted_increment": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "q_pred_velocity": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "t": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "measurement_state_index": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "reference_state_index": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "actual_state_index": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "prediction_target_state_index": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "delay_steps": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "gain": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "joint_delta_scale": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "reference_time_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "q_current_diagnostic": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "estimate_error_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "controller_target_qpos": {
+      "dtype": "float32",
+      "axes": [
+        "decision",
+        "arm joint"
+      ],
+      "unit": "rad"
+    }
+  },
+  "same_state_diagnostics_fields": {
+    "t": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "previous_state_index": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "measurement_state_index": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "current_state_index": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "next_state_index": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "previous_time_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "measurement_time_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "current_time_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "next_time_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "measurement_age_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "previous_interval_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "s"
+    },
+    "q_previous_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "q_latest_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "q_current_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "q_ref_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "v_latest_rad_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad/s"
+    },
+    "v_difference_rad_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad/s"
+    },
+    "v_gap_rad_s": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad/s"
+    },
+    "predicted_increment_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "q_hold_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "q_pred_position_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "q_pred_velocity_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "error_hold_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "error_position_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "error_velocity_rad": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "rad"
+    },
+    "u_ff": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "correction_velocity": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "correction_position": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "raw_velocity": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "raw_position": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "clipped_velocity": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "clipped_position": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "sent_velocity": {
+      "dtype": "float32",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "sent_position_candidate": {
+      "dtype": "float32",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "velocity_strict_clipped": {
+      "dtype": "bool",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "velocity_at_bound": {
+      "dtype": "bool",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "position_candidate_strict_clipped": {
+      "dtype": "bool",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "position_candidate_at_bound": {
+      "dtype": "bool",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    },
+    "raw_gap": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "clipped_gap": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "sent_gap": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "rounding_residual": {
+      "dtype": "float64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "normalized command"
+    },
+    "category": {
+      "dtype": "int64",
+      "axes": [
+        "decision"
+      ],
+      "unit": "unitless metadata/flag"
+    }
+  },
+  "offline_position_candidate": "Never sent on CV/PV; no invented outcomes or next states.",
+  "category_ids": {
+    "0": "A raw equal",
+    "1": "B raw differs / float64 clipped equal",
+    "2": "C clipped differs / float32 send equal",
+    "3": "D float32 send differs"
+  },
+  "state_and_action_axes": "Actual action t=9..19; estimates only at true queries. State comparison k=9..20 for complete runs.",
+  "finite_numeric_only": true
+}

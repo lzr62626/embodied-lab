@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "all_seven_figures_reopened": true,
+  "robot_table_cube_recognizable": true,
+  "first_last_8_9_peak_and_next_state_inspected": true,
+  "case_tiles_pixel_exact": 22,
+  "units_and_index_labels_legible": true,
+  "small_motion_not_success_claim": true
+}

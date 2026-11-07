@@ -1,0 +1,393 @@
+{
+  "version": "delayed-velocity-prediction-v1",
+  "seeds": {
+    "45": {
+      "comparison_state_indices": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "common_completed_actions": 20,
+      "groups": {
+        "U": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": true,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 0.0,
+            "rmse": 0.0,
+            "mean_signed": 0.0,
+            "unit": "rad",
+            "end_signed": 0.0,
+            "end_abs": 0.0
+          },
+          "cube_net_xyz_m": [
+            -3.8743019104003906e-07,
+            -6.854534149169922e-07,
+            -8.195638656616211e-08
+          ],
+          "cube_net_displacement_m": 7.916219970728893e-07,
+          "reward_sum": 1.3658495843410492,
+          "reward_final": 0.06701037287712097,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 0,
+          "strict_clipped": null,
+          "sent_at_bound": null
+        },
+        "CE": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": true,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 8.316710591316223e-06,
+            "rmse": 5.244588866603073e-06,
+            "mean_signed": -2.214335836470127e-06,
+            "unit": "rad",
+            "end_signed": 3.3082906156778336e-06,
+            "end_abs": 3.3082906156778336e-06
+          },
+          "cube_net_xyz_m": [
+            -3.8743019104003906e-07,
+            -6.854534149169922e-07,
+            -8.195638656616211e-08
+          ],
+          "cube_net_displacement_m": 7.916219970728893e-07,
+          "reward_sum": 1.3658450245857239,
+          "reward_final": 0.06701113283634186,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 11,
+          "strict_clipped": 9,
+          "sent_at_bound": 9
+        },
+        "PE": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": true,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 0.007320881122723222,
+            "rmse": 0.0033234522181120113,
+            "mean_signed": 0.0026601722153524556,
+            "unit": "rad",
+            "end_signed": 0.0012047146447002888,
+            "end_abs": 0.0012047146447002888
+          },
+          "cube_net_xyz_m": [
+            -3.8743019104003906e-07,
+            -6.854534149169922e-07,
+            -8.195638656616211e-08
+          ],
+          "cube_net_displacement_m": 7.916219970728893e-07,
+          "reward_sum": 1.3715654462575912,
+          "reward_final": 0.06723035871982574,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 11,
+          "strict_clipped": 6,
+          "sent_at_bound": 6
+        },
+        "CV": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": false,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 0.00015794672071933746,
+            "rmse": 9.956753309309028e-05,
+            "mean_signed": -4.213720482463638e-05,
+            "unit": "rad",
+            "end_signed": 6.257975473999977e-05,
+            "end_abs": 6.257975473999977e-05
+          },
+          "cube_net_xyz_m": [
+            -3.8743019104003906e-07,
+            -6.854534149169922e-07,
+            -8.195638656616211e-08
+          ],
+          "cube_net_displacement_m": 7.916219970728893e-07,
+          "reward_sum": 1.3657568097114563,
+          "reward_final": 0.06702189147472382,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 11,
+          "strict_clipped": 9,
+          "sent_at_bound": 9
+        },
+        "PV": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": false,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 0.007320881122723222,
+            "rmse": 0.003200600590972839,
+            "mean_signed": 0.002454532776027918,
+            "unit": "rad",
+            "end_signed": 0.0009411233477294445,
+            "end_abs": 0.0009411233477294445
+          },
+          "cube_net_xyz_m": [
+            -3.8743019104003906e-07,
+            -6.854534149169922e-07,
+            -8.195638656616211e-08
+          ],
+          "cube_net_displacement_m": 7.916219970728893e-07,
+          "reward_sum": 1.3711350560188293,
+          "reward_final": 0.06718255579471588,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 11,
+          "strict_clipped": 6,
+          "sent_at_bound": 6
+        }
+      },
+      "paired_responses": {
+        "position": {
+          "samples": 12,
+          "max_abs": 0.007320881122723222,
+          "rmse": 0.003325476822813211,
+          "mean_signed": 0.0026623865511889258,
+          "unit": "rad",
+          "end_signed": 0.001201406354084611,
+          "end_abs": 0.001201406354084611
+        },
+        "velocity": {
+          "samples": 12,
+          "max_abs": 0.007320881122723222,
+          "rmse": 0.0032391301698796162,
+          "mean_signed": 0.002496669980852554,
+          "unit": "rad",
+          "end_signed": 0.0008785435929894447,
+          "end_abs": 0.0008785435929894447
+        }
+      }
+    },
+    "46": {
+      "comparison_state_indices": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "common_completed_actions": 20,
+      "groups": {
+        "U": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": true,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 0.0,
+            "rmse": 0.0,
+            "mean_signed": 0.0,
+            "unit": "rad",
+            "end_signed": 0.0,
+            "end_abs": 0.0
+          },
+          "cube_net_xyz_m": [
+            -3.8370490074157715e-07,
+            -7.37607479095459e-07,
+            -6.51925802230835e-08
+          ],
+          "cube_net_displacement_m": 8.339929955262243e-07,
+          "reward_sum": 1.5284648388624191,
+          "reward_final": 0.07825309038162231,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 0,
+          "strict_clipped": null,
+          "sent_at_bound": null
+        },
+        "CE": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": true,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 7.534399628639221e-06,
+            "rmse": 4.764341613354938e-06,
+            "mean_signed": -1.9918661564588547e-06,
+            "unit": "rad",
+            "end_signed": 3.0277296900749207e-06,
+            "end_abs": 3.0277296900749207e-06
+          },
+          "cube_net_xyz_m": [
+            -3.8370490074157715e-07,
+            -7.37607479095459e-07,
+            -6.51925802230835e-08
+          ],
+          "cube_net_displacement_m": 8.339929955262243e-07,
+          "reward_sum": 1.5284712314605713,
+          "reward_final": 0.07825230062007904,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 11,
+          "strict_clipped": 9,
+          "sent_at_bound": 9
+        },
+        "PE": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": true,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 0.007347689010202885,
+            "rmse": 0.003328606586380907,
+            "mean_signed": 0.002666809984172384,
+            "unit": "rad",
+            "end_signed": 0.00122012197971344,
+            "end_abs": 0.00122012197971344
+          },
+          "cube_net_xyz_m": [
+            -3.8370490074157715e-07,
+            -7.37607479095459e-07,
+            -6.51925802230835e-08
+          ],
+          "cube_net_displacement_m": 8.339929955262243e-07,
+          "reward_sum": 1.5202905237674713,
+          "reward_final": 0.07793976366519928,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 11,
+          "strict_clipped": 6,
+          "sent_at_bound": 6
+        },
+        "CV": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": false,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 0.00015963613986968994,
+            "rmse": 0.00010084009877263573,
+            "mean_signed": -4.2515030751625695e-05,
+            "unit": "rad",
+            "end_signed": 6.331130862236023e-05,
+            "end_abs": 6.331130862236023e-05
+          },
+          "cube_net_xyz_m": [
+            -3.8370490074157715e-07,
+            -7.37607479095459e-07,
+            -6.51925802230835e-08
+          ],
+          "cube_net_displacement_m": 8.339929955262243e-07,
+          "reward_sum": 1.528600350022316,
+          "reward_final": 0.07823660969734192,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 11,
+          "strict_clipped": 9,
+          "sent_at_bound": 9
+        },
+        "PV": {
+          "actual_steps": 20,
+          "simulation_time_s": 1.0,
+          "stopping_reason": "step_budget",
+          "reused_historical_run": false,
+          "tracking": {
+            "samples": 12,
+            "max_abs": 0.007347689010202885,
+            "rmse": 0.0032064495961395072,
+            "mean_signed": 0.002462219369287292,
+            "unit": "rad",
+            "end_signed": 0.0009573120623826981,
+            "end_abs": 0.0009573120623826981
+          },
+          "cube_net_xyz_m": [
+            -3.8370490074157715e-07,
+            -7.37607479095459e-07,
+            -6.51925802230835e-08
+          ],
+          "cube_net_displacement_m": 8.339929955262243e-07,
+          "reward_sum": 1.520906537771225,
+          "reward_final": 0.07800731062889099,
+          "success_any": false,
+          "success_final": false,
+          "terminated_final": false,
+          "truncated_final": false,
+          "feedback_decisions": 11,
+          "strict_clipped": 6,
+          "sent_at_bound": 6
+        }
+      },
+      "paired_responses": {
+        "position": {
+          "samples": 12,
+          "max_abs": 0.007347689010202885,
+          "rmse": 0.003330424548137004,
+          "mean_signed": 0.0026688018503288427,
+          "unit": "rad",
+          "end_signed": 0.001217094250023365,
+          "end_abs": 0.001217094250023365
+        },
+        "velocity": {
+          "samples": 12,
+          "max_abs": 0.007347689010202885,
+          "rmse": 0.0032451846445841065,
+          "mean_signed": 0.002504734400038918,
+          "unit": "rad",
+          "end_signed": 0.0008940007537603378,
+          "end_abs": 0.0008940007537603378
+        }
+      }
+    }
+  },
+  "new_runs": 4,
+  "historical_runs_reused": 6,
+  "units": {
+    "angle": "rad",
+    "velocity": "rad/s",
+    "time": "s",
+    "cube_displacement": "m"
+  },
+  "training_calls": 0,
+  "statistics_fits": 0
+}

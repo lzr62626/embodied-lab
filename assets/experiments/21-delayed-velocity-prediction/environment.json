@@ -1,0 +1,1200 @@
+{
+  "preflight": {
+    "status": "passed",
+    "python": "3.11.9",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.14.1",
+      "Pillow": "13.0.0",
+      "mani-skill": "3.0.1",
+      "sapien": "3.0.3",
+      "gymnasium": "1.4.0",
+      "matplotlib": "3.11.2"
+    },
+    "source_checks": {
+      "45-U": {
+        "verified_pngs": 21,
+        "fields": 21,
+        "steps": 20,
+        "feedback_formula_max_abs_errors": null,
+        "controller_target_max_abs_error_rad": 1.0244548334648051e-09
+      },
+      "45-CE": {
+        "verified_pngs": 21,
+        "fields": 24,
+        "steps": 20,
+        "feedback_formula_max_abs_errors": null,
+        "controller_target_max_abs_error_rad": 1.0244548334648051e-09,
+        "compensated_formula_errors": {
+          "q_ref": 0.0,
+          "q_previous": 0.0,
+          "q_latest": 0.0,
+          "delta_q": 0.0,
+          "q_estimated": 0.0,
+          "velocity_estimated": 0.0,
+          "q_current": 0.0,
+          "error_estimated_rad": 0.0,
+          "estimate_error_rad": 0.0,
+          "hold_error_rad": 0.0,
+          "error_current_rad": 0.0,
+          "u_ff": 0.0,
+          "correction": 0.0,
+          "u_raw": 0.0,
+          "u_clipped_float64": 0.0,
+          "gain": 0.0,
+          "joint_delta_scale": 0.0,
+          "current_time_s": 0.0,
+          "reference_time_s": 0.0,
+          "previous_measurement_time_s": 0.0,
+          "measurement_time_s": 0.0,
+          "measurement_age_s": 0.0,
+          "previous_measurement_age_s": 0.0,
+          "measurement_interval_s": 0.0,
+          "prediction_horizon_s": 0.0
+        }
+      },
+      "45-PE": {
+        "verified_pngs": 21,
+        "fields": 24,
+        "steps": 20,
+        "feedback_formula_max_abs_errors": null,
+        "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+        "compensated_formula_errors": {
+          "q_ref": 0.0,
+          "q_previous": 0.0,
+          "q_latest": 0.0,
+          "delta_q": 0.0,
+          "q_estimated": 0.0,
+          "velocity_estimated": 0.0,
+          "q_current": 0.0,
+          "error_estimated_rad": 0.0,
+          "estimate_error_rad": 0.0,
+          "hold_error_rad": 0.0,
+          "error_current_rad": 0.0,
+          "u_ff": 0.0,
+          "correction": 0.0,
+          "u_raw": 0.0,
+          "u_clipped_float64": 0.0,
+          "gain": 0.0,
+          "joint_delta_scale": 0.0,
+          "current_time_s": 0.0,
+          "reference_time_s": 0.0,
+          "previous_measurement_time_s": 0.0,
+          "measurement_time_s": 0.0,
+          "measurement_age_s": 0.0,
+          "previous_measurement_age_s": 0.0,
+          "measurement_interval_s": 0.0,
+          "prediction_horizon_s": 0.0
+        }
+      },
+      "46-U": {
+        "verified_pngs": 21,
+        "fields": 21,
+        "steps": 20,
+        "feedback_formula_max_abs_errors": null,
+        "controller_target_max_abs_error_rad": 1.4901161207725444e-09
+      },
+      "46-CE": {
+        "verified_pngs": 21,
+        "fields": 24,
+        "steps": 20,
+        "feedback_formula_max_abs_errors": null,
+        "controller_target_max_abs_error_rad": 1.4901161207725444e-09,
+        "compensated_formula_errors": {
+          "q_ref": 0.0,
+          "q_previous": 0.0,
+          "q_latest": 0.0,
+          "delta_q": 0.0,
+          "q_estimated": 0.0,
+          "velocity_estimated": 0.0,
+          "q_current": 0.0,
+          "error_estimated_rad": 0.0,
+          "estimate_error_rad": 0.0,
+          "hold_error_rad": 0.0,
+          "error_current_rad": 0.0,
+          "u_ff": 0.0,
+          "correction": 0.0,
+          "u_raw": 0.0,
+          "u_clipped_float64": 0.0,
+          "gain": 0.0,
+          "joint_delta_scale": 0.0,
+          "current_time_s": 0.0,
+          "reference_time_s": 0.0,
+          "previous_measurement_time_s": 0.0,
+          "measurement_time_s": 0.0,
+          "measurement_age_s": 0.0,
+          "previous_measurement_age_s": 0.0,
+          "measurement_interval_s": 0.0,
+          "prediction_horizon_s": 0.0
+        }
+      },
+      "46-PE": {
+        "verified_pngs": 21,
+        "fields": 24,
+        "steps": 20,
+        "feedback_formula_max_abs_errors": null,
+        "controller_target_max_abs_error_rad": 1.862645149230957e-09,
+        "compensated_formula_errors": {
+          "q_ref": 0.0,
+          "q_previous": 0.0,
+          "q_latest": 0.0,
+          "delta_q": 0.0,
+          "q_estimated": 0.0,
+          "velocity_estimated": 0.0,
+          "q_current": 0.0,
+          "error_estimated_rad": 0.0,
+          "estimate_error_rad": 0.0,
+          "hold_error_rad": 0.0,
+          "error_current_rad": 0.0,
+          "u_ff": 0.0,
+          "correction": 0.0,
+          "u_raw": 0.0,
+          "u_clipped_float64": 0.0,
+          "gain": 0.0,
+          "joint_delta_scale": 0.0,
+          "current_time_s": 0.0,
+          "reference_time_s": 0.0,
+          "previous_measurement_time_s": 0.0,
+          "measurement_time_s": 0.0,
+          "measurement_age_s": 0.0,
+          "previous_measurement_age_s": 0.0,
+          "measurement_interval_s": 0.0,
+          "prediction_horizon_s": 0.0
+        }
+      }
+    },
+    "historical_pngs_verified": 126,
+    "original_compensation_decisions_replayed": 44,
+    "article20_independent_replay": "passed",
+    "step_caps": {
+      "45": 20,
+      "46": 20
+    },
+    "referenced_files": 196,
+    "protected_files": 6806,
+    "controller_source_sha256": {
+      "agents/robots/panda/panda.py": "2a98a2133b49e5a94a83d05019c0ab833ad6767f85ff1bf66265cd9247cb0fda",
+      "agents/controllers/base_controller.py": "a39aa1ec3666ccca4820d0c8c42d3422b266a5a2561c0ca38ab34e42a9d5c249",
+      "agents/controllers/pd_joint_pos.py": "ce05feb05c4370ec2be58c60465082dde15fd97e6398a187a648a5e932a4d58e",
+      "utils/gym_utils.py": "66f56909b8b913014fba394c2348e4948d87855ab6a81a89597bfca61a4ef325",
+      "envs/tasks/tabletop/push_cube.py": "8ae1536c13fae2fe8f5c84be0c60ff40a6acd625e738dfafc056ec333a16e0d8",
+      "envs/sapien_env.py": "459196c275764eaf53ccba8e154e3207036399e54c8bdd45f9e7d0919970464b",
+      "agents/base_agent.py": "64b0c9f45577ef842ae41449af36529e476ad68d26e726de5c9d858496f8824d"
+    },
+    "private_causal_tests": "passed",
+    "simulation_calls": 0,
+    "training_calls": 0,
+    "statistics_fits": 0
+  },
+  "runtime_by_run": {
+    "seed-0045/CV-velocity-clean": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "controllers": {
+        "arm": {
+          "class": "PDJointPosController",
+          "config": {
+            "joint_names": [
+              "panda_joint1",
+              "panda_joint2",
+              "panda_joint3",
+              "panda_joint4",
+              "panda_joint5",
+              "panda_joint6",
+              "panda_joint7"
+            ],
+            "lower": -0.1,
+            "upper": 0.1,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": true,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force"
+          },
+          "joint_names": [
+            "panda_joint1",
+            "panda_joint2",
+            "panda_joint3",
+            "panda_joint4",
+            "panda_joint5",
+            "panda_joint6",
+            "panda_joint7"
+          ],
+          "active_joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "physical_low": [
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612
+          ],
+          "physical_high": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "action_slice": [
+            0,
+            7
+          ]
+        },
+        "gripper": {
+          "class": "PDJointPosMimicController",
+          "config": {
+            "joint_names": [
+              "panda_finger_joint1",
+              "panda_finger_joint2"
+            ],
+            "lower": -0.01,
+            "upper": 0.04,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": false,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force",
+            "mimic": {
+              "panda_finger_joint2": {
+                "joint": "panda_finger_joint1"
+              }
+            }
+          },
+          "joint_names": [
+            "panda_finger_joint1",
+            "panda_finger_joint2"
+          ],
+          "active_joint_indices": [
+            7,
+            8
+          ],
+          "physical_low": [
+            -0.009999999776482582
+          ],
+          "physical_high": [
+            0.03999999910593033
+          ],
+          "action_slice": [
+            7,
+            8
+          ]
+        }
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_provenance": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "device_can_render": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    },
+    "seed-0045/PV-velocity-perturbed": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "controllers": {
+        "arm": {
+          "class": "PDJointPosController",
+          "config": {
+            "joint_names": [
+              "panda_joint1",
+              "panda_joint2",
+              "panda_joint3",
+              "panda_joint4",
+              "panda_joint5",
+              "panda_joint6",
+              "panda_joint7"
+            ],
+            "lower": -0.1,
+            "upper": 0.1,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": true,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force"
+          },
+          "joint_names": [
+            "panda_joint1",
+            "panda_joint2",
+            "panda_joint3",
+            "panda_joint4",
+            "panda_joint5",
+            "panda_joint6",
+            "panda_joint7"
+          ],
+          "active_joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "physical_low": [
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612
+          ],
+          "physical_high": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "action_slice": [
+            0,
+            7
+          ]
+        },
+        "gripper": {
+          "class": "PDJointPosMimicController",
+          "config": {
+            "joint_names": [
+              "panda_finger_joint1",
+              "panda_finger_joint2"
+            ],
+            "lower": -0.01,
+            "upper": 0.04,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": false,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force",
+            "mimic": {
+              "panda_finger_joint2": {
+                "joint": "panda_finger_joint1"
+              }
+            }
+          },
+          "joint_names": [
+            "panda_finger_joint1",
+            "panda_finger_joint2"
+          ],
+          "active_joint_indices": [
+            7,
+            8
+          ],
+          "physical_low": [
+            -0.009999999776482582
+          ],
+          "physical_high": [
+            0.03999999910593033
+          ],
+          "action_slice": [
+            7,
+            8
+          ]
+        }
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_provenance": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "device_can_render": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    },
+    "seed-0046/CV-velocity-clean": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "controllers": {
+        "arm": {
+          "class": "PDJointPosController",
+          "config": {
+            "joint_names": [
+              "panda_joint1",
+              "panda_joint2",
+              "panda_joint3",
+              "panda_joint4",
+              "panda_joint5",
+              "panda_joint6",
+              "panda_joint7"
+            ],
+            "lower": -0.1,
+            "upper": 0.1,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": true,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force"
+          },
+          "joint_names": [
+            "panda_joint1",
+            "panda_joint2",
+            "panda_joint3",
+            "panda_joint4",
+            "panda_joint5",
+            "panda_joint6",
+            "panda_joint7"
+          ],
+          "active_joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "physical_low": [
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612
+          ],
+          "physical_high": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "action_slice": [
+            0,
+            7
+          ]
+        },
+        "gripper": {
+          "class": "PDJointPosMimicController",
+          "config": {
+            "joint_names": [
+              "panda_finger_joint1",
+              "panda_finger_joint2"
+            ],
+            "lower": -0.01,
+            "upper": 0.04,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": false,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force",
+            "mimic": {
+              "panda_finger_joint2": {
+                "joint": "panda_finger_joint1"
+              }
+            }
+          },
+          "joint_names": [
+            "panda_finger_joint1",
+            "panda_finger_joint2"
+          ],
+          "active_joint_indices": [
+            7,
+            8
+          ],
+          "physical_low": [
+            -0.009999999776482582
+          ],
+          "physical_high": [
+            0.03999999910593033
+          ],
+          "action_slice": [
+            7,
+            8
+          ]
+        }
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_provenance": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "device_can_render": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    },
+    "seed-0046/PV-velocity-perturbed": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "controllers": {
+        "arm": {
+          "class": "PDJointPosController",
+          "config": {
+            "joint_names": [
+              "panda_joint1",
+              "panda_joint2",
+              "panda_joint3",
+              "panda_joint4",
+              "panda_joint5",
+              "panda_joint6",
+              "panda_joint7"
+            ],
+            "lower": -0.1,
+            "upper": 0.1,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": true,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force"
+          },
+          "joint_names": [
+            "panda_joint1",
+            "panda_joint2",
+            "panda_joint3",
+            "panda_joint4",
+            "panda_joint5",
+            "panda_joint6",
+            "panda_joint7"
+          ],
+          "active_joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "physical_low": [
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612
+          ],
+          "physical_high": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "action_slice": [
+            0,
+            7
+          ]
+        },
+        "gripper": {
+          "class": "PDJointPosMimicController",
+          "config": {
+            "joint_names": [
+              "panda_finger_joint1",
+              "panda_finger_joint2"
+            ],
+            "lower": -0.01,
+            "upper": 0.04,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": false,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force",
+            "mimic": {
+              "panda_finger_joint2": {
+                "joint": "panda_finger_joint1"
+              }
+            }
+          },
+          "joint_names": [
+            "panda_finger_joint1",
+            "panda_finger_joint2"
+          ],
+          "active_joint_indices": [
+            7,
+            8
+          ],
+          "physical_low": [
+            -0.009999999776482582
+          ],
+          "physical_high": [
+            0.03999999910593033
+          ],
+          "action_slice": [
+            7,
+            8
+          ]
+        }
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_provenance": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "device_can_render": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    }
+  },
+  "reference_runtime_by_seed": {
+    "45": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "controllers": {
+        "arm": {
+          "class": "PDJointPosController",
+          "config": {
+            "joint_names": [
+              "panda_joint1",
+              "panda_joint2",
+              "panda_joint3",
+              "panda_joint4",
+              "panda_joint5",
+              "panda_joint6",
+              "panda_joint7"
+            ],
+            "lower": -0.1,
+            "upper": 0.1,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": true,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force"
+          },
+          "joint_names": [
+            "panda_joint1",
+            "panda_joint2",
+            "panda_joint3",
+            "panda_joint4",
+            "panda_joint5",
+            "panda_joint6",
+            "panda_joint7"
+          ],
+          "active_joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "physical_low": [
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612
+          ],
+          "physical_high": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "action_slice": [
+            0,
+            7
+          ]
+        },
+        "gripper": {
+          "class": "PDJointPosMimicController",
+          "config": {
+            "joint_names": [
+              "panda_finger_joint1",
+              "panda_finger_joint2"
+            ],
+            "lower": -0.01,
+            "upper": 0.04,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": false,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force",
+            "mimic": {
+              "panda_finger_joint2": {
+                "joint": "panda_finger_joint1"
+              }
+            }
+          },
+          "joint_names": [
+            "panda_finger_joint1",
+            "panda_finger_joint2"
+          ],
+          "active_joint_indices": [
+            7,
+            8
+          ],
+          "physical_low": [
+            -0.009999999776482582
+          ],
+          "physical_high": [
+            0.03999999910593033
+          ],
+          "action_slice": [
+            7,
+            8
+          ]
+        }
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_provenance": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "device_can_render": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    },
+    "46": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "controllers": {
+        "arm": {
+          "class": "PDJointPosController",
+          "config": {
+            "joint_names": [
+              "panda_joint1",
+              "panda_joint2",
+              "panda_joint3",
+              "panda_joint4",
+              "panda_joint5",
+              "panda_joint6",
+              "panda_joint7"
+            ],
+            "lower": -0.1,
+            "upper": 0.1,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": true,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force"
+          },
+          "joint_names": [
+            "panda_joint1",
+            "panda_joint2",
+            "panda_joint3",
+            "panda_joint4",
+            "panda_joint5",
+            "panda_joint6",
+            "panda_joint7"
+          ],
+          "active_joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "physical_low": [
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612,
+            -0.10000000149011612
+          ],
+          "physical_high": [
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612,
+            0.10000000149011612
+          ],
+          "action_slice": [
+            0,
+            7
+          ]
+        },
+        "gripper": {
+          "class": "PDJointPosMimicController",
+          "config": {
+            "joint_names": [
+              "panda_finger_joint1",
+              "panda_finger_joint2"
+            ],
+            "lower": -0.01,
+            "upper": 0.04,
+            "stiffness": 1000.0,
+            "damping": 100.0,
+            "force_limit": 100,
+            "friction": 0.0,
+            "use_delta": false,
+            "use_target": false,
+            "interpolate": false,
+            "normalize_action": true,
+            "drive_mode": "force",
+            "mimic": {
+              "panda_finger_joint2": {
+                "joint": "panda_finger_joint1"
+              }
+            }
+          },
+          "joint_names": [
+            "panda_finger_joint1",
+            "panda_finger_joint2"
+          ],
+          "active_joint_indices": [
+            7,
+            8
+          ],
+          "physical_low": [
+            -0.009999999776482582
+          ],
+          "physical_high": [
+            0.03999999910593033
+          ],
+          "action_slice": [
+            7,
+            8
+          ]
+        }
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_provenance": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "device_can_render": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    }
+  },
+  "collection": {
+    "status": "passed",
+    "explicit_seeded_resets": 4,
+    "constructor_initializations": 4,
+    "step_attempts_by_run": {
+      "seed-0045/CV-velocity-clean": 20,
+      "seed-0045/PV-velocity-perturbed": 20,
+      "seed-0046/CV-velocity-clean": 20,
+      "seed-0046/PV-velocity-perturbed": 20
+    },
+    "step_attempts_total": 80,
+    "completed_steps_total": 80,
+    "historical_runs_recollected": 0,
+    "condition_order_verified": true,
+    "budget_accounted_before_call": true
+  },
+  "note": "CPU physics/outer prediction/NumPy transfer and resolved render interface are separate. Rendering API provenance is recorded; no GPU-utilization measurement."
+}

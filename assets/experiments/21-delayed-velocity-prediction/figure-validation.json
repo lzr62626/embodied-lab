@@ -1,0 +1,260 @@
+{
+  "status": "passed",
+  "tiles": [
+    {
+      "seed": 45,
+      "condition": "CV",
+      "state_index": 0,
+      "box": [
+        16,
+        60,
+        272,
+        316
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "CV",
+      "state_index": 8,
+      "box": [
+        288,
+        60,
+        544,
+        316
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "CV",
+      "state_index": 9,
+      "box": [
+        560,
+        60,
+        816,
+        316
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "CV",
+      "state_index": 11,
+      "box": [
+        832,
+        60,
+        1088,
+        316
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "CV",
+      "state_index": 12,
+      "box": [
+        1104,
+        60,
+        1360,
+        316
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "CV",
+      "state_index": 20,
+      "box": [
+        1376,
+        60,
+        1632,
+        316
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "PV",
+      "state_index": 0,
+      "box": [
+        16,
+        376,
+        272,
+        632
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "PV",
+      "state_index": 8,
+      "box": [
+        288,
+        376,
+        544,
+        632
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "PV",
+      "state_index": 9,
+      "box": [
+        560,
+        376,
+        816,
+        632
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "PV",
+      "state_index": 10,
+      "box": [
+        832,
+        376,
+        1088,
+        632
+      ]
+    },
+    {
+      "seed": 45,
+      "condition": "PV",
+      "state_index": 20,
+      "box": [
+        1104,
+        376,
+        1360,
+        632
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CV",
+      "state_index": 0,
+      "box": [
+        16,
+        692,
+        272,
+        948
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CV",
+      "state_index": 8,
+      "box": [
+        288,
+        692,
+        544,
+        948
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CV",
+      "state_index": 9,
+      "box": [
+        560,
+        692,
+        816,
+        948
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CV",
+      "state_index": 11,
+      "box": [
+        832,
+        692,
+        1088,
+        948
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CV",
+      "state_index": 12,
+      "box": [
+        1104,
+        692,
+        1360,
+        948
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "CV",
+      "state_index": 20,
+      "box": [
+        1376,
+        692,
+        1632,
+        948
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "PV",
+      "state_index": 0,
+      "box": [
+        16,
+        1008,
+        272,
+        1264
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "PV",
+      "state_index": 8,
+      "box": [
+        288,
+        1008,
+        544,
+        1264
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "PV",
+      "state_index": 9,
+      "box": [
+        560,
+        1008,
+        816,
+        1264
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "PV",
+      "state_index": 10,
+      "box": [
+        832,
+        1008,
+        1088,
+        1264
+      ]
+    },
+    {
+      "seed": 46,
+      "condition": "PV",
+      "state_index": 20,
+      "box": [
+        1104,
+        1008,
+        1360,
+        1264
+      ]
+    }
+  ],
+  "case_tiles_pixel_exact": 22,
+  "figure_sha256": {
+    "seed-0045-estimation.png": "3158500692c386fdd319ba78d53204d574cc2b1971244a98760f794bb74b2ea7",
+    "seed-0045-commands.png": "c989b7b6e4035a47b8d7e7c3e7e2ffb2178cfd2c339f3f756e1ae2a45539a3ca",
+    "seed-0045-comparison.png": "8268f2a74fde0544c948b53e26b1eda26abd3c0090ed89de3f2a0edf88d68786",
+    "seed-0046-estimation.png": "7f0d464301a6abd860cdb0d06bef2412fce78976b379970518468c3d43ed9e8a",
+    "seed-0046-commands.png": "28f72fbad4a70aa67432326a711f73a9a0f6d3aa1afa07d341792ba60a156122",
+    "seed-0046-comparison.png": "8b3574520ef544d2487e32c5213e30c18c2c1d3d0e20aa9910cafd052dc63a18",
+    "velocity-frames.png": "b9ec63adada7ea3cf598336bb32fbd6daa77ce822e42f9dcfb49d64c0638de12"
+  },
+  "labels_outside_raw_tiles": true,
+  "units_separate": true,
+  "simulation_calls": 0
+}
