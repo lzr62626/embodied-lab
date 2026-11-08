@@ -1,0 +1,42 @@
+{
+  "version": "two-step-observation-delay-v1",
+  "layout": "A rollout has N actions and N+1 states. The source environment batch axis E is kept at length 1.",
+  "rollout": {
+    "obs/agent/qpos": {"dtype": "float32", "axes": ["state", "E", "joint"], "units": "first seven rad, two gripper joints m"},
+    "obs/agent/qvel": {"dtype": "float32", "axes": ["state", "E", "joint"], "units": "first seven rad/s, two gripper joints m/s"},
+    "obs/sensor_data/base_camera/rgb": {"dtype": "uint8", "axes": ["state", "E", "height", "width", "RGB channel"], "size": "256 x 256, full 0 to 255 scale"},
+    "step_index": {"axes": ["state", "E"], "meaning": "integer state index starting at reset"},
+    "time_s": {"dtype": "float64", "axes": ["state", "E"], "units": "s", "meaning": "state index times the control period"},
+    "actions": {"dtype": "float32", "axes": ["action", "dimension"], "units": "normalized", "meaning": "8 values, arm first, gripper last"},
+    "rewards": {"axes": ["action", "E"], "meaning": "the reward returned for that action"},
+    "terminated": {"axes": ["action", "E"], "meaning": "unchanged task termination flag"},
+    "truncated": {"axes": ["action", "E"], "meaning": "unchanged truncation flag"},
+    "info/*": {"axes": ["action", "E", "..."], "meaning": "the simulator's step diagnostics, including success and elapsed_steps"},
+    "reset_info/*": {"axes": ["E", "..."], "meaning": "numeric info returned by the one explicit reset"},
+    "obs/*": {"axes": ["state", "E", "..."], "meaning": "other original observation fields, including any camera parameters"},
+    "diagnostic/cube_pose": {"axes": ["state", "E", "pose component"], "meaning": "first three coordinates are m, remaining four are quaternion entries"},
+    "diagnostic/arm_target_qpos": {"axes": ["action", "E", "arm joint"], "units": "rad", "meaning": "actual target readback after the step"},
+    "diagnostic/gripper_target_qpos": {"axes": ["action", "E", "finger joint"], "units": "m", "meaning": "actual open target readback"},
+    "audit/action_source": {"axes": ["action"], "meaning": "0 script prefix, 1 forced override, 2 actual outer feedback"},
+    "audit/feedback_active": {"axes": ["action"], "meaning": "true exactly when the run called its outer feedback"},
+    "audit/intervention": {"axes": ["action"], "meaning": "true for the prescribed t=8 override"}
+  },
+  "actual_feedback": {
+    "axis": "decision, one record per actual query at t>=9. The run's original format is retained for historical NPZ audits.",
+    "indices": "t, measurement_state_index, reference_state_index, actual_state_index and delay_steps are int64.",
+    "clock": "Fields ending in _s are float64 seconds. measurement_age_s is current_time_s minus measurement_time_s.",
+    "position": "q_measured_rad, prediction_increment_rad, q_est_rad, q_ref, q_current_diagnostic, estimate_error_rad and error_rad use rad.",
+    "velocity": "v_measured_rad_s is rad/s. Hold records this for audit only.",
+    "controls": "u_ff, correction, u_raw and u_clipped_float64 are float64 normalized values. u_sent is the actual float32 normalized command.",
+    "controller_settings": "gain is dimensionless, joint_delta_scale is rad per unit normalized command.",
+    "flags": "was_clipped tests strict overflow before clipping. sent_at_bound tests float32 equality at the boundary.",
+    "controller_target_qpos": "An actual float32 readback with axes [decision, 7], rad. Flat exports store each component separately."
+  },
+  "offline_exports": {
+    "source_id": "Stable integer mapping in source_manifest.json. The source name and origin are metadata.",
+    "same_state_candidates": "Replayed inputs and command computations on each new trajectory. method_id 0 is Hold, 1 is Velocity. is_actual_rule identifies the one method and delay that was sent. Other candidates have no physical readback or outcome.",
+    "comparison": "Each seed has state_index and action_index as distinct axes. Angle and target values are rad and commands are normalized. Pair differences are left minus right over the same state index.",
+    "timing_cases": "The actual two-step decisions at t=9, 10 and 11, where present.",
+    "metrics": "Estimation error is q_est minus recorded q at action time. Tracking deviation is executed q minus U at the same state index. RMSE aggregates squared values over each reported interval."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "step_attempts": 80,
+  "completed_steps": 80,
+  "run_order": [
+    "seed-0045/P2-Hold",
+    "seed-0045/P2-Velocity",
+    "seed-0046/P2-Hold",
+    "seed-0046/P2-Velocity"
+  ],
+  "explicit_resets": 4,
+  "constructor_calls": 4,
+  "step_counts": {
+    "seed-0045/P2-Hold": 20,
+    "seed-0045/P2-Velocity": 20,
+    "seed-0046/P2-Hold": 20,
+    "seed-0046/P2-Velocity": 20
+  },
+  "ledger_sha256": "59a4a280be374a0f6eb425b56461c7de891ef5d5fa19d7dbcb976bfb80d78afa",
+  "historical_reruns": 0,
+  "training_calls": 0,
+  "statistics_fits": 0,
+  "model_updates": 0
+}

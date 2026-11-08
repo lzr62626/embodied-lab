@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "camera": "base_camera",
+  "reviewed_conditions": ["45 P2-Hold", "45 P2-Velocity", "46 P2-Hold", "46 P2-Velocity"],
+  "reviewed_state_indices": [0, 8, 9, 20],
+  "robot_table_cube_recognizable": true,
+  "camera_tiles_viewed": 16,
+  "plots_viewed": 4,
+  "notes": "Opened the contact sheet made of the 16 unmodified source PNG regions and all four plots. The arm, tabletop, blue cube, and target are recognizable. Labels are above the unchanged pixels."
+}

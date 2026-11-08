@@ -1,0 +1,246 @@
+{
+  "python": "3.11.9",
+  "packages": {
+    "numpy": "2.4.6",
+    "torch": "2.14.1",
+    "Pillow": "13.0.0",
+    "mani-skill": "3.0.1",
+    "sapien": "3.0.3",
+    "gymnasium": "1.4.0",
+    "matplotlib": "3.11.2"
+  },
+  "task": {
+    "task": "PushCube-v1",
+    "robot": "panda",
+    "num_envs": 1,
+    "obs_mode": "rgb",
+    "control_mode": "pd_joint_delta_pos",
+    "camera": "base_camera",
+    "width": 256,
+    "height": 256,
+    "shader_pack": "minimal",
+    "sim_backend": "cpu",
+    "render_backend": "cpu"
+  },
+  "computation": "CPU outer feedback and CPU offline verification",
+  "image_transfer": "CPU-accessible RGB tensor copied into NumPy uint8",
+  "render_note": "The logical backend and interface device are recorded from the runtime. Physical GPU utilization was not measured.",
+  "runtime_by_run": {
+    "seed-0045/P2-Hold": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_interface": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    },
+    "seed-0045/P2-Velocity": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_interface": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    },
+    "seed-0046/P2-Hold": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_interface": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    },
+    "seed-0046/P2-Velocity": {
+      "action_space": {
+        "shape": [
+          8
+        ],
+        "dtype": "float32",
+        "low": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "high": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "timing": {
+        "control_freq_hz": 20,
+        "simulation_freq_hz": 100,
+        "control_dt_s": 0.05,
+        "simulation_dt_s": 0.01,
+        "physics_substeps_per_control": 5
+      },
+      "resolved_backend": {
+        "sim_backend": "physx_cpu",
+        "render_backend": "sapien_cpu",
+        "device": "cpu",
+        "sim_device": "cpu",
+        "render_device": "cpu"
+      },
+      "sensor": {
+        "name": "base_camera",
+        "width": 256,
+        "height": 256,
+        "shader_pack": "minimal"
+      },
+      "render_interface": {
+        "render_system_device": "cpu",
+        "device_is_cpu": true,
+        "device_is_cuda": false,
+        "image_transfer": "CPU-accessible base_camera RGB copied into NumPy uint8"
+      }
+    }
+  }
+}

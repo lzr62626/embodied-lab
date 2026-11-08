@@ -1,0 +1,51 @@
+{
+  "version": "two-step-observation-delay-v1",
+  "seeds": [45, 46],
+  "conditions": {
+    "U": {"article": 13, "delay_steps": null, "method": "script", "override": false},
+    "P1-Hold": {"article": 18, "delay_steps": 1, "method": "hold", "override": true},
+    "P1-Velocity": {"article": 21, "delay_steps": 1, "method": "velocity", "override": true},
+    "P2-Hold": {"article": 22, "delay_steps": 2, "method": "hold", "override": true},
+    "P2-Velocity": {"article": 22, "delay_steps": 2, "method": "velocity", "override": true}
+  },
+  "run_order": [[45, "P2-Hold"], [45, "P2-Velocity"], [46, "P2-Hold"], [46, "P2-Velocity"]],
+  "max_steps_per_run": 20,
+  "max_step_attempts_total": 80,
+  "gain": 1.0,
+  "joint_delta_scale_rad": 0.1,
+  "command_limit_nominal": 0.1,
+  "command_limit_float32": 0.10000000149011612,
+  "clip_limit_float64_from_float32": 0.10000000149011612,
+  "boundary_rule": "Clip in float64 against the existing float32 interface bound, then cast to float32",
+  "reference_state_index": "t",
+  "measurement_state_index": "t - d, in this run",
+  "control_dt_s": 0.05,
+  "control_freq_hz": 20,
+  "simulation_freq_hz": 100,
+  "measurement_age_atol_s": 1e-12,
+  "numeric_audit_atol": 1e-12,
+  "numeric_audit_rtol": 0.0,
+  "controller_target_atol_rad": 1e-6,
+  "initial_and_prefix_atol": {
+    "obs/agent/qpos": 1e-6,
+    "obs/agent/qvel": 1e-5,
+    "diagnostic/cube_pose": 1e-6
+  },
+  "feedback_takeover_t": 9,
+  "override_t": 8,
+  "comparison_start_state_index": 9,
+  "action_sources": {"0": "script_prefix", "1": "forced_override", "2": "actual_outer_feedback"},
+  "task": {
+    "task": "PushCube-v1",
+    "robot": "panda",
+    "num_envs": 1,
+    "obs_mode": "rgb",
+    "control_mode": "pd_joint_delta_pos",
+    "camera": "base_camera",
+    "width": 256,
+    "height": 256,
+    "shader_pack": "minimal",
+    "sim_backend": "cpu",
+    "render_backend": "cpu"
+  }
+}

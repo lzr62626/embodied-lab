@@ -1,0 +1,178 @@
+{
+  "status": "passed",
+  "figures": {
+    "rollout-frames.png": {
+      "width": 1072,
+      "height": 1180,
+      "sha256": "3dd857d2e097c61ab47ace715de7f552cad2f190d1e01284f1bd7be5e5df4894"
+    },
+    "seed-0045-diagnostics.png": {
+      "width": 1798,
+      "height": 1116,
+      "sha256": "7f219aae14a8b6faf37856a579b95ddaed76177e1dd31c44dfc7283d37023388"
+    },
+    "seed-0045-tracking.png": {
+      "width": 1612,
+      "height": 1286,
+      "sha256": "65d9aa117ebfa2794442a22b54de78e80bfd9b5ac5ba581f5ec1fa3e2b21220f"
+    },
+    "seed-0046-diagnostics.png": {
+      "width": 1798,
+      "height": 1116,
+      "sha256": "7e32e440d2baf8b558cc6d16338c0dbfbb031d33b5aa3c3358cd194c4e7f1d08"
+    },
+    "seed-0046-tracking.png": {
+      "width": 1612,
+      "height": 1286,
+      "sha256": "dfc0792a3625bc6f7aafaef65b9a0e8e9b1127f66dce6e7ae3d3a6184e535356"
+    }
+  },
+  "raw_tiles_pixel_exact": 16,
+  "tile_boxes": [
+    {
+      "source": "seed-0045/P2-Hold/frames/0000.png",
+      "box": [
+        12,
+        39,
+        268,
+        295
+      ]
+    },
+    {
+      "source": "seed-0045/P2-Hold/frames/0008.png",
+      "box": [
+        276,
+        39,
+        532,
+        295
+      ]
+    },
+    {
+      "source": "seed-0045/P2-Hold/frames/0009.png",
+      "box": [
+        540,
+        39,
+        796,
+        295
+      ]
+    },
+    {
+      "source": "seed-0045/P2-Hold/frames/0020.png",
+      "box": [
+        804,
+        39,
+        1060,
+        295
+      ]
+    },
+    {
+      "source": "seed-0045/P2-Velocity/frames/0000.png",
+      "box": [
+        12,
+        330,
+        268,
+        586
+      ]
+    },
+    {
+      "source": "seed-0045/P2-Velocity/frames/0008.png",
+      "box": [
+        276,
+        330,
+        532,
+        586
+      ]
+    },
+    {
+      "source": "seed-0045/P2-Velocity/frames/0009.png",
+      "box": [
+        540,
+        330,
+        796,
+        586
+      ]
+    },
+    {
+      "source": "seed-0045/P2-Velocity/frames/0020.png",
+      "box": [
+        804,
+        330,
+        1060,
+        586
+      ]
+    },
+    {
+      "source": "seed-0046/P2-Hold/frames/0000.png",
+      "box": [
+        12,
+        621,
+        268,
+        877
+      ]
+    },
+    {
+      "source": "seed-0046/P2-Hold/frames/0008.png",
+      "box": [
+        276,
+        621,
+        532,
+        877
+      ]
+    },
+    {
+      "source": "seed-0046/P2-Hold/frames/0009.png",
+      "box": [
+        540,
+        621,
+        796,
+        877
+      ]
+    },
+    {
+      "source": "seed-0046/P2-Hold/frames/0020.png",
+      "box": [
+        804,
+        621,
+        1060,
+        877
+      ]
+    },
+    {
+      "source": "seed-0046/P2-Velocity/frames/0000.png",
+      "box": [
+        12,
+        912,
+        268,
+        1168
+      ]
+    },
+    {
+      "source": "seed-0046/P2-Velocity/frames/0008.png",
+      "box": [
+        276,
+        912,
+        532,
+        1168
+      ]
+    },
+    {
+      "source": "seed-0046/P2-Velocity/frames/0009.png",
+      "box": [
+        540,
+        912,
+        796,
+        1168
+      ]
+    },
+    {
+      "source": "seed-0046/P2-Velocity/frames/0020.png",
+      "box": [
+        804,
+        912,
+        1060,
+        1168
+      ]
+    }
+  ],
+  "line_data_checked_against_numeric_exports": true
+}

@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "article": 22,
+  "standalone_extraction_evaluated": true,
+  "pngs_verified": 210,
+  "recomputed_files_equal": 13,
+  "comparison_arrays_equal": true,
+  "candidate_arrays_equal": true,
+  "metrics_equal": true,
+  "CSV_equal": true,
+  "training_calls": 0,
+  "simulation_calls": 0,
+  "zip_bytes": 43199069,
+  "zip_sha256": "2e929d405edaccc8c9d27e831ed490aa29a528510a3f20f74a4543a4631de0fd",
+  "file_count": 271
+}
