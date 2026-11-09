@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "formal_episodes": 50,
+  "smoke_episodes": 2,
+  "successes": 37,
+  "timeouts": 13,
+  "program_errors": 0,
+  "complete_videos_decoded": 52,
+  "raw_files_unchanged": 112,
+  "model_revision": "ba73b2766f1371cdc133ca4efb97eb090d744625",
+  "checks": [
+    "Fixed seeds and identical smoke/formal protocol",
+    "All per-step rewards, terminal flags and finite actions",
+    "CSV and summary recomputed",
+    "All video frames decoded at 640x480 and 50 fps; steps + 1 frames",
+    "Model and runner hashes matched",
+    "Original artifacts unchanged during read-only acceptance"
+  ],
+  "assets_sha256": {
+    "images/seed-1000-poster.png": "8de73c0b50770d6bb4918e4c9e85ca66d3718797d2be04b346b0753ed75b3bda",
+    "images/seed-1001-poster.png": "c4ef1f7412195cda45d622c00fe4565cec4893c8cd4928fa6308d93f2b179a06",
+    "protocol.json": "2d1bfb255ded88c21602332cc67d49299afe9df19e9dfb94c0ff44f3e6c046d9",
+    "reference-comparison.json": "e6fb403c8a30b58a58c7ede403c6e120d771287e8af2105e7a280ca52adb6a10",
+    "results.csv": "f7198b789a85ed409406406e3b70352b01fd25d699b4a1a178a67742ceefbbce",
+    "summary.json": "51c357465e8da49bfcb11f46deb3f91b9382ea48b5a0f58562b0e23f94134779",
+    "videos/seed-1000.mp4": "5863f39110b50fc86ba061908b618f303154eacb6daf2b2cda8b1cf1f1960df1",
+    "videos/seed-1001.mp4": "15ed6f2abf03c0f51de18fba03e8bb00a026d0e9a5d100ef35f62e3f436e5f6e"
+  }
+}

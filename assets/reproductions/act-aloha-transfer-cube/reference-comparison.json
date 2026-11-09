@@ -1,0 +1,14 @@
+{
+  "official_500_successes": 415,
+  "official_500_episodes": 500,
+  "matched_seed_start": 1000,
+  "matched_seed_end": 1049,
+  "matched_official_successes": 38,
+  "matched_local_successes": 37,
+  "both_success": 37,
+  "only_local_success": 0,
+  "only_official_success": 1,
+  "both_unsuccessful": 12,
+  "official_record_sha256": "566d1661791f6e939efef28826a5cd7f674795d9c94575496d9ce252a11705ba",
+  "official_record_url": "https://huggingface.co/lerobot/act_aloha_sim_transfer_cube_human/blob/ba73b2766f1371cdc133ca4efb97eb090d744625/eval_info.json"
+}

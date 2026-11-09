@@ -1,0 +1,21 @@
+{
+  "mode": "formal",
+  "completed_episodes": 50,
+  "successes": 37,
+  "timeouts": 13,
+  "program_errors": 0,
+  "success_rate": 0.74,
+  "elapsed_s": 130.129,
+  "smoke_episodes_excluded": 2,
+  "smoke_successes": 2,
+  "total_steps": 15932,
+  "mean_max_reward": 3.34,
+  "mean_sum_reward": 213.54,
+  "max_reward_counts": {
+    "0": 0,
+    "1": 7,
+    "2": 6,
+    "3": 0,
+    "4": 37
+  }
+}
